@@ -1,0 +1,15 @@
+﻿There is one world, not to be seen or manipulated by players.
+
+This world contains a list of all players. One player is one person playing the game.
+
+One player has a Username, a Password, a maximum of 6 characters (one of each class.) and a maximum of 30 items in his inventory.
+It is important to note, that items carried by one of the six characters is NOT located in the inventory.
+
+Use the Combarhandler to calculate damage reduction.
+
+WARRIOR, // A pure Strength class, dealing uncontrollable damage to whatever is around him.
+PALADIN, // A hybrid Strength/Intellect Class, focusing on healing while dealing damage.
+WIZARD, // A pure Intellect class, who deals great amounts of magical damage or heals grivieus wounds.
+THIEF, // A pure Agility Class, dealing damage with his weapon and agility and ''borrows'' equipment from his allies.
+CARETAKER, // A hybrid Strength/Agility Class, he deals damage and heals based on his health.
+SYNERGIST, // A hybrid Agility/Intellect Class, always seeking to perfect balance between his stats to deal devasteting damage to his enemies.

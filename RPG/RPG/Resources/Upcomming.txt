@@ -1,0 +1,33 @@
+This tab presents planned changes to the game, that has not yet been implemented. Please note that these changes are not certain to go through.
+
+	- Finish up the support tab with facts about the game and instructions on how to play.
+
+	- Fix bugs and balance classes and stats.
+
+	- Add more Epochal Items to the game.
+
+	- Add more icons and graphics.
+
+	- Add a BOSS difficulty to choose from.
+
+	- Add more suffixes and prefixes.
+
+	- Add more NPCAIs to the game.
+
+	- Implement ''one-battle quests'', where a character will face multiple foes in a 
+	  small series of difficult battles.
+
+	- Add more quests to the game:
+		- Defeat x monsters of type y.
+
+	- Add music and sound effects to the game.
+
+	- Add Animations of characters hitting NPCs and vice versa.
+
+	- Add Buffs and Debuffs to the game.
+
+	- NAME the game.
+
+Known bugs:
+
+	- On computers where the used font is not installed, alot of text scaling errores occur.

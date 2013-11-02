@@ -1,0 +1,428 @@
+﻿Version 0.1.3.6 (30/10-2013):
+
+	- General:
+		- Fixed an issue where the player got credit for the quest based on health 
+		  percent, when they should not.
+		- Fixed an issue where players would not receive dust rewarded from quests.
+		- Attempted to fix an issue with the font.
+		- Added a feature to so it is possible to see percentage complete of quest and 
+		  percentage of health remaining for both characters and monsters.
+
+_________________________________________________________________________________________________________
+Version 0.1.3.3 (29/10-2013):
+
+	- General:
+		- Fixed an issue where characters being deleted werent actually being deleted.
+		- Attempting to fix additional issue with displaying the correct font.
+		- Fixed several visual bugs.
+		- Reworked and extended the "How To Play" tab in the Support menu.
+		- Made the "How To Play" tab open up for players starting the game with no characters.
+		- Changed the Color of Grand Items to make them easier to read on the background.
+		- Enabled background on additional menus.
+		- "Quickleaps", "The Thornebrush" and "Hood of Power" was changed to no longer grant 
+		  Attack Damage, but instead grant Crit.
+		- Agility was changed back to once again grant Attack Damage.
+		- Changed the way Crit was calculated to make it scale better with levels.
+		- Fixed some minor spelling errores.
+		- When using the Disenchant buttons, if any items are remaining in the inventory, 
+		  the last one will be selected.
+		- It is now possible to equip an item by pressing enter while have the item in the
+		  inventory selected.
+		- Added the ability to abandon the current quest in the Options Menu. A new quest will be 
+		  issued once the player has battled again!
+		- Fixed an issue causing the character panels to become scale out of proportion.
+		- Fixed an issue where some text had the wrong background color.
+
+	- Quests:
+		- Player Quests have been implemented! These will require the player to complete
+		  objectives while battling with his characters to earn additional rewards!
+		  The following quests either have been implemented or are in construction:
+			- Defeat 5 opponents on Very Easy/Easy/Normal/Hard/Very Hard difficulty!
+			- Deal a certain amount of damage!
+			- Heal a certain amount of damage!
+			- Use one of the classes to win 3 battles on any difficulty!
+			- Win 3 battles with less than 15/20/25/30/35 % health remaining!
+		- The player chooses the difficulty of the quest: Very Easy, Easy, 
+		  Normal, Hard or Very Hard. The harder the quest, the greater the reward.
+		- Speaking of the rewards, you can choose what type of reward you want!
+		  You select High Quality items, Dust for Randomization or additional Experience 
+		  for your characters!
+		- Quests can only be completed in SinglePlayer - you are on your own!
+		- "Overhealing" and "overkilling", meaning healing for more than can be healed
+		  or damaging for more than required to kill the monster, will NOT factor in.
+		  Dealing 120 damage to a mob when only 90 was needed will only count as 
+		  90 damage dealt.
+
+	- Classes:
+		- Thief:
+			- "Flurry" was changed: "Deals 10% (was 25%) of the Thiefs Attack to the target, 
+			  10% of his agility times."
+		- Warrior:
+			- "Insanity" was changed: "The Warrior deals 300% of his strength in damage to 
+			  the target, but injures of his allies for 15% (was 50%) of the damage dealt."
+
+_________________________________________________________________________________________________________
+Version 0.1.3.0 (25/10-2013):
+
+	- General:
+		- Fixed some additional issue with the font.
+		- Added a "Options" button, allowing the player to set his or her preferred 
+		  difficulty level and preferred character!
+		- Fixed a graphical issue when deleting characters.
+		- Fixed an issue where "Attack" was displayed as "Melee".
+
+	- Classes:
+		- All Classes:
+			- "Melee Attack" was changed: "Deal damage to the target for 85% (was 75%) of 
+			  the units attack."
+			- "Double Swing" was changed: "Deal damage equal to 275% (was 235%) of 
+			  the units attack."
+		- Thief:
+			- "Borrow Weapon" was changed: "The Thief uses the best attack of his allies together
+			  with his own, dealing 45% (was 40%) of their combined damage."
+		- Caretaker:
+			- "Lifeforce" was changed: "Deals 90% of the Caretakers health deficit in damage to 
+			  the target AND the Caretaker. "
+_________________________________________________________________________________________________________
+Version 0.1.2.22 (25/10-2013):
+
+	- General:
+		- Fixed some additional issue with the font.
+
+_________________________________________________________________________________________________________
+Version 0.1.2.20 (24/10-2013):
+
+	- General:
+		- Fixed an issue where windows would open in the center of the screen instead 
+		  of in the center of the game.
+		- Fixed an issue where Battle Regeneration would display an incorrect amount healed in Chat.
+		- Removed the tooltip when selecting items and added a section of the Main Menu to show
+		  the stats of the item.
+		- Fixed an issue causing player below level 10 to sometimes get error messages when 
+		  recieving loot.
+		- Fixed an issue causing multiple error windows to be open simulataneously.
+		- Testing a way to include the font with the game. All elements in the main window 
+		  should now have the intended font. If there are no bugs, this will be implemented 
+		  on all other windows.
+
+	- Classes:
+		- Synergist:
+			- "Duality" was changed: "Deals 25% (was 40%) of the Synergists combined intellect 
+			  and agility in damage."
+			- "Agile Mind" was changed: "Deals damage for 55% (was 85%) of the Synergists 
+			  Agility, but subtracts the difference between agility and intellect from the damage."
+			- "Mental Agility" was changed: "Deals 115% (was 175%) of the Synergists Intellect 
+			  in damage, subtracting the difference between Intellect and Agility."
+			- "Synergy" was changed: "Deals 145% (was 175%) of the Synergists combined intellect 
+			  and agility as damage, but subtracts difference between them from this amount."
+_________________________________________________________________________________________________________
+Version 0.1.2.19 (24/10-2013):
+
+	- General:
+		- Fixed an issue causing certain spells to consume an incorrect amount of turnpoints.
+		- Changed the loot receive from battles: Players will now get more Grand loot, 
+		  less Normal loot and less Epochal loot.
+		- The starting Battlecharms of a new character now both give + 1 Health.
+		- When battling opponents of difficulty Easy or Very Easy, players will now 
+		  recieve 3 pieces of loot instead of 2.
+		- When trying to equip a battlecharm, so the character will have two battlecharms 
+		  with the same name, the newly equipped battlecharm will be renamed.
+		- Made it impossible for characters to equip two different instances
+		  of the same Epochal Battlecharm.
+		- Fixed an issue where having more than 1000 Dust cause the amount to not be displayed.
+		- Added colors to the items in the Randomize Stat menu.
+
+	- Classes:
+		- All Classes:
+			- "Battle Regeneration" was changed: "Heals the caster for 100% of the 
+			  casters level (was 20% of highest stat)."
+			- Fixed an issue where secondary stats was not affected by increase or decrease
+			  of stats during battle.
+		- Synergist:
+			- "Agile Mind" was changed: "Deals damage for 85% (was 100%) of the Synergists 
+			  Agility, but subtracts the difference between agility and intellect from the damage."
+			- "Mental Agility" was changed: "Deals 175% (was 200%) of the Synergists Intellect 
+			  in damage, subtracting the difference between Intellect and Agility."
+		- Caretaker:
+			- "Body Slam" was changed: "Deals 20% (was 30%) of the Caretakers maximum 
+			  health in damage to the target."
+			- "Lifeforce" was changed: "Deals between 90% (was 100%) based the Caretakers 
+			  health deficit (was current health) in damage."
+
+_________________________________________________________________________________________________________
+Version 0.1.2.17 (22/10-2013):
+
+	- General:
+		- Fixed a bug that caused agility from items to not increase health gained from Armor.
+		- Fixed a tooltip bug, displaying the damage from Nuke incorrectly.
+		- Made the chatboxes scroll down to the most recent entry.
+		- Minor Patches will no longer have their own Changelog.
+
+	- Items:
+		- "Thief's Tool" was changed to be a Dagger instead of a Sword.
+		- "The Flutterer" was changed to be a Sword instead of a Dagger.
+		- "Choosen of the Ranger" was changed to grant Intellect instead of Strength.
+		- "Defiance" was changed to grant Intellect.
+		- "The Balance was changed to grant Crit instead of Strength.
+		- Epochal Items for levels 30-40, 40-50, 50-55 and 55-60 was implemented.
+
+	- Monsters:
+		- The Fireball ability for Monsters was changed: "This ability deals 175% (was double) 
+		  the units level in damage."
+		- The Nuke ability for Monsters was changed: "This ability deals 600% of the 
+		  casters level (was 90% of targets health) in damage. Can only be used every 5 turns."
+
+	- Classes:
+		- Synergist:
+			- "Balance - Intellect" was removed and replaced with a new ability:
+			  "Mental Agility": Deals 200% of the Synergists Intellect in damage, 
+			  subtracting the difference between Intellect and Agility.
+			- "Balance - Agility" was removed and replaced with a new ability:
+			  "Balance": Of Agility and Intellect, increases lowest stat by 15% and highest by 10%.
+_________________________________________________________________________________________________________
+Version 0.1.2.16 (17/10-2013):
+
+	- General:
+		- Agility was changed: It no longer gives 30% to Attack, but 30% to Armor.
+	
+	- Classes:
+		- All: 
+			- Fixed Melee attack, so it was possible to advance beyond level 1.
+			- Fixed a bug causing characters to forget an ability if it was learned at that level,
+			  when loading a set og characters.
+		- Synergist: 
+			- "Agile mind" was dealing incorrectly low damage and was fixed.
+		- Thief:
+			- "Borrow Weapon" was changed: "The Thief uses the best attack of his allies 
+			  together with his own, dealing 40% (was 60%) of their combined damage."
+		- Caretaker:
+			- "Lifeforce" was changed: "Deals 100% (was 150%) of the Caretakers current 
+			  health in damage."
+
+_________________________________________________________________________________________________________
+Version 0.1.2.14 (17/10-2013):
+
+	- General:
+		- Fixed an issue that caused all button tooltips to pop up at the support button.
+		- Fixed an issue that caused button tooltips to not hide when moving the mouse.
+		- Added additional button tooltips.
+		- Significantly improved the ''How To Play'' guide.
+		- Slightly changed the Character Overview form to better display item stats.
+		- Fixed a bug causing Abilies on loaded character to display an old tooltip.
+
+	- Classes:
+		- All Classes:
+			- "Melee Attack" was changed: "Deal damage to the target for 75% (was 100%) of the 
+			  units attack."
+			- "Double Swing" was changed: "Deal damage equal to 235% (was 305%) of the units attack."
+		- Synergist:
+			- "Agile Mind" was changed: "Deals damage for 100% (was 65%) of the Synergists agility, 
+			  but subtracts the difference between agility and intellect from the damage."
+		- Warrior:
+			- "Power Strike" was changed: "Deal damage to the target based on 70% (was 80%) attack
+			  damage and 10% of the Warriors strength."
+
+	- Monsters:
+		- Abilities:
+			- Atonement Smites' heal was changed to be based on maximum health instead of level.
+			- Heal was changed to be based on maximum health instead of level.
+_________________________________________________________________________________________________________
+Version 0.1.2.13 (15/10-2013):
+
+	- General:
+		- Made the battlecharacter automatically select the enemy when changing abilities, if the newly 
+		  selected ability is offensive
+		- Fixed a bug causing Flamecomet to say it crits when it didnt and that it didnt crit
+		  when it did crit.
+		- Fixed a bug that caused Sacrifice to deal damage based on max health instead of Agility
+		- Fixed a bug causing two copies of the same epochal item to always have the same stats.
+		- Epochal items in general have been changed and they can now drop at level 10+.
+		- Changed the Battle Window to pop up in the middel of the Main Window, instead of the middle
+		  of the screen
+		- Added a "How to Play!" tab on the support page.
+		- Added a "Frequently Asked Questions" (FAQ) tab on the support page.
+		- Added a cool new background!
+		- Added a tooltips to many burrons in the Main Menu.
+		- Changed the description of the back up of characters, so it was more comprehensible for players.
+
+	- Classes
+		- Caretaker:
+			- "Sacrifice" was changed: "Deals 85% (was 65%) of the Caretakers agility in damage,
+			  but takes damage equal to the difference between strength and agility."
+		- Warrior:
+			- "Power Strike" was changed: "Deal damage to the target based on 80% (was 100%) attack
+			  damage and 10% (was 25%) of the Warriors strength."
+			- "Blind Rage" was changed: "Deals anywhere between 175 (was 160) and 75% (was 60%) 
+			  of the Warriors strength in damage."
+		- Thief:
+			- "Bloodstealer" was changed: "Deals 100% (was 90%) of the Thiefs agility in damage and
+			  heals him for 10% of the damage dealt."
+			- "Dirty Tricks" was changed: "Deals 250% (was 280%) of the Thiefs agility and 40% 
+			  (was 0%) of his attack as damage to the target."
+		- Paladin:
+			- "Justice" was changed: "Deals 40% (was 25%) of the Paladins strength in damage and 
+			  heals him for 30% (was 15%) of his intellect."
+			- "Serenity" was changed: "Heals a random ally and deals damage to the target for 
+			  40% (was 25%) of the Paladins intellect."
+_________________________________________________________________________________________________________
+Version 0.1.2.12 (14/10-2013):
+
+	- General:
+		- Fixed a bug that gave character only 6 attribute points after resetting them.
+		- Set previously overlooked types to lower case.
+		- Change experience gain. In order to give players defeating harder opponents more benefits,
+		  the amount of experience given has been tweaked per difficulty:
+			- Very Easy grants no experience and can be used for farming.
+			- Easy grants 50% of normal experience.
+			- Normal grants the same as before.
+			- Hard grants 20% more experience than normal.
+			- Very Hard grants 50% more experience than normal.
+		  Keep in mind that these numbers are based on the mob you are fighting. If a level 10 mob grants 100 
+		  experience and a level 8 mob grants 80 experience and your character is level 8, the level 10 mob 
+		  will grant you 100 * 1.2 = 120 experience. Likewise, defeating a level 12 granting 120 experience
+		  will grant you 120 * 1.5 = 180 experience.
+		- Reversed the direction of the changelog, setting new changes at the top.
+
+	- Classes:
+		- All:
+			Stat buffing abilties were greatly buffed (haha, a buffing ability that gets buffed!).
+		- Warrior:
+			- "Blind Rage" was changed: "Deals anywhere between 165 (was 160) and 60% (was 25%)
+			  of the Warriors strength in damage."
+
+_________________________________________________________________________________________________________
+Version 0.1.2.11 (14/10-2013):
+
+	- General:
+		- Made the choosen attribute when randomizing stats not reset to the first choice.
+		- Fixed a bug that gave character 4 more attribute points after resetting them.
+		- Gave new characters gear in all slots from the beginning.
+		- Gave the player a possibility of saving data in a folder on exit, and load it from a folder on start up.
+
+_________________________________________________________________________________________________________
+Version 0.1.2.10 (14/10-2013):
+
+	- General:
+		- Made it possible to put 3 points in each attribute.
+		- Made the Disenchant all button only disenchant Normal and Grand items.
+		- Gave more experience to players defeating Hard and Very Hard opponents.
+		- Set all types, such as WARRIOR and ATTACKDAMAGE, to lower case, resulting in Warrior 
+		  and Attackdamage.
+		- Added a Reset Attributes button to the stats page.
+
+_________________________________________________________________________________________________________
+Version 0.1.2.9 (13/10-2013):
+
+	- General:
+		- Made the main window moveable.
+
+	- Classes:
+		- Synergist:
+			- "Duality" was changed: "Deals 40% of the Synergists combined 
+			  intellect and agility in damage." Combines the stats before
+			  taking 40% of the sum now, in place of taking 25% of each stat.
+
+	- Monters:
+		- Changed the amount of health Monters have.
+
+_________________________________________________________________________________________________________
+Version 0.1.2.8 (13/10-2013):
+
+	- Classes:
+		- Warrior:
+			- "Blind Rage" was changed: "Deals anywhere between 160 (was 200) and 25% (was 50%)
+			  of the Warriors strength in damage."
+
+_________________________________________________________________________________________________________
+Version 0.1.2.7 (13/10-2013):
+
+	- General:
+		- Made characters unable to gain more than twice their level in a base attribute.
+		- Fixed a bug that caused a wrong message when starting a battle.
+		- Made player get more dust from items:
+			- Normal items does not give extra dust.
+			- Grand and Fabled items give 1 extra dust.
+			- Epochal items give 5 extra dust.
+
+_________________________________________________________________________________________________________
+Version 0.1.2.6 (13/10-2013):
+
+	- General:
+		- Fixed a tooltip bug.
+		- Made the harder NPC locked untill level 10.
+
+_________________________________________________________________________________________________________
+Version 0.1.2.5 (13/10-2013):
+
+	- General:
+		- Fixed a bug that caused the game to crash when disenchanting or putting an item into an empty slot.
+		- Fixed a bug that caused the Disenchant all button to leave 1 item in the inventory.
+
+_________________________________________________________________________________________________________
+Version 0.1.2.4 (13/10-2013):
+
+	- General:
+		- Made the color of the text of Inventory items correspond to their rarity.
+		- Made the battle begin with the enemy selected.
+		- Added a "Disenchant all items" button.
+		- When characters level up they will not recieve a set amount to each stat. Instead, Players will have to choose which stats to put points in.
+		- Added a Auto Level Up button, so testers dont have to grind so much.
+
+	- Monters:
+		- Added 3 brand new AIs to play against!
+
+_________________________________________________________________________________________________________
+Version 0.1.2.3 (13/10-2013):
+
+	- General: 
+		- Fixed an issue that cause Crit to keep stacking uncontrollably.
+		- Fixed an issue that displayed the chance to crit incorrectly.
+
+_________________________________________________________________________________________________________
+Version 0.1.2.2 (13/10-2013):
+
+	- General:
+		- New Attribute: Crit - will give the character a certain chance to critting with his abilities, dealing 50% extra 
+		  damage or healing.
+		- Benefits of stats: Each main stat (Strength, Agility and Intellect) will grant a bonus to a secondary stat:
+			- 30% of character Strength will add to Health.
+			- 30% of character Agility will add to Attack.
+			- 30% of character Intellect will add to Crit.
+	
+	- Classes:
+		- Caretaker:
+			- "Bodyslam" was changed: "Deals 30% (was 50%) of the Caretakers maximum health in damage to the 
+			  target."
+
+_________________________________________________________________________________________________________
+Version 0.1.2.1 (13/10-2013):
+
+	- General:
+		- Added the Upcomming tab in the Support form.
+		- Added utility to save progress - An account will now autosave at important times.
+		- Added utility to delete characters - something that is needed, now that they can be saved.
+
+	- Classes:
+		- Paladin:
+			- "Wrath" was fixed: It previously incorrectly dealt damage based on Intellect and have now been 
+			  fixed to properly deal damage based on Strength.
+
+_________________________________________________________________________________________________________
+Version 0.1.1.13 (11/10-2013):
+
+	- General
+		- Made it possible to actually close the Support Page and modified its appearence.
+
+	- Classes:
+		- Thief:
+			- "Borrow Weapon" was changed: "The Thief uses the best attack of his allies together with his own,
+			  dealing 60% (was 100%) of their combined damage."
+
+_________________________________________________________________________________________________________
+Version 0.1.1.12 (11/10-2013):
+
+	- General:
+		- Added Support Button.
+		- Added Added Changelog.
+		- Made characters able to equip items rewarded from Very Hard Opponents.
+		- Made character that are not level 60 unable to equip items with itemlevel 60 or higher.

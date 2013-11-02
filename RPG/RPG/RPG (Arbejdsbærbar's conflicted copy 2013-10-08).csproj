@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DFD95EA2-8194-477D-9250-E26D1DDD1B1A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RPG</RootNamespace>
+    <AssemblyName>RPG</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Windows.Input.Manipulations" />
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Function\Battle.cs" />
+    <Compile Include="Function\ServerManagement.cs" />
+    <Compile Include="UI\BattleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BattleForm.Designer.cs">
+      <DependentUpon>BattleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChangeGearForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ChangeGearForm.Designer.cs">
+      <DependentUpon>ChangeGearForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MessageForm.Designer.cs">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RandomizeStatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RandomizeStatForm.Designer.cs">
+      <DependentUpon>RandomizeStatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UseAbilityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UseAbilityForm.Designer.cs">
+      <DependentUpon>UseAbilityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserControls\ucAbilityIcon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\ucAbilityIcon.Designer.cs">
+      <DependentUpon>ucAbilityIcon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CharacterCreationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CharacterCreationForm.Designer.cs">
+      <DependentUpon>CharacterCreationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Abilities\ActiveAbility.cs" />
+    <Compile Include="Core\Abilities\PassiveAbility.cs" />
+    <Compile Include="Core\Ability.cs" />
+    <Compile Include="Core\Player.cs" />
+    <Compile Include="Core\UnitAttribute.cs" />
+    <Compile Include="Core\Item.cs" />
+    <Compile Include="Core\Items\Armor.cs" />
+    <Compile Include="Core\Items\BattleCharm.cs" />
+    <Compile Include="Core\Items\Weapon.cs" />
+    <Compile Include="Core\Unit.cs" />
+    <Compile Include="Core\Units\Character.cs" />
+    <Compile Include="Core\Units\NPC.cs" />
+    <Compile Include="UI\FindBattleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FindBattleForm.Designer.cs">
+      <DependentUpon>FindBattleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Function\CombatHandler.cs" />
+    <Compile Include="Function\GeneralFunctions.cs" />
+    <Compile Include="Function\ItemGeneration.cs" />
+    <Compile Include="Function\NPCAI.cs" />
+    <Compile Include="Function\WorldGeneration.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemInterface\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\UserControls\ucCharacterBattle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\ucCharacterBattle.Designer.cs">
+      <DependentUpon>ucCharacterBattle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserControls\ucCharacterInterface.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\ucCharacterInterface.Designer.cs">
+      <DependentUpon>ucCharacterInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserControls\ucNPC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\ucNPC.Designer.cs">
+      <DependentUpon>ucNPC.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\BattleForm.resx">
+      <DependentUpon>BattleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ChangeGearForm.resx">
+      <DependentUpon>ChangeGearForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MessageForm.resx">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RandomizeStatForm.resx">
+      <DependentUpon>RandomizeStatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UseAbilityForm.resx">
+      <DependentUpon>UseAbilityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserControls\ucAbilityIcon.resx">
+      <DependentUpon>ucAbilityIcon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CharacterCreationForm.resx">
+      <DependentUpon>CharacterCreationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FindBattleForm.resx">
+      <DependentUpon>FindBattleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserControls\ucCharacterBattle.resx">
+      <DependentUpon>ucCharacterBattle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserControls\ucCharacterInterface.resx">
+      <DependentUpon>ucCharacterInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserControls\ucNPC.resx">
+      <DependentUpon>ucNPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Classes.txt" />
+    <None Include="Resources\heal.jpg" />
+    <None Include="Resources\powerstrike.jpg" />
+    <None Include="Resources\undead.jpg" />
+    <None Include="Resources\humanoid.jpg" />
+    <None Include="Resources\dragon.jpg" />
+    <None Include="Resources\beast.jpg" />
+    <None Include="Resources\meleeattack.jpg" />
+    <None Include="Resources\fireball.jpg" />
+    <None Include="Resources\synergist.jpg" />
+    <None Include="Resources\caretaker.jpg" />
+    <None Include="Resources\thief.jpg" />
+    <None Include="Resources\mage.jpg" />
+    <None Include="Resources\paladin.jpg" />
+    <None Include="Resources\arrowLeft.png" />
+    <None Include="Resources\arrowRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warrior.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
