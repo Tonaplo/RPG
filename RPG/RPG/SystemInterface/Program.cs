@@ -28,8 +28,10 @@ namespace RPG
             Application.SetCompatibleTextRenderingDefault(false);
 
             List<Player> playerList = ServerManagement.LoadPlayers("players.xml");
-            SoundManagerClass.InitializeSounds();
+            SoundManager.InitializeSounds();
+
             
+
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             fbd.Description = "If you are a returning player, please choose a folder to load your characters from. If you are new to the game, please press cancel:";
             

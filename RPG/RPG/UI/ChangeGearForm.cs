@@ -203,7 +203,7 @@ namespace RPG.UI
 
         private void btEquip_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             if (!(theItem.ItemLevel >= 60 && selectedChar.UnitLevel < 60))
             {
                 if ((selectedChar.UnitLevel + 4) >= theItem.ItemLevel)
@@ -282,7 +282,7 @@ namespace RPG.UI
 
         private void bnCancel_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
         }
 

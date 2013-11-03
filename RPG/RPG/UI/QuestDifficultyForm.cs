@@ -85,7 +85,7 @@ namespace RPG.UI
 
         private void bnVeryEasy_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             difficulty = -4;
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
@@ -93,7 +93,7 @@ namespace RPG.UI
 
         private void bnEasy_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             difficulty = -2;
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
@@ -101,7 +101,7 @@ namespace RPG.UI
 
         private void bnNormal_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             difficulty = 0;
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
@@ -109,7 +109,7 @@ namespace RPG.UI
 
         private void btHard_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             difficulty = 2;
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
@@ -117,7 +117,7 @@ namespace RPG.UI
 
         private void btVeryHard_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             difficulty = 4;
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();

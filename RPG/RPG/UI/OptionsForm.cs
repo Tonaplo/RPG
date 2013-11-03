@@ -99,7 +99,7 @@ namespace RPG.UI
 
         private void bnOK_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             player.PrefDifficulty = comboBoxDifficulty.SelectedIndex;
             player.PrefChar = comboBoxChooseChar.SelectedItem.ToString();
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
@@ -108,7 +108,7 @@ namespace RPG.UI
 
         private void bnAbandon_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             player.CurrentQuest = null;
             MessageForm mes = new MessageForm("You abandomed your quest!");
             mes.ShowDialog();

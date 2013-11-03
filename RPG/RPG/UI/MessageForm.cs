@@ -72,7 +72,7 @@ namespace RPG.UI
 
         private void bnDone_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
         }

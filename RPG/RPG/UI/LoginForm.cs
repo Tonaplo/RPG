@@ -133,7 +133,7 @@ namespace RPG
 
         private void btLogin_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             if (UserExists(textBoxPlayerName.Text, textBoxPassword.Text))
             {
                 this.DialogResult = System.Windows.Forms.DialogResult.OK;
@@ -158,7 +158,7 @@ namespace RPG
 
         private void btNewUser_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             if (Function.GeneralFunctions.CheckTextForNonLettersAndNonDigits(textBoxPassword.Text) && Function.GeneralFunctions.CheckTextForNonLettersAndNonDigits(textBoxPlayerName.Text))
             {
                 if (!IsUsernameTaken(textBoxPlayerName.Text))
@@ -184,7 +184,7 @@ namespace RPG
 
         private void bnExit_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Close();
         }

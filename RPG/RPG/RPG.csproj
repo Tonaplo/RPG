@@ -108,7 +108,7 @@
     <Compile Include="Function\Battle.cs" />
     <Compile Include="Function\PlayerQuestHandler.cs" />
     <Compile Include="Function\ServerManagement.cs" />
-    <Compile Include="Function\SoundManagerClass.cs" />
+    <Compile Include="Function\SoundManager.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -316,6 +316,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Classes.txt" />
+    <None Include="Resources\Suffixes.txt" />
+    <None Include="Resources\Prefixes.txt" />
     <None Include="Resources\background.jpg" />
     <Content Include="Resources\buttonpress.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

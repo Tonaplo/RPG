@@ -230,58 +230,19 @@ namespace RPG.Function
             helmArmorNames.Add("Crown");
             helmArmorNames.Add("Bone Helm");
             #endregion
+            
+            string data = Properties.Resources.Prefixes;
+            itemPrefixes = new List<string>(data.Split(','));
 
-            #region Prefixes for item names
-            ItemGeneration.itemPrefixes.Add("Great ");
-            ItemGeneration.itemPrefixes.Add("Bronze ");
-            ItemGeneration.itemPrefixes.Add("Iron ");
-            ItemGeneration.itemPrefixes.Add("Steel ");
-            ItemGeneration.itemPrefixes.Add("Silver ");
-            ItemGeneration.itemPrefixes.Add("Gold ");
-            ItemGeneration.itemPrefixes.Add("Platinum ");
-            ItemGeneration.itemPrefixes.Add("Meteoric ");
-            ItemGeneration.itemPrefixes.Add("Strange ");
-            ItemGeneration.itemPrefixes.Add("Weird ");
-            ItemGeneration.itemPrefixes.Add("Jagged ");
-            ItemGeneration.itemPrefixes.Add("Deadly ");
-            ItemGeneration.itemPrefixes.Add("Vicious ");
-            ItemGeneration.itemPrefixes.Add("Brutal ");
-            ItemGeneration.itemPrefixes.Add("Massive ");
-            ItemGeneration.itemPrefixes.Add("Savage ");
-            ItemGeneration.itemPrefixes.Add("Merciless ");
-            ItemGeneration.itemPrefixes.Add("Ferocious ");
-            ItemGeneration.itemPrefixes.Add("Cruel ");
-            ItemGeneration.itemPrefixes.Add("Sharp ");
-            ItemGeneration.itemPrefixes.Add("Fine ");
-            ItemGeneration.itemPrefixes.Add("Warrior's ");
-            ItemGeneration.itemPrefixes.Add("Soldier's ");
-            ItemGeneration.itemPrefixes.Add("Knight's ");
-            ItemGeneration.itemPrefixes.Add("Lord's ");
-            ItemGeneration.itemPrefixes.Add("King's ");
-            ItemGeneration.itemPrefixes.Add("Master's ");
-            ItemGeneration.itemPrefixes.Add("Grandmaster's ");
-            #endregion
+            data = Properties.Resources.Suffixes;
+            itemSuffixes = new List<string>(data.Split(','));
 
-            #region Suffixes for item names
-            ItemGeneration.itemSuffixes.Add(" of Worth");
-            ItemGeneration.itemSuffixes.Add(" of Measure");
-            ItemGeneration.itemSuffixes.Add(" of Excellence");
-            ItemGeneration.itemSuffixes.Add(" of Performance");
-            ItemGeneration.itemSuffixes.Add(" of Transcendence");
-            ItemGeneration.itemSuffixes.Add(" of Perfection");
-            ItemGeneration.itemSuffixes.Add(" of the Titan");
-            ItemGeneration.itemSuffixes.Add(" of the Giant");
-            ItemGeneration.itemSuffixes.Add(" of Nirvana");
-            ItemGeneration.itemSuffixes.Add(" of the Colossus");
-            ItemGeneration.itemSuffixes.Add(" of Craftmanship");
-            ItemGeneration.itemSuffixes.Add(" of Storms");
-            ItemGeneration.itemSuffixes.Add(" of Defiance");
-            ItemGeneration.itemSuffixes.Add(" of Equilibrium");
-            ItemGeneration.itemSuffixes.Add(" of Amicae");
-            ItemGeneration.itemSuffixes.Add(" of the Guard");
-            ItemGeneration.itemSuffixes.Add(" of Ages");
-            #endregion
+            Console.WriteLine(Environment.NewLine + "Checking Prefixes:" +Environment.NewLine);
+            CheckListForRepeats(itemPrefixes);
 
+            Console.WriteLine(Environment.NewLine + "Checking Suffixes:" + Environment.NewLine);
+            CheckListForRepeats(itemSuffixes);
+            
         }
 
         #region Epochal Item Functions
@@ -1090,8 +1051,6 @@ namespace RPG.Function
             }
         }
 
-        
-
         #endregion
 
         #region Helper functions for item generation
@@ -1195,6 +1154,23 @@ namespace RPG.Function
 
         #region Item Name Generating functions
 
+        public static void CheckListForRepeats(List<string> list)
+        {
+            int numer = 0;
+            for (int i = 0; i < list.Count; i++)
+			{
+                for (int k = i+1; k < list.Count; k++)
+                {
+                    if (list[i] == list[k])
+                    {
+                        Console.WriteLine(list[i]);
+                        numer++;
+                    }
+                }
+			}
+            Console.WriteLine(Environment.NewLine + numer + " repeats.");
+        }
+
         public static string RandomizeNewName(Item _item)
         {
             bool prefix = false;
@@ -1236,6 +1212,7 @@ namespace RPG.Function
             {
                 index = (_weapon.ItemLevel * (int)r.Next(itemPrefixes.Count)) % (itemPrefixes.Count);
                 _name = itemPrefixes[index];
+                _name += " ";
             }
 
             switch (_weapon.WeaponType)
@@ -1268,6 +1245,7 @@ namespace RPG.Function
 
             if (suffix)
             {
+                _name += " ";
                 index = (_weapon.ItemLevel * (int)Math.Exp(r.Next(itemSuffixes.Count))) % (itemSuffixes.Count - 1);
                 _name += itemSuffixes[index];
             }
@@ -1286,6 +1264,7 @@ namespace RPG.Function
             {
                 index = (_armor.ItemLevel * r.Next(itemPrefixes.Count)) % (itemPrefixes.Count);
                 _name = itemPrefixes[index];
+                _name += " ";
             }
 
             switch (_armor.ArmorType)
@@ -1306,6 +1285,7 @@ namespace RPG.Function
 
             if (suffix)
             {
+                _name += " ";
                 index = (_armor.ItemLevel * r.Next(itemSuffixes.Count)) % (itemSuffixes.Count - 1);
                 _name += itemSuffixes[index];
             }
@@ -1324,12 +1304,14 @@ namespace RPG.Function
             {
                 index = (_bc.ItemLevel * r.Next(itemPrefixes.Count)) % (itemPrefixes.Count);
                 _name = itemPrefixes[index];
+                _name += " ";
             }
 
             _name += "Battle Charm";
            
             if (suffix)
             {
+                _name += " ";
                 index = (_bc.ItemLevel * r.Next(itemSuffixes.Count)) % (itemSuffixes.Count - 1);
                 _name += itemSuffixes[index];
             }

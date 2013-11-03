@@ -179,13 +179,13 @@ namespace RPG.UI
 
         private void btCancel_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
         }
 
         private void btRandomize_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             if (choosenItem != null && player.Dust >= choosenItem.ItemLevel)
             {
                 if (comboBoxAttribute.SelectedIndex != -1)

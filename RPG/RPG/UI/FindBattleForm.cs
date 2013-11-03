@@ -182,7 +182,7 @@ namespace RPG
 
         private void bnCancel_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Close();
         }
@@ -194,7 +194,7 @@ namespace RPG
 
         private void btSinglePlayer_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             if (choosechar.UnitActiveAbilities.Count > 0)
             {
                 this.DialogResult = System.Windows.Forms.DialogResult.OK;
@@ -215,7 +215,7 @@ namespace RPG
 
         private void bnMultiplayer_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             if (choosechar.UnitActiveAbilities.Count > 0)
             {
                 this.DialogResult = System.Windows.Forms.DialogResult.OK;

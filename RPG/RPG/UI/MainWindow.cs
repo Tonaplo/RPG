@@ -29,7 +29,7 @@ namespace RPG
         {
             InitializeComponent();
             player = _player;
-            Function.SoundManagerClass.PlayMainMenuMusic();
+            Function.SoundManager.PlayMainMenuMusic();
 
             if (player.PrefChar == null)
                 player.PrefChar = "None";
@@ -257,7 +257,7 @@ namespace RPG
 
         private void btExitGame_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             fbd.Description = "Choose a location to save your list of players. This will work as a backup case case anything changes!";
 
@@ -267,13 +267,13 @@ namespace RPG
                 ServerManagement.ExportToFolder(Path.Combine(fbd.SelectedPath,"players.xml"), playerlist);
             }
 
-            Function.SoundManagerClass.StopMainMenuMusic();
+            Function.SoundManager.StopMainMenuMusic();
             this.Close();
         }
 
         private void bnBattle_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             if (player.ControlledCharacters.Count > 0)
             {
                 FindBattleForm battlechoose = new FindBattleForm(player);
@@ -284,12 +284,12 @@ namespace RPG
                     {
                         List<Core.Units.Character> list = new List<Core.Units.Character>();
                         list.Add(battlechoose.ReturnChar());
-                        Function.SoundManagerClass.PauseMainMenuMusic();
+                        Function.SoundManager.PauseMainMenuMusic();
 
                         BattleForm battle = new BattleForm(list, battlechoose.ReturnDifficulty(), battlechoose.Singleplayer);
                         if (battle.ShowDialog() == DialogResult.OK)
                         {
-                            Function.SoundManagerClass.ResumeMainMenuMusic();
+                            Function.SoundManager.ResumeMainMenuMusic();
                             Core.Units.Character removing = this.player.ControlledCharacters.Find(x => x.UnitName == battle.ReturnChar(player).UnitName);
                             List<Item> loot = new List<Item>();
 
@@ -297,7 +297,33 @@ namespace RPG
                             loot.Add(Function.ItemGeneration.GenerateLoot(removing.UnitLevel, battle.ReturnNumberOfPlayers(), battle.ReturnedEnemy().UnitLevel));
                             if(battlechoose.ReturnDifficulty() < 0)
                                 loot.Add(Function.ItemGeneration.GenerateLoot(removing.UnitLevel, battle.ReturnNumberOfPlayers(), battle.ReturnedEnemy().UnitLevel));
-                            
+
+                            if (loot.Count == 2)
+                            {
+                                if (loot[0].ItemName == loot[1].ItemName)
+                                    loot[0].ItemName = Function.ItemGeneration.RandomizeNewName(loot[0]);
+                            }
+
+                            if (loot.Count == 3)
+                            {
+                                if (loot[0].ItemName == loot[1].ItemName && loot[1].ItemName == loot[2].ItemName)
+                                {
+                                    loot[0].ItemName = Function.ItemGeneration.RandomizeNewName(loot[0]);
+                                    loot[1].ItemName = Function.ItemGeneration.RandomizeNewName(loot[1]);
+                                }
+                                if (loot[0].ItemName == loot[1].ItemName)
+                                {
+                                    loot[0].ItemName = Function.ItemGeneration.RandomizeNewName(loot[0]);
+                                }
+                                if (loot[0].ItemName == loot[2].ItemName)
+                                {
+                                    loot[0].ItemName = Function.ItemGeneration.RandomizeNewName(loot[0]);
+                                }
+                                if (loot[1].ItemName == loot[2].ItemName)
+                                {
+                                    loot[1].ItemName = Function.ItemGeneration.RandomizeNewName(loot[1]);
+                                }
+                            }
 
                             if (loot.Count > 0)
                             {
@@ -371,14 +397,14 @@ namespace RPG
 
         private void btNewGame_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             SupportForm sup = new SupportForm();
             sup.ShowDialog();
         }
 
         private void btDisenchant_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             if (listBoxInventory.SelectedItem != null)
             {
                 int temp = listBoxInventory.SelectedIndex;
@@ -398,7 +424,7 @@ namespace RPG
 
         private void btDisenchantAll_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             int count = 0;
 
             while (this.player.InventoryOfPlayer.Any(c => (c.ItemQuality == EnumItemQuality.Normal || c.ItemQuality == EnumItemQuality.Grand))) 
@@ -421,13 +447,13 @@ namespace RPG
 
         private void listBoxInventory_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             UseGearChangeForm();
         }
 
         private void btRandomizeStat_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             if ((this.player.InventoryOfPlayer.Count > 0 && listBoxInventory.SelectedIndex >= 0) || this.player.ControlledCharacters.Count > 0)
             {
                 RandomizeStatForm rsform = new RandomizeStatForm(this.player);
@@ -444,7 +470,7 @@ namespace RPG
 
         private void btAddCharacter_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             if (this.player.ControlledCharacters.Count < 4)
             {
                 CreateACharacter();
@@ -493,7 +519,7 @@ namespace RPG
 
         private void btDeleteCharacter_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             if (this.player.ControlledCharacters.Count > 0)
             {
                 DeleteCharForm del = new DeleteCharForm(player);
@@ -524,7 +550,7 @@ namespace RPG
 
         private void bnOptions_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             OptionsForm options = new OptionsForm(player);
             options.ShowDialog();
 
@@ -535,7 +561,7 @@ namespace RPG
         {
             if (e.KeyCode == Keys.Return)
             {
-                Function.SoundManagerClass.PlayButtonSound();
+                Function.SoundManager.PlayButtonSound();
                 e.SuppressKeyPress = true;
 
                 UseGearChangeForm();

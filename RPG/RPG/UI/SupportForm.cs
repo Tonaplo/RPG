@@ -122,7 +122,17 @@ namespace RPG.UI
             RichTextBoxExtensions.AppendText(howtoplay, " Dust can be used to randomize attributes on an item, by pressing the ''Randomize Stat'' Button. You then select what item and what stat on the item you want to randomize and roll the dice!", Color.Honeydew);
             RichTextBoxExtensions.AppendText(howtoplay, " The amount of the stat on the item will changed - it can maximum be the amount of Dust spent on the randomization, but could also become the minimal and terrifying 0!" + Environment.NewLine + Environment.NewLine, Color.Honeydew);
             RichTextBoxExtensions.AppendText(howtoplay, "Options:" + Environment.NewLine + Environment.NewLine, Color.OrangeRed);
-            RichTextBoxExtensions.AppendText(howtoplay, "Pressing the ''Options'' button on the main menu will bring you to the Options Menu. Here you can set a prefered character to battle with and a preferred difficulty level! If you choose ''None'' as your preferred character, you will always be asked if you want to battle with the at least recently active character!", Color.Honeydew);
+            RichTextBoxExtensions.AppendText(howtoplay, "Pressing the ''Options'' button on the main menu will bring you to the Options Menu. Here you can set a prefered character to battle with and a preferred difficulty level! If you choose ''None'' as your preferred character, you will always be asked if you want to battle with the at least recently active character!" + Environment.NewLine + Environment.NewLine, Color.Honeydew);
+            RichTextBoxExtensions.AppendText(howtoplay, "Quests:" + Environment.NewLine + Environment.NewLine, Color.OrangeRed);
+            RichTextBoxExtensions.AppendText(howtoplay, "You will now receive quests while battling monsters! These quests will require you to complete objectives of varying difficulty - how difficulty is up to you!", Color.Honeydew);
+            RichTextBoxExtensions.AppendText(howtoplay, "Quests can be Very Easy, Easy, Normal, Hard or Very Hard. As the quests become more challenging, the rewards become greater! You may choose between 3 different rewards:" + Environment.NewLine + Environment.NewLine, Color.Honeydew);
+            RichTextBoxExtensions.AppendText(howtoplay, "Experience:" + Environment.NewLine, Color.Red);
+            RichTextBoxExtensions.AppendText(howtoplay, "  This reward will give ALL of your characters experience! How much will depend on the difficulty of the quest and the level of each character!" + Environment.NewLine + Environment.NewLine, Color.Honeydew);
+            RichTextBoxExtensions.AppendText(howtoplay, "High Quality Items:" + Environment.NewLine, Color.Red);
+            RichTextBoxExtensions.AppendText(howtoplay, "  This reward will give you 2 items of Fabled or Epochal quality! The harder the quest, the higher the chance for an Epochal item!" + Environment.NewLine + Environment.NewLine, Color.Honeydew);
+            RichTextBoxExtensions.AppendText(howtoplay, "Dust:" + Environment.NewLine, Color.Red);
+            RichTextBoxExtensions.AppendText(howtoplay, "  This reward will give you more dust to randomize stats on your items! How much you get depends on the average level of your characters and the difficulty of the quest!" + Environment.NewLine + Environment.NewLine, Color.Honeydew);
+            
             RichTextBoxExtensions.AppendText(howtoplay, "Thank you for reading this ''How to Play'' section. Good luck and have fun!", Color.Honeydew);
             #endregion
 
@@ -197,34 +207,34 @@ namespace RPG.UI
 
         private void btChangeLog_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             flpMain.Controls.Clear();
             flpMain.Controls.Add(changelog);
         }
 
         private void btDone_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             this.Close();
         }
 
         private void btUpcomming_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             flpMain.Controls.Clear();
             flpMain.Controls.Add(upcomming);
         }
 
         private void btHowToPlay_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             flpMain.Controls.Clear();
             flpMain.Controls.Add(howtoplay);
         }
 
         private void btFAQ_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             flpMain.Controls.Clear();
             flpMain.Controls.Add(faq);
         }

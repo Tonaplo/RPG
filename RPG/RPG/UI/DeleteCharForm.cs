@@ -128,7 +128,7 @@ namespace RPG.UI
 
         private void bnCancel_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Close();
         }
@@ -140,7 +140,7 @@ namespace RPG.UI
 
         private void btDelete_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             if (choosechar.UnitName == player.PrefChar)
             {
                 player.PrefChar = "None";

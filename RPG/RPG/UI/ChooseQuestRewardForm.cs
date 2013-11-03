@@ -84,7 +84,7 @@ namespace RPG.UI
         #region Events
         private void bnExperience_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
             rewardType = EnumQuestRewardType.Experience;
@@ -92,7 +92,7 @@ namespace RPG.UI
 
         private void bnItem_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
             rewardType = EnumQuestRewardType.Item;
@@ -100,7 +100,7 @@ namespace RPG.UI
 
         private void bnDust_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
             rewardType = EnumQuestRewardType.Dust;

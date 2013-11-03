@@ -619,7 +619,7 @@ namespace RPG.UI
         #region Events
         private void btDone_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             if (!this.CheckNumberOfCheckedBoxes())
             {
                 SetNewCharacterAbilities();
@@ -953,7 +953,7 @@ namespace RPG.UI
 
         private void btAutoLevel_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             int newlevel = character.UnitLevel + 1;
 
             while (character.UnitLevel != newlevel)
@@ -969,7 +969,7 @@ namespace RPG.UI
 
         private void btAddToAttribute_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             if (character.UnUsedAttributePoints.IntValue > 0)
             {
                 if (comboBoxAttributes.SelectedItem.ToString().ToLower() == "strength")
@@ -1026,7 +1026,7 @@ namespace RPG.UI
 
         private void btResetStats_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             character.BaseIntellingence.IntValue = 1;
             character.BaseStrength.IntValue = 1;
             character.BaseAgility.IntValue = 1;

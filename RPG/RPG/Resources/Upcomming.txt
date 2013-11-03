@@ -10,8 +10,6 @@ This tab presents planned changes to the game, that has not yet been implemented
 
 	- Add a BOSS difficulty to choose from.
 
-	- Add more suffixes and prefixes.
-
 	- Add more NPCAIs to the game.
 
 	- Implement ''one-battle quests'', where a character will face multiple foes in a 
@@ -20,9 +18,9 @@ This tab presents planned changes to the game, that has not yet been implemented
 	- Add more quests to the game:
 		- Defeat x monsters of type y.
 
-	- Add music and sound effects to the game.
-
-	- Add Animations of characters hitting NPCs and vice versa.
+	- Learn and use the DirectX library to do the following:
+		- Add music and sound effects to the game.
+		- Add Animations of characters hitting NPCs and vice versa.
 
 	- Add Buffs and Debuffs to the game.
 

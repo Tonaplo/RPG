@@ -42,7 +42,7 @@ namespace RPG.UI
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterParent;
             this.BackgroundImage = GeneralFunctions.ResizeImage(Properties.Resources.background, labelBackgroundIGNORE.Size);
-            Function.SoundManagerClass.PlayBattleMusic();
+            Function.SoundManager.PlayBattleMusic();
 
             numberOfPlayers = _listOfChars.Count;
 
@@ -76,7 +76,7 @@ namespace RPG.UI
 
         void ucb_AttackClicked(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             ucCharacterBattle control = sender as ucCharacterBattle;
             Core.Abilities.ActiveAbility ab = control.ChoosenAbility();
             if (ab.DamageOrHealing == EnumActiveAbilityType.Damage)
@@ -352,7 +352,7 @@ namespace RPG.UI
         #region Events
         private void bnTurnDone_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             if (!end)
             {
                 if (singleplayer)
@@ -362,7 +362,7 @@ namespace RPG.UI
             }
             else
             {
-                Function.SoundManagerClass.StopBattleMusic();
+                Function.SoundManager.StopBattleMusic();
                 this.DialogResult = result;
                 this.Close();
             }

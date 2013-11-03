@@ -439,7 +439,7 @@ namespace RPG.Function
                         if (ilevel < 1)
                             ilevel = 1;
 
-                        if(temp >=11 && ilevel > 10)
+                        if(temp >=1 && ilevel > 10)
                         {
                             itemReward = ItemGeneration.ReturnEpocalItem(ilevel);
                         }

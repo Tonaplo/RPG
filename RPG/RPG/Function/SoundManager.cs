@@ -12,12 +12,11 @@ using System.IO;
 
 namespace RPG.Function
 {
-    public static class SoundManagerClass
+    public static class SoundManager
     {
         private static SoundEffect buttonSound;
-        private static SoundEffectInstance backMusic1;
-        private static SoundEffectInstance backMusic2;
-        private static SoundPlayer test;
+        private static SoundPlayer backMusic1;
+        private static SoundPlayer backMusic2;
 
         public static void InitializeSounds()
         {
@@ -40,6 +39,9 @@ namespace RPG.Function
             }
             
             */
+            backMusic1 = new SoundPlayer(Properties.Resources.backmusic1);
+            backMusic2 = new SoundPlayer(Properties.Resources.backmusic2);
+
         }
 
         public static void PlayButtonSound()
@@ -50,6 +52,7 @@ namespace RPG.Function
 
         public static void PlayMainMenuMusic()
         {
+            backMusic1.PlayLooping();
             //backMusic1.IsLooped = true;
             //backMusic1.Play();
         }

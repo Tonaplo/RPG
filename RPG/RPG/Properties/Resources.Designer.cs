@@ -148,17 +148,19 @@ namespace RPG.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Version 0.1.3.6 (30/10-2013):
+        ///   Looks up a localized string similar to Version 0.1.3.7 (2/11-2013):
         ///
         ///	- General:
-        ///		- Fixed an issue where the player got credit for the quest based on health 
-        ///		  percent, when they should not.
-        ///		- Fixed an issue where players would not receive dust rewarded from quests.
-        ///		- Attempted to fix an issue with the font.
-        ///		- Added a feature to so it is possible to see percentage complete of quest and 
-        ///		  percentage of health remaining for both characters and monsters.
+        ///		- Added background temporary background music. There are current some issues with sound, 
+        ///		  so only background music is implemented. To read more about the issues, see the 
+        ///		  &apos;&apos;Upcomming&apos;&apos; tab.
+        ///		- Updated the &apos;&apos;How to Play&apos;&apos; section in the Support menu to include a description of quests.
         ///
-        ///_______________________________________________________________________ [rest of string was truncated]&quot;;.
+        ///_________________________________________________________________________________________________________
+        ///Version 0.1.3.6 (30/10-2013):
+        ///
+        ///	- General:
+        ///		- Fixed an [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ChangeLog {
             get {
@@ -247,6 +249,56 @@ namespace RPG.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Strengthening ,
+        ///Agile ,
+        ///Dextrous ,
+        ///Sturdy ,
+        ///Acrobatic ,
+        ///Systematic ,
+        ///Cunning ,
+        ///Indomitable ,
+        ///Clever ,
+        ///Intimidating ,
+        ///Finessed ,
+        ///Warlord&apos;s ,
+        ///Rebounding ,
+        ///Tireless ,
+        ///Energetic ,
+        ///Precise ,
+        ///Acute ,
+        ///Relentless ,
+        ///Coordinated ,
+        ///Warding ,
+        ///Artist&apos;s ,
+        ///Construct&apos;s ,
+        ///Myrmidon&apos;s ,
+        ///Aegis ,
+        ///Duelist&apos;s ,
+        ///Flurry ,
+        ///Pugilist&apos;s ,
+        ///Honest ,
+        ///Lancer&apos;s ,
+        ///Eschewing ,
+        ///Cunning ,
+        ///Bolstering ,
+        ///Brilliant ,
+        ///Intelligent ,
+        ///Stalwart ,
+        ///Diplomatic ,
+        ///Calm ,
+        ///Omniscient ,
+        ///Formation ,
+        ///Reformation ,
+        ///Solid ,
+        ///S [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Prefixes {
+            get {
+                return ResourceManager.GetString("Prefixes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap questionmark {
@@ -273,6 +325,47 @@ namespace RPG.Properties {
             get {
                 object obj = ResourceManager.GetObject("strength", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  of Worth,
+        /// of Measure,
+        /// of Excellence,
+        /// of Performance,
+        /// of Transcendence,
+        /// of Perfection,
+        /// of the Titan,
+        /// of the Giant,
+        /// of Nirvana,
+        /// of the Colossus,
+        /// of Craftmanship,
+        /// of Storms,
+        /// of Defiance,
+        /// of Equilibrium,
+        /// of Amicae,
+        /// of the Guard,
+        /// of Ages,
+        /// of Calm,
+        /// of Steadiness,
+        /// of Accuracy,
+        /// of Precision,
+        /// of the Sniper,
+        /// of the Marksman,
+        /// of the Deadeye,
+        /// of the Ranger,
+        /// of the Assassin,
+        /// of Shining,
+        /// of Light,
+        /// of Radiance,
+        /// of Skill,
+        /// of Ease,
+        /// of Mastery,
+        /// of Grandmastery, [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Suffixes {
+            get {
+                return ResourceManager.GetString("Suffixes", resourceCulture);
             }
         }
         

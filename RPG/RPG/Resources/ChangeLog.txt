@@ -1,4 +1,15 @@
-﻿Version 0.1.3.6 (30/10-2013):
+﻿Version 0.1.3.7 (2/11-2013):
+
+	- General:
+		- Added background temporary background music. There are current some issues with sound 
+		  and animations, so only background music is implemented. To read more about the issues,
+		  see the ''Upcomming'' tab.
+		- Updated the ''How to Play'' section in the Support menu to include a description of quests.
+		- Added many, many more prefixes and suffixes for items.
+		- Made sure the player never receive two pieces of loot with the same name from the same battle.
+
+_________________________________________________________________________________________________________
+Version 0.1.3.6 (30/10-2013):
 
 	- General:
 		- Fixed an issue where the player got credit for the quest based on health 

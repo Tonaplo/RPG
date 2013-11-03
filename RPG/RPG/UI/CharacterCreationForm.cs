@@ -91,13 +91,13 @@ namespace RPG
 
         private void pictureBoxRightArrow_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             UpdateClassSelection(1);
         }
 
         private void pictureBoxLeftArrow_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             UpdateClassSelection(-1);
         }
 
@@ -187,7 +187,7 @@ namespace RPG
 
         private void btCancel_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             if (this.player.ControlledCharacters.Count != 0)
             {
                 this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -202,7 +202,7 @@ namespace RPG
 
         private void btCreate_Click(object sender, EventArgs e)
         {
-            Function.SoundManagerClass.PlayButtonSound();
+            Function.SoundManager.PlayButtonSound();
             if (textBoxCharacterName.Text != "" && GeneralFunctions.CheckTextForNonLetters(textBoxCharacterName.Text))
             {
                 if (!this.player.ControlledCharacters.Any(x => x.UnitName.ToLower().Equals(textBoxCharacterName.Text.ToLower())))
