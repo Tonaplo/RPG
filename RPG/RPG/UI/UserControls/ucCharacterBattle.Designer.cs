@@ -50,7 +50,7 @@
             // lbCharStats
             // 
             this.lbCharStats.BackColor = System.Drawing.Color.Transparent;
-            this.lbCharStats.Font = new System.Drawing.Font("Pericles", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCharStats.Font = new System.Drawing.Font("Pericles", 5.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCharStats.ForeColor = System.Drawing.Color.Yellow;
             this.lbCharStats.Location = new System.Drawing.Point(89, 27);
             this.lbCharStats.Name = "lbCharStats";

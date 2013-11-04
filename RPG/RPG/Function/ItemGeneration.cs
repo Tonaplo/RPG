@@ -1065,7 +1065,7 @@ namespace RPG.Function
         {
             if (_itype == EnumItemType.Battlecharm)
             {
-                switch (r.Next(_random) % 8)
+                switch (r.Next(_random) % 9)
                 {
                     case 1:
                         return EnumAttributeType.Agility;
@@ -1079,13 +1079,15 @@ namespace RPG.Function
                         return EnumAttributeType.Armor;
                     case 7:
                         return EnumAttributeType.Crit;
+                    case 8:
+                        return EnumAttributeType.Speed;
                     default:
                         return EnumAttributeType.Attackdamage;
                 }
             }
             else 
             {
-                switch (r.Next(_random) % 6)
+                switch (r.Next(_random) % 7)
                 {
                     case 1:
                         return EnumAttributeType.Agility;
@@ -1095,6 +1097,8 @@ namespace RPG.Function
                         return EnumAttributeType.Intellect;
                     case 4:
                         return EnumAttributeType.Crit;
+                    case 5:
+                        return EnumAttributeType.Speed;
                     default:
                         return EnumAttributeType.Strength;
                 }
@@ -1246,7 +1250,7 @@ namespace RPG.Function
             if (suffix)
             {
                 _name += " ";
-                index = (_weapon.ItemLevel * (int)Math.Exp(r.Next(itemSuffixes.Count))) % (itemSuffixes.Count - 1);
+                index = (_weapon.ItemLevel * r.Next(itemSuffixes.Count)) % (itemSuffixes.Count);
                 _name += itemSuffixes[index];
             }
 

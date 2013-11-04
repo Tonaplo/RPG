@@ -20,6 +20,8 @@ namespace RPG.Core.Units
         UnitAttribute buffedIntellingence = new UnitAttribute(EnumAttributeType.Intellect);
         UnitAttribute baseCrit = new UnitAttribute(EnumAttributeType.Crit);
         UnitAttribute buffedCrit = new UnitAttribute(EnumAttributeType.Crit);
+        UnitAttribute baseSpeed = new UnitAttribute(EnumAttributeType.Speed);
+        UnitAttribute buffedSpeed = new UnitAttribute(EnumAttributeType.Speed);
         UnitAttribute unUsedAttributePoints = new UnitAttribute(EnumAttributeType.Unused);
 
         UnitAttribute baseTurnPoints = new UnitAttribute(EnumAttributeType.Turnpoints);
@@ -72,6 +74,12 @@ namespace RPG.Core.Units
             set { baseCrit = value; }
         }
 
+        public UnitAttribute BaseSpeed
+        {
+            get { return baseSpeed; }
+            set { baseSpeed = value; }
+        }
+
         public UnitAttribute BuffedAgility
         {
             get { return buffedAgility; }
@@ -94,6 +102,12 @@ namespace RPG.Core.Units
         {
             get { return buffedCrit; }
             set { buffedCrit = value; }
+        }
+
+        public UnitAttribute BuffedSpeed
+        {
+            get { return buffedSpeed; }
+            set { buffedSpeed = value; }
         }
 
         public UnitAttribute BaseArmor
@@ -244,7 +258,9 @@ namespace RPG.Core.Units
         public void CharLevelUp()
         {
             this.BaseHP.IntValue += 2;
-            this.baseCrit.IntValue++;
+            int temp = this.UnitLevel+1;
+            this.baseCrit.IntValue = temp;
+            this.baseSpeed.IntValue = temp;
             this.UnUsedAttributePoints.IntValue += 4;
             this.UnitLevel++;
             this.baseTurnPoints.IntValue = (this.UnitLevel / 10) + 1;
@@ -911,6 +927,9 @@ namespace RPG.Core.Units
                     case EnumAttributeType.Crit:
                         this.BuffedCrit.IntValue += stat.IntValue;
                         break;
+                    case EnumAttributeType.Speed:
+                        this.BuffedSpeed.IntValue += stat.IntValue;
+                        break;
                     default:
                         break;
                 }
@@ -930,6 +949,7 @@ namespace RPG.Core.Units
             this.BuffedArmor.IntValue = this.BaseArmor.IntValue;
             this.BuffedAttackDamage.IntValue = this.BaseAttackDamage.IntValue;
             this.BuffedCrit.IntValue = this.BaseCrit.IntValue;
+            this.BuffedSpeed.IntValue = this.BaseSpeed.IntValue;
         }
 
         /// <summary>
@@ -938,15 +958,17 @@ namespace RPG.Core.Units
         /// </summary>
         private void SetStats()
         {
-            
             this.BuffedHP.IntValue += (int)(this.BuffedStrength.IntValue * 0.3);
-            this.BuffedAttackDamage.IntValue += (int)(this.BuffedAgility.IntValue * 0.3);
+            this.BuffedSpeed.IntValue += (int)(this.BuffedAgility.IntValue * 0.3);
             this.BuffedCrit.IntValue += (int)(this.BuffedIntellingence.IntValue * 0.3);
             this.BuffedHP.IntValue += this.BuffedArmor.IntValue;
         }
 
         public void ResetChar()
         {
+            int temp2 = this.UnitLevel + 1;
+            this.baseCrit.IntValue = temp2;
+            this.baseSpeed.IntValue = temp2;
             UpdateGear();
             SetStats();
             int temp = this.BuffedHP.IntValue;

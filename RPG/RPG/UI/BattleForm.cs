@@ -29,6 +29,7 @@ namespace RPG.UI
         int numberOfPlayers = 0;
         DialogResult result;
         int healingDone;
+        int damageDone;
         #endregion
 
         /// <summary>
@@ -86,11 +87,15 @@ namespace RPG.UI
 
                     int previousHP = 0;
                     int postHP = 0;
+                    int previousMonsterHP = 0;
+                    int postMonsterHP = 0;
 
                     foreach (var item in battleChars)
                     {
                         previousHP += item.CurrentHP.IntValue;
                     }
+
+                    previousMonsterHP = enemy.CurrentHP.IntValue;
 
                     ab.UseAbility(control.Character(), battleChars, null, enemy);
 
@@ -99,8 +104,13 @@ namespace RPG.UI
                         postHP += item.CurrentHP.IntValue;
                     }
 
+                    postMonsterHP = enemy.CurrentHP.IntValue;
+
                     if (postHP > previousHP)
                         healingDone += Math.Abs(postHP - previousHP);
+
+                    if (postMonsterHP > previousMonsterHP)
+                        damageDone += Math.Abs(postMonsterHP - previousMonsterHP);
 
                     Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, "[" + DateTime.Now.ToShortTimeString() + "] ", Color.DarkSeaGreen);
                     Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, ab.ChatString + Environment.NewLine, Color.DarkOrange);
@@ -207,6 +217,12 @@ namespace RPG.UI
             return healingDone;
         }
 
+        public int ReturnedDamageDone()
+        {
+            return damageDone;
+        }
+
+
         #region Functions
 
         #region Font Stuff
@@ -264,9 +280,16 @@ namespace RPG.UI
         {
             if (enemy.CurrentHP.IntValue > 0)
             {
+                int previousMonsterHP = enemy.CurrentHP.IntValue;
+
                 ai.Run();
                 Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, "[" + DateTime.Now.ToShortTimeString() + "] ", Color.DarkSeaGreen);
                 Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, ai.Chat + Environment.NewLine, Color.DarkOrange);
+
+                int postMonsterHP = enemy.CurrentHP.IntValue;
+
+                if (postMonsterHP > previousMonsterHP)
+                    damageDone += Math.Abs(postMonsterHP - previousMonsterHP);
             }
 
             battleChars = ai.Targets;
@@ -278,7 +301,9 @@ namespace RPG.UI
                 if (item.CurrentTurnPoints.IntValue + 2 > turnpoints)
                     item.CurrentTurnPoints.IntValue = (item.UnitLevel / 10) + 1;
                 else
-                    item.CurrentTurnPoints.IntValue += r.Next(1,3);
+                {
+                    item.CurrentTurnPoints.IntValue += Function.CombatHandler.SpeedCalculator(item.UnitLevel, item.BuffedSpeed.IntValue);
+                }
 
             }
 

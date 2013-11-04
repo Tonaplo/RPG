@@ -28,7 +28,7 @@ namespace RPG.Function
 
             if (_difficulty == -4)
             {
-                quest = r.Next(0, 5);
+                quest = r.Next(0, 6);
 
                 switch (quest)
                 {
@@ -47,6 +47,9 @@ namespace RPG.Function
                     case 4:
                         _player.CurrentQuest = new VeryEasyPercentRemaining();
                         break;
+                    case 5:
+                        _player.CurrentQuest = new VeryEasyNPCType();
+                        break;
                     default:
                         break;
                 }
@@ -58,7 +61,7 @@ namespace RPG.Function
 
             if (_difficulty == -2)
             {
-                quest = r.Next(0, 5);
+                quest = r.Next(0, 6);
 
                 switch (quest)
                 {
@@ -77,6 +80,9 @@ namespace RPG.Function
                     case 4:
                         _player.CurrentQuest = new EasyPercentRemaining();
                         break;
+                    case 5:
+                        _player.CurrentQuest = new EasyNPCType();
+                        break;
 
                     default:
                         break;
@@ -89,7 +95,7 @@ namespace RPG.Function
 
             if (_difficulty == 0)
             {
-                quest = r.Next(0, 5);
+                quest = r.Next(0, 6);
 
                 switch (quest)
                 {
@@ -108,6 +114,9 @@ namespace RPG.Function
                     case 4:
                         _player.CurrentQuest = new NormalPercentRemaining();
                         break;
+                    case 5:
+                        _player.CurrentQuest = new NormalNPCType();
+                        break;
 
                     default:
                         break;
@@ -120,7 +129,7 @@ namespace RPG.Function
 
             if (_difficulty == 2)
             {
-                quest = r.Next(0, 5);
+                quest = r.Next(0, 6);
 
                 switch (quest)
                 {
@@ -139,6 +148,9 @@ namespace RPG.Function
                     case 4:
                         _player.CurrentQuest = new HardPercentRemaining();
                         break;
+                    case 5:
+                        _player.CurrentQuest = new HardNPCType();
+                        break;
 
                     default:
                         break;
@@ -151,7 +163,7 @@ namespace RPG.Function
 
             if (_difficulty == 4)
             {
-                quest = r.Next(0, 5);
+                quest = r.Next(0, 6);
 
                 switch (quest)
                 {
@@ -170,6 +182,9 @@ namespace RPG.Function
                     case 4:
                         _player.CurrentQuest = new VeryHardPercentRemaining();
                         break;
+                    case 5:
+                        _player.CurrentQuest = new VeryHardNPCType();
+                        break;
 
                     default:
                         break;
@@ -178,9 +193,10 @@ namespace RPG.Function
 
             #endregion
 
+            _player.CurrentQuest.InitiateQuest(_player);
             MessageForm mes = new MessageForm("You have been given a new quest! " + Environment.NewLine + _player.CurrentQuest.QuestText);
             mes.ShowDialog();
-            _player.CurrentQuest.InitiateQuest(_player);
+            
         }
 
         public static void GiveVeryEasyQuestReward(Player _player, EnumQuestRewardType _rewardType)
@@ -476,39 +492,41 @@ namespace RPG.Function
             return questReward.ReturnRewardType();
         }
 
-        public static List<EnumCharClass> ReturnClassesForQuest(int _sizeOfList)
+        public static List<EnumCharClass> ReturnClassesForQuest(Player _player, int maxSize)
         {
             List<EnumCharClass> list = new List<EnumCharClass>();
 
-            if (_sizeOfList > 6)
-                return list;
+            int usedSize = maxSize;
+            if (maxSize > _player.ControlledCharacters.Count)
+                usedSize = _player.ControlledCharacters.Count;
 
-            while (list.Count < _sizeOfList)
+
+            while (list.Count < usedSize)
             {
                 switch (r.Next(0,6))
                 {
                     case 0:
-                        if(!list.Any(x=> x == EnumCharClass.Caretaker))
+                        if(!list.Any(x=> x == EnumCharClass.Caretaker) && _player.ControlledCharacters.Any(y => y.CharClass == EnumCharClass.Caretaker))
                             list.Add(EnumCharClass.Caretaker);
                         break;
                     case 1:
-                        if(!list.Any(x=> x == EnumCharClass.Paladin))
+                        if (!list.Any(x => x == EnumCharClass.Paladin) && _player.ControlledCharacters.Any(y => y.CharClass == EnumCharClass.Paladin))
                             list.Add(EnumCharClass.Paladin);
                         break;
                     case 2:
-                        if (!list.Any(x => x == EnumCharClass.Synergist))
+                        if (!list.Any(x => x == EnumCharClass.Synergist) && _player.ControlledCharacters.Any(y => y.CharClass == EnumCharClass.Synergist))
                             list.Add(EnumCharClass.Synergist);
                         break;
                     case 3:
-                        if (!list.Any(x => x == EnumCharClass.Thief))
+                        if (!list.Any(x => x == EnumCharClass.Thief) && _player.ControlledCharacters.Any(y => y.CharClass == EnumCharClass.Thief))
                             list.Add(EnumCharClass.Thief);
                         break;
                     case 4:
-                        if (!list.Any(x => x == EnumCharClass.Warrior))
+                        if (!list.Any(x => x == EnumCharClass.Warrior) && _player.ControlledCharacters.Any(y => y.CharClass == EnumCharClass.Warrior))
                             list.Add(EnumCharClass.Warrior);
                         break;
                     case 5:
-                        if (!list.Any(x => x == EnumCharClass.Wizard))
+                        if (!list.Any(x => x == EnumCharClass.Wizard) && _player.ControlledCharacters.Any(y => y.CharClass == EnumCharClass.Wizard))
                             list.Add(EnumCharClass.Wizard);
                         break;
                     default:
@@ -517,6 +535,23 @@ namespace RPG.Function
             }
 
             return list;
+        }
+
+        public static EnumMonsterType ReturnRandomMonsterType()
+        {
+            EnumMonsterType _newtype;
+            int selectionValue = r.Next(0, 20);
+
+            if (selectionValue < 8)
+                _newtype = EnumMonsterType.Beast;
+            else if (selectionValue <= 14)
+                _newtype = EnumMonsterType.Humanoid;
+            else if (selectionValue <= 18)
+                _newtype = EnumMonsterType.Undead;
+            else
+                _newtype = EnumMonsterType.Dragon;
+
+            return _newtype;
         }
     }
 }

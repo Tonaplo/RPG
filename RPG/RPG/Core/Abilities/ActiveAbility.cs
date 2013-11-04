@@ -185,7 +185,7 @@ namespace RPG.Core.Abilities
                     break;
                 case EnumAttributeType.Agility:
                     _caster.BuffedAgility.IntValue += (int)(stat * 0.2);
-                    _caster.BuffedAttackDamage.IntValue += (int)(stat * 0.2 * 0.3);
+                    _caster.BuffedSpeed.IntValue += (int)(stat * 0.2 * 0.3);
                     break;
                 case EnumAttributeType.Intellect:
                     _caster.BuffedIntellingence.IntValue += (int)(stat * 0.2);
@@ -315,7 +315,7 @@ namespace RPG.Core.Abilities
                 case 0:
                     buff = (int)(_caster.BuffedAgility.IntValue * 0.5);
                     _caster.BuffedAgility.IntValue += buff;
-                    _caster.BuffedAttackDamage.IntValue += (int)(buff * 0.3);
+                    _caster.BuffedSpeed.IntValue += (int)(buff * 0.3);
                     type = EnumAttributeType.Agility;
                     break;
                 case 1:
@@ -406,7 +406,7 @@ namespace RPG.Core.Abilities
             _caster.BuffedStrength.IntValue += 15;
 
             _caster.BuffedHP.IntValue += (int)(15*0.3);
-            _caster.BuffedAttackDamage.IntValue += (int)(15 * 0.3);
+            _caster.BuffedSpeed.IntValue += (int)(15 * 0.3);
             _caster.BuffedCrit.IntValue += (int)(15 * 0.3);
 
             this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " increasing all stats by 15!";
@@ -1000,7 +1000,7 @@ namespace RPG.Core.Abilities
                 case EnumAttributeType.Agility:
                     buff = (int)(_allies[index].BuffedAgility.IntValue * 0.4);
                     _allies[index].BuffedAgility.IntValue += buff;
-                    _allies[index].BuffedAttackDamage.IntValue += (int)(buff * 0.3);
+                    _allies[index].BuffedSpeed.IntValue += (int)(buff * 0.3);
                     break;
                 case EnumAttributeType.Intellect:
                     buff = (int)(_allies[index].BuffedIntellingence.IntValue * 0.4);
@@ -1103,7 +1103,7 @@ namespace RPG.Core.Abilities
             _caster.BuffedAgility.IntValue -= (int)(_caster.BuffedAgility.IntValue * 0.10);
 
             _caster.BuffedHP.IntValue -= (int)(_caster.BuffedStrength.IntValue * 0.10 * 0.3);
-            _caster.BuffedAttackDamage.IntValue -= (int)(_caster.BuffedAgility.IntValue * 0.10 * 0.3);
+            _caster.BuffedSpeed.IntValue -= (int)(_caster.BuffedAgility.IntValue * 0.10 * 0.3);
             _caster.BuffedCrit.IntValue -= (int)(_caster.BuffedIntellingence.IntValue * 0.10 * 0.3);
 
             int heal = _caster.BuffedHP.IntValue;
@@ -1686,7 +1686,7 @@ namespace RPG.Core.Abilities
         {
             int buff = (int)(_caster.BuffedAgility.IntValue * 0.40);
             _caster.BuffedAgility.IntValue += buff;
-            _caster.BuffedAttackDamage.IntValue += (int)(buff * 0.3);
+            _caster.BuffedSpeed.IntValue += (int)(buff * 0.3);
 
             this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing agility by " + buff + "!";
         }
@@ -1998,7 +1998,7 @@ namespace RPG.Core.Abilities
             _caster.BuffedAgility.IntValue += agibuff;
 
             _caster.BuffedHP.IntValue += (int)(strbuff * 0.3);
-            _caster.BuffedAttackDamage.IntValue += (int)(agibuff * 0.3);
+            _caster.BuffedSpeed.IntValue += (int)(agibuff * 0.3);
 
             this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing strength by " + strbuff + " and agility by " + agibuff + "!";
         }
@@ -2266,7 +2266,7 @@ namespace RPG.Core.Abilities
             }
 
             _caster.BuffedCrit.IntValue += (int)(intBuff * 0.3);
-            _caster.BuffedAttackDamage.IntValue += (int)(agiBuff * 0.3);
+            _caster.BuffedSpeed.IntValue += (int)(agiBuff * 0.3);
 
             this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " increasing agility by " + agiBuff + " and increasing intellect by " + intBuff + "!";
         }
@@ -2340,7 +2340,7 @@ namespace RPG.Core.Abilities
             _caster.BuffedAgility.IntValue += agiBuff;
 
             _caster.BuffedCrit.IntValue += (int)(intBuff * 0.3);
-            _caster.BuffedAttackDamage.IntValue += (int)(agiBuff * 0.3);
+            _caster.BuffedSpeed.IntValue += (int)(agiBuff * 0.3);
 
 
             this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " increasing agility by " + agiBuff + " and increasing intellect by " + intBuff + "!";

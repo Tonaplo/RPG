@@ -36,6 +36,7 @@ namespace RPG.Core
         Armor,
         Crit,
         Turnpoints,
+        Speed,
         Unused
     }
 

@@ -6,39 +6,18 @@ using System.Media;
 using System.Windows;
 using System.Reflection;
 using System.Windows.Media;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
 using System.IO;
 
 namespace RPG.Function
 {
     public static class SoundManager
     {
-        private static SoundEffect buttonSound;
         private static SoundPlayer backMusic1;
         private static SoundPlayer backMusic2;
 
         public static void InitializeSounds()
         {
-            /*
-            //buttonSound.URL = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("YourNamespace.IconFilename.ico");
-            System.Reflection.Assembly a = System.Reflection.Assembly.GetExecutingAssembly();
-            System.IO.Stream s = a.GetManifestResourceStream("RPG.Resources.chimes.wav");
-            test = new SoundPlayer(Properties.Resources.buttonpress);
-            //buttonSound = SoundEffect.FromStream();
-            //buttonSound = new SoundEffect(
-            
-            //backMusic1 = SoundEffect.FromStream(Properties.Resources.ResourceManager.GetStream("backmusic1.wav")).CreateInstance();
-            string lol = Directory.GetCurrentDirectory() + "\\Resources\\buttonpress.wav";
-            Uri stupid = new Uri(lol, UriKind.Absolute);
-
-            using (Stream what = new FileStream(lol, FileMode.Open))
-            {
-                buttonSound = SoundEffect.FromStream(what);//Application.GetResourceStream(stupid).Stream);
-                what.Close();
-            }
-            
-            */
+           
             backMusic1 = new SoundPlayer(Properties.Resources.backmusic1);
             backMusic2 = new SoundPlayer(Properties.Resources.backmusic2);
 

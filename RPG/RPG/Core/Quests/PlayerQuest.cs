@@ -36,7 +36,7 @@ namespace RPG.Core
         {
         }
 
-        public virtual void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class) 
+        public virtual void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class) 
         {
         }
 
@@ -63,7 +63,7 @@ namespace RPG.Core
             this.questText = "Defeat 5 opponents of Very Easy difficulty.";
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if (_difficulty == -4)
             {
@@ -94,7 +94,7 @@ namespace RPG.Core
             this.questText = "Defeat 5 opponents of Easy difficulty.";
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if (_difficulty == -2)
             {
@@ -125,7 +125,7 @@ namespace RPG.Core
             this.questText = "Defeat 5 opponents of Normal difficulty.";
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if (_difficulty == 0)
             {
@@ -156,7 +156,7 @@ namespace RPG.Core
             this.questText = "Defeat 5 opponents of Hard difficulty.";
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if (_difficulty == 2)
             {
@@ -187,7 +187,7 @@ namespace RPG.Core
             this.questText = "Defeat 5 opponents of Very Hard difficulty.";
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if (_difficulty == 4)
             {
@@ -227,7 +227,7 @@ namespace RPG.Core
             this.questText = "Heal " + finalValue + " damage during Very Easy battles.";
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if(_difficulty == -4)
             {
@@ -263,7 +263,7 @@ namespace RPG.Core
             this.questText = "Heal " + finalValue + " damage during Easy battles.";
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if(_difficulty == -2)
             {
@@ -299,7 +299,7 @@ namespace RPG.Core
             this.questText = "Heal " + finalValue + " damage during Normal battles.";
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if(_difficulty == 0)
             {
@@ -335,7 +335,7 @@ namespace RPG.Core
             this.questText = "Heal " + finalValue + " damage during Hard battles.";
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if(_difficulty == 2)
             {
@@ -371,7 +371,7 @@ namespace RPG.Core
             this.questText = "Heal " + finalValue + " damage during Very Hard battles.";
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if(_difficulty == 4)
             {
@@ -411,11 +411,11 @@ namespace RPG.Core
             this.questText = "Deal " + finalValue + " damage during Very Easy battles.";
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if (_difficulty == -4)
             {
-                this.currentValue += _opponentHealth;
+                this.currentValue += _damageDone;
                 if (currentValue >= finalValue)
                     this.EndQuest(_player);
             }
@@ -447,11 +447,11 @@ namespace RPG.Core
             this.questText = "Deal " + finalValue + " damage during Easy battles.";
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if (_difficulty == -2)
             {
-                this.currentValue += _opponentHealth;
+                this.currentValue += _damageDone;
                 if (currentValue >= finalValue)
                     this.EndQuest(_player);
             }
@@ -483,11 +483,11 @@ namespace RPG.Core
             this.questText = "Deal " + finalValue + " damage during Normal battles.";
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if (_difficulty == 0)
             {
-                this.currentValue += _opponentHealth;
+                this.currentValue += _damageDone;
                 if (currentValue >= finalValue)
                     this.EndQuest(_player);
             }
@@ -519,11 +519,11 @@ namespace RPG.Core
             this.questText = "Deal " + finalValue + " damage during Hard battles.";
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if (_difficulty == 2)
             {
-                this.currentValue += _opponentHealth;
+                this.currentValue += _damageDone;
                 if (currentValue >= finalValue)
                     this.EndQuest(_player);
             }
@@ -555,11 +555,11 @@ namespace RPG.Core
             this.questText = "Deal " + finalValue + " damage during Very Hard battles.";
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if (_difficulty == 4)
             {
-                this.currentValue += _opponentHealth;
+                this.currentValue += _damageDone;
                 if (currentValue >= finalValue)
                     this.EndQuest(_player);
             }
@@ -586,17 +586,17 @@ namespace RPG.Core
 
         public override void InitiateQuest(Player _player)
         {
-            classList = Function.PlayerQuestHandler.ReturnClassesForQuest(3);
+            classList = Function.PlayerQuestHandler.ReturnClassesForQuest(_player, 3);
             this.currentValue = 0;
             this.finalValue = 3;
             this.questText = "Defeat 3 opponents of Very Easy difficulty with a " + classList[0] + ", " + classList[1] + " or " + classList[2];
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if (classList.Count == 0)
             {
-                classList = Function.PlayerQuestHandler.ReturnClassesForQuest(3);
+                classList = Function.PlayerQuestHandler.ReturnClassesForQuest(_player, 3);
                 this.questText = "Defeat 3 opponents of Very Easy difficulty with a " + classList[0] + ", " + classList[1] + " or " + classList[2];
             }
 
@@ -626,17 +626,17 @@ namespace RPG.Core
 
         public override void InitiateQuest(Player _player)
         {
-            classList = Function.PlayerQuestHandler.ReturnClassesForQuest(3);
+            classList = Function.PlayerQuestHandler.ReturnClassesForQuest(_player, 3);
             this.currentValue = 0;
             this.finalValue = 3;
             this.questText = "Defeat 3 opponents of Easy difficulty with a " + classList[0] + ", " + classList[1] + " or " + classList[2];
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if (classList.Count == 0)
             {
-                classList = Function.PlayerQuestHandler.ReturnClassesForQuest(3);
+                classList = Function.PlayerQuestHandler.ReturnClassesForQuest(_player, 3);
                 this.questText = "Defeat 3 opponents of Easy difficulty with a " + classList[0] + ", " + classList[1] + " or " + classList[2];
             }
 
@@ -666,17 +666,17 @@ namespace RPG.Core
 
         public override void InitiateQuest(Player _player)
         {
-            classList = Function.PlayerQuestHandler.ReturnClassesForQuest(2);
+            classList = Function.PlayerQuestHandler.ReturnClassesForQuest(_player, 2);
             this.currentValue = 0;
             this.finalValue = 3;
             this.questText = "Defeat 3 opponents of Normal difficulty with a " + classList[0] + " or a " + classList[1];
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if (classList.Count == 0)
             {
-                classList = Function.PlayerQuestHandler.ReturnClassesForQuest(2);
+                classList = Function.PlayerQuestHandler.ReturnClassesForQuest(_player, 2);
                 this.questText = "Defeat 3 opponents of Normal difficulty with a " + classList[0] + " or a " + classList[1];
             }
 
@@ -706,17 +706,17 @@ namespace RPG.Core
 
         public override void InitiateQuest(Player _player)
         {
-            classList = Function.PlayerQuestHandler.ReturnClassesForQuest(1);
+            classList = Function.PlayerQuestHandler.ReturnClassesForQuest(_player, 1);
             this.currentValue = 0;
             this.finalValue = 3;
             this.questText = "Defeat 3 opponents of Hard difficulty with a " + classList[0];
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if (classList.Count == 0)
             {
-                classList = Function.PlayerQuestHandler.ReturnClassesForQuest(1);
+                classList = Function.PlayerQuestHandler.ReturnClassesForQuest(_player, 1);
                 this.questText = "Defeat 3 opponents of Hard difficulty with a " + classList[0];
             }
 
@@ -746,17 +746,17 @@ namespace RPG.Core
 
         public override void InitiateQuest(Player _player)
         {
-            classList = Function.PlayerQuestHandler.ReturnClassesForQuest(1);
+            classList = Function.PlayerQuestHandler.ReturnClassesForQuest(_player, 1);
             this.currentValue = 0;
             this.finalValue = 3;
             this.questText = "Defeat 3 opponents of Very Hard difficulty with a " + classList[0];
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if (classList.Count == 0)
             {
-                classList = Function.PlayerQuestHandler.ReturnClassesForQuest(1);
+                classList = Function.PlayerQuestHandler.ReturnClassesForQuest(_player, 1);
                 this.questText = "Defeat 3 opponents of Very Hard difficulty with a " + classList[0];
             }
 
@@ -793,7 +793,7 @@ namespace RPG.Core
             this.questText = "Defeat 3 opponents of Very Easy difficulty with less than 35% health remaining";
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if (_difficulty == -4 && (_charPercent < 0.35))
             {
@@ -824,7 +824,7 @@ namespace RPG.Core
             this.questText = "Defeat 3 opponents of Easy difficulty with less than 30% health remaining";
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if (_difficulty == -2 && (_charPercent < 0.30))
             {
@@ -855,7 +855,7 @@ namespace RPG.Core
             this.questText = "Defeat 3 opponents of Normal difficulty with less than 25% health remaining";
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if (_difficulty == 0 && (_charPercent < 0.25))
             {
@@ -886,7 +886,7 @@ namespace RPG.Core
             this.questText = "Defeat 3 opponents of Hard difficulty with less than 20% health remaining";
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if (_difficulty == 2 && (_charPercent < 0.20))
             {
@@ -917,7 +917,7 @@ namespace RPG.Core
             this.questText = "Defeat 3 opponents of Very Hard difficulty with less than 15% health remaining";
         }
 
-        public override void UpdateQuest(Player _player, int _difficulty, int _healingDone, int _opponentHealth, double _charPercent, EnumCharClass _class)
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
         {
             if (_difficulty == 4 && (_charPercent < 0.15))
             {
@@ -935,6 +935,208 @@ namespace RPG.Core
         }
     }
 
+    #endregion
+
+    #region NPC Type Quests
+    public class VeryEasyNPCType : PlayerQuest
+    {
+        EnumMonsterType monsterType;
+
+        public VeryEasyNPCType()
+        {
+        }
+
+        public override void InitiateQuest(Player _player)
+        {
+            monsterType = Function.PlayerQuestHandler.ReturnRandomMonsterType();
+            this.currentValue = 0;
+            this.finalValue = 3;
+            this.questText = "Defeat 3 " + monsterType + " of Very Easy difficulty";
+        }
+
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
+        {
+            if (monsterType == null)
+            {
+                monsterType = Function.PlayerQuestHandler.ReturnRandomMonsterType();
+                this.questText = "Defeat 3 " + monsterType + " of Very Easy difficulty";
+            }
+
+            if (_difficulty == -4 && monsterType == _enemy.TypeOfNPC)
+            {
+                this.currentValue++;
+                if (currentValue == finalValue)
+                    this.EndQuest(_player);
+            }
+        }
+
+        public override void EndQuest(Player _player)
+        {
+            this.currentValue = 0;
+            PlayerQuestHandler.GiveVeryEasyQuestReward(_player, PlayerQuestHandler.ChooseQuestRewardType());
+            this.questcompleted = true;
+        }
+    }
+
+    public class EasyNPCType : PlayerQuest
+    {
+        EnumMonsterType monsterType;
+
+        public EasyNPCType()
+        {
+        }
+
+        public override void InitiateQuest(Player _player)
+        {
+            monsterType = Function.PlayerQuestHandler.ReturnRandomMonsterType();
+            this.currentValue = 0;
+            this.finalValue = 3;
+            this.questText = "Defeat 3 " + monsterType + " of Easy difficulty";
+        }
+
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
+        {
+            if (monsterType == null)
+            {
+                monsterType = Function.PlayerQuestHandler.ReturnRandomMonsterType();
+                this.questText = "Defeat 3 " + monsterType + " of Easy difficulty";
+            }
+
+            if (_difficulty == -2 && monsterType == _enemy.TypeOfNPC)
+            {
+                this.currentValue++;
+                if (currentValue == finalValue)
+                    this.EndQuest(_player);
+            }
+        }
+
+        public override void EndQuest(Player _player)
+        {
+            this.currentValue = 0;
+            PlayerQuestHandler.GiveVeryEasyQuestReward(_player, PlayerQuestHandler.ChooseQuestRewardType());
+            this.questcompleted = true;
+        }
+    }
+
+    public class NormalNPCType : PlayerQuest
+    {
+        EnumMonsterType monsterType;
+
+        public NormalNPCType()
+        {
+        }
+
+        public override void InitiateQuest(Player _player)
+        {
+            monsterType = Function.PlayerQuestHandler.ReturnRandomMonsterType();
+            this.currentValue = 0;
+            this.finalValue = 3;
+            this.questText = "Defeat 3 " + monsterType + " of Normal difficulty";
+        }
+
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
+        {
+            if (monsterType == null)
+            {
+                monsterType = Function.PlayerQuestHandler.ReturnRandomMonsterType();
+                this.questText = "Defeat 3 " + monsterType + " of Normal difficulty";
+            }
+
+            if (_difficulty == 0 && monsterType == _enemy.TypeOfNPC)
+            {
+                this.currentValue++;
+                if (currentValue == finalValue)
+                    this.EndQuest(_player);
+            }
+        }
+
+        public override void EndQuest(Player _player)
+        {
+            this.currentValue = 0;
+            PlayerQuestHandler.GiveVeryEasyQuestReward(_player, PlayerQuestHandler.ChooseQuestRewardType());
+            this.questcompleted = true;
+        }
+    }
+
+    public class HardNPCType : PlayerQuest
+    {
+        EnumMonsterType monsterType;
+
+        public HardNPCType()
+        {
+        }
+
+        public override void InitiateQuest(Player _player)
+        {
+            monsterType = Function.PlayerQuestHandler.ReturnRandomMonsterType();
+            this.currentValue = 0;
+            this.finalValue = 3;
+            this.questText = "Defeat 3 " + monsterType + " of Hard difficulty";
+        }
+
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
+        {
+            if (monsterType == null)
+            {
+                monsterType = Function.PlayerQuestHandler.ReturnRandomMonsterType();
+                this.questText = "Defeat 3 " + monsterType + " of Hard difficulty";
+            }
+
+            if (_difficulty == 2 && monsterType == _enemy.TypeOfNPC)
+            {
+                this.currentValue++;
+                if (currentValue == finalValue)
+                    this.EndQuest(_player);
+            }
+        }
+
+        public override void EndQuest(Player _player)
+        {
+            this.currentValue = 0;
+            PlayerQuestHandler.GiveVeryEasyQuestReward(_player, PlayerQuestHandler.ChooseQuestRewardType());
+            this.questcompleted = true;
+        }
+    }
+
+    public class VeryHardNPCType : PlayerQuest
+    {
+        EnumMonsterType monsterType;
+
+        public VeryHardNPCType()
+        {
+        }
+
+        public override void InitiateQuest(Player _player)
+        {
+            monsterType = Function.PlayerQuestHandler.ReturnRandomMonsterType();
+            this.currentValue = 0;
+            this.finalValue = 3;
+            this.questText = "Defeat 3 " + monsterType + " of Very Hard difficulty";
+        }
+
+        public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, EnumCharClass _class)
+        {
+            if (monsterType == null)
+            {
+                monsterType = Function.PlayerQuestHandler.ReturnRandomMonsterType();
+                this.questText = "Defeat 3 " + monsterType + " of Very Hard difficulty";
+            }
+
+            if (_difficulty == 4 && monsterType == _enemy.TypeOfNPC)
+            {
+                this.currentValue++;
+                if (currentValue == finalValue)
+                    this.EndQuest(_player);
+            }
+        }
+
+        public override void EndQuest(Player _player)
+        {
+            this.currentValue = 0;
+            PlayerQuestHandler.GiveVeryEasyQuestReward(_player, PlayerQuestHandler.ChooseQuestRewardType());
+            this.questcompleted = true;
+        }
+    }
     #endregion
 
     #endregion

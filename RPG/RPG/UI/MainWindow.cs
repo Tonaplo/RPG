@@ -34,7 +34,7 @@ namespace RPG
             if (player.PrefChar == null)
                 player.PrefChar = "None";
 
-            player.CurrentQuest.UpdateQuest(player, 1, 0, 0, 1.0, EnumCharClass.Caretaker);
+            player.CurrentQuest.UpdateQuest(player, 1,null , 0, 0, 1.0, EnumCharClass.Caretaker);
 
             playerlist = _playerlist;
             this.BackgroundImage = GeneralFunctions.ResizeImage(Properties.Resources.background, labelBackgroundIGNORE.Size);
@@ -335,7 +335,7 @@ namespace RPG
 
                             if (player.CurrentQuest != null)
                             {
-                                player.CurrentQuest.UpdateQuest(player, battlechoose.ReturnDifficulty(), battle.ReturnedHealingDone(), battle.ReturnedEnemy().BuffedHP.IntValue, (double)battle.ReturnChar(player).CurrentHP.IntValue / (double)battle.ReturnChar(player).BuffedHP.IntValue, battle.ReturnChar(player).CharClass);
+                                player.CurrentQuest.UpdateQuest(player, battlechoose.ReturnDifficulty(), battle.ReturnedEnemy(), battle.ReturnedHealingDone(), battle.ReturnedEnemy().BuffedHP.IntValue, (double)battle.ReturnChar(player).CurrentHP.IntValue / (double)battle.ReturnChar(player).BuffedHP.IntValue, battle.ReturnChar(player).CharClass);
 
                                 if (player.CurrentQuest.questcompleted == true)
                                     PlayerQuestHandler.BeginNewQuest(player);
