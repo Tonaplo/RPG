@@ -209,8 +209,8 @@ namespace RPG
                 {
                     returnedCharacter = new Core.Units.Character(textBoxCharacterName.Text, 1, 10, 10, finalclass, 0, 1, 1, 1, 1, 0, 0, null);
                     returnedCharacter.CharGear = GiveCharGear(returnedCharacter);
-                    returnedCharacter.AddActiveAbility(new Core.Abilities.MeleeAttack("", "", null, EnumAbilityClassReq.ANY));
-                    returnedCharacter.AddPassiveAbility(new Core.Abilities.MeleeAttack("", "", null, EnumAbilityClassReq.ANY));
+                    returnedCharacter.AddActiveAbility(new Core.Abilities.MeleeAttack(returnedCharacter, "", "", null, EnumAbilityClassReq.ANY));
+                    returnedCharacter.AddPassiveAbility(new Core.Abilities.MeleeAttack(returnedCharacter, "", "", null, EnumAbilityClassReq.ANY));
 
                     this.DialogResult = System.Windows.Forms.DialogResult.OK;
                     this.Close();

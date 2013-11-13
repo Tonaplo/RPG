@@ -105,7 +105,9 @@ namespace RPG.UI
             RichTextBoxExtensions.AppendText(howtoplay, "Attack:" + Environment.NewLine, Color.Red);
             RichTextBoxExtensions.AppendText(howtoplay, "  Attack is the melee damage your character can inflict. This is used by certain abilities in your characters arsenal." + Environment.NewLine + Environment.NewLine, Color.Honeydew);
             RichTextBoxExtensions.AppendText(howtoplay, "Crit:" + Environment.NewLine, Color.Red);
-            RichTextBoxExtensions.AppendText(howtoplay, "  Crit determines your characters abilities to have a critical effect! An abilty that 'crits' inflicts 50% extra damage or healing upon the target!" + Environment.NewLine + Environment.NewLine, Color.Honeydew);
+            RichTextBoxExtensions.AppendText(howtoplay, "  Crit gives your characters abilities a chance to have a critical effect! An abilty that 'crits' inflicts 50% extra damage or healing upon the target!" + Environment.NewLine + Environment.NewLine, Color.Honeydew);
+            RichTextBoxExtensions.AppendText(howtoplay, "Speed:" + Environment.NewLine, Color.Red);
+            RichTextBoxExtensions.AppendText(howtoplay, "  Speed give your character a chance to gain 2 turnpoints instead of 1 when ending their turn!" + Environment.NewLine + Environment.NewLine, Color.Honeydew);
             RichTextBoxExtensions.AppendText(howtoplay, "Strength:" + Environment.NewLine, Color.Red);
             RichTextBoxExtensions.AppendText(howtoplay, "  Strength is one of the three main attributes and is paramount for certain classes' abilities. 30% of your characters Strength will also be added to its Health!" + Environment.NewLine + Environment.NewLine, Color.Honeydew);
             RichTextBoxExtensions.AppendText(howtoplay, "Agility:" + Environment.NewLine, Color.Red);

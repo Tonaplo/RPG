@@ -5,6 +5,7 @@ using System.Text;
 using System.Drawing;
 using System.Xml.Serialization;
 using System.IO;
+using RPG.Core.Units;
 
 namespace RPG.Core
 {
@@ -15,7 +16,7 @@ namespace RPG.Core
         string icon;
         EnumAbilityClassReq classReq;
 
-        public Ability(string _abilityName, string _description, Image _icon, EnumAbilityClassReq _classRep)
+        public Ability(Character _char, string _abilityName, string _description, Image _icon, EnumAbilityClassReq _classRep)
         {
             this.abilityName = _abilityName;
             this.description = _description;

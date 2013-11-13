@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using RPG.Core;
+using RPG.Core.Units;
 
 namespace RPG.Core.Abilities
 {
@@ -16,8 +17,8 @@ namespace RPG.Core.Abilities
         string chatString = "";
         int turnPointCost = 0;
         EnumActiveAbilityType damageOrHealing;
-        public ActiveAbility(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq) 
-            : base(_name, _description, _icon, _classReq)
+        public ActiveAbility(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq) 
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.Icon = this.SetIcon(_icon);
         }
@@ -63,15 +64,15 @@ namespace RPG.Core.Abilities
 
     #region Any class abilities
     /// <summary>
-    /// Melee Attack: "Deal damage to the target for 85% of the units attack."
+    /// Melee Attack: "Deal damage to the target for 100% of the units attack."
     /// </summary>
     public class MeleeAttack : ActiveAbility
     {
-        public MeleeAttack(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq) 
-            : base(_name, _description, _icon, _classReq)
+        public MeleeAttack(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Melee Attack";
-            this.Description = "Deal damage to the target for 85% of the units attack.";
+            this.Description = "Deal damage to the target for 100% of the units attack.";
             this.NumberOfTargets = 1;
             this.Icon = this.Icon = this.SetIcon(Properties.Resources.meleeattack);
             this.TurnPointCost = 1;
@@ -87,7 +88,7 @@ namespace RPG.Core.Abilities
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _target)
         {
             double critModifier = Function.CombatHandler.CritCalculator(_caster.UnitLevel, _caster.BuffedCrit.IntValue);
-            int damage = (int)((_caster.BuffedAttackDamage.IntValue * 0.85) * critModifier);
+            int damage = (int)((_caster.BuffedAttackDamage.IntValue * 1.0) * critModifier);
             if (damage == 0)
                 damage = 1;
             _target.CurrentHP.IntValue -= damage;
@@ -104,8 +105,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class BattleRegeneration : ActiveAbility
     {
-        public BattleRegeneration(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public BattleRegeneration(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Battle Regeneration";
             this.Description = "Heals the caster for 100% of the casters level.";
@@ -143,8 +144,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class Empowerment : ActiveAbility
     {
-        public Empowerment(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public Empowerment(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Empowerment";
             this.Description = "Increase the highest stat of the caster by 20%.";
@@ -162,61 +163,70 @@ namespace RPG.Core.Abilities
 
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _target)
         {
-            int stat = _caster.BuffedStrength.IntValue;
-            EnumAttributeType type = EnumAttributeType.Strength;
-
-            if (_caster.BuffedAgility.IntValue > stat)
+            if (!_caster.UnitBuffsAndDebuffs.Any(x => x.AbilityName == "Empowered"))
             {
-                stat = _caster.BuffedAgility.IntValue;
-                type = EnumAttributeType.Agility;
-            }
+                _caster.UnitBuffsAndDebuffs.Add(new Empowered(_caster, null, null, null, EnumAbilityClassReq.ANY));
+                int stat = _caster.BuffedStrength.IntValue;
+                EnumAttributeType type = EnumAttributeType.Strength;
 
-            if (_caster.BuffedIntellingence.IntValue > stat)
+                if (_caster.BuffedAgility.IntValue > stat)
+                {
+                    stat = _caster.BuffedAgility.IntValue;
+                    type = EnumAttributeType.Agility;
+                }
+
+                if (_caster.BuffedIntellingence.IntValue > stat)
+                {
+                    stat = _caster.BuffedIntellingence.IntValue;
+                    type = EnumAttributeType.Intellect;
+                }
+
+                switch (type)
+                {
+                    case EnumAttributeType.Strength:
+                        _caster.BuffedStrength.IntValue += (int)(stat * 0.2);
+                        _caster.BuffedHP.IntValue += (int)(stat * 0.2 * 0.3);
+                        break;
+                    case EnumAttributeType.Agility:
+                        _caster.BuffedAgility.IntValue += (int)(stat * 0.2);
+                        _caster.BuffedSpeed.IntValue += (int)(stat * 0.2 * 0.3);
+                        break;
+                    case EnumAttributeType.Intellect:
+                        _caster.BuffedIntellingence.IntValue += (int)(stat * 0.2);
+                        _caster.BuffedCrit.IntValue += (int)(stat * 0.2 * 0.3);
+                        break;
+                    case EnumAttributeType.Health:
+                        break;
+                    case EnumAttributeType.Attackdamage:
+                        break;
+                    case EnumAttributeType.Armor:
+                        break;
+                    case EnumAttributeType.Turnpoints:
+                        break;
+                    default:
+                        break;
+                }
+
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing " + type.ToString().ToLower() + " by " + (int)(stat * 0.2) + "!";
+            }
+            else
             {
-                stat = _caster.BuffedIntellingence.IntValue;
-                type = EnumAttributeType.Intellect;
+                this.ChatString = _caster.UnitName + " is already affected by " + this.AbilityName + "!";
+                _caster.CurrentTurnPoints.IntValue += this.TurnPointCost;
             }
-
-            switch (type)
-            {
-                case EnumAttributeType.Strength:
-                    _caster.BuffedStrength.IntValue += (int)(stat * 0.2);
-                    _caster.BuffedHP.IntValue += (int)(stat * 0.2 * 0.3);
-                    break;
-                case EnumAttributeType.Agility:
-                    _caster.BuffedAgility.IntValue += (int)(stat * 0.2);
-                    _caster.BuffedSpeed.IntValue += (int)(stat * 0.2 * 0.3);
-                    break;
-                case EnumAttributeType.Intellect:
-                    _caster.BuffedIntellingence.IntValue += (int)(stat * 0.2);
-                    _caster.BuffedCrit.IntValue += (int)(stat * 0.2 * 0.3);
-                    break;
-                case EnumAttributeType.Health:
-                    break;
-                case EnumAttributeType.Attackdamage:
-                    break;
-                case EnumAttributeType.Armor:
-                    break;
-                case EnumAttributeType.Turnpoints:
-                    break;
-                default:
-                    break;
-            }
-
-            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing " + type.ToString().ToLower() + " by " + (int)(stat * 0.2) + "!";
         }
     }
 
     /// <summary>
-    /// Invigorate: "Increase the Maximum Health of the caster by 5% of Highest Stat."
+    /// Invigorate: "Increase the maximum health of the caster by 20% of the casters highest stat."
     /// </summary>
     public class Invigorate : ActiveAbility
     {
-        public Invigorate(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public Invigorate(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Invigorate";
-            this.Description = "Increase the Maximum Health of the caster by 5% of Highest Stat.";
+            this.Description = "Increase the maximum health of the caster by 20% of the casters highest stat.";
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.meleeattack);
             this.TurnPointCost = 2;
@@ -231,31 +241,40 @@ namespace RPG.Core.Abilities
 
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _target)
         {
-            int stat = _caster.BuffedStrength.IntValue;
+            if (!_caster.UnitBuffsAndDebuffs.Any(x => x.AbilityName == "Invigorated"))
+            {
+                _caster.UnitBuffsAndDebuffs.Add(new Invigorated(_caster, null, null, null, EnumAbilityClassReq.ANY));
+                int stat = _caster.BuffedStrength.IntValue;
 
-            if (_caster.BuffedAgility.IntValue > stat)
-                stat = _caster.BuffedAgility.IntValue;
+                if (_caster.BuffedAgility.IntValue > stat)
+                    stat = _caster.BuffedAgility.IntValue;
 
-            if (_caster.BuffedIntellingence.IntValue > stat)
-                stat = _caster.BuffedIntellingence.IntValue;
+                if (_caster.BuffedIntellingence.IntValue > stat)
+                    stat = _caster.BuffedIntellingence.IntValue;
 
 
-            _caster.BuffedHP.IntValue += (int)(stat * 0.05);
+                _caster.BuffedHP.IntValue += (int)(stat * 0.2);
 
-            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing maxmimum health by " + (int)(stat * 0.05) + "!";
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing maxmimum health by " + (int)(stat * 0.05) + "!";
+            }
+            else
+            {
+                this.ChatString = _caster.UnitName + " is already affected by " + this.AbilityName + "!";
+                _caster.CurrentTurnPoints.IntValue += this.TurnPointCost;
+            }
         }
     }
 
     /// <summary>
-    /// Double Swing: "Deal damage equal to 275% of the units attack."
+    /// Double Swing: "Deal damage equal to 315% of the units attack."
     /// </summary>
     public class DoubleSwing : ActiveAbility
     {
-        public DoubleSwing(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public DoubleSwing(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Double Swing";
-            this.Description = "Deal damage equal to 275% of the units attack.";
+            this.Description = "Deal damage equal to 315% of the units attack.";
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.meleeattack);
             this.TurnPointCost = 3;
@@ -272,7 +291,7 @@ namespace RPG.Core.Abilities
         {
             double critModifier = Function.CombatHandler.CritCalculator(_caster.UnitLevel, _caster.BuffedCrit.IntValue);
 
-            int damage = (int)((_caster.BuffedAttackDamage.IntValue * 2.75)*critModifier);
+            int damage = (int)((_caster.BuffedAttackDamage.IntValue * 3.15)*critModifier);
             _target.CurrentHP.IntValue -= damage;
 
             if (critModifier == 1.0)
@@ -287,8 +306,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class Opportunity : ActiveAbility
     {
-        public Opportunity(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public Opportunity(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Opportunity";
             this.Description = "Increases a random of your stats by 50%.";
@@ -306,36 +325,44 @@ namespace RPG.Core.Abilities
 
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _target)
         {
-            Random r = new Random();
-            EnumAttributeType type = EnumAttributeType.Agility;
-            int buff = 0;
-
-            switch (r.Next(0,2))
+            if (!_caster.UnitBuffsAndDebuffs.Any(x => x.AbilityName == "Oportunist"))
             {
-                case 0:
-                    buff = (int)(_caster.BuffedAgility.IntValue * 0.5);
-                    _caster.BuffedAgility.IntValue += buff;
-                    _caster.BuffedSpeed.IntValue += (int)(buff * 0.3);
-                    type = EnumAttributeType.Agility;
-                    break;
-                case 1:
-                    buff = (int)(_caster.BuffedIntellingence.IntValue * 0.5);
-                    _caster.BuffedIntellingence.IntValue += buff;
-                    _caster.BuffedCrit.IntValue += (int)(buff * 0.3);
-                    type = EnumAttributeType.Intellect;
-                    break;
-                case 2:
-                    buff = (int)(_caster.BuffedStrength.IntValue * 0.5);
-                    _caster.BuffedStrength.IntValue += buff;
-                    _caster.BuffedHP.IntValue += (int)(buff * 0.3);
-                    type = EnumAttributeType.Strength;
-                    break;
-                default:
-                    break;
-            }
+                _caster.UnitBuffsAndDebuffs.Add(new Oportunist(_caster, null, null, null, EnumAbilityClassReq.ANY));
+                Random r = new Random();
+                EnumAttributeType type = EnumAttributeType.Agility;
+                int buff = 0;
 
-            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing " + type.ToString().ToLower() + " by " + buff + "!";
-        
+                switch (r.Next(0,2))
+                {
+                    case 0:
+                        buff = (int)(_caster.BuffedAgility.IntValue * 0.5);
+                        _caster.BuffedAgility.IntValue += buff;
+                        _caster.BuffedSpeed.IntValue += (int)(buff * 0.3);
+                        type = EnumAttributeType.Agility;
+                        break;
+                    case 1:
+                        buff = (int)(_caster.BuffedIntellingence.IntValue * 0.5);
+                        _caster.BuffedIntellingence.IntValue += buff;
+                        _caster.BuffedCrit.IntValue += (int)(buff * 0.3);
+                        type = EnumAttributeType.Intellect;
+                        break;
+                    case 2:
+                        buff = (int)(_caster.BuffedStrength.IntValue * 0.5);
+                        _caster.BuffedStrength.IntValue += buff;
+                        _caster.BuffedHP.IntValue += (int)(buff * 0.3);
+                        type = EnumAttributeType.Strength;
+                        break;
+                    default:
+                        break;
+                }
+
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing " + type.ToString().ToLower() + " by " + buff + "!";
+            }
+            else
+            {
+                this.ChatString = _caster.UnitName + " is already affected by " + this.AbilityName + "!";
+                _caster.CurrentTurnPoints.IntValue += this.TurnPointCost;
+            }
         }
     }
 
@@ -344,8 +371,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class Totalitarism : ActiveAbility
     {
-        public Totalitarism(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public Totalitarism(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Totalitarism";
             this.Description = "Deals all of the units stats combined in damage.";
@@ -380,8 +407,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class Ascend : ActiveAbility
     {
-        public Ascend(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public Ascend(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Ascend";
             this.Description = "Increases all of the units stats by 15, including max health and attack.";
@@ -399,17 +426,26 @@ namespace RPG.Core.Abilities
 
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _target)
         {
-            _caster.BuffedAttackDamage.IntValue += 15;
-            _caster.BuffedAgility.IntValue += 15;
-            _caster.BuffedHP.IntValue += 15;
-            _caster.BuffedIntellingence.IntValue += 15;
-            _caster.BuffedStrength.IntValue += 15;
+            if (!_caster.UnitBuffsAndDebuffs.Any(x => x.AbilityName == "Ascended"))
+            {
+                _caster.UnitBuffsAndDebuffs.Add(new Ascended(_caster, null, null, null, EnumAbilityClassReq.ANY));
+                _caster.BuffedAttackDamage.IntValue += 15;
+                _caster.BuffedAgility.IntValue += 15;
+                _caster.BuffedHP.IntValue += 15;
+                _caster.BuffedIntellingence.IntValue += 15;
+                _caster.BuffedStrength.IntValue += 15;
 
-            _caster.BuffedHP.IntValue += (int)(15*0.3);
-            _caster.BuffedSpeed.IntValue += (int)(15 * 0.3);
-            _caster.BuffedCrit.IntValue += (int)(15 * 0.3);
+                _caster.BuffedHP.IntValue += (int)(15*0.3);
+                _caster.BuffedSpeed.IntValue += (int)(15 * 0.3);
+                _caster.BuffedCrit.IntValue += (int)(15 * 0.3);
 
-            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " increasing all stats by 15!";
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " increasing all stats by 15!";
+            }
+            else
+            {
+                this.ChatString = _caster.UnitName + " is already affected by " + this.AbilityName + "!";
+                _caster.CurrentTurnPoints.IntValue += this.TurnPointCost;
+            }
         }
     }
 
@@ -422,8 +458,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class WarriorStrength : ActiveAbility
     {
-        public WarriorStrength(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public WarriorStrength(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Strength";
             this.Description = "Deal damage to the target based on the 50% of the strength of the Warrior.";
@@ -454,15 +490,15 @@ namespace RPG.Core.Abilities
     }
 
     /// <summary>
-    /// Power Strike: "Deal damage to the target based on 70% attack damage and 10% of the Warriors strength."
+    /// Power Strike: "Deal damage to the target based on 90% attack damage and 10% of the Warriors strength."
     /// </summary>
     public class WarriorPowerStrike : ActiveAbility
     {
-        public WarriorPowerStrike(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public WarriorPowerStrike(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Power Strike";
-            this.Description = "Deal damage to the target based on 70% attack damage and 10% of the Warriors strength.";
+            this.Description = "Deal damage to the target based on 90% attack damage and 10% of the Warriors strength.";
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.strength);
             this.TurnPointCost = 1;
@@ -479,7 +515,7 @@ namespace RPG.Core.Abilities
         {
             double critModifier = Function.CombatHandler.CritCalculator(_caster.UnitLevel, _caster.BuffedCrit.IntValue);
 
-            int damage = (int)(((_caster.BuffedStrength.IntValue * 0.1) + (_caster.BuffedAttackDamage.IntValue * 0.7)) * critModifier);
+            int damage = (int)(((_caster.BuffedStrength.IntValue * 0.1) + (_caster.BuffedAttackDamage.IntValue * 0.9)) * critModifier);
             _targets.CurrentHP.IntValue -= damage;
 
             if (critModifier == 1.0)
@@ -494,8 +530,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class WarriorBlindRage : ActiveAbility
     {
-        public WarriorBlindRage(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public WarriorBlindRage(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Blind Rage";
             this.Description = "Deals anywhere between 175 and 75% of the Warriors strength in damage.";
@@ -531,8 +567,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class WarriorRampage : ActiveAbility
     {
-        public WarriorRampage(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public WarriorRampage(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Rampage";
             this.Description = "The Warriors deals 135% of his  strength in damage, but takes 10% damage of the damage himself.";
@@ -568,8 +604,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class WarriorRoar : ActiveAbility
     {
-        public WarriorRoar(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public WarriorRoar(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Roar";
             this.Description = "Increases the strength of the Warrior by 40%.";
@@ -587,11 +623,20 @@ namespace RPG.Core.Abilities
 
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _targets)
         {
-            int buff = (int)(_caster.BuffedStrength.IntValue * 0.4);
-            _caster.BuffedStrength.IntValue += buff;
-            _caster.BuffedHP.IntValue += (int)(buff * 0.3);
+            if (!_caster.UnitBuffsAndDebuffs.Any(x => x.AbilityName == "Roared"))
+            {
+                _caster.UnitBuffsAndDebuffs.Add(new Roared(_caster, null, null, null, EnumAbilityClassReq.ANY));
+                int buff = (int)(_caster.BuffedStrength.IntValue * 0.4);
+                _caster.BuffedStrength.IntValue += buff;
+                _caster.BuffedHP.IntValue += (int)(buff * 0.3);
 
-            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing Strength by " + buff + "!";
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing Strength by " + buff + "!";
+            }
+            else
+            {
+                this.ChatString = _caster.UnitName + " is already affected by " + this.AbilityName + "!";
+                _caster.CurrentTurnPoints.IntValue += this.TurnPointCost;
+            }
         }
     }
 
@@ -600,8 +645,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class WarriorInfuriate : ActiveAbility
     {
-        public WarriorInfuriate(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public WarriorInfuriate(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Infuriate";
             this.Description = "Increases the Warriors attack by 25% of the Warriors health deficit.";
@@ -619,10 +664,19 @@ namespace RPG.Core.Abilities
 
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _targets)
         {
-            int buff = (int)((_caster.BuffedHP.IntValue - _caster.CurrentHP.IntValue)*0.25);
-            _caster.BuffedAttackDamage.IntValue += buff;
+            if (!_caster.UnitBuffsAndDebuffs.Any(x => x.AbilityName == "Infuriated"))
+            {
+                _caster.UnitBuffsAndDebuffs.Add(new Infuriated(_caster, null, null, null, EnumAbilityClassReq.ANY));
+                int buff = (int)((_caster.BuffedHP.IntValue - _caster.CurrentHP.IntValue)*0.25);
+                _caster.BuffedAttackDamage.IntValue += buff;
 
-            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing Attack by " + buff + "!";
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing Attack by " + buff + "!";
+            }
+            else
+            {
+                this.ChatString = _caster.UnitName + " is already affected by " + this.AbilityName + "!";
+                _caster.CurrentTurnPoints.IntValue += this.TurnPointCost;
+            }
         }
     }
 
@@ -631,8 +685,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class WarriorExecution : ActiveAbility
     {
-        public WarriorExecution(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public WarriorExecution(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Execution";
             this.Description = "Deals 750% attack damage if the target dies from this. Otherwise, deals 150% Weapon Damage.";
@@ -679,8 +733,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class WarriorInsanity : ActiveAbility
     {
-        public WarriorInsanity(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public WarriorInsanity(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Insanity";
             this.Description = "The Warrior deals 350% of his strength in damage to the target, but injures of his allies for 15% of the damage dealt.";
@@ -726,8 +780,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class PaladinWrath : ActiveAbility
     {
-        public PaladinWrath(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public PaladinWrath(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             AbilityName = "Wrath";
             Description = "Deals 50% of the Paladins strength in damage.";
@@ -763,8 +817,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class PaladinJustice : ActiveAbility
     {
-        public PaladinJustice(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public PaladinJustice(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Justice";
             this.Description = "Deals 40% of the Paladins strength in damage and heals him for 30% of his intellect.";
@@ -806,8 +860,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class PaladinSerenity : ActiveAbility
     {
-        public PaladinSerenity(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public PaladinSerenity(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Serenity";
             this.Description = "Heals a random ally and deals damage to the target for 40% of the Paladins intellect.";
@@ -855,8 +909,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class PaladinRaiseSpirit : ActiveAbility
     {
-        public PaladinRaiseSpirit(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public PaladinRaiseSpirit(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Raise Spirit";
             this.Description = "The Paladin heals the target for 25% of his combined strength and intellect.";
@@ -903,8 +957,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class PaladinPrayer : ActiveAbility
     {
-        public PaladinPrayer(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public PaladinPrayer(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Prayer";
             this.Description = "Increases the strength and intellect of the Paladin by 20%.";
@@ -922,15 +976,24 @@ namespace RPG.Core.Abilities
 
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _targets)
         {
-            int strBuff = (int)(_caster.BuffedStrength.IntValue*0.2);
-            int intBuff = (int)(_caster.BuffedIntellingence.IntValue * 0.2);
-            _caster.BuffedStrength.IntValue += strBuff;
-            _caster.BuffedIntellingence.IntValue += intBuff;
+            if (!_caster.UnitBuffsAndDebuffs.Any(x => x.AbilityName == "In Prayer"))
+            {
+                _caster.UnitBuffsAndDebuffs.Add(new InPrayer(_caster, null, null, null, EnumAbilityClassReq.ANY));
+                int strBuff = (int)(_caster.BuffedStrength.IntValue*0.2);
+                int intBuff = (int)(_caster.BuffedIntellingence.IntValue * 0.2);
+                _caster.BuffedStrength.IntValue += strBuff;
+                _caster.BuffedIntellingence.IntValue += intBuff;
 
-            _caster.BuffedHP.IntValue += (int)(strBuff * 0.3);
-            _caster.BuffedCrit.IntValue += (int)(intBuff * 0.3);
+                _caster.BuffedHP.IntValue += (int)(strBuff * 0.3);
+                _caster.BuffedCrit.IntValue += (int)(intBuff * 0.3);
 
-            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing Strength by " + strBuff + " and Intellect by " + intBuff + "!";
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing Strength by " + strBuff + " and Intellect by " + intBuff + "!";
+            }
+            else
+            {
+                this.ChatString = _caster.UnitName + " is already affected by " + this.AbilityName + "!";
+                _caster.CurrentTurnPoints.IntValue += this.TurnPointCost;
+            }
         }
     }
 
@@ -939,8 +1002,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class PaladinBlessing : ActiveAbility
     {
-        public PaladinBlessing(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public PaladinBlessing(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Blessing";
             this.Description = "Increases the target allys' highest stat by 40%:";
@@ -972,54 +1035,64 @@ namespace RPG.Core.Abilities
                 }
             }
 
-            if (_allies[index].BuffedAgility.IntValue > best)
+            if (!_allies[index].UnitBuffsAndDebuffs.Any(x => x.AbilityName == "Blessed"))
             {
-                stat = EnumAttributeType.Agility;
-                best = _allies[index].BuffedAgility.IntValue;
-            }
+                _allies[index].UnitBuffsAndDebuffs.Add(new Blessed(_caster, null, null, null, EnumAbilityClassReq.ANY));
 
-            if (_allies[index].BuffedIntellingence.IntValue > best)
+                if (_allies[index].BuffedAgility.IntValue > best)
+                {
+                    stat = EnumAttributeType.Agility;
+                    best = _allies[index].BuffedAgility.IntValue;
+                }
+
+                if (_allies[index].BuffedIntellingence.IntValue > best)
+                {
+                    stat = EnumAttributeType.Intellect;
+                    best = _allies[index].BuffedIntellingence.IntValue;
+                }
+
+                if (_allies[index].BuffedStrength.IntValue > best)
+                {
+                    stat = EnumAttributeType.Strength;
+                    best = _allies[index].BuffedStrength.IntValue;
+                }
+
+                switch (stat)
+                {
+                    case EnumAttributeType.Strength:
+                        buff = (int)(_allies[index].BuffedStrength.IntValue*0.4);
+                        _allies[index].BuffedStrength.IntValue += buff;
+                        _allies[index].BuffedHP.IntValue += (int)(buff * 0.3);
+                        break;
+                    case EnumAttributeType.Agility:
+                        buff = (int)(_allies[index].BuffedAgility.IntValue * 0.4);
+                        _allies[index].BuffedAgility.IntValue += buff;
+                        _allies[index].BuffedSpeed.IntValue += (int)(buff * 0.3);
+                        break;
+                    case EnumAttributeType.Intellect:
+                        buff = (int)(_allies[index].BuffedIntellingence.IntValue * 0.4);
+                        _allies[index].BuffedIntellingence.IntValue += buff;
+                        _allies[index].BuffedCrit.IntValue += (int)(buff * 0.3);
+                        break;
+                    case EnumAttributeType.Health:
+                        break;
+                    case EnumAttributeType.Attackdamage:
+                        break;
+                    case EnumAttributeType.Armor:
+                        break;
+                    case EnumAttributeType.Turnpoints:
+                        break;
+                    default:
+                        break;
+                }
+
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _allies[index].UnitName + ", increasing " + stat.ToString().ToLower() + " by " + buff + "!";
+            }
+            else
             {
-                stat = EnumAttributeType.Intellect;
-                best = _allies[index].BuffedIntellingence.IntValue;
+                this.ChatString = _caster.UnitName + " is already affected by " + this.AbilityName + "!";
+                _caster.CurrentTurnPoints.IntValue += this.TurnPointCost;
             }
-
-            if (_allies[index].BuffedStrength.IntValue > best)
-            {
-                stat = EnumAttributeType.Strength;
-                best = _allies[index].BuffedStrength.IntValue;
-            }
-
-            switch (stat)
-            {
-                case EnumAttributeType.Strength:
-                    buff = (int)(_allies[index].BuffedStrength.IntValue*0.4);
-                    _allies[index].BuffedStrength.IntValue += buff;
-                    _allies[index].BuffedHP.IntValue += (int)(buff * 0.3);
-                    break;
-                case EnumAttributeType.Agility:
-                    buff = (int)(_allies[index].BuffedAgility.IntValue * 0.4);
-                    _allies[index].BuffedAgility.IntValue += buff;
-                    _allies[index].BuffedSpeed.IntValue += (int)(buff * 0.3);
-                    break;
-                case EnumAttributeType.Intellect:
-                    buff = (int)(_allies[index].BuffedIntellingence.IntValue * 0.4);
-                    _allies[index].BuffedIntellingence.IntValue += buff;
-                    _allies[index].BuffedCrit.IntValue += (int)(buff * 0.3);
-                    break;
-                case EnumAttributeType.Health:
-                    break;
-                case EnumAttributeType.Attackdamage:
-                    break;
-                case EnumAttributeType.Armor:
-                    break;
-                case EnumAttributeType.Turnpoints:
-                    break;
-                default:
-                    break;
-            }
-
-            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _allies[index].UnitName + ", increasing " + stat.ToString().ToLower() + " by " + buff + "!";
         }
     }
 
@@ -1028,8 +1101,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class PaladinDesperatePlea : ActiveAbility
     {
-        public PaladinDesperatePlea(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public PaladinDesperatePlea(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Desperate Plea";
             this.Description = "Heals the target for 75% of their maximum health, but decreases their maximum health by 20%.";
@@ -1079,8 +1152,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class PaladinThePowerOfFaith : ActiveAbility
     {
-        public PaladinThePowerOfFaith(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public PaladinThePowerOfFaith(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "The Power of Faith";
             this.Description = "Heals the paladin to full health, but reduces all his stats by 10%.";
@@ -1121,8 +1194,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class WizardFireball : ActiveAbility
     {
-        public WizardFireball(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public WizardFireball(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             AbilityName = "Fireball";
             Description = "This ability deals damage to the 1 target, based on half of the casters intellect.";
@@ -1157,8 +1230,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class WizardHeal : ActiveAbility
     {
-        public WizardHeal(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public WizardHeal(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             AbilityName = "Heal";
             Description = "This Ability heals the target player for an amount equal to a quarter of the casters Intellect.";
@@ -1207,8 +1280,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class WizardFlameComet : ActiveAbility
     {
-        public WizardFlameComet(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public WizardFlameComet(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             AbilityName = "Flame Comet";
             Description = "Deals damage to the target for 110% of the Wizards intellect.";
@@ -1243,8 +1316,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class WizardRevitalize : ActiveAbility
     {
-        public WizardRevitalize(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public WizardRevitalize(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             AbilityName = "Revitalize";
             Description = "The Wizard heals the target for 50% of her intellect.";
@@ -1293,8 +1366,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class WizardBrilliance : ActiveAbility
     {
-        public WizardBrilliance(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public WizardBrilliance(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Brilliance";
             this.Description = "Increases the intellect of the Wizard by 40%.";
@@ -1312,11 +1385,20 @@ namespace RPG.Core.Abilities
 
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _targets)
         {
-            int buff = (int)(_caster.BuffedIntellingence.IntValue * 0.40);
-            _caster.BuffedIntellingence.IntValue += buff;
-            _caster.BuffedCrit.IntValue += (int)(buff * 0.3);
+            if (!_caster.UnitBuffsAndDebuffs.Any(x => x.AbilityName == "Brilliant"))
+            {
+                _caster.UnitBuffsAndDebuffs.Add(new Brilliant(_caster, null, null, null, EnumAbilityClassReq.ANY));
+                int buff = (int)(_caster.BuffedIntellingence.IntValue * 0.40);
+                _caster.BuffedIntellingence.IntValue += buff;
+                _caster.BuffedCrit.IntValue += (int)(buff * 0.3);
 
-            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _caster.UnitName + ", increasing Intellect for " + buff + "!";
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _caster.UnitName + ", increasing Intellect for " + buff + "!";
+            }
+            else
+            {
+                this.ChatString = _caster.UnitName + " is already affected by " + this.AbilityName + "!";
+                _caster.CurrentTurnPoints.IntValue += this.TurnPointCost;
+            }
         }
     }
 
@@ -1325,8 +1407,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class WizardArchon : ActiveAbility
     {
-        public WizardArchon(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public WizardArchon(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Archon";
             this.Description = "Reduces maximum health by 60%, but increases intellect by 300%.";
@@ -1344,21 +1426,30 @@ namespace RPG.Core.Abilities
 
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _targets)
         {
-            int newInt = (int)(_caster.BuffedIntellingence.IntValue * 3);
-            int newMax = (int)(_caster.BuffedHP.IntValue * 0.40);
-
-            _caster.BuffedIntellingence.IntValue = newInt;
-            _caster.BuffedCrit.IntValue = (int)(newInt * 0.3);
-
-            _caster.BuffedHP.IntValue = newMax;
-
-            if (_caster.BuffedHP.IntValue < _caster.CurrentHP.IntValue)
+            if (!_caster.UnitBuffsAndDebuffs.Any(x => x.AbilityName == "Transformed"))
             {
-                int temp = _caster.BuffedHP.IntValue;
-                _caster.CurrentHP.IntValue = temp;
-            }
+                _caster.UnitBuffsAndDebuffs.Add(new Transformed(_caster, null, null, null, EnumAbilityClassReq.ANY));
+                int newInt = (int)(_caster.BuffedIntellingence.IntValue * 3);
+                int newMax = (int)(_caster.BuffedHP.IntValue * 0.40);
 
-            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", immensely increasing Intellect to " + newInt + ", but reduces maximum health to " + newMax + "!";
+                _caster.BuffedIntellingence.IntValue = newInt;
+                _caster.BuffedCrit.IntValue = (int)(newInt * 0.3);
+
+                _caster.BuffedHP.IntValue = newMax;
+
+                if (_caster.BuffedHP.IntValue < _caster.CurrentHP.IntValue)
+                {
+                    int temp = _caster.BuffedHP.IntValue;
+                    _caster.CurrentHP.IntValue = temp;
+                }
+
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", immensely increasing Intellect to " + newInt + ", but reduces maximum health to " + newMax + "!";
+            }
+            else
+            {
+                this.ChatString = _caster.UnitName + " is already affected by " + this.AbilityName + "!";
+                _caster.CurrentTurnPoints.IntValue += this.TurnPointCost;
+            }
         }
     }
 
@@ -1367,8 +1458,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class WizardInferno : ActiveAbility
     {
-        public WizardInferno(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public WizardInferno(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             AbilityName = "Inferno";
             Description = "Deals damage to the target for 280% of the Wizards intellect.";
@@ -1403,8 +1494,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class WizardOracle : ActiveAbility
     {
-        public WizardOracle(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public WizardOracle(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             AbilityName = "Oracle";
             Description = "Heals all allies for 55/40/30 % of the Wizards Intellect. Percentage is dependant on number of valid targets.";
@@ -1478,8 +1569,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class ThiefQuickAttack : ActiveAbility
     {
-        public ThiefQuickAttack(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public ThiefQuickAttack(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Quick Attack";
             this.Description = "Swiftly injure the target for 50% of the casters agility.";
@@ -1509,15 +1600,15 @@ namespace RPG.Core.Abilities
     }
 
     /// <summary>
-    /// Borrow Weapon: "The Thief uses the best attack of his allies together with his own, dealing 45% of their combined damage."
+    /// Borrow Weapon: "The Thief uses the best attack of his allies together with his own, dealing 65% of their combined damage."
     /// </summary>
     public class ThiefBorrowWeapon : ActiveAbility
     {
-        public ThiefBorrowWeapon(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public ThiefBorrowWeapon(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Borrow Weapon";
-            this.Description = "The Thief uses the best attack of his allies together with his own, dealing 45% of their combined damage.";
+            this.Description = "The Thief uses the best attack of his allies together with his own, dealing 65% of their combined damage.";
             this.Icon = this.SetIcon(Properties.Resources.quickattack);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 1;
@@ -1546,7 +1637,7 @@ namespace RPG.Core.Abilities
                 }
             }
 
-            damage = (int)(((_caster.BuffedAttackDamage.IntValue + best) * 0.45) * critModifier);
+            damage = (int)(((_caster.BuffedAttackDamage.IntValue + best) * 0.65) * critModifier);
             _targets.CurrentHP.IntValue -= damage;
 
             if (critModifier == 1.0)
@@ -1561,8 +1652,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class ThiefBloodstealer : ActiveAbility
     {
-        public ThiefBloodstealer(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public ThiefBloodstealer(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Bloodstealer";
             this.Description = "Deals 100% of the Thiefs agility in damage and heals him for 10% of the damage dealt.";
@@ -1603,8 +1694,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class ThiefCopycat : ActiveAbility
     {
-        public ThiefCopycat(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public ThiefCopycat(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Copycat";
             this.Description = "Deals 95% of the Thiefs allies' highest stat in damage.";
@@ -1665,8 +1756,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class ThiefSwiftness : ActiveAbility
     {
-        public ThiefSwiftness(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public ThiefSwiftness(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Swiftness";
             this.Description = "Increases the agility of the Thief by 40%";
@@ -1684,24 +1775,33 @@ namespace RPG.Core.Abilities
 
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _targets)
         {
-            int buff = (int)(_caster.BuffedAgility.IntValue * 0.40);
-            _caster.BuffedAgility.IntValue += buff;
-            _caster.BuffedSpeed.IntValue += (int)(buff * 0.3);
+            if (!_caster.UnitBuffsAndDebuffs.Any(x => x.AbilityName == "Swift"))
+            {
+                _caster.UnitBuffsAndDebuffs.Add(new Swift(_caster, null, null, null, EnumAbilityClassReq.ANY));
+                int buff = (int)(_caster.BuffedAgility.IntValue * 0.40);
+                _caster.BuffedAgility.IntValue += buff;
+                _caster.BuffedSpeed.IntValue += (int)(buff * 0.3);
 
-            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing agility by " + buff + "!";
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing agility by " + buff + "!";
+            }
+            else
+            {
+                this.ChatString = _caster.UnitName + " is already affected by " + this.AbilityName + "!";
+                _caster.CurrentTurnPoints.IntValue += this.TurnPointCost;
+            }
         }
     }
 
     /// <summary>
-    /// Envenom: "Increases the Attack of the Thief by 10%."
+    /// Envenom: "Increases the Attack of the Thief by 50%."
     /// </summary>
     public class ThiefEnvenom : ActiveAbility
     {
-        public ThiefEnvenom(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public ThiefEnvenom(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Envenom";
-            this.Description = "Increases the Attack of the Thief by 10%.";
+            this.Description = "Increases the Attack of the Thief by 50%.";
             this.Icon = this.SetIcon(Properties.Resources.quickattack);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 4;
@@ -1716,10 +1816,19 @@ namespace RPG.Core.Abilities
 
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _targets)
         {
-            int buff = (int)(_caster.BuffedAttackDamage.IntValue * 0.10);
-            _caster.BuffedAttackDamage.IntValue += buff;
+            if (!_caster.UnitBuffsAndDebuffs.Any(x => x.AbilityName == "Venomous"))
+            {
+                _caster.UnitBuffsAndDebuffs.Add(new Venomous(_caster, null, null, null, EnumAbilityClassReq.ANY));
+                int buff = (int)(_caster.BuffedAttackDamage.IntValue * 0.50);
+                _caster.BuffedAttackDamage.IntValue += buff;
 
-            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing attack by " + buff + "!";
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing attack by " + buff + "!";
+            }
+            else
+            {
+                this.ChatString = _caster.UnitName + " is already affected by " + this.AbilityName + "!";
+                _caster.CurrentTurnPoints.IntValue += this.TurnPointCost;
+            }
         }
     }
 
@@ -1728,8 +1837,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class ThiefDirtyTricks : ActiveAbility
     {
-        public ThiefDirtyTricks(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public ThiefDirtyTricks(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Dirty Tricks";
             this.Description = "Deals 250% of the Thiefs agility and 40% of his attack as damage to the target.";
@@ -1763,8 +1872,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class ThiefFlurry : ActiveAbility
     {
-        public ThiefFlurry(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public ThiefFlurry(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Flurry";
             this.Description = "Deals 10% of the Thiefs Attack to the target, 10% of his agility times.";
@@ -1808,8 +1917,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class CaretakerBodySlam : ActiveAbility
     {
-        public CaretakerBodySlam(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public CaretakerBodySlam(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Body Slam";
             this.Description = "Deals 20% of the Caretakers maximum health in damage to the target.";
@@ -1843,8 +1952,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class CaretakerSacrifice : ActiveAbility
     {
-        public CaretakerSacrifice(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public CaretakerSacrifice(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Sacrifice";
             this.Description = "Deals 85% of the Caretakers agility in damage, but takes damage equal to the difference between strength and agility.";
@@ -1882,8 +1991,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class CaretakerLifeforce : ActiveAbility
     {
-        public CaretakerLifeforce(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public CaretakerLifeforce(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Lifeforce";
             this.Description = "Deals 90% of the Caretakers health deficit in damage to the target AND the Caretaker.";
@@ -1920,8 +2029,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class CaretakerZealOfHumanity : ActiveAbility
     {
-        public CaretakerZealOfHumanity(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public CaretakerZealOfHumanity(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Zeal of Humanity";
             this.Description = "Heals target ally for 75% of the Caretakers strength, but injures himself for 50% of the amount healed.";
@@ -1973,8 +2082,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class CaretakerAction : ActiveAbility
     {
-        public CaretakerAction(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public CaretakerAction(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Action";
             this.Description = "Increases the strength and agility of the Caretaker by 20%.";
@@ -1992,15 +2101,24 @@ namespace RPG.Core.Abilities
 
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _targets)
         {
-            int strbuff = (int)(_caster.BuffedStrength.IntValue * 0.2);
-            int agibuff = (int)(_caster.BuffedAgility.IntValue * 0.2);
-            _caster.BuffedStrength.IntValue +=  strbuff;
-            _caster.BuffedAgility.IntValue += agibuff;
+            if (!_caster.UnitBuffsAndDebuffs.Any(x => x.AbilityName == "In Action"))
+            {
+                _caster.UnitBuffsAndDebuffs.Add(new InAction(_caster, null, null, null, EnumAbilityClassReq.ANY));
+                int strbuff = (int)(_caster.BuffedStrength.IntValue * 0.2);
+                int agibuff = (int)(_caster.BuffedAgility.IntValue * 0.2);
+                _caster.BuffedStrength.IntValue +=  strbuff;
+                _caster.BuffedAgility.IntValue += agibuff;
 
-            _caster.BuffedHP.IntValue += (int)(strbuff * 0.3);
-            _caster.BuffedSpeed.IntValue += (int)(agibuff * 0.3);
+                _caster.BuffedHP.IntValue += (int)(strbuff * 0.3);
+                _caster.BuffedSpeed.IntValue += (int)(agibuff * 0.3);
 
-            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing strength by " + strbuff + " and agility by " + agibuff + "!";
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing strength by " + strbuff + " and agility by " + agibuff + "!";
+            }
+            else
+            {
+                this.ChatString = _caster.UnitName + " is already affected by " + this.AbilityName + "!";
+                _caster.CurrentTurnPoints.IntValue += this.TurnPointCost;
+            }
         }
     }
 
@@ -2009,8 +2127,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class CaretakerLifeblood : ActiveAbility
     {
-        public CaretakerLifeblood(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public CaretakerLifeblood(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Lifeblood";
             this.Description = "The Caretaker heals a target ally to full, but takes the allys' health deficit in damage.";
@@ -2063,8 +2181,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class CaretakerPowerAndDexterity : ActiveAbility
     {
-        public CaretakerPowerAndDexterity(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public CaretakerPowerAndDexterity(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Power and Dexterity";
             this.Description = "Deals 125% of the Caretakers combined Strength and Agility to the target.";
@@ -2098,8 +2216,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class CaretakerDeathdefiance : ActiveAbility
     {
-        public CaretakerDeathdefiance(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public CaretakerDeathdefiance(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Deathdefiance";
             this.Description = "Splits the Caretakers health deficit as healing between all allies.";
@@ -2156,8 +2274,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class SynergistDuality : ActiveAbility
     {
-        public SynergistDuality(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public SynergistDuality(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Duality";
             this.Description = "Deals 25% of the Synergists combined intellect and agility in damage.";
@@ -2191,8 +2309,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class SynergistAgileMind : ActiveAbility
     {
-        public SynergistAgileMind(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public SynergistAgileMind(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Agile Mind";
             this.Description = "Deals damage for 55% of the Synergists Agility, but subtracts the difference between Agility and Intellect from the damage.";
@@ -2229,8 +2347,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class SynergistBalance : ActiveAbility
     {
-        public SynergistBalance(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public SynergistBalance(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Balance";
             this.Description = "Of Agility and Intellect, increases lowest stat by 15% and highest by 10%.";
@@ -2248,27 +2366,36 @@ namespace RPG.Core.Abilities
 
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _targets)
         {
-            int agiBuff = 0;
-            int intBuff = 0;
-            if (_caster.BuffedIntellingence.IntValue > _caster.BuffedAgility.IntValue)
+            if (!_caster.UnitBuffsAndDebuffs.Any(x => x.AbilityName == "Balanced"))
             {
-                intBuff = (int)(_caster.BuffedIntellingence.IntValue * 0.1);
-                agiBuff = (int)(_caster.BuffedAgility.IntValue * 0.15);
-                _caster.BuffedIntellingence.IntValue += intBuff;
-                _caster.BuffedAgility.IntValue += agiBuff;
+                _caster.UnitBuffsAndDebuffs.Add(new Balanced(_caster, null, null, null, EnumAbilityClassReq.ANY));
+                int agiBuff = 0;
+                int intBuff = 0;
+                if (_caster.BuffedIntellingence.IntValue > _caster.BuffedAgility.IntValue)
+                {
+                    intBuff = (int)(_caster.BuffedIntellingence.IntValue * 0.1);
+                    agiBuff = (int)(_caster.BuffedAgility.IntValue * 0.15);
+                    _caster.BuffedIntellingence.IntValue += intBuff;
+                    _caster.BuffedAgility.IntValue += agiBuff;
+                }
+                else
+                {
+                    intBuff = (int)(_caster.BuffedIntellingence.IntValue * 0.15);
+                    agiBuff = (int)(_caster.BuffedAgility.IntValue * 0.1);
+                    _caster.BuffedIntellingence.IntValue += intBuff;
+                    _caster.BuffedAgility.IntValue += agiBuff;
+                }
+
+                _caster.BuffedCrit.IntValue += (int)(intBuff * 0.3);
+                _caster.BuffedSpeed.IntValue += (int)(agiBuff * 0.3);
+
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " increasing agility by " + agiBuff + " and increasing intellect by " + intBuff + "!";
             }
             else
             {
-                intBuff = (int)(_caster.BuffedIntellingence.IntValue * 0.15);
-                agiBuff = (int)(_caster.BuffedAgility.IntValue * 0.1);
-                _caster.BuffedIntellingence.IntValue += intBuff;
-                _caster.BuffedAgility.IntValue += agiBuff;
+                this.ChatString = _caster.UnitName + " is already affected by " + this.AbilityName + "!";
+                _caster.CurrentTurnPoints.IntValue += this.TurnPointCost;
             }
-
-            _caster.BuffedCrit.IntValue += (int)(intBuff * 0.3);
-            _caster.BuffedSpeed.IntValue += (int)(agiBuff * 0.3);
-
-            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " increasing agility by " + agiBuff + " and increasing intellect by " + intBuff + "!";
         }
     }
 
@@ -2277,8 +2404,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class SynergistMentalAgility : ActiveAbility
     {
-        public SynergistMentalAgility(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public SynergistMentalAgility(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Mental Agility";
             this.Description = "Deals 115% of the Synergists Intellect in damage, subtracting the difference between Intellect and Agility.";
@@ -2315,8 +2442,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class SynergistAlign : ActiveAbility
     {
-        public SynergistAlign(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public SynergistAlign(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Align";
             this.Description = "Increases the intellect and agility of the Synergist by 20%.";
@@ -2334,16 +2461,25 @@ namespace RPG.Core.Abilities
 
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _targets)
         {
-            int intBuff = (int)(_caster.BuffedIntellingence.IntValue * 0.2);
-            int agiBuff = (int)(_caster.BuffedAgility.IntValue * 0.2);
-            _caster.BuffedIntellingence.IntValue += intBuff;
-            _caster.BuffedAgility.IntValue += agiBuff;
+            if (!_caster.UnitBuffsAndDebuffs.Any(x => x.AbilityName == "Aligned"))
+            {
+                _caster.UnitBuffsAndDebuffs.Add(new Aligned(_caster, null, null, null, EnumAbilityClassReq.ANY));
+                int intBuff = (int)(_caster.BuffedIntellingence.IntValue * 0.2);
+                int agiBuff = (int)(_caster.BuffedAgility.IntValue * 0.2);
+                _caster.BuffedIntellingence.IntValue += intBuff;
+                _caster.BuffedAgility.IntValue += agiBuff;
 
-            _caster.BuffedCrit.IntValue += (int)(intBuff * 0.3);
-            _caster.BuffedSpeed.IntValue += (int)(agiBuff * 0.3);
+                _caster.BuffedCrit.IntValue += (int)(intBuff * 0.3);
+                _caster.BuffedSpeed.IntValue += (int)(agiBuff * 0.3);
 
 
-            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " increasing agility by " + agiBuff + " and increasing intellect by " + intBuff + "!";
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " increasing agility by " + agiBuff + " and increasing intellect by " + intBuff + "!";
+            }
+            else
+            {
+                this.ChatString = _caster.UnitName + " is already affected by " + this.AbilityName + "!";
+                _caster.CurrentTurnPoints.IntValue += this.TurnPointCost;
+            }
         }
     }
 
@@ -2352,8 +2488,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class SynergistCollapsedEquality : ActiveAbility
     {
-        public SynergistCollapsedEquality(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public SynergistCollapsedEquality(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Collapsed Equality";
             this.Description = "Heals all allies for 50/37/25 % of the Synergists Intellect, but reduces intellect by 20%.";
@@ -2425,8 +2561,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class SynergistSynergy : ActiveAbility
     {
-        public SynergistSynergy(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public SynergistSynergy(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Synergy";
             this.Description = "Deals 145% of the Synergists combined intellect and agility as damage, but subtracts difference between them from this amount:";
@@ -2464,8 +2600,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class SynergistCompleteBalance : ActiveAbility
     {
-        public SynergistCompleteBalance(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public SynergistCompleteBalance(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Complete Balance";
             this.Description = "Aligns all allies health to be at the average percentage and heals them for 8% of the Synergists agility and intellect.";
@@ -2533,8 +2669,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class NPCFireball : ActiveAbility
     {
-        public NPCFireball(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public NPCFireball(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Fireball";
             this.Description = "This ability deals 175% the units level in damage.";
@@ -2561,8 +2697,8 @@ namespace RPG.Core.Abilities
 
     public class NPCHeal : ActiveAbility
     {
-        public NPCHeal(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public NPCHeal(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Heal";
             this.Description = "This ability heals the unit for 10% of its max HP";
@@ -2591,8 +2727,8 @@ namespace RPG.Core.Abilities
 
     public class NPCNuke : ActiveAbility
     {
-        public NPCNuke(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public NPCNuke(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Nuke";
             this.Description = "This ability deals 600% of the casters level in damage. Can only be used every 5 turns.";
@@ -2619,8 +2755,8 @@ namespace RPG.Core.Abilities
 
     public class NPCAtonementSmite : ActiveAbility
     {
-        public NPCAtonementSmite(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public NPCAtonementSmite(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Atonement Smite";
             this.Description = "This ability deals the units level in damage and heals it for 7% of its maximum health.";
@@ -2651,6 +2787,97 @@ namespace RPG.Core.Abilities
         }
     }
 
+    public class NPCGrow : ActiveAbility
+    {
+        public NPCGrow(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
+        {
+            this.AbilityName = "Grow";
+            this.Description = "This ability increases the monsters health by for 10%";
+            this.Icon = this.SetIcon(Properties.Resources.heal);
+        }
+
+        /// <summary>
+        /// Used only for XML Serialization
+        /// </summary>
+        public NPCGrow()
+        { }
+
+        int damageValue = 0;
+        public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
+        {
+            int buff = (int)Math.Abs(_caster.BuffedHP.IntValue * 0.10);
+
+            _caster.BuffedHP.IntValue += buff;
+
+            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _caster.UnitName + ", increasing its max health by " + buff + "!";
+        }
+    }
+
+    public class NPCDesperation : ActiveAbility
+    {
+        public NPCDesperation(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
+        {
+            this.AbilityName = "Desperation";
+            this.Description = "This ability deals 15% of the monsters health deficit in damage to all characters!";
+            this.Icon = this.SetIcon(Properties.Resources.strength);
+        }
+
+        /// <summary>
+        /// Used only for XML Serialization
+        /// </summary>
+        public NPCDesperation()
+        { }
+
+        int damageValue = 0;
+        public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
+        {
+            int damage = (int)Math.Abs((_caster.BuffedHP.IntValue-_caster.CurrentHP.IntValue) * 0.15);
+
+            foreach (var item in _targets)
+            {
+                item.CurrentHP.IntValue -= damage;
+            }
+            
+
+            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on all characters, dealing " + damage + " to each!";
+        }
+    }
+
+    public class NPCGrowingDespair : ActiveAbility
+    {
+        public NPCGrowingDespair(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
+        {
+            this.AbilityName = "Growing Despair";
+            this.Description = "This ability deals increasing damage to all characters.";
+            this.Icon = this.SetIcon(Properties.Resources.strength);
+            
+        }
+
+        /// <summary>
+        /// Used only for XML Serialization
+        /// </summary>
+        public NPCGrowingDespair()
+        { }
+        int iteration = 1;
+        int damageValue = 0;
+        public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
+        {
+            int damage = (int)(_caster.UnitLevel * (0.5 * iteration));
+
+            foreach (var item in _targets)
+            {
+                item.CurrentHP.IntValue -= damage;
+            }
+
+
+            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on all characters, dealing " + damage + " to each!";
+            iteration++;
+        }
+    }
+
     #endregion
 
     #region Unused abilities (Old abilities that are there for save purposes only)
@@ -2660,8 +2887,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class SynergistBalanceAgility : ActiveAbility
     {
-        public SynergistBalanceAgility(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public SynergistBalanceAgility(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Balance - Agility";
             this.Description = "Decreases intellect by 10%, but increases agility by this amount.";
@@ -2692,8 +2919,8 @@ namespace RPG.Core.Abilities
     /// </summary>
     public class SynergistBalanceIntellect : ActiveAbility
     {
-        public SynergistBalanceIntellect(string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
-            : base(_name, _description, _icon, _classReq)
+        public SynergistBalanceIntellect(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Balance - Intellect";
             this.Description = "Decreases agility by 10%, but increases intellect by this amount.";

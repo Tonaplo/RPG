@@ -387,6 +387,10 @@ namespace RPG.UI
             }
             else
             {
+                foreach (var item in battleChars)
+                {
+                    item.UnitBuffsAndDebuffs.Clear();
+                }
                 Function.SoundManager.StopBattleMusic();
                 this.DialogResult = result;
                 this.Close();

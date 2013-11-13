@@ -637,7 +637,7 @@ namespace RPG.UI
         private void checkBoxAll1_MouseHover(object sender, EventArgs e)
         {
             tt.ToolTipTitle = "Melee Attack";
-            tt.Show("Deal damage to the target for 85% of the units attack.", checkBoxAll1, 5000);
+            tt.Show("Deal damage to the target for 100% of the units attack.", checkBoxAll1, 5000);
         }
 
         private void checkBoxAll2_MouseHover(object sender, EventArgs e)
@@ -655,13 +655,13 @@ namespace RPG.UI
         private void checkBoxAll4_MouseHover(object sender, EventArgs e)
         {
                 tt.ToolTipTitle = "Invigorate";
-                tt.Show("Increase the Maximum Health of the caster by 5% of Highest Stat.", checkBoxAll4, 5000);
+                tt.Show("Increase the maximum health of the caster by 20% of the casters highest stat.", checkBoxAll4, 5000);
         }
 
         private void checkBoxAll5_MouseHover(object sender, EventArgs e)
         {
                 tt.ToolTipTitle = "Double Swing";
-                tt.Show("Deal damage equal to 275% of the units attack.", checkBoxAll5, 5000);
+                tt.Show("Deal damage equal to 315% of the units attack.", checkBoxAll5, 5000);
         }
 
         private void checkBoxAll6_MouseHover(object sender, EventArgs e)
@@ -725,7 +725,7 @@ namespace RPG.UI
             {
                 case EnumCharClass.Warrior:
                     tt.ToolTipTitle = "Power Strike";
-                    tt.Show("Deal damage to the target based on 70% attack damage and 10% of the Warriors strength.", checkBoxClass2, 5000);
+                    tt.Show("Deal damage to the target based on 90% attack damage and 10% of the Warriors strength.", checkBoxClass2, 5000);
                     break;
                 case EnumCharClass.Paladin:
                     tt.ToolTipTitle = "Justice";
@@ -737,7 +737,7 @@ namespace RPG.UI
                     break;
                 case EnumCharClass.Thief:
                     tt.ToolTipTitle = "Borrow Weapon";
-                    tt.Show("The Thief uses the best attack of his allies together with his own, dealing 45% of their combined damage.", checkBoxClass2, 5000);
+                    tt.Show("The Thief uses the best attack of his allies together with his own, dealing 65% of their combined damage.", checkBoxClass2, 5000);
                     break;
                 case EnumCharClass.Caretaker:
                     tt.ToolTipTitle = "Sacrifice";
@@ -869,7 +869,7 @@ namespace RPG.UI
                     break;
                 case EnumCharClass.Thief:
                     tt.ToolTipTitle = "Envenom";
-                    tt.Show("Increases the Attack of the Thief by 10%.", checkBoxClass6, 5000);
+                    tt.Show("Increases the Attack of the Thief by 50%.", checkBoxClass6, 5000);
                     break;
                 case EnumCharClass.Caretaker:
                     tt.ToolTipTitle = "Lifeblood";

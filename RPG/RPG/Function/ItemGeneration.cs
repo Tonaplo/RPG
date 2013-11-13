@@ -36,213 +36,75 @@ namespace RPG.Function
         /// </summary>
         public static void ItemGenerationInitialization()
         {
-            #region Sword names
-            swordNames.Add("Short Sword");
-            swordNames.Add("Scimitar");
-            swordNames.Add("Sabre");
-            swordNames.Add("Falchion");
-            swordNames.Add("Crystal Sword");
-            swordNames.Add("Broad Sword");
-            swordNames.Add("Long Sword");
-            swordNames.Add("War Sword");
-            swordNames.Add("Two-handed Sword");
-            swordNames.Add("Claymore");
-            swordNames.Add("Giant Sword");
-            swordNames.Add("Bastard Sword");
-            swordNames.Add("Flamberge");
-            #endregion
+            string data = Properties.Resources.SwordNames;
+            swordNames = new List<string>(data.Split(','));
 
-            #region Axe names
-            axeNames.Add("Hand Axe");
-            axeNames.Add("Axe");
-            axeNames.Add("Double Axe");
-            axeNames.Add("Military Pick");
-            axeNames.Add("War Axe");
-            axeNames.Add("Large Axe");
-            axeNames.Add("Broad Axe");
-            axeNames.Add("Battle Axe");
-            axeNames.Add("Great Axe");
-            axeNames.Add("Giant Axe");
-            #endregion
+            data = Properties.Resources.AxesNames;
+            axeNames = new List<string>(data.Split(','));
 
-            #region Mace names
-            maceNames.Add("Club");
-            maceNames.Add("Spiked Club");
-            maceNames.Add("Mace");
-            maceNames.Add("Morning Star");
-            maceNames.Add("Flail");
-            maceNames.Add("War Hammer");
-            maceNames.Add("Maul");
-            maceNames.Add("Truncheon");
-            maceNames.Add("Tyrant Club");
-            maceNames.Add("Reinforced Mace");
-            maceNames.Add("Devil Star");
-            maceNames.Add("Scourge");
-            maceNames.Add("Legendary Mallet");
-            maceNames.Add("Ogre Maul");
-            maceNames.Add("Thunder Maul");
+            data = Properties.Resources.MaxeNames;
+            maceNames = new List<string>(data.Split(','));
 
-            #endregion
+            data = Properties.Resources.StaffNames;
+            staffNames = new List<string>(data.Split(','));
 
-            #region Staff names
-            staffNames.Add("Walking Stick");
-            staffNames.Add("Stalagmite");
-            staffNames.Add("Elder Staff");
-            staffNames.Add("Shillelagh");
-            staffNames.Add("Archon Staff");
-            staffNames.Add("Jo Staff");
-            staffNames.Add("Quarterstaff");
-            staffNames.Add("Cedar Staff");
-            staffNames.Add("Gothic Staff");
-            staffNames.Add("Rune Staff");
-            staffNames.Add("Short Staff");
-            staffNames.Add("Long Staff");
-            staffNames.Add("Gnarled Staff");
-            staffNames.Add("Battle Staff");
-            staffNames.Add("War Staff");
-            #endregion
+            data = Properties.Resources.BowNames;
+            bowNames = new List<string>(data.Split(','));
 
-            #region Bow names
-            bowNames.Add("Spider Bow");
-            bowNames.Add("Blade Bow");
-            bowNames.Add("Shadow Bow");
-            bowNames.Add("Great Bow");
-            bowNames.Add("Diamond Bow");
-            bowNames.Add("Crusader Bow");
-            bowNames.Add("Ward Bow");
-            bowNames.Add("Hydra Bow");
-            bowNames.Add("Short Bow");
-            bowNames.Add("Hunter's Bow");
-            bowNames.Add("Long Bow");
-            bowNames.Add("Composite Bow");
-            bowNames.Add("Short Battle Bow");
-            bowNames.Add("Long Battle Bow");
-            bowNames.Add("Short War Bow");
-            bowNames.Add("Long War Bow");
-            #endregion
+            data = Properties.Resources.DaggerNames;
+            daggerNames = new List<string>(data.Split(','));
 
-            #region Dagger names
-            daggerNames.Add("Bone Knife");
-            daggerNames.Add("Mithril Point");
-            daggerNames.Add("Fanged Knife");
-            daggerNames.Add("Legend Spike");
-            daggerNames.Add("Poignard");
-            daggerNames.Add("Rondel");
-            daggerNames.Add("CinquedeaS");
-            daggerNames.Add("Stiletto");
-            daggerNames.Add("Dagger");
-            daggerNames.Add("Dirk");
-            daggerNames.Add("Kris");
-            daggerNames.Add("Blade");
-            #endregion
+            data = Properties.Resources.LegArmorNames;
+            legArmorNames = new List<string>(data.Split(','));
 
-            #region Leg names
-            legArmorNames.Add("Cloth Pants");
-            legArmorNames.Add("Leather Pants");
-            legArmorNames.Add("Hide Breeches");
-            legArmorNames.Add("Chain Leggings");
-            legArmorNames.Add("Faulds");
-            legArmorNames.Add("Plate Leggings");
-            legArmorNames.Add("Legwraps");
-            legArmorNames.Add("Etched Pants");
-            legArmorNames.Add("Chausses");
-            legArmorNames.Add("Tassets");
-            legArmorNames.Add("Boneweave Faulds");
-            legArmorNames.Add("Leg Guards");
-            legArmorNames.Add("Poleyns");
-            legArmorNames.Add("Warlord Leg Plates");
-            legArmorNames.Add("Schynbalds");
-            legArmorNames.Add("Sovereign Tassets");
-            legArmorNames.Add("Archon Faulds");
-            #endregion 
+            data = Properties.Resources.ChestArmorNames;
+            chestArmorNames = new List<string>(data.Split(','));
 
-            #region Chestarmor names
-            chestArmorNames.Add("Dusk Shroud");
-            chestArmorNames.Add("Wyrmhide");
-            chestArmorNames.Add("Scarab Husk");
-            chestArmorNames.Add("Wire Fleece");
-            chestArmorNames.Add("Diamond Mail");
-            chestArmorNames.Add("Loricated Mail");
-            chestArmorNames.Add("Great Hauberk");
-            chestArmorNames.Add("Boneweave");
-            chestArmorNames.Add("Balrog Skin");
-            chestArmorNames.Add("Archon Plate");
-            chestArmorNames.Add("Kraken Shell");
-            chestArmorNames.Add("Hellforge Plate");
-            chestArmorNames.Add("Lacquered Plate");
-            chestArmorNames.Add("Shadow Plate");
-            chestArmorNames.Add("Sacred Armor");
-            chestArmorNames.Add("Ghost Armor");
-            chestArmorNames.Add("Serpentskin Armor");
-            chestArmorNames.Add("Demonhide Armor");
-            chestArmorNames.Add("Trellised Armor");
-            chestArmorNames.Add("Linked Mail");
-            chestArmorNames.Add("Tigulated Mail");
-            chestArmorNames.Add("Cuirass");
-            chestArmorNames.Add("Mesh Armor");
-            chestArmorNames.Add("Russet Armor");
-            chestArmorNames.Add("Mage Plate");
-            chestArmorNames.Add("Sharktooth Armor");
-            chestArmorNames.Add("Templar Coat");
-            chestArmorNames.Add("Embossed Plate");
-            chestArmorNames.Add("Chaos Armor");
-            chestArmorNames.Add("Ornate Plate");
-            chestArmorNames.Add("Quilted Armor");
-            chestArmorNames.Add("Leather Armor");
-            chestArmorNames.Add("Hard Leather Armor");
-            chestArmorNames.Add("Studded Leather");
-            chestArmorNames.Add("Ring Mail");
-            chestArmorNames.Add("Scale Mail");
-            chestArmorNames.Add("Breast Plate");
-            chestArmorNames.Add("Chain Mail");
-            chestArmorNames.Add("Splint Mail");
-            chestArmorNames.Add("Light Plate");
-            chestArmorNames.Add("Field Plate");
-            chestArmorNames.Add("Plate Mail");
-            chestArmorNames.Add("Gothic Plate");
-            chestArmorNames.Add("Full Plate Mail");
-            chestArmorNames.Add("Ancient Armor");
-            #endregion
-
-            #region Helm names
-            helmArmorNames.Add("Shako");
-            helmArmorNames.Add("Hydraskull");
-            helmArmorNames.Add("Armet");
-            helmArmorNames.Add("Giant Conch");
-            helmArmorNames.Add("Spired Helm");
-            helmArmorNames.Add("Demonhead");
-            helmArmorNames.Add("Corona");
-            helmArmorNames.Add("Bone Visage");
-            helmArmorNames.Add("War Hat");
-            helmArmorNames.Add("Sallet");
-            helmArmorNames.Add("Casque");
-            helmArmorNames.Add("Basinet");
-            helmArmorNames.Add("Winged Helm");
-            helmArmorNames.Add("Death Mask");
-            helmArmorNames.Add("Grand Crown");
-            helmArmorNames.Add("Grim Helm");
-            helmArmorNames.Add("Cap");
-            helmArmorNames.Add("Skull Cap");
-            helmArmorNames.Add("Helm");
-            helmArmorNames.Add("Full Helm");
-            helmArmorNames.Add("Great Helm");
-            helmArmorNames.Add("Mask");
-            helmArmorNames.Add("Crown");
-            helmArmorNames.Add("Bone Helm");
-            #endregion
+            data = Properties.Resources.HeadArmorNames;
+            helmArmorNames = new List<string>(data.Split(','));
             
-            string data = Properties.Resources.Prefixes;
+            data = Properties.Resources.Prefixes;
             itemPrefixes = new List<string>(data.Split(','));
 
             data = Properties.Resources.Suffixes;
             itemSuffixes = new List<string>(data.Split(','));
 
-            Console.WriteLine(Environment.NewLine + "Checking Prefixes:" +Environment.NewLine);
+            #region Check for double occurences in all name lists
+            Console.WriteLine("Checking Prefixes:" +Environment.NewLine);
             CheckListForRepeats(itemPrefixes);
 
-            Console.WriteLine(Environment.NewLine + "Checking Suffixes:" + Environment.NewLine);
+            Console.WriteLine("Checking Suffixes:" + Environment.NewLine);
             CheckListForRepeats(itemSuffixes);
-            
+
+            Console.WriteLine("Checking Axes:" + Environment.NewLine);
+            CheckListForRepeats(axeNames);
+
+            Console.WriteLine("Checking Swords:" + Environment.NewLine);
+            CheckListForRepeats(swordNames);
+
+            Console.WriteLine("Checking Maces:" + Environment.NewLine);
+            CheckListForRepeats(maceNames);
+
+            Console.WriteLine("Checking Staffs:" + Environment.NewLine);
+            CheckListForRepeats(staffNames);
+
+            Console.WriteLine("Checking Bows:" + Environment.NewLine);
+            CheckListForRepeats(bowNames);
+
+            Console.WriteLine("Checking Daggers:" + Environment.NewLine);
+            CheckListForRepeats(daggerNames);
+
+            Console.WriteLine("Checking LegArmor:" + Environment.NewLine);
+            CheckListForRepeats(legArmorNames);
+
+            Console.WriteLine("Checking ChestArmor:" + Environment.NewLine);
+            CheckListForRepeats(chestArmorNames);
+
+            Console.WriteLine("Checking HeadArmor:" + Environment.NewLine);
+            CheckListForRepeats(legArmorNames);
+            #endregion
+
+
         }
 
         #region Epochal Item Functions
@@ -335,24 +197,28 @@ namespace RPG.Function
             Item returnedItem = new Item();
             int increasedStat = _npclevel + 2;
 
-            switch (r.Next(0,6))
+            switch (r.Next(0,9))
             {
                 case 0:
-                    returnedItem = new Weapon("Thief-s Tool", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, Core.Items.EnumWeaponType.Dagger, increasedStat);
+                    returnedItem = new Weapon("Thief's Tool", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, Core.Items.EnumWeaponType.Dagger, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Health, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Agility, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Crit, increasedStat);
                     returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
                     break;
                 case 1:
                     returnedItem = new Weapon("The Crusher", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, Core.Items.EnumWeaponType.Mace, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Health, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Strength, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Agility, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Crit, increasedStat);
                     returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
                     break;
                 case 2:
                     returnedItem = new Weapon("The Flutterer", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, Core.Items.EnumWeaponType.Sword, increasedStat);
-                    returnedItem.AddAttributeToItem(EnumAttributeType.Health, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Strength, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Intellect, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Health, increasedStat);
                     returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
                     break;
                 case 3:
@@ -364,7 +230,7 @@ namespace RPG.Function
                     break;
                 case 4:
                     returnedItem = new Armor("Quickleaps", EnumItemType.Armor, EnumItemQuality.Epochal, _npclevel, EnumArmorType.Legarmor, increasedStat);
-                    returnedItem.AddAttributeToItem(EnumAttributeType.Crit, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Speed, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Health, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Agility, increasedStat);
                     returnedItem = (Armor)ItemGeneration.RandomizeEpochalItem(returnedItem);
@@ -375,6 +241,27 @@ namespace RPG.Function
                     returnedItem.AddAttributeToItem(EnumAttributeType.Health, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Strength, increasedStat);
                     returnedItem = (Armor)ItemGeneration.RandomizeEpochalItem(returnedItem);
+                    break;
+                case 6:
+                    returnedItem = new Weapon("Quickdraw", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, Core.Items.EnumWeaponType.Dagger, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Agility, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Intellect, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Speed, increasedStat);
+                    returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
+                    break;
+                case 7:
+                    returnedItem = new Weapon("Glimpse of Speed", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, Core.Items.EnumWeaponType.Axe, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Health, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Speed, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Strength, increasedStat);
+                    returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
+                    break;
+                case 8:
+                    returnedItem = new Weapon("Mind Loop", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, Core.Items.EnumWeaponType.Staff, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Health, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Speed, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Intellect, increasedStat);
+                    returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
                     break;
                 default:
                     break;
@@ -388,18 +275,18 @@ namespace RPG.Function
             Item returnedItem = new Item();
             int increasedStat = _npclevel + 2;
 
-            switch (r.Next(0, 7))
+            switch (r.Next(0, 10))
             {
                 case 0:
                     returnedItem = new Weapon("Battlemage's Ward", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, EnumWeaponType.Staff, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Health, increasedStat);
-                    returnedItem.AddAttributeToItem(EnumAttributeType.Strength, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Armor, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Intellect, increasedStat);
                     returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
                     break;
                 case 1:
                     returnedItem = new Weapon("Defiance", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, EnumWeaponType.Axe, increasedStat);
-                    returnedItem.AddAttributeToItem(EnumAttributeType.Intellect, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Agility, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Strength, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Armor, increasedStat);
                     returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
@@ -439,6 +326,28 @@ namespace RPG.Function
                     returnedItem.AddAttributeToItem(EnumAttributeType.Health, increasedStat);
                     returnedItem = (BattleCharm)ItemGeneration.RandomizeEpochalItem(returnedItem);
                     break;
+                case 7:
+                    returnedItem = new Weapon("Flash of Light", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, EnumWeaponType.Sword, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Health, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Strength, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Intellect, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Speed, increasedStat);
+                    returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
+                    break;
+                case 8:
+                    returnedItem = new Weapon("Legbone of an Ogre", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, EnumWeaponType.Mace, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Health, (int)(increasedStat*0.7));
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Strength, (int)(increasedStat*1.2));
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Crit, increasedStat);
+                    returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
+                    break;
+                case 9:
+                    returnedItem = new Weapon("Swiftblade", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, EnumWeaponType.Dagger, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Health, (int)(increasedStat * 0.9));
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Agility, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Speed, (int)(increasedStat * 1.3));
+                    returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
+                    break;
                 default:
                     break;
             }
@@ -450,7 +359,7 @@ namespace RPG.Function
             Item returnedItem = new Item();
             int increasedStat = _npclevel + 2;
 
-            switch (r.Next(0, 6))
+            switch (r.Next(0, 9))
             {
                 case 0:
                     returnedItem = new Weapon("Faith Blade", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, EnumWeaponType.Sword, increasedStat);
@@ -467,7 +376,7 @@ namespace RPG.Function
                     returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
                     break;
                 case 2:
-                    returnedItem = new Weapon("Leaf of the Forrest", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, Core.Items.EnumWeaponType.Dagger, increasedStat);
+                    returnedItem = new Weapon("Leaf of the Forest", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, EnumWeaponType.Dagger, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Agility, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Intellect, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Crit, increasedStat);
@@ -488,11 +397,32 @@ namespace RPG.Function
                     returnedItem = (Armor)ItemGeneration.RandomizeEpochalItem(returnedItem);
                     break;
                 case 5:
-                    returnedItem = new Armor("Harmony of Lightweave", EnumItemType.Armor, EnumItemQuality.Epochal, _npclevel, EnumArmorType.Chestarmor, increasedStat);
+                    returnedItem = new Armor("Robes of Hope", EnumItemType.Armor, EnumItemQuality.Epochal, _npclevel, EnumArmorType.Chestarmor, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Intellect, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Health, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Crit, increasedStat);
                     returnedItem = (Armor)ItemGeneration.RandomizeEpochalItem(returnedItem);
+                    break;
+                case 6:
+                    returnedItem = new Weapon("The Divider", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, EnumWeaponType.Axe, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Strength, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Speed, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Crit, increasedStat);
+                    returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
+                    break;
+                case 7:
+                    returnedItem = new Weapon("Simplicity", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, EnumWeaponType.Staff, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Health, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Intellect, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Crit, increasedStat);
+                    returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
+                    break;
+                case 8:
+                    returnedItem = new Weapon("Silken String", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, Core.Items.EnumWeaponType.Bow, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Agility, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Speed, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Crit, increasedStat);
+                    returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
                     break;
                 default:
                     break;
@@ -505,7 +435,7 @@ namespace RPG.Function
             Item returnedItem = new Item();
             int increasedStat = _npclevel + 2;
 
-            switch (r.Next(0, 7))
+            switch (r.Next(0, 10))
             {
                 case 0:
                     returnedItem = new Weapon("Branch of Yggdrasil", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, EnumWeaponType.Staff, increasedStat);
@@ -522,7 +452,7 @@ namespace RPG.Function
                     returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
                     break;
                 case 2:
-                    returnedItem = new Weapon("Hawks' Aim", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, Core.Items.EnumWeaponType.Bow, increasedStat);
+                    returnedItem = new Weapon("Hawks' Aim", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, EnumWeaponType.Bow, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Agility, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Intellect, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Crit, increasedStat);
@@ -531,6 +461,7 @@ namespace RPG.Function
                 case 3:
                     returnedItem = new Armor("Hood of Power", EnumItemType.Armor, EnumItemQuality.Epochal, _npclevel, EnumArmorType.Headarmor, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Crit, (int)(increasedStat * 1.1));
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Speed, (int)(increasedStat * 1.1));
                     returnedItem.AddAttributeToItem(EnumAttributeType.Agility, (int)(increasedStat*1.1));
                     returnedItem = (Armor)ItemGeneration.RandomizeEpochalItem(returnedItem);
                     break;
@@ -554,6 +485,29 @@ namespace RPG.Function
                     returnedItem.AddAttributeToItem(EnumAttributeType.Health, increasedStat);
                     returnedItem = (BattleCharm)ItemGeneration.RandomizeEpochalItem(returnedItem);
                     break;
+                case 7:
+                    returnedItem = new Weapon("The Impaler", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, EnumWeaponType.Sword, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Strength, (int)(increasedStat*1.3));
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Crit, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Agility, (int)(increasedStat*0.3));
+                    returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
+                    break;
+                case 8:
+                    returnedItem = new Weapon("Frosttorch", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, EnumWeaponType.Mace, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Health, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Strength, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Intellect, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Speed, increasedStat);
+                    returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
+                    break;
+                case 9:
+                    returnedItem = new Weapon("Sabretooth", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, EnumWeaponType.Dagger, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Health, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Speed, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Agility, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Crit, increasedStat);
+                    returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
+                    break;
                 default:
                     break;
             }
@@ -565,14 +519,14 @@ namespace RPG.Function
             Item returnedItem = new Item();
             int increasedStat = _npclevel + 2;
 
-            switch (r.Next(0, 6))
+            switch (r.Next(0, 9))
             {
                 case 0:
                     returnedItem = new Weapon("Eiwars Blade", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, EnumWeaponType.Sword, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Health, increasedStat);
-                    returnedItem.AddAttributeToItem(EnumAttributeType.Strength, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Agility, increasedStat);
-                    returnedItem.AddAttributeToItem(EnumAttributeType.Armor, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Intellect, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Speed, increasedStat);
                     returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
                     break;
                 case 1:
@@ -609,6 +563,27 @@ namespace RPG.Function
                     returnedItem.AddAttributeToItem(EnumAttributeType.Strength, increasedStat);
                     returnedItem = (Armor)ItemGeneration.RandomizeEpochalItem(returnedItem);
                     break;
+                case 6:
+                    returnedItem = new Weapon("Decapitation", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, Core.Items.EnumWeaponType.Axe, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Strength, (int)(increasedStat*1.1));
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Health, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Crit, (int)(increasedStat*1.3));
+                    returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
+                    break;
+                case 7:
+                    returnedItem = new Weapon("Multistrike", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, Core.Items.EnumWeaponType.Bow, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Intellect, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Health, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Speed, (int)(increasedStat*1.5));
+                    returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
+                    break;
+                case 8:
+                    returnedItem = new Weapon("The Pyre", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, Core.Items.EnumWeaponType.Staff, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Strength, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Health, (int)(increasedStat * 1.5));
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Intellect, increasedStat);
+                    returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
+                    break;
                 default:
                     break;
             }
@@ -620,7 +595,7 @@ namespace RPG.Function
             Item returnedItem = new Item();
             int increasedStat = _npclevel + 2;
 
-            switch (r.Next(0, 7))
+            switch (r.Next(0, 10))
             {
                 case 0:
                     returnedItem = new Weapon("The Occulus", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, EnumWeaponType.Staff, increasedStat);
@@ -630,7 +605,7 @@ namespace RPG.Function
                     returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
                     break;
                 case 1:
-                    returnedItem = new Weapon("The Divider", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, EnumWeaponType.Axe, increasedStat);
+                    returnedItem = new Weapon("The End", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, EnumWeaponType.Axe, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Crit, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Strength, (int)(increasedStat*1.4));
                     returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
@@ -669,6 +644,29 @@ namespace RPG.Function
                     returnedItem.AddAttributeToItem(EnumAttributeType.Strength, increasedStat);
                     returnedItem.AddAttributeToItem(EnumAttributeType.Attackdamage, increasedStat);
                     returnedItem = (BattleCharm)ItemGeneration.RandomizeEpochalItem(returnedItem);
+                    break;
+                case 7:
+                    returnedItem = new Weapon("Justice", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, EnumWeaponType.Sword, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Health, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Intellect, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Strength, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Speed, increasedStat);
+                    returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
+                    break;
+                case 8:
+                    returnedItem = new Weapon("The Destroyer", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, EnumWeaponType.Mace, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Health, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Strength, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Agility, increasedStat);
+                    returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
+                    break;
+                case 9:
+                    returnedItem = new Weapon("Throatslitter", EnumItemType.Weapon, EnumItemQuality.Epochal, _npclevel, EnumWeaponType.Dagger, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Health, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Agility, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Intellect, increasedStat);
+                    returnedItem.AddAttributeToItem(EnumAttributeType.Crit, increasedStat);
+                    returnedItem = (Weapon)ItemGeneration.RandomizeEpochalItem(returnedItem);
                     break;
                 default:
                     break;

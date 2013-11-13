@@ -33,8 +33,10 @@ namespace RPG
 
             if (player.PrefChar == null)
                 player.PrefChar = "None";
-
-            player.CurrentQuest.UpdateQuest(player, 1,null , 0, 0, 1.0, EnumCharClass.Caretaker);
+            if (player.CurrentQuest != null)
+            {
+                player.CurrentQuest.UpdateQuest(player, 1, null, 0, 0, 1.0, EnumCharClass.Caretaker);
+            }
 
             playerlist = _playerlist;
             this.BackgroundImage = GeneralFunctions.ResizeImage(Properties.Resources.background, labelBackgroundIGNORE.Size);
@@ -151,7 +153,6 @@ namespace RPG
                 c.Owner = player.UserName;
                 player.AddCharacter(c);
                 this.flpCharacters.Controls.Add(new ucCharacterInterface(form.ReturnCharacter(), true));
-                ServerManagement.Saveplayers("players.xml", playerlist, player);
             }
         }
 
@@ -184,7 +185,6 @@ namespace RPG
                     {
                         UpdateChars();
                         UpdateInventoryVisual();
-                        ServerManagement.Saveplayers("players.xml", playerlist, player);
                     }
 
                 }
@@ -354,7 +354,6 @@ namespace RPG
                             UpdateChars();
 
                             UpdateInventoryVisual();
-                            ServerManagement.Saveplayers("players.xml", playerlist, player);
                         }
                         else
                         {
@@ -442,7 +441,6 @@ namespace RPG
 
             UpdateInventoryVisual();
             listBoxInventory.SelectedIndex = listBoxInventory.Items.Count - 1;
-            ServerManagement.Saveplayers("players.xml", playerlist, player);
         }
 
         private void listBoxInventory_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -459,7 +457,6 @@ namespace RPG
                 RandomizeStatForm rsform = new RandomizeStatForm(this.player);
                 rsform.ShowDialog();
                 UpdateChars();
-                ServerManagement.Saveplayers("players.xml", playerlist, player);
             }
             else 
             {
@@ -539,7 +536,6 @@ namespace RPG
                     player.ControlledCharacters.Remove(del.ChooseChar());
 
                     UpdateChars();
-                    ServerManagement.Saveplayers("players.xml", playerlist, player);
                 }
             }
             else

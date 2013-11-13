@@ -42,6 +42,8 @@
             this.labelAbilityDescription = new System.Windows.Forms.Label();
             this.flpHealthBar = new System.Windows.Forms.FlowLayoutPanel();
             this.labelHealthRemaining = new System.Windows.Forms.Label();
+            this.lbBuffs = new System.Windows.Forms.Label();
+            this.flpBuffsAndDebuffs = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChar)).BeginInit();
             this.groupBoxTargets.SuspendLayout();
             this.flpHealthBar.SuspendLayout();
@@ -64,7 +66,7 @@
             this.comboBoxAbilities.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxAbilities.ForeColor = System.Drawing.Color.DarkRed;
             this.comboBoxAbilities.FormattingEnabled = true;
-            this.comboBoxAbilities.Location = new System.Drawing.Point(204, 56);
+            this.comboBoxAbilities.Location = new System.Drawing.Point(249, 57);
             this.comboBoxAbilities.Name = "comboBoxAbilities";
             this.comboBoxAbilities.Size = new System.Drawing.Size(124, 23);
             this.comboBoxAbilities.TabIndex = 6;
@@ -76,7 +78,7 @@
             this.lbTurnpoints.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbTurnpoints.Font = new System.Drawing.Font("Pericles", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTurnpoints.ForeColor = System.Drawing.Color.Yellow;
-            this.lbTurnpoints.Location = new System.Drawing.Point(203, 34);
+            this.lbTurnpoints.Location = new System.Drawing.Point(248, 35);
             this.lbTurnpoints.Name = "lbTurnpoints";
             this.lbTurnpoints.Size = new System.Drawing.Size(124, 19);
             this.lbTurnpoints.TabIndex = 8;
@@ -171,7 +173,7 @@
             this.groupBoxTargets.Controls.Add(this.checkBoxPlayer2);
             this.groupBoxTargets.Controls.Add(this.checkBoxPlayer4);
             this.groupBoxTargets.Controls.Add(this.checkBoxPlayer3);
-            this.groupBoxTargets.Location = new System.Drawing.Point(204, 75);
+            this.groupBoxTargets.Location = new System.Drawing.Point(249, 76);
             this.groupBoxTargets.Name = "groupBoxTargets";
             this.groupBoxTargets.Size = new System.Drawing.Size(123, 77);
             this.groupBoxTargets.TabIndex = 15;
@@ -187,7 +189,7 @@
             this.btAttack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAttack.Font = new System.Drawing.Font("Pericles", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAttack.ForeColor = System.Drawing.Color.Yellow;
-            this.btAttack.Location = new System.Drawing.Point(203, 2);
+            this.btAttack.Location = new System.Drawing.Point(248, 3);
             this.btAttack.Name = "btAttack";
             this.btAttack.Size = new System.Drawing.Size(123, 22);
             this.btAttack.TabIndex = 16;
@@ -201,9 +203,9 @@
             this.labelAbilityDescription.BackColor = System.Drawing.Color.Transparent;
             this.labelAbilityDescription.Font = new System.Drawing.Font("Pericles", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAbilityDescription.ForeColor = System.Drawing.Color.Yellow;
-            this.labelAbilityDescription.Location = new System.Drawing.Point(332, 0);
+            this.labelAbilityDescription.Location = new System.Drawing.Point(377, 0);
             this.labelAbilityDescription.Name = "labelAbilityDescription";
-            this.labelAbilityDescription.Size = new System.Drawing.Size(109, 155);
+            this.labelAbilityDescription.Size = new System.Drawing.Size(120, 155);
             this.labelAbilityDescription.TabIndex = 17;
             this.labelAbilityDescription.Text = "label1";
             this.labelAbilityDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -233,11 +235,37 @@
             this.labelHealthRemaining.TabIndex = 0;
             this.labelHealthRemaining.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lbBuffs
+            // 
+            this.lbBuffs.BackColor = System.Drawing.Color.Transparent;
+            this.lbBuffs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbBuffs.Font = new System.Drawing.Font("Pericles", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBuffs.ForeColor = System.Drawing.Color.Yellow;
+            this.lbBuffs.Location = new System.Drawing.Point(201, 0);
+            this.lbBuffs.Name = "lbBuffs";
+            this.lbBuffs.Size = new System.Drawing.Size(41, 25);
+            this.lbBuffs.TabIndex = 19;
+            this.lbBuffs.Text = "Buffs:";
+            this.lbBuffs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // flpBuffsAndDebuffs
+            // 
+            this.flpBuffsAndDebuffs.AllowDrop = true;
+            this.flpBuffsAndDebuffs.AutoScroll = true;
+            this.flpBuffsAndDebuffs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flpBuffsAndDebuffs.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpBuffsAndDebuffs.Location = new System.Drawing.Point(201, 28);
+            this.flpBuffsAndDebuffs.Name = "flpBuffsAndDebuffs";
+            this.flpBuffsAndDebuffs.Size = new System.Drawing.Size(41, 124);
+            this.flpBuffsAndDebuffs.TabIndex = 20;
+            // 
             // ucCharacterBattle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Controls.Add(this.flpBuffsAndDebuffs);
+            this.Controls.Add(this.lbBuffs);
             this.Controls.Add(this.comboBoxAbilities);
             this.Controls.Add(this.flpHealthBar);
             this.Controls.Add(this.labelAbilityDescription);
@@ -248,7 +276,7 @@
             this.Controls.Add(this.pictureBoxChar);
             this.Font = new System.Drawing.Font("Pericles", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ucCharacterBattle";
-            this.Size = new System.Drawing.Size(444, 155);
+            this.Size = new System.Drawing.Size(500, 155);
             this.Load += new System.EventHandler(this.ucCharacterBattle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChar)).EndInit();
             this.groupBoxTargets.ResumeLayout(false);
@@ -274,6 +302,8 @@
         private System.Windows.Forms.Label labelAbilityDescription;
         private System.Windows.Forms.FlowLayoutPanel flpHealthBar;
         private System.Windows.Forms.Label labelHealthRemaining;
+        private System.Windows.Forms.Label lbBuffs;
+        private System.Windows.Forms.FlowLayoutPanel flpBuffsAndDebuffs;
 
     }
 }

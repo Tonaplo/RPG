@@ -181,6 +181,15 @@ namespace RPG.UI.UserControls
             lbTurnpoints.Text = character.CurrentTurnPoints.IntValue.ToString() + " Turnpoints left";
 
             lbCharStats.Text = Function.GeneralFunctions.ReturnCharBattleString(this.character);
+
+            if (flpBuffsAndDebuffs.Controls.Count != character.UnitBuffsAndDebuffs.Count)
+            {
+                flpBuffsAndDebuffs.Controls.Clear();
+                foreach (var item in character.UnitBuffsAndDebuffs)
+                {
+                    flpBuffsAndDebuffs.Controls.Add(new ucAbilityIcon(item));
+                }
+            }
         }
 
         #endregion

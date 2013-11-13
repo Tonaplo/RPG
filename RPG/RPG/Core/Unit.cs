@@ -23,6 +23,7 @@ namespace RPG.Core
         //DoTs/HoTs and Debuffs are defined in the unit class.
         List<Abilities.ActiveAbility> unitActiveAbilities;
         List<Abilities.ActiveAbility> unitPassiveAbilities;
+        List<Abilities.BuffsAndDebuffs> unitBuffsAndDebuffs;
         // TODO: Need to add passives and DHoTs
         // The Inventory and Gear of the Character.
 
@@ -112,6 +113,12 @@ namespace RPG.Core
         {
             get { return unitActiveAbilities; }
             set { unitActiveAbilities = value; }
+        }
+
+        public List<Abilities.BuffsAndDebuffs> UnitBuffsAndDebuffs
+        {
+            get { return unitBuffsAndDebuffs; }
+            set { unitBuffsAndDebuffs = value; }
         }
 
         #endregion

@@ -41,14 +41,14 @@
             this.richTextBoxActionbox.BackColor = System.Drawing.SystemColors.InfoText;
             this.richTextBoxActionbox.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxActionbox.ForeColor = System.Drawing.SystemColors.Window;
-            this.richTextBoxActionbox.Location = new System.Drawing.Point(516, 202);
+            this.richTextBoxActionbox.Location = new System.Drawing.Point(531, 202);
             this.richTextBoxActionbox.Name = "richTextBoxActionbox";
             this.richTextBoxActionbox.ReadOnly = true;
             this.richTextBoxActionbox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.richTextBoxActionbox.Size = new System.Drawing.Size(404, 425);
             this.richTextBoxActionbox.TabIndex = 26;
-            this.richTextBoxActionbox.Text = "Welcome to a Battle!\n\nUse your abilities untill you are until of Turnpoints. Then" +
-    " end the turn for the NPC to Retaliate.\n";
+            this.richTextBoxActionbox.Text = "Welcome to a Battle!\n\nUse your abilities untill you are out of Turnpoints. Then e" +
+    "nd the turn for the NPC to Retaliate - and for you to regain turnpoints!\n";
             this.richTextBoxActionbox.TextChanged += new System.EventHandler(this.richTextBoxActionbox_TextChanged);
             // 
             // textBoxChat
@@ -57,7 +57,7 @@
             this.textBoxChat.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textBoxChat.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxChat.ForeColor = System.Drawing.Color.DarkRed;
-            this.textBoxChat.Location = new System.Drawing.Point(516, 633);
+            this.textBoxChat.Location = new System.Drawing.Point(531, 633);
             this.textBoxChat.MaxLength = 300;
             this.textBoxChat.Name = "textBoxChat";
             this.textBoxChat.ShortcutsEnabled = false;
@@ -74,7 +74,7 @@
             this.bnTurnDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bnTurnDone.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnTurnDone.ForeColor = System.Drawing.Color.Yellow;
-            this.bnTurnDone.Location = new System.Drawing.Point(515, 12);
+            this.bnTurnDone.Location = new System.Drawing.Point(530, 12);
             this.bnTurnDone.Name = "bnTurnDone";
             this.bnTurnDone.Size = new System.Drawing.Size(405, 44);
             this.bnTurnDone.TabIndex = 24;
@@ -87,13 +87,13 @@
             this.flpCharacters.BackColor = System.Drawing.Color.Transparent;
             this.flpCharacters.Location = new System.Drawing.Point(12, 12);
             this.flpCharacters.Name = "flpCharacters";
-            this.flpCharacters.Size = new System.Drawing.Size(444, 643);
+            this.flpCharacters.Size = new System.Drawing.Size(512, 643);
             this.flpCharacters.TabIndex = 22;
             // 
             // flpNPCs
             // 
             this.flpNPCs.BackColor = System.Drawing.Color.Transparent;
-            this.flpNPCs.Location = new System.Drawing.Point(516, 65);
+            this.flpNPCs.Location = new System.Drawing.Point(531, 65);
             this.flpNPCs.Name = "flpNPCs";
             this.flpNPCs.Size = new System.Drawing.Size(404, 131);
             this.flpNPCs.TabIndex = 23;
@@ -106,7 +106,7 @@
             this.labelBackgroundIGNORE.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelBackgroundIGNORE.Location = new System.Drawing.Point(0, 0);
             this.labelBackgroundIGNORE.Name = "labelBackgroundIGNORE";
-            this.labelBackgroundIGNORE.Size = new System.Drawing.Size(931, 670);
+            this.labelBackgroundIGNORE.Size = new System.Drawing.Size(947, 670);
             this.labelBackgroundIGNORE.TabIndex = 27;
             // 
             // BattleForm
@@ -114,7 +114,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(931, 670);
+            this.ClientSize = new System.Drawing.Size(947, 670);
             this.Controls.Add(this.richTextBoxActionbox);
             this.Controls.Add(this.textBoxChat);
             this.Controls.Add(this.bnTurnDone);

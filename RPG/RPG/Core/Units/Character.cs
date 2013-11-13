@@ -219,6 +219,8 @@ namespace RPG.Core.Units
                 this.charGear = _gear;
             this.baseTurnPoints.IntValue = (this.UnitLevel / 10) + 1;
             this.currentTurnPoints = this.baseTurnPoints;
+
+            this.UnitBuffsAndDebuffs = new List<Abilities.BuffsAndDebuffs>();
         }
 
         /// <summary>
@@ -279,8 +281,8 @@ namespace RPG.Core.Units
                     RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Battle Regeneration!");
                     mes.ShowDialog();
                 }
-                this.AddActiveAbility(new Abilities.MeleeAttack(null, null, null, Core.EnumAbilityClassReq.ANY));
-                this.AddPassiveAbility(new Abilities.MeleeAttack(null, null, null, Core.EnumAbilityClassReq.ANY));
+                this.AddActiveAbility(new Abilities.MeleeAttack(this, null, null, null, Core.EnumAbilityClassReq.ANY));
+                this.AddPassiveAbility(new Abilities.MeleeAttack(this,null, null, null, Core.EnumAbilityClassReq.ANY));
             }
             if (this.UnitLevel == 5)
             {
@@ -289,8 +291,8 @@ namespace RPG.Core.Units
                     RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Battle Regeneration!");
                     mes.ShowDialog();
                 }
-                this.AddActiveAbility(new Abilities.BattleRegeneration(null, null, null, Core.EnumAbilityClassReq.ANY));
-                this.AddPassiveAbility(new Abilities.BattleRegeneration(null, null, null, Core.EnumAbilityClassReq.ANY));
+                this.AddActiveAbility(new Abilities.BattleRegeneration(this, null, null, null, Core.EnumAbilityClassReq.ANY));
+                this.AddPassiveAbility(new Abilities.BattleRegeneration(this, null, null, null, Core.EnumAbilityClassReq.ANY));
             }
             if (this.UnitLevel == 10)
             {
@@ -299,8 +301,8 @@ namespace RPG.Core.Units
                     RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Empowerment!");
                     mes.ShowDialog();
                 }
-                this.AddActiveAbility(new Abilities.Empowerment(null, null, null, EnumAbilityClassReq.ANY));
-                this.AddPassiveAbility(new Abilities.Empowerment(null, null, null, EnumAbilityClassReq.ANY));
+                this.AddActiveAbility(new Abilities.Empowerment(this, null, null, null, EnumAbilityClassReq.ANY));
+                this.AddPassiveAbility(new Abilities.Empowerment(this, null, null, null, EnumAbilityClassReq.ANY));
             }
             if (this.UnitLevel == 20)
             {
@@ -309,8 +311,8 @@ namespace RPG.Core.Units
                     RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Invigorate!");
                     mes.ShowDialog();
                 }
-                this.AddActiveAbility(new Abilities.Invigorate(null, null, null, EnumAbilityClassReq.ANY));
-                this.AddPassiveAbility(new Abilities.Invigorate(null, null, null, EnumAbilityClassReq.ANY));
+                this.AddActiveAbility(new Abilities.Invigorate(this, null, null, null, EnumAbilityClassReq.ANY));
+                this.AddPassiveAbility(new Abilities.Invigorate(this, null, null, null, EnumAbilityClassReq.ANY));
             }
             if (this.UnitLevel == 30)
             {
@@ -319,8 +321,8 @@ namespace RPG.Core.Units
                     RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Double Swing!");
                     mes.ShowDialog();
                 }
-                this.AddActiveAbility(new Abilities.DoubleSwing(null, null, null, EnumAbilityClassReq.ANY));
-                this.AddPassiveAbility(new Abilities.DoubleSwing(null, null, null, EnumAbilityClassReq.ANY));
+                this.AddActiveAbility(new Abilities.DoubleSwing(this, null, null, null, EnumAbilityClassReq.ANY));
+                this.AddPassiveAbility(new Abilities.DoubleSwing(this, null, null, null, EnumAbilityClassReq.ANY));
             }
             if (this.UnitLevel == 40)
             {
@@ -329,8 +331,8 @@ namespace RPG.Core.Units
                     RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Opportunity!");
                     mes.ShowDialog();
                 }
-                this.AddActiveAbility(new Abilities.Opportunity(null, null, null, EnumAbilityClassReq.ANY));
-                this.AddPassiveAbility(new Abilities.Opportunity(null, null, null, EnumAbilityClassReq.ANY));
+                this.AddActiveAbility(new Abilities.Opportunity(this, null, null, null, EnumAbilityClassReq.ANY));
+                this.AddPassiveAbility(new Abilities.Opportunity(this, null, null, null, EnumAbilityClassReq.ANY));
             }
             if (this.UnitLevel == 50)
             {
@@ -339,8 +341,8 @@ namespace RPG.Core.Units
                     RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Totalitarism!");
                     mes.ShowDialog();
                 }
-                this.AddActiveAbility(new Abilities.Totalitarism(null, null, null, EnumAbilityClassReq.ANY));
-                this.AddPassiveAbility(new Abilities.Totalitarism(null, null, null, EnumAbilityClassReq.ANY));
+                this.AddActiveAbility(new Abilities.Totalitarism(this, null, null, null, EnumAbilityClassReq.ANY));
+                this.AddPassiveAbility(new Abilities.Totalitarism(this, null, null, null, EnumAbilityClassReq.ANY));
             }
             if (this.UnitLevel == 57)
             {
@@ -349,8 +351,8 @@ namespace RPG.Core.Units
                     RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Ascend!");
                     mes.ShowDialog();
                 }
-                this.AddActiveAbility(new Abilities.Ascend(null, null, null, EnumAbilityClassReq.ANY));
-                this.AddPassiveAbility(new Abilities.Ascend(null, null, null, EnumAbilityClassReq.ANY));
+                this.AddActiveAbility(new Abilities.Ascend(this, null, null, null, EnumAbilityClassReq.ANY));
+                this.AddPassiveAbility(new Abilities.Ascend(this, null, null, null, EnumAbilityClassReq.ANY));
             }
         }
 
@@ -367,8 +369,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Strength!");
                             mes.ShowDialog();
                         }
-                        this.AddActiveAbility(new Abilities.WarriorStrength(null, null, null, EnumAbilityClassReq.WARRIOR));
-                        this.AddPassiveAbility(new Abilities.WarriorStrength(null, null, null, EnumAbilityClassReq.WARRIOR));
+                        this.AddActiveAbility(new Abilities.WarriorStrength(this, null, null, null, EnumAbilityClassReq.WARRIOR));
+                        this.AddPassiveAbility(new Abilities.WarriorStrength(this, null, null, null, EnumAbilityClassReq.WARRIOR));
                     }
                     if (this.UnitLevel == 8)
                     {
@@ -377,8 +379,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Power Strike!");
                             mes.ShowDialog();
                         }
-                        this.AddActiveAbility(new Abilities.WarriorPowerStrike(null, null, null, EnumAbilityClassReq.WARRIOR));
-                        this.AddPassiveAbility(new Abilities.WarriorPowerStrike(null, null, null, EnumAbilityClassReq.WARRIOR));
+                        this.AddActiveAbility(new Abilities.WarriorPowerStrike(this, null, null, null, EnumAbilityClassReq.WARRIOR));
+                        this.AddPassiveAbility(new Abilities.WarriorPowerStrike(this, null, null, null, EnumAbilityClassReq.WARRIOR));
                     }
                     if (this.UnitLevel == 15)
                     {
@@ -387,8 +389,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Blind Rage!");
                             mes.ShowDialog();
                         }
-                        this.AddActiveAbility(new Abilities.WarriorBlindRage(null, null, null, EnumAbilityClassReq.WARRIOR));
-                        this.AddPassiveAbility(new Abilities.WarriorBlindRage(null, null, null, EnumAbilityClassReq.WARRIOR));
+                        this.AddActiveAbility(new Abilities.WarriorBlindRage(this, null, null, null, EnumAbilityClassReq.WARRIOR));
+                        this.AddPassiveAbility(new Abilities.WarriorBlindRage(this, null, null, null, EnumAbilityClassReq.WARRIOR));
                     }
                     if (this.UnitLevel == 25)
                     {
@@ -397,8 +399,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Rampage!");
                             mes.ShowDialog();
                         }
-                        this.AddActiveAbility(new Abilities.WarriorRampage(null, null, null, EnumAbilityClassReq.WARRIOR));
-                        this.AddPassiveAbility(new Abilities.WarriorRampage(null, null, null, EnumAbilityClassReq.WARRIOR));
+                        this.AddActiveAbility(new Abilities.WarriorRampage(this, null, null, null, EnumAbilityClassReq.WARRIOR));
+                        this.AddPassiveAbility(new Abilities.WarriorRampage(this, null, null, null, EnumAbilityClassReq.WARRIOR));
                     }
                     if (this.UnitLevel == 35)
                     {
@@ -407,8 +409,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Roar!");
                             mes.ShowDialog();
                         }
-                        this.AddActiveAbility(new Abilities.WarriorRoar(null, null, null, EnumAbilityClassReq.WARRIOR));
-                        this.AddPassiveAbility(new Abilities.WarriorRoar(null, null, null, EnumAbilityClassReq.WARRIOR));
+                        this.AddActiveAbility(new Abilities.WarriorRoar(this, null, null, null, EnumAbilityClassReq.WARRIOR));
+                        this.AddPassiveAbility(new Abilities.WarriorRoar(this, null, null, null, EnumAbilityClassReq.WARRIOR));
                     }
                     if (this.UnitLevel == 45)
                     {
@@ -417,8 +419,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Infuriate!");
                             mes.ShowDialog();
                         }
-                        this.AddActiveAbility(new Abilities.WarriorInfuriate(null, null, null, EnumAbilityClassReq.WARRIOR));
-                        this.AddPassiveAbility(new Abilities.WarriorInfuriate(null, null, null, EnumAbilityClassReq.WARRIOR));
+                        this.AddActiveAbility(new Abilities.WarriorInfuriate(this, null, null, null, EnumAbilityClassReq.WARRIOR));
+                        this.AddPassiveAbility(new Abilities.WarriorInfuriate(this, null, null, null, EnumAbilityClassReq.WARRIOR));
                     }
                     if (this.UnitLevel == 55)
                     {
@@ -427,8 +429,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Execution!");
                             mes.ShowDialog();
                         }
-                        this.AddActiveAbility(new Abilities.WarriorExecution(null, null, null, EnumAbilityClassReq.WARRIOR));
-                        this.AddPassiveAbility(new Abilities.WarriorExecution(null, null, null, EnumAbilityClassReq.WARRIOR));
+                        this.AddActiveAbility(new Abilities.WarriorExecution(this, null, null, null, EnumAbilityClassReq.WARRIOR));
+                        this.AddPassiveAbility(new Abilities.WarriorExecution(this, null, null, null, EnumAbilityClassReq.WARRIOR));
                     }
                     if (this.UnitLevel == 60)
                     {
@@ -437,8 +439,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Insanity!");
                             mes.ShowDialog();
                         }
-                        this.AddActiveAbility(new Abilities.WarriorInsanity(null, null, null, EnumAbilityClassReq.WARRIOR));
-                        this.AddPassiveAbility(new Abilities.WarriorInsanity(null, null, null, EnumAbilityClassReq.WARRIOR));
+                        this.AddActiveAbility(new Abilities.WarriorInsanity(this, null, null, null, EnumAbilityClassReq.WARRIOR));
+                        this.AddPassiveAbility(new Abilities.WarriorInsanity(this, null, null, null, EnumAbilityClassReq.WARRIOR));
                     }
                     #endregion
                     break;
@@ -451,8 +453,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Wrath!");
                             mes.ShowDialog();
                         }
-                        this.AddActiveAbility(new Abilities.PaladinWrath(null, null, null, EnumAbilityClassReq.PALADIN));
-                        this.AddPassiveAbility(new Abilities.PaladinWrath(null, null, null, EnumAbilityClassReq.PALADIN));
+                        this.AddActiveAbility(new Abilities.PaladinWrath(this, null, null, null, EnumAbilityClassReq.PALADIN));
+                        this.AddPassiveAbility(new Abilities.PaladinWrath(this, null, null, null, EnumAbilityClassReq.PALADIN));
                     }
                     if (this.UnitLevel == 8)
                     {
@@ -461,8 +463,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Justice!");
                             mes.ShowDialog();
                         }
-                        this.AddActiveAbility(new Abilities.PaladinJustice(null, null, null, EnumAbilityClassReq.PALADIN));
-                        this.AddPassiveAbility(new Abilities.PaladinJustice(null, null, null, EnumAbilityClassReq.PALADIN));
+                        this.AddActiveAbility(new Abilities.PaladinJustice(this, null, null, null, EnumAbilityClassReq.PALADIN));
+                        this.AddPassiveAbility(new Abilities.PaladinJustice(this, null, null, null, EnumAbilityClassReq.PALADIN));
                     }
                     if (this.UnitLevel == 15)
                     {
@@ -471,8 +473,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Serenity!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.PaladinSerenity(null, null, null, EnumAbilityClassReq.PALADIN));
-                        this.AddActiveAbility(new Abilities.PaladinSerenity(null, null, null, EnumAbilityClassReq.PALADIN));
+                        this.AddPassiveAbility(new Abilities.PaladinSerenity(this, null, null, null, EnumAbilityClassReq.PALADIN));
+                        this.AddActiveAbility(new Abilities.PaladinSerenity(this, null, null, null, EnumAbilityClassReq.PALADIN));
                     }
                     if (this.UnitLevel == 25)
                     {
@@ -481,8 +483,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Raise Spirit!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.PaladinRaiseSpirit(null, null, null, EnumAbilityClassReq.PALADIN));
-                        this.AddActiveAbility(new Abilities.PaladinRaiseSpirit(null, null, null, EnumAbilityClassReq.PALADIN));
+                        this.AddPassiveAbility(new Abilities.PaladinRaiseSpirit(this, null, null, null, EnumAbilityClassReq.PALADIN));
+                        this.AddActiveAbility(new Abilities.PaladinRaiseSpirit(this, null, null, null, EnumAbilityClassReq.PALADIN));
                     }
                     if (this.UnitLevel == 35)
                     {
@@ -491,8 +493,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Prayer!");
                             mes.ShowDialog();
                         }
-                        this.AddActiveAbility(new Abilities.PaladinPrayer(null, null, null, EnumAbilityClassReq.PALADIN));
-                        this.AddPassiveAbility(new Abilities.PaladinPrayer(null, null, null, EnumAbilityClassReq.PALADIN));
+                        this.AddActiveAbility(new Abilities.PaladinPrayer(this, null, null, null, EnumAbilityClassReq.PALADIN));
+                        this.AddPassiveAbility(new Abilities.PaladinPrayer(this, null, null, null, EnumAbilityClassReq.PALADIN));
                     }
                     if (this.UnitLevel == 45)
                     {
@@ -501,8 +503,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Blessing!");
                             mes.ShowDialog();
                         }
-                        this.AddActiveAbility(new Abilities.PaladinBlessing(null, null, null, EnumAbilityClassReq.PALADIN));
-                        this.AddPassiveAbility(new Abilities.PaladinBlessing(null, null, null, EnumAbilityClassReq.PALADIN));
+                        this.AddActiveAbility(new Abilities.PaladinBlessing(this, null, null, null, EnumAbilityClassReq.PALADIN));
+                        this.AddPassiveAbility(new Abilities.PaladinBlessing(this, null, null, null, EnumAbilityClassReq.PALADIN));
                     }
                     if (this.UnitLevel == 55)
                     {
@@ -511,8 +513,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Desperate Plea!");
                             mes.ShowDialog();
                         }
-                        this.AddActiveAbility(new Abilities.PaladinDesperatePlea(null, null, null, EnumAbilityClassReq.PALADIN));
-                        this.AddPassiveAbility(new Abilities.PaladinDesperatePlea(null, null, null, EnumAbilityClassReq.PALADIN));
+                        this.AddActiveAbility(new Abilities.PaladinDesperatePlea(this, null, null, null, EnumAbilityClassReq.PALADIN));
+                        this.AddPassiveAbility(new Abilities.PaladinDesperatePlea(this, null, null, null, EnumAbilityClassReq.PALADIN));
                     }
                     if (this.UnitLevel == 60)
                     {
@@ -521,8 +523,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned The Power of Faith!");
                             mes.ShowDialog();
                         }
-                        this.AddActiveAbility(new Abilities.PaladinThePowerOfFaith(null, null, null, EnumAbilityClassReq.PALADIN));
-                        this.AddPassiveAbility(new Abilities.PaladinThePowerOfFaith(null, null, null, EnumAbilityClassReq.PALADIN));
+                        this.AddActiveAbility(new Abilities.PaladinThePowerOfFaith(this, null, null, null, EnumAbilityClassReq.PALADIN));
+                        this.AddPassiveAbility(new Abilities.PaladinThePowerOfFaith(this, null, null, null, EnumAbilityClassReq.PALADIN));
                     }
                     #endregion
                     break;
@@ -535,8 +537,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Fireball!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.WizardFireball(null, null, null, EnumAbilityClassReq.WIZARD));
-                        this.AddActiveAbility(new Abilities.WizardFireball(null, null, null, EnumAbilityClassReq.WIZARD));
+                        this.AddPassiveAbility(new Abilities.WizardFireball(this, null, null, null, EnumAbilityClassReq.WIZARD));
+                        this.AddActiveAbility(new Abilities.WizardFireball(this, null, null, null, EnumAbilityClassReq.WIZARD));
                     }
                     if (this.UnitLevel == 8)
                     {
@@ -545,8 +547,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Heal!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.WizardHeal(null, null, null, EnumAbilityClassReq.WIZARD));
-                        this.AddActiveAbility(new Abilities.WizardHeal(null, null, null, EnumAbilityClassReq.WIZARD));
+                        this.AddPassiveAbility(new Abilities.WizardHeal(this, null, null, null, EnumAbilityClassReq.WIZARD));
+                        this.AddActiveAbility(new Abilities.WizardHeal(this, null, null, null, EnumAbilityClassReq.WIZARD));
                     }
                     if (this.UnitLevel == 15)
                     {
@@ -555,8 +557,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Flame Comet!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.WizardFlameComet(null, null, null, EnumAbilityClassReq.WIZARD));
-                        this.AddActiveAbility(new Abilities.WizardFlameComet(null, null, null, EnumAbilityClassReq.WIZARD));
+                        this.AddPassiveAbility(new Abilities.WizardFlameComet(this, null, null, null, EnumAbilityClassReq.WIZARD));
+                        this.AddActiveAbility(new Abilities.WizardFlameComet(this, null, null, null, EnumAbilityClassReq.WIZARD));
                     }
                     if (this.UnitLevel == 25)
                     {
@@ -565,8 +567,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Revitalize!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.WizardRevitalize(null, null, null, EnumAbilityClassReq.WIZARD));
-                        this.AddActiveAbility(new Abilities.WizardRevitalize(null, null, null, EnumAbilityClassReq.WIZARD));
+                        this.AddPassiveAbility(new Abilities.WizardRevitalize(this, null, null, null, EnumAbilityClassReq.WIZARD));
+                        this.AddActiveAbility(new Abilities.WizardRevitalize(this, null, null, null, EnumAbilityClassReq.WIZARD));
                     }
                     if (this.UnitLevel == 35)
                     {
@@ -575,8 +577,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Brilliance!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.WizardBrilliance(null, null, null, EnumAbilityClassReq.WIZARD));
-                        this.AddActiveAbility(new Abilities.WizardBrilliance(null, null, null, EnumAbilityClassReq.WIZARD));
+                        this.AddPassiveAbility(new Abilities.WizardBrilliance(this, null, null, null, EnumAbilityClassReq.WIZARD));
+                        this.AddActiveAbility(new Abilities.WizardBrilliance(this, null, null, null, EnumAbilityClassReq.WIZARD));
                     }
                     if (this.UnitLevel == 45)
                     {
@@ -585,8 +587,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Archon!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.WizardArchon(null, null, null, EnumAbilityClassReq.WIZARD));
-                        this.AddActiveAbility(new Abilities.WizardArchon(null, null, null, EnumAbilityClassReq.WIZARD));
+                        this.AddPassiveAbility(new Abilities.WizardArchon(this, null, null, null, EnumAbilityClassReq.WIZARD));
+                        this.AddActiveAbility(new Abilities.WizardArchon(this, null, null, null, EnumAbilityClassReq.WIZARD));
                     }
                     if (this.UnitLevel == 55)
                     {
@@ -595,8 +597,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Inferno!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.WizardInferno(null, null, null, EnumAbilityClassReq.WIZARD));
-                        this.AddActiveAbility(new Abilities.WizardInferno(null, null, null, EnumAbilityClassReq.WIZARD));
+                        this.AddPassiveAbility(new Abilities.WizardInferno(this, null, null, null, EnumAbilityClassReq.WIZARD));
+                        this.AddActiveAbility(new Abilities.WizardInferno(this, null, null, null, EnumAbilityClassReq.WIZARD));
                     }
                     if (this.UnitLevel == 60)
                     {
@@ -605,8 +607,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Oracle!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.WizardOracle(null, null, null, EnumAbilityClassReq.WIZARD));
-                        this.AddActiveAbility(new Abilities.WizardOracle(null, null, null, EnumAbilityClassReq.WIZARD));
+                        this.AddPassiveAbility(new Abilities.WizardOracle(this, null, null, null, EnumAbilityClassReq.WIZARD));
+                        this.AddActiveAbility(new Abilities.WizardOracle(this, null, null, null, EnumAbilityClassReq.WIZARD));
                     }
                     #endregion
                     break;
@@ -619,8 +621,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Quick Attack!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.ThiefQuickAttack(null, null, null, EnumAbilityClassReq.THIEF));
-                        this.AddActiveAbility(new Abilities.ThiefQuickAttack(null, null, null, EnumAbilityClassReq.THIEF));
+                        this.AddPassiveAbility(new Abilities.ThiefQuickAttack(this, null, null, null, EnumAbilityClassReq.THIEF));
+                        this.AddActiveAbility(new Abilities.ThiefQuickAttack(this, null, null, null, EnumAbilityClassReq.THIEF));
                     }
                     if (this.UnitLevel == 8)
                     {
@@ -629,8 +631,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Borrow Weapon!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.ThiefBorrowWeapon(null, null, null, EnumAbilityClassReq.THIEF));
-                        this.AddActiveAbility(new Abilities.ThiefBorrowWeapon(null, null, null, EnumAbilityClassReq.THIEF));
+                        this.AddPassiveAbility(new Abilities.ThiefBorrowWeapon(this, null, null, null, EnumAbilityClassReq.THIEF));
+                        this.AddActiveAbility(new Abilities.ThiefBorrowWeapon(this, null, null, null, EnumAbilityClassReq.THIEF));
                     }
                     if (this.UnitLevel == 15)
                     {
@@ -639,8 +641,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Bloodstealer!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.ThiefBloodstealer(null, null, null, EnumAbilityClassReq.THIEF));
-                        this.AddActiveAbility(new Abilities.ThiefBloodstealer(null, null, null, EnumAbilityClassReq.THIEF));
+                        this.AddPassiveAbility(new Abilities.ThiefBloodstealer(this, null, null, null, EnumAbilityClassReq.THIEF));
+                        this.AddActiveAbility(new Abilities.ThiefBloodstealer(this, null, null, null, EnumAbilityClassReq.THIEF));
                     }
                     if (this.UnitLevel == 25)
                     {
@@ -649,8 +651,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Copycat!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.ThiefCopycat(null, null, null, EnumAbilityClassReq.THIEF));
-                        this.AddActiveAbility(new Abilities.ThiefCopycat(null, null, null, EnumAbilityClassReq.THIEF));
+                        this.AddPassiveAbility(new Abilities.ThiefCopycat(this, null, null, null, EnumAbilityClassReq.THIEF));
+                        this.AddActiveAbility(new Abilities.ThiefCopycat(this, null, null, null, EnumAbilityClassReq.THIEF));
                     }
                     if (this.UnitLevel == 35)
                     {
@@ -659,8 +661,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Swiftness!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.ThiefSwiftness(null, null, null, EnumAbilityClassReq.THIEF));
-                        this.AddActiveAbility(new Abilities.ThiefSwiftness(null, null, null, EnumAbilityClassReq.THIEF));
+                        this.AddPassiveAbility(new Abilities.ThiefSwiftness(this, null, null, null, EnumAbilityClassReq.THIEF));
+                        this.AddActiveAbility(new Abilities.ThiefSwiftness(this, null, null, null, EnumAbilityClassReq.THIEF));
                     }
                     if (this.UnitLevel == 45)
                     {
@@ -669,8 +671,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Envenom!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.ThiefEnvenom(null, null, null, EnumAbilityClassReq.THIEF));
-                        this.AddActiveAbility(new Abilities.ThiefEnvenom(null, null, null, EnumAbilityClassReq.THIEF));
+                        this.AddPassiveAbility(new Abilities.ThiefEnvenom(this, null, null, null, EnumAbilityClassReq.THIEF));
+                        this.AddActiveAbility(new Abilities.ThiefEnvenom(this, null, null, null, EnumAbilityClassReq.THIEF));
                     }
                     if (this.UnitLevel == 55)
                     {
@@ -679,8 +681,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Dirty Tricks!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.ThiefDirtyTricks(null, null, null, EnumAbilityClassReq.THIEF));
-                        this.AddActiveAbility(new Abilities.ThiefDirtyTricks(null, null, null, EnumAbilityClassReq.THIEF));
+                        this.AddPassiveAbility(new Abilities.ThiefDirtyTricks(this, null, null, null, EnumAbilityClassReq.THIEF));
+                        this.AddActiveAbility(new Abilities.ThiefDirtyTricks(this, null, null, null, EnumAbilityClassReq.THIEF));
                     }
                     if (this.UnitLevel == 60)
                     {
@@ -689,8 +691,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Flurry!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.ThiefFlurry(null, null, null, EnumAbilityClassReq.THIEF));
-                        this.AddActiveAbility(new Abilities.ThiefFlurry(null, null, null, EnumAbilityClassReq.THIEF));
+                        this.AddPassiveAbility(new Abilities.ThiefFlurry(this, null, null, null, EnumAbilityClassReq.THIEF));
+                        this.AddActiveAbility(new Abilities.ThiefFlurry(this, null, null, null, EnumAbilityClassReq.THIEF));
                     }
                     #endregion
                     break;
@@ -703,8 +705,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Body Slam!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.CaretakerBodySlam(null, null, null, EnumAbilityClassReq.CARETAKER));
-                        this.AddActiveAbility(new Abilities.CaretakerBodySlam(null, null, null, EnumAbilityClassReq.CARETAKER));
+                        this.AddPassiveAbility(new Abilities.CaretakerBodySlam(this, null, null, null, EnumAbilityClassReq.CARETAKER));
+                        this.AddActiveAbility(new Abilities.CaretakerBodySlam(this, null, null, null, EnumAbilityClassReq.CARETAKER));
                     }
                     if (this.UnitLevel == 8)
                     {
@@ -713,8 +715,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Sacrifice!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.CaretakerSacrifice(null, null, null, EnumAbilityClassReq.CARETAKER));
-                        this.AddActiveAbility(new Abilities.CaretakerSacrifice(null, null, null, EnumAbilityClassReq.CARETAKER));
+                        this.AddPassiveAbility(new Abilities.CaretakerSacrifice(this, null, null, null, EnumAbilityClassReq.CARETAKER));
+                        this.AddActiveAbility(new Abilities.CaretakerSacrifice(this, null, null, null, EnumAbilityClassReq.CARETAKER));
                     }
                     if (this.UnitLevel == 15)
                     {
@@ -723,8 +725,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Lifeforce!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.CaretakerLifeforce(null, null, null, EnumAbilityClassReq.CARETAKER));
-                        this.AddActiveAbility(new Abilities.CaretakerLifeforce(null, null, null, EnumAbilityClassReq.CARETAKER));
+                        this.AddPassiveAbility(new Abilities.CaretakerLifeforce(this, null, null, null, EnumAbilityClassReq.CARETAKER));
+                        this.AddActiveAbility(new Abilities.CaretakerLifeforce(this, null, null, null, EnumAbilityClassReq.CARETAKER));
                     }
                     if (this.UnitLevel == 25)
                     {
@@ -733,8 +735,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Zeal of Humanity!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.CaretakerZealOfHumanity(null, null, null, EnumAbilityClassReq.CARETAKER));
-                        this.AddActiveAbility(new Abilities.CaretakerZealOfHumanity(null, null, null, EnumAbilityClassReq.CARETAKER));
+                        this.AddPassiveAbility(new Abilities.CaretakerZealOfHumanity(this, null, null, null, EnumAbilityClassReq.CARETAKER));
+                        this.AddActiveAbility(new Abilities.CaretakerZealOfHumanity(this, null, null, null, EnumAbilityClassReq.CARETAKER));
                     }
                     if (this.UnitLevel == 35)
                     {
@@ -743,8 +745,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Action!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.CaretakerAction(null, null, null, EnumAbilityClassReq.CARETAKER));
-                        this.AddActiveAbility(new Abilities.CaretakerAction(null, null, null, EnumAbilityClassReq.CARETAKER));
+                        this.AddPassiveAbility(new Abilities.CaretakerAction(this, null, null, null, EnumAbilityClassReq.CARETAKER));
+                        this.AddActiveAbility(new Abilities.CaretakerAction(this, null, null, null, EnumAbilityClassReq.CARETAKER));
                     }
                     if (this.UnitLevel == 45)
                     {
@@ -753,8 +755,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Lifeblood!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.CaretakerLifeblood(null, null, null, EnumAbilityClassReq.CARETAKER));
-                        this.AddActiveAbility(new Abilities.CaretakerLifeblood(null, null, null, EnumAbilityClassReq.CARETAKER));
+                        this.AddPassiveAbility(new Abilities.CaretakerLifeblood(this, null, null, null, EnumAbilityClassReq.CARETAKER));
+                        this.AddActiveAbility(new Abilities.CaretakerLifeblood(this, null, null, null, EnumAbilityClassReq.CARETAKER));
                     }
                     if (this.UnitLevel == 55)
                     {
@@ -763,8 +765,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Power and Dexterity!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.CaretakerPowerAndDexterity(null, null, null, EnumAbilityClassReq.CARETAKER));
-                        this.AddActiveAbility(new Abilities.CaretakerPowerAndDexterity(null, null, null, EnumAbilityClassReq.CARETAKER));
+                        this.AddPassiveAbility(new Abilities.CaretakerPowerAndDexterity(this, null, null, null, EnumAbilityClassReq.CARETAKER));
+                        this.AddActiveAbility(new Abilities.CaretakerPowerAndDexterity(this, null, null, null, EnumAbilityClassReq.CARETAKER));
                     }
                     if (this.UnitLevel == 60)
                     {
@@ -773,8 +775,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Deathdefiance!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.CaretakerDeathdefiance(null, null, null, EnumAbilityClassReq.CARETAKER));
-                        this.AddActiveAbility(new Abilities.CaretakerDeathdefiance(null, null, null, EnumAbilityClassReq.CARETAKER));
+                        this.AddPassiveAbility(new Abilities.CaretakerDeathdefiance(this, null, null, null, EnumAbilityClassReq.CARETAKER));
+                        this.AddActiveAbility(new Abilities.CaretakerDeathdefiance(this, null, null, null, EnumAbilityClassReq.CARETAKER));
                     }
                     #endregion
                     break;
@@ -787,8 +789,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Duality!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.SynergistDuality(null, null, null, EnumAbilityClassReq.SYNERGIST));
-                        this.AddActiveAbility(new Abilities.SynergistDuality(null, null, null, EnumAbilityClassReq.SYNERGIST));
+                        this.AddPassiveAbility(new Abilities.SynergistDuality(this, null, null, null, EnumAbilityClassReq.SYNERGIST));
+                        this.AddActiveAbility(new Abilities.SynergistDuality(this, null, null, null, EnumAbilityClassReq.SYNERGIST));
                     }
                     if (this.UnitLevel == 8)
                     {
@@ -797,8 +799,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Agile Mind!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.SynergistAgileMind(null, null, null, EnumAbilityClassReq.SYNERGIST));
-                        this.AddActiveAbility(new Abilities.SynergistAgileMind(null, null, null, EnumAbilityClassReq.SYNERGIST));
+                        this.AddPassiveAbility(new Abilities.SynergistAgileMind(this, null, null, null, EnumAbilityClassReq.SYNERGIST));
+                        this.AddActiveAbility(new Abilities.SynergistAgileMind(this, null, null, null, EnumAbilityClassReq.SYNERGIST));
                     }
                     if (this.UnitLevel == 15)
                     {
@@ -807,8 +809,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Balance!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.SynergistBalance(null, null, null, EnumAbilityClassReq.SYNERGIST));
-                        this.AddActiveAbility(new Abilities.SynergistBalance(null, null, null, EnumAbilityClassReq.SYNERGIST));
+                        this.AddPassiveAbility(new Abilities.SynergistBalance(this, null, null, null, EnumAbilityClassReq.SYNERGIST));
+                        this.AddActiveAbility(new Abilities.SynergistBalance(this, null, null, null, EnumAbilityClassReq.SYNERGIST));
                     }
                     if (this.UnitLevel == 25)
                     {
@@ -817,8 +819,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Mental Agility!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.SynergistMentalAgility(null, null, null, EnumAbilityClassReq.SYNERGIST));
-                        this.AddActiveAbility(new Abilities.SynergistMentalAgility(null, null, null, EnumAbilityClassReq.SYNERGIST));
+                        this.AddPassiveAbility(new Abilities.SynergistMentalAgility(this, null, null, null, EnumAbilityClassReq.SYNERGIST));
+                        this.AddActiveAbility(new Abilities.SynergistMentalAgility(this, null, null, null, EnumAbilityClassReq.SYNERGIST));
                     }
                     if (this.UnitLevel == 35)
                     {
@@ -827,8 +829,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Align!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.SynergistAlign(null, null, null, EnumAbilityClassReq.SYNERGIST));
-                        this.AddActiveAbility(new Abilities.SynergistAlign(null, null, null, EnumAbilityClassReq.SYNERGIST));
+                        this.AddPassiveAbility(new Abilities.SynergistAlign(this, null, null, null, EnumAbilityClassReq.SYNERGIST));
+                        this.AddActiveAbility(new Abilities.SynergistAlign(this, null, null, null, EnumAbilityClassReq.SYNERGIST));
                     }
                     if (this.UnitLevel == 45)
                     {
@@ -837,8 +839,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Collapsed Equality!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.SynergistCollapsedEquality(null, null, null, EnumAbilityClassReq.SYNERGIST));
-                        this.AddActiveAbility(new Abilities.SynergistCollapsedEquality(null, null, null, EnumAbilityClassReq.SYNERGIST));
+                        this.AddPassiveAbility(new Abilities.SynergistCollapsedEquality(this, null, null, null, EnumAbilityClassReq.SYNERGIST));
+                        this.AddActiveAbility(new Abilities.SynergistCollapsedEquality(this, null, null, null, EnumAbilityClassReq.SYNERGIST));
                     }
                     if (this.UnitLevel == 55)
                     {
@@ -847,8 +849,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Synergy!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.SynergistSynergy(null, null, null, EnumAbilityClassReq.SYNERGIST));
-                        this.AddActiveAbility(new Abilities.SynergistSynergy(null, null, null, EnumAbilityClassReq.SYNERGIST));
+                        this.AddPassiveAbility(new Abilities.SynergistSynergy(this, null, null, null, EnumAbilityClassReq.SYNERGIST));
+                        this.AddActiveAbility(new Abilities.SynergistSynergy(this, null, null, null, EnumAbilityClassReq.SYNERGIST));
                     }
                     if (this.UnitLevel == 60)
                     {
@@ -857,8 +859,8 @@ namespace RPG.Core.Units
                             RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Complete Balance!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.SynergistCompleteBalance(null, null, null, EnumAbilityClassReq.SYNERGIST));
-                        this.AddActiveAbility(new Abilities.SynergistCompleteBalance(null, null, null, EnumAbilityClassReq.SYNERGIST));
+                        this.AddPassiveAbility(new Abilities.SynergistCompleteBalance(this, null, null, null, EnumAbilityClassReq.SYNERGIST));
+                        this.AddActiveAbility(new Abilities.SynergistCompleteBalance(this, null, null, null, EnumAbilityClassReq.SYNERGIST));
                     }
                     #endregion
                     break;

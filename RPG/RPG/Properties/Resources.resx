@@ -208,4 +208,31 @@
   <data name="Suffixes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Suffixes.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="AxesNames" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AxesNames.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="BowNames" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BowNames.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ChestArmorNames" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChestArmorNames.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="DaggerNames" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DaggerNames.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="HeadArmorNames" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HeadArmorNames.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="LegArmorNames" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LegArmorNames.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="MaxeNames" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MaxeNames.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="StaffNames" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StaffNames.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="SwordNames" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SwordNames.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
 </root>

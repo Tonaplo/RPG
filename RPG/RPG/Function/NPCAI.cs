@@ -41,7 +41,7 @@ namespace RPG.Function
             }
             else
             {
-                this.aiScript = r.Next(0, 4);
+                this.aiScript = r.Next(0, 6);
             }
 
             this.targets = _targets;
@@ -71,25 +71,38 @@ namespace RPG.Function
             {
                 case 0:
                     if (npc.UnitActiveAbilities.Count == 0)
-                        npc.AddActiveAbility(new NPCFireball("", "", null, EnumAbilityClassReq.NPC));
+                        npc.AddActiveAbility(new NPCFireball(null, "", "", null, EnumAbilityClassReq.NPC));
                     break;
                 case 1:
                     if (npc.UnitActiveAbilities.Count == 0)
                     {
-                        npc.AddActiveAbility(new NPCHeal("", "", null, EnumAbilityClassReq.NPC));
-                        npc.AddActiveAbility(new NPCNuke("", "", null, EnumAbilityClassReq.NPC));
+                        npc.AddActiveAbility(new NPCHeal(null, "", "", null, EnumAbilityClassReq.NPC));
+                        npc.AddActiveAbility(new NPCNuke(null, "", "", null, EnumAbilityClassReq.NPC));
                     }
                     break;
                 case 2:
                     if (npc.UnitActiveAbilities.Count == 0)
-                        npc.AddActiveAbility(new NPCAtonementSmite("", "", null, EnumAbilityClassReq.NPC));
+                        npc.AddActiveAbility(new NPCAtonementSmite(null, "", "", null, EnumAbilityClassReq.NPC));
                     break;
                 case 3:
                     if (npc.UnitActiveAbilities.Count == 0)
                     {
-                        npc.AddActiveAbility(new NPCHeal("", "", null, EnumAbilityClassReq.NPC));
-                        npc.AddActiveAbility(new NPCAtonementSmite("", "", null, EnumAbilityClassReq.NPC));
-                        npc.AddActiveAbility(new NPCFireball("", "", null, EnumAbilityClassReq.NPC));
+                        npc.AddActiveAbility(new NPCHeal(null, "", "", null, EnumAbilityClassReq.NPC));
+                        npc.AddActiveAbility(new NPCAtonementSmite(null, "", "", null, EnumAbilityClassReq.NPC));
+                        npc.AddActiveAbility(new NPCFireball(null, "", "", null, EnumAbilityClassReq.NPC));
+                    }
+                    break;
+                case 4:
+                    if (npc.UnitActiveAbilities.Count == 0)
+                    {
+                        npc.AddActiveAbility(new NPCGrow(null, "", "", null, EnumAbilityClassReq.NPC));
+                        npc.AddActiveAbility(new NPCDesperation(null, "", "", null, EnumAbilityClassReq.NPC));
+                    }
+                    break;
+                case 5:
+                    if (npc.UnitActiveAbilities.Count == 0)
+                    {
+                        npc.AddActiveAbility(new NPCGrowingDespair(null, "", "", null, EnumAbilityClassReq.NPC));
                     }
                     break;
                 default:
@@ -113,6 +126,12 @@ namespace RPG.Function
                     break;
                 case 3:
                     WhichShouldITake();
+                    break;
+                case 4:
+                    GrowAndDespair();
+                    break;
+                case 5:
+                    GrowingDespair();
                     break;
                 default:
                     break;
@@ -159,6 +178,31 @@ namespace RPG.Function
                 chatAction = npc.UnitActiveAbilities[index].ChatString;
             }
             
+        }
+
+        private void GrowAndDespair()
+        {
+            if (aiStep == 0)
+            {
+                npc.UnitActiveAbilities[1].UseAbility(npc, targets);
+                chatAction = npc.UnitActiveAbilities[1].ChatString;
+            }
+            else
+            {
+                npc.UnitActiveAbilities[0].UseAbility(npc, targets);
+                chatAction = npc.UnitActiveAbilities[0].ChatString;
+            }
+
+            aiStep++;
+
+            if (aiStep == 3)
+                aiStep = 0;
+        }
+
+        private void GrowingDespair()
+        {
+            npc.UnitActiveAbilities[0].UseAbility(npc, targets);
+            chatAction = npc.UnitActiveAbilities[0].ChatString;
         }
     }
 }

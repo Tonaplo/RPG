@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using RPG.Core;
 
 namespace RPG
 {
@@ -20,6 +21,11 @@ namespace RPG
 
             ucAbility = _ability;
             pictureBoxIcon.Image = ucAbility.GetIcon();
+        }
+
+        public Ability ReturnedAbility()
+        {
+            return ucAbility;
         }
 
         private void pictureBoxIcon_MouseEnter(object sender, EventArgs e)

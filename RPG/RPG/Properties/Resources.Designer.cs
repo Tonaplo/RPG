@@ -81,6 +81,15 @@ namespace RPG.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hand Axe,Axe,Double Axe,Military Axe,War Axe,Large Axe,Broad Axe,Battle Axe,Great Axe,Giant Axe.
+        /// </summary>
+        internal static string AxesNames {
+            get {
+                return ResourceManager.GetString("AxesNames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap background {
@@ -129,6 +138,15 @@ namespace RPG.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Spider Bow,Blade Bow,Shadow Bow,Great Bow,Diamond Bow,Crusader Bow,Ward Bow,Hydra Bow,Short Bow,Hunter&apos;s Bow,Long Bow,Composite Bow,Short Battle Bow,Long Battle Bow,Short War Bow,Long War Bow.
+        /// </summary>
+        internal static string BowNames {
+            get {
+                return ResourceManager.GetString("BowNames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream buttonpress {
@@ -148,23 +166,38 @@ namespace RPG.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Version 0.1.3.7 (2/11-2013):
+        ///   Looks up a localized string similar to Version 0.1.3.10 (4/11-2013):
         ///
         ///	- General:
-        ///		- Added background temporary background music. There are current some issues with sound, 
-        ///		  so only background music is implemented. To read more about the issues, see the 
-        ///		  &apos;&apos;Upcomming&apos;&apos; tab.
-        ///		- Updated the &apos;&apos;How to Play&apos;&apos; section in the Support menu to include a description of quests.
-        ///
-        ///_________________________________________________________________________________________________________
-        ///Version 0.1.3.6 (30/10-2013):
-        ///
-        ///	- General:
-        ///		- Fixed an [rest of string was truncated]&quot;;.
+        ///		- Added background temporary background music. There are current some issues with sound 
+        ///		  and animations, so only background music is implemented. To read more about the issues,
+        ///		  see the &apos;&apos;Upcomming&apos;&apos; tab.
+        ///		- Updated the &apos;&apos;How to Play&apos;&apos; section in the Support menu to include a description of quests
+        ///		  and the new attribute, Speed.
+        ///		- Added many, many more prefixes and suffixes for items.
+        ///		- Made sure the player never receive two pieces of loot  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ChangeLog {
             get {
                 return ResourceManager.GetString("ChangeLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dusk Shroud,Wyrmhide,Scarab Husk,Wire Fleece,Diamond Mail,Loricated Mail,Great Hauberk,Boneweave,Balrog Skin,Archon Plate,Kraken Shell,Hellforge Plate,Lacquered Plate,Shadow Plate,Sacred Armor,Ghost Armor,Serpentskin Armor,Demonhide Armor,Trellised Armor,Linked Mail,Tigulated Mail,Cuirass,Mesh Armor,Russet Armor,Mage Plate,Sharktooth Armor,Templar Coat,Embossed Plate,Chaos Armor,Ornate Plate,Quilted Armor,Leather Armor,Hard Leather Armor,Studded Leather,Ring Mail,Scale Mail,Breast Plate,Chain Mail,Splint Ma [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ChestArmorNames {
+            get {
+                return ResourceManager.GetString("ChestArmorNames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bone Knife,Mithril Point,Fanged Knife,Legend Spike,Poignard,Rondel,Cinquedeas,Stiletto,Dagger,Dirk,Kris,Blade.
+        /// </summary>
+        internal static string DaggerNames {
+            get {
+                return ResourceManager.GetString("DaggerNames", resourceCulture);
             }
         }
         
@@ -199,6 +232,15 @@ namespace RPG.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Shako,Hydraskull,Armet,Giant Conch,Spired Helm,Demonhead,Corona,Bone Visage,War Hat,Sallet,Casque,Basinet,Winged Helm,Death Mask,Grand Crown,Grim Helm,Cap,Skull Cap,Helm,Full Helm,Great Helm,Mask,Crown,Bone Helm.
+        /// </summary>
+        internal static string HeadArmorNames {
+            get {
+                return ResourceManager.GetString("HeadArmorNames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap heal {
@@ -215,6 +257,24 @@ namespace RPG.Properties {
             get {
                 object obj = ResourceManager.GetObject("humanoid", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cloth Pants,Leather Pants,Hide Breeches,Chain Leggings,Faulds,Plate Leggings,Legwraps,Etched Pants,Chausses,Tassets,Boneweave Faulds,Leg Guards,Poleyns,Warlord Leg Plates,Schynbalds,Sovereign Tassets,Archon Fauld.
+        /// </summary>
+        internal static string LegArmorNames {
+            get {
+                return ResourceManager.GetString("LegArmorNames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Club,Spiked Club,Mace,Morning Star,Flail,War Hammer,Maul,Truncheon,Tyrant Club,Reinforced Mace,Devil Star,Scourge,Legendary Mallet,Ogre Maul,Thunder Maul.
+        /// </summary>
+        internal static string MaxeNames {
+            get {
+                return ResourceManager.GetString("MaxeNames", resourceCulture);
             }
         }
         
@@ -249,48 +309,7 @@ namespace RPG.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Strengthening ,
-        ///Agile ,
-        ///Dextrous ,
-        ///Sturdy ,
-        ///Acrobatic ,
-        ///Systematic ,
-        ///Cunning ,
-        ///Indomitable ,
-        ///Clever ,
-        ///Intimidating ,
-        ///Finessed ,
-        ///Warlord&apos;s ,
-        ///Rebounding ,
-        ///Tireless ,
-        ///Energetic ,
-        ///Precise ,
-        ///Acute ,
-        ///Relentless ,
-        ///Coordinated ,
-        ///Warding ,
-        ///Artist&apos;s ,
-        ///Construct&apos;s ,
-        ///Myrmidon&apos;s ,
-        ///Aegis ,
-        ///Duelist&apos;s ,
-        ///Flurry ,
-        ///Pugilist&apos;s ,
-        ///Honest ,
-        ///Lancer&apos;s ,
-        ///Eschewing ,
-        ///Cunning ,
-        ///Bolstering ,
-        ///Brilliant ,
-        ///Intelligent ,
-        ///Stalwart ,
-        ///Diplomatic ,
-        ///Calm ,
-        ///Omniscient ,
-        ///Formation ,
-        ///Reformation ,
-        ///Solid ,
-        ///S [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to Strengthening,Agile,Dextrous,Sturdy,Acrobatic,Systematic,Precise,Acute,Relentless,Coordinated,Warding,Artist&apos;s,Construct&apos;s,Myrmidon&apos;s,Aegis,Duelist&apos;s,Flurry,Pugilist&apos;s,Honest,Lancer&apos;s,Eschewing,Cunning,Bolstering,Brilliant,Intelligent,Stalwart,Diplomatic,Calm,Omniscient,Formation,Reformation,Solid,Survivor&apos;s,Ravaging,Condeming,Vital,Sagacity,Guardian,Harmonizing,Physician&apos;s,Ameliorating,Bastion&apos;s,Barricade,Friendly,Hospitable,Generous,Altruistic,Aversion,Deterrant,Indomitable,Intimidating,Clever,Finessed,Eg [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Prefixes {
             get {
@@ -319,6 +338,16 @@ namespace RPG.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Walking Stick,Stalagmite,Elder Staff,Shillelagh,Archon Staff,Jo Staff,Quarterstaff,Cedar Staff,Gothic Staff,Rune Staf,Short Staff,Long Staff,Gnarled Staff,Battle Staff
+        ///War Staff.
+        /// </summary>
+        internal static string StaffNames {
+            get {
+                return ResourceManager.GetString("StaffNames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap strength {
@@ -329,43 +358,20 @@ namespace RPG.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  of Worth,
-        /// of Measure,
-        /// of Excellence,
-        /// of Performance,
-        /// of Transcendence,
-        /// of Perfection,
-        /// of the Titan,
-        /// of the Giant,
-        /// of Nirvana,
-        /// of the Colossus,
-        /// of Craftmanship,
-        /// of Storms,
-        /// of Defiance,
-        /// of Equilibrium,
-        /// of Amicae,
-        /// of the Guard,
-        /// of Ages,
-        /// of Calm,
-        /// of Steadiness,
-        /// of Accuracy,
-        /// of Precision,
-        /// of the Sniper,
-        /// of the Marksman,
-        /// of the Deadeye,
-        /// of the Ranger,
-        /// of the Assassin,
-        /// of Shining,
-        /// of Light,
-        /// of Radiance,
-        /// of Skill,
-        /// of Ease,
-        /// of Mastery,
-        /// of Grandmastery, [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to of Worth,of Measure,of Excellence,of Performance,of Transcendence,of Perfection,of the Giant,of the Colossus,of Craftmanship,of Storms,of Defiance,of Equilibrium,of Amicae,of the Guard,of Ages,of Calm,of Accuracy,of Precision,of the Sniper,of the Marksman,of the Deadeye,of the Ranger,of the Assassin,of Shining,of Light,of Radiance,of Ease,of Mastery,of Grandmastery,of Skill,of Renown,of Acclaim,of Fame,of Infamy,of Celebration,of the Clouds,of the Sky,of the Meteor,of the Comet,of the Heavens,of the Galaxy, [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Suffixes {
             get {
                 return ResourceManager.GetString("Suffixes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Short Sword,Scimitar,Sabre,Falchion,Crystal Sword,Broad Sword,Long Sword,War Sword,Two-handed Sword,Claymore,Giant Sword,Bastard Sword,Flamberge.
+        /// </summary>
+        internal static string SwordNames {
+            get {
+                return ResourceManager.GetString("SwordNames", resourceCulture);
             }
         }
         
@@ -404,19 +410,11 @@ namespace RPG.Properties {
         ///
         ///	- Finish up the support tab with facts about the game and instructions on how to play.
         ///
-        ///	- Fix bugs and balance classes and stats.
+        ///	- I have an idea of how to save data on the server, rendering local copies useless.
+        ///		- Simply name each .xml file after the user and check that there&apos;s only 1 of 
+        ///		  that user name. Then save these files in a &apos;&apos;Data&apos;&apos; folder on the server.
         ///
-        ///	- Add more Epochal Items to the game.
-        ///
-        ///	- Add more icons and graphics.
-        ///
-        ///	- Add a BOSS difficulty to choose from.
-        ///
-        ///	- Add more suffixes and prefixes.
-        ///
-        ///	- Add more NPCAIs to the game.
-        ///
-        ///	- Implement &apos;&apos;one-battle quests&apos;&apos; [rest of string was truncated]&quot;;.
+        ///	- Fix bugs and balance cl [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Upcomming {
             get {
