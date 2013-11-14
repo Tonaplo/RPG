@@ -172,8 +172,8 @@ namespace RPG.Function
                                     "\nStrength: " + thisChar.BuffedStrength.IntValue +
                                     "\nAgility: " + thisChar.BuffedAgility.IntValue +
                                     "\nIntellect: " + thisChar.BuffedIntellingence.IntValue +
-                                    "\nCrit: " + thisChar.BuffedCrit.IntValue + " (" + CombatHandler.ReturnCritAndSpeedPercent(thisChar.UnitLevel, thisChar.BuffedCrit.IntValue) + "%)" +
-                                    "\nSpeed: " + thisChar.BuffedSpeed.IntValue + " (" + CombatHandler.ReturnCritAndSpeedPercent(thisChar.UnitLevel, thisChar.BuffedSpeed.IntValue) + "%)" +
+                                    "\nCrit: " + thisChar.BuffedCrit.IntValue + " (" + CombatHandler.ReturnCritPercent(thisChar.UnitLevel, thisChar.BuffedCrit.IntValue) + "%)" +
+                                    "\nSpeed: " + thisChar.BuffedSpeed.IntValue + " (" + CombatHandler.ReturnSpeedPercent(thisChar.UnitLevel, thisChar.BuffedSpeed.IntValue) + "%)" +
                                     "\nAttack: " + thisChar.BuffedAttackDamage.IntValue +
                                     "\nArmor: " + thisChar.BuffedArmor.IntValue;
             }
@@ -207,8 +207,8 @@ namespace RPG.Function
                                     "\nStrength: " + thisChar.BaseStrength.IntValue +
                                     "\nAgility: " + thisChar.BaseAgility.IntValue +
                                     "\nIntellect: " + thisChar.BaseIntellingence.IntValue +
-                                    "\nCrit: " + thisChar.BaseCrit.IntValue + " (" + CombatHandler.ReturnCritAndSpeedPercent(thisChar.UnitLevel, thisChar.BaseCrit.IntValue) + "%)" +
-                                    "\nSpeed: " + thisChar.BuffedSpeed.IntValue + " (" + CombatHandler.ReturnCritAndSpeedPercent(thisChar.UnitLevel, thisChar.BuffedSpeed.IntValue) + "%)" +
+                                    "\nCrit: " + thisChar.BaseCrit.IntValue + " (" + CombatHandler.ReturnCritPercent(thisChar.UnitLevel, thisChar.BaseCrit.IntValue) + "%)" +
+                                    "\nSpeed: " + thisChar.BuffedSpeed.IntValue + " (" + CombatHandler.ReturnSpeedPercent(thisChar.UnitLevel, thisChar.BuffedSpeed.IntValue) + "%)" +
                                     "\nAttack: " + thisChar.BaseAttackDamage.IntValue +
                                     "\nArmor: " + thisChar.BaseArmor.IntValue;
             }
@@ -233,8 +233,8 @@ namespace RPG.Function
                                 "\nStrength: " + thisChar.BuffedStrength.IntValue +
                                 "\nAgility: " + thisChar.BuffedAgility.IntValue +
                                 "\nIntellect: " + thisChar.BuffedIntellingence.IntValue +
-                                "\nCrit: " + thisChar.BuffedCrit.IntValue + " (" + CombatHandler.ReturnCritAndSpeedPercent(thisChar.UnitLevel, thisChar.BuffedCrit.IntValue) + "%)" +
-                                "\nSpeed: " + thisChar.BuffedSpeed.IntValue + " (" + CombatHandler.ReturnCritAndSpeedPercent(thisChar.UnitLevel, thisChar.BuffedSpeed.IntValue) + "%)" +
+                                "\nCrit: " + thisChar.BuffedCrit.IntValue + " (" + CombatHandler.ReturnCritPercent(thisChar.UnitLevel, thisChar.BuffedCrit.IntValue) + "%)" +
+                                "\nSpeed: " + thisChar.BuffedSpeed.IntValue + " (" + CombatHandler.ReturnSpeedPercent(thisChar.UnitLevel, thisChar.BuffedSpeed.IntValue) + "%)" +
                                 "\nAttack: " + thisChar.BuffedAttackDamage.IntValue +
                                 "\nArmor: " + thisChar.BuffedArmor.IntValue;
             }

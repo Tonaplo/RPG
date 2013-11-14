@@ -11,7 +11,7 @@ namespace RPG.Function
     {
         public static double CritCalculator(int _unitLevel, int _critRating)
         {
-            int critPercent = ReturnCritAndSpeedPercent(_unitLevel, _critRating);
+            int critPercent = ReturnCritPercent(_unitLevel, _critRating);
             Random r = new Random();
 
             if (critPercent > 95)
@@ -29,15 +29,25 @@ namespace RPG.Function
 
         public static int SpeedCalculator(int _unitLevel, int _critRating)
         {
-            int speedPercent = ReturnCritAndSpeedPercent(_unitLevel, _critRating);
             Random r = new Random();
+            int speedPercent = ReturnSpeedPercent(_unitLevel, _critRating);
+            int value = r.Next(0, 101);
 
             if (speedPercent > 95)
                 speedPercent = 95;
 
-            if (r.Next(0, 101) < speedPercent)
+            if (value < speedPercent)
             {
-                return 2;
+                if(value < 20)
+                    return 2;
+                else if (value < 40)
+                    return 3;
+                else if (value < 60)
+                    return 4;
+                else if (value < 80)
+                    return 5;
+                else
+                    return 6;
             }
             else
             {
@@ -45,9 +55,14 @@ namespace RPG.Function
             }
         }
 
-        public static int ReturnCritAndSpeedPercent(int _unitLevel, int _critRating)
+        public static int ReturnSpeedPercent(int _unitLevel, int _critRating)
         {
-            return (int)((double)_critRating/((_unitLevel+1)*0.3));
+            return (int)((double)_critRating/((_unitLevel+1)*0.22));
+        }
+
+        public static int ReturnCritPercent(int _unitLevel, int _critRating)
+        {
+            return (int)((double)_critRating / ((_unitLevel + 1) * 0.19));
         }
     }
 }

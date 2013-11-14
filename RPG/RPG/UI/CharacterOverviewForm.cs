@@ -741,7 +741,7 @@ namespace RPG.UI
                     break;
                 case EnumCharClass.Caretaker:
                     tt.ToolTipTitle = "Sacrifice";
-                    tt.Show("Deals 85% of the Caretakers agility in damage, but takes damage equal to the difference between strength and agility.", checkBoxClass2, 5000);
+                    tt.Show("Deals 55% of the Caretakers Agility in damage, but takes damage equal to the difference between Strength and Agility.", checkBoxClass2, 5000);
                     break;
                 case EnumCharClass.Synergist:
                     tt.ToolTipTitle = "Agile Mind";
@@ -1031,6 +1031,7 @@ namespace RPG.UI
             character.BaseStrength.IntValue = 1;
             character.BaseAgility.IntValue = 1;
             character.UnUsedAttributePoints.IntValue = ((character.UnitLevel-1) * 4);
+            character.ResetChar();
             SetAttributeLabels();
         }
 

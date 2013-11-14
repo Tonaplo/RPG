@@ -162,7 +162,7 @@ namespace RPG.Core.Units
         {
             get 
             {   
-                charXPToLevel = (int)((10 * this.UnitLevel)*Math.Pow(1.1,(float)this.UnitLevel));
+                charXPToLevel = (int)((10 * this.UnitLevel)*Math.Pow(1.06,(float)this.UnitLevel));
                 return charXPToLevel;
             }
             set { charXPToLevel = value; }

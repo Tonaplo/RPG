@@ -255,7 +255,7 @@ namespace RPG.Core.Abilities
 
                 _caster.BuffedHP.IntValue += (int)(stat * 0.2);
 
-                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing maxmimum health by " + (int)(stat * 0.05) + "!";
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing maxmimum health by " + (int)(stat * 0.2) + "!";
             }
             else
             {
@@ -1948,7 +1948,7 @@ namespace RPG.Core.Abilities
     }
 
     /// <summary>
-    /// Sacrifice: "Deals 85% of the Caretakers agility in damage, but takes damage equal to the difference between strength and agility."
+    /// Sacrifice: "Deals 55% of the Caretakers Agility in damage, but takes damage equal to the difference between Strength and Agility."
     /// </summary>
     public class CaretakerSacrifice : ActiveAbility
     {
@@ -1956,7 +1956,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Sacrifice";
-            this.Description = "Deals 85% of the Caretakers agility in damage, but takes damage equal to the difference between strength and agility.";
+            this.Description = "Deals 55% of the Caretakers Agility in damage, but takes damage equal to the difference between Strength and Agility.";
             this.Icon = this.SetIcon(Properties.Resources.bodyslam);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 1;
@@ -1972,7 +1972,7 @@ namespace RPG.Core.Abilities
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _targets)
         {
             double critModifier = Function.CombatHandler.CritCalculator(_caster.UnitLevel, _caster.BuffedCrit.IntValue);
-            int damage = (int)((_caster.BuffedAgility.IntValue * 0.85) * critModifier);
+            int damage = (int)((_caster.BuffedAgility.IntValue * 0.55) * critModifier);
             _targets.CurrentHP.IntValue -= damage;
 
             int damageTake = Math.Abs((_caster.BuffedAgility.IntValue-(_caster.BuffedStrength.IntValue)));
@@ -2701,7 +2701,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Heal";
-            this.Description = "This ability heals the unit for 10% of its max HP";
+            this.Description = "This ability heals the unit for 7% of its max HP";
             this.Icon = this.SetIcon(Properties.Resources.heal);
         }
 
@@ -2714,7 +2714,7 @@ namespace RPG.Core.Abilities
         int damageValue = 0;
         public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
         {
-            int heal = (int)Math.Abs(_caster.BuffedHP.IntValue * 0.10);
+            int heal = (int)Math.Abs(_caster.BuffedHP.IntValue * 0.07);
 
             if (heal + _caster.CurrentHP.IntValue > _caster.BuffedHP.IntValue)
                 _caster.CurrentHP.IntValue = _caster.BuffedHP.IntValue;
@@ -2759,7 +2759,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Atonement Smite";
-            this.Description = "This ability deals the units level in damage and heals it for 7% of its maximum health.";
+            this.Description = "This ability deals the units level in damage and heals it for 5% of its maximum health.";
             this.Icon = this.SetIcon(Properties.Resources.fireball);
         }
 
@@ -2774,7 +2774,7 @@ namespace RPG.Core.Abilities
         {
             int index = DateTime.Now.Millisecond % _targets.Count;
             int damage = Math.Abs(_caster.UnitLevel);
-            int healing = (int)(_caster.BuffedHP.IntValue * 0.07);
+            int healing = (int)(_caster.BuffedHP.IntValue * 0.05);
 
             if (healing + _caster.CurrentHP.IntValue >= _caster.BuffedHP.IntValue)
                 _caster.CurrentHP.IntValue = _caster.BuffedHP.IntValue;

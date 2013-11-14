@@ -28,6 +28,8 @@ namespace RPG.Function
         public static List<string> chestArmorNames = new List<string>();
         public static List<string> helmArmorNames = new List<string>();
         public static Random r = new Random();
+        private static string previousprefix = "";
+        private static string previoussuffix = "";
 
         #endregion
 
@@ -735,7 +737,7 @@ namespace RPG.Function
             if (_weaponName == null)
                 returnedWeapon.ItemName = Function.ItemGeneration.GenerateWeaponName(returnedWeapon, true, false);
 
-            for (int i = 0; i < r.Next(1,3); i++)
+            for (int i = 0; i < 3; i++)
             {
                 returnedWeapon.AddAttributeToItem(GetRandomAttribute(_itemlevel + r.Next(48), returnedWeapon.ItemType), r.Next(_itemlevel / 4, _itemlevel));
             }
@@ -767,7 +769,7 @@ namespace RPG.Function
                 returnedWeapon.ItemName = Function.ItemGeneration.GenerateWeaponName(returnedWeapon, true, true);
 
             //This code adds 2 or 3 attributes to the item. The _itemlevel+r.Next(48) is to ensure randomness.
-            for (int i = 0; i < r.Next(1, 4); i++)
+            for (int i = 0; i < 5; i++)
             {
                 returnedWeapon.AddAttributeToItem(GetRandomAttribute(_itemlevel + r.Next(48), returnedWeapon.ItemType), r.Next(_itemlevel / 4, _itemlevel));
             }
@@ -831,7 +833,7 @@ namespace RPG.Function
             if (_armorName == null)
                 returnedArmor.ItemName = Function.ItemGeneration.GenerateArmorName(returnedArmor, true, false);
 
-            for (int i = 0; i < r.Next(1, 3); i++)
+            for (int i = 0; i < 3; i++)
             {
                 returnedArmor.AddAttributeToItem(GetRandomAttribute(_itemlevel + r.Next(48), returnedArmor.ItemType), r.Next(_itemlevel / 4, _itemlevel));
             }
@@ -864,7 +866,7 @@ namespace RPG.Function
                 returnedArmor.ItemName = Function.ItemGeneration.GenerateArmorName(returnedArmor, true, true);
 
             //This code adds 2 or 3 attributes to the item. The _itemlevel+r.Next(48) is to ensure randomness.
-            for (int i = 0; i < r.Next(1, 4); i++)
+            for (int i = 0; i < 5; i++)
             {
                 returnedArmor.AddAttributeToItem(GetRandomAttribute(_itemlevel + r.Next(48), returnedArmor.ItemType), r.Next(_itemlevel / 4, _itemlevel));
             }
@@ -894,7 +896,7 @@ namespace RPG.Function
             if (_bcName == null)
                 returnedBC.ItemName = Function.ItemGeneration.GenerateBattleCharmName(returnedBC, true, false);
 
-            for (int i = 0; i < r.Next(1, 3); i++)
+            for (int i = 0; i < 3; i++)
             {
                 returnedBC.AddAttributeToItem(GetRandomAttribute(_itemlevel + r.Next(48), returnedBC.ItemType), r.Next(_itemlevel/4, _itemlevel/2));
             }
@@ -921,7 +923,7 @@ namespace RPG.Function
             if (_bcName == null)
                 returnedBC.ItemName = Function.ItemGeneration.GenerateBattleCharmName(returnedBC, true, true);
 
-            for (int i = 0; i < r.Next(1, 4); i++)
+            for (int i = 0; i < 5; i++)
             {
                 returnedBC.AddAttributeToItem(GetRandomAttribute(_itemlevel + r.Next(48), returnedBC.ItemType), r.Next(_itemlevel / 4, _itemlevel/2));
             }
@@ -1206,15 +1208,14 @@ namespace RPG.Function
 
         private static string GenerateWeaponName(Weapon _weapon, bool prefix, bool suffix)
         {
-            Random r = new Random();
             int index = 0;
+            Random r = new Random();
+            
             string _name = "";
 
             if (prefix)
             {
-                index = (_weapon.ItemLevel * (int)r.Next(itemPrefixes.Count)) % (itemPrefixes.Count);
-                _name = itemPrefixes[index];
-                _name += " ";
+                _name += ReturnRandomPrefix() + " ";
             }
 
             switch (_weapon.WeaponType)
@@ -1247,9 +1248,7 @@ namespace RPG.Function
 
             if (suffix)
             {
-                _name += " ";
-                index = (_weapon.ItemLevel * r.Next(itemSuffixes.Count)) % (itemSuffixes.Count);
-                _name += itemSuffixes[index];
+                _name += " " + ReturnRandomSuffix();
             }
 
             return _name;
@@ -1264,9 +1263,7 @@ namespace RPG.Function
 
             if (prefix)
             {
-                index = (_armor.ItemLevel * r.Next(itemPrefixes.Count)) % (itemPrefixes.Count);
-                _name = itemPrefixes[index];
-                _name += " ";
+                _name += ReturnRandomPrefix() + " ";
             }
 
             switch (_armor.ArmorType)
@@ -1287,9 +1284,7 @@ namespace RPG.Function
 
             if (suffix)
             {
-                _name += " ";
-                index = (_armor.ItemLevel * r.Next(itemSuffixes.Count)) % (itemSuffixes.Count - 1);
-                _name += itemSuffixes[index];
+                _name += " " + ReturnRandomSuffix();
             }
 
             return _name;
@@ -1299,27 +1294,51 @@ namespace RPG.Function
         private static string GenerateBattleCharmName(BattleCharm _bc, bool prefix, bool suffix)
         {
             Random r = new Random();
-            int index = 0;
             string _name = "";
 
             if (prefix)
             {
-                index = (_bc.ItemLevel * r.Next(itemPrefixes.Count)) % (itemPrefixes.Count);
-                _name = itemPrefixes[index];
-                _name += " ";
+                _name += ReturnRandomPrefix() + " ";
             }
 
             _name += "Battle Charm";
-           
+
             if (suffix)
             {
-                _name += " ";
-                index = (_bc.ItemLevel * r.Next(itemSuffixes.Count)) % (itemSuffixes.Count - 1);
-                _name += itemSuffixes[index];
+                _name += " " + ReturnRandomSuffix();
             }
 
             return _name;
 
+        }
+
+        private static string ReturnRandomPrefix()
+        {
+            int index = 0;
+            string pre = "";
+            do
+            {
+                index = (int)r.Next(0, itemPrefixes.Count);
+                pre = itemPrefixes[index];
+            } while (previousprefix == pre);
+            previousprefix = pre;
+
+            return pre;
+        }
+
+        private static string ReturnRandomSuffix()
+        {
+            int index = 0;
+            string suf = "";
+            do
+            {
+                index = r.Next(0, itemSuffixes.Count);
+                suf = itemSuffixes[index];
+            } while (previoussuffix == suf);
+
+            previoussuffix = suf;
+
+            return suf;
         }
 
         #endregion

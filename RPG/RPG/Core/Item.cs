@@ -82,8 +82,6 @@ namespace RPG.Core
                 this.stats.Add(new UnitAttribute(type, value));
             else if (this.stats.Count >= 4)
             {
-                RPG.UI.MessageForm mes = new RPG.UI.MessageForm("This item has too many attributes. The item is called " + this.itemName);
-                mes.ShowDialog();
             }
         }
 

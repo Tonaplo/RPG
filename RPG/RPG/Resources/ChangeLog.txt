@@ -1,4 +1,30 @@
-﻿Version 0.1.3.13 (12/11-2013):
+﻿Version 0.1.3.14 (13/11-2013):
+
+	- General:
+		- Speed and Crit percentages was buffed - higher percentages are now granted for lower rating.
+		- Speed and Crit was seperated - Crit now outputs slightly higher percentages than Speed.
+		- Speed was changed - At higher percentages, the character has a chance to gain more than 
+		  one extra turnpoint:
+			- 21+ % Speed gives the character a chance to earn 2 extra turnpoints.
+			- 41+ % Speed gives the character a chance to earn 3 extra turnpoints.
+			- 61+ % Speed gives the character a chance to earn 4 extra turnpoints.
+			- 81+ % Speed gives the character a chance to earn 5 extra turnpoints.
+		- Significantly reduced the amount of experience needed to level up for all levels.
+		- Changed loot, so Grand and Fabled items are more prone to have more stats.
+		- Fixed a bug causing a message to be shown to the player upon recieving loot.
+		- Improved item naming, so an item will never have the same suffix and prefix as the
+		  item right before it.
+
+	- Monsters:
+		- The monsters "Heal" amount was reduced from 10% to 7%.
+		- The healing part of monsters "Atonement" was reduced from 7% to 5%.
+
+	- Classes:
+		- Caretaker:
+			- "Sacrifice" was changed: "Deals 55% (was 85%) of the Caretakers Agility in damage, 
+			  but takes damage equal to the difference between Strength and Agility."
+_________________________________________________________________________________________________________
+Version 0.1.3.13 (12/11-2013):
 
 	- General:
 		- Buffs and Debuffs has been implemented! This means that certain buffed abilities can
