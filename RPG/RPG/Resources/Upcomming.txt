@@ -34,6 +34,9 @@ This tab presents planned changes to the game, that has not yet been implemented
 
 	- NAME the game.
 
+	- Change the Thief's Copycat ability. Right now it's only good for being "less carried"
+	  in multiplayer.
+
 Known bugs:
 
 	- On computers where the used font is not installed, alot of text scaling errores occur.

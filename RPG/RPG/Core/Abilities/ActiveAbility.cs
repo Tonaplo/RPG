@@ -571,7 +571,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Rampage";
-            this.Description = "The Warriors deals 135% of his  strength in damage, but takes 10% damage of the damage himself.";
+            this.Description = "The Warriors deals 150% of his  strength in damage, but takes 10% damage of the damage himself.";
             this.Icon = this.SetIcon(Properties.Resources.strength);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 2;
@@ -587,7 +587,7 @@ namespace RPG.Core.Abilities
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _targets)
         {
             double critModifier = Function.CombatHandler.CritCalculator(_caster.UnitLevel, _caster.BuffedCrit.IntValue);
-            int damage = (int)((_caster.BuffedStrength.IntValue * 1.35) * critModifier);
+            int damage = (int)((_caster.BuffedStrength.IntValue * 1.50) * critModifier);
             int damageSelf = (int)(0.1 * damage);
             _targets.CurrentHP.IntValue -= damage;
             _caster.CurrentHP.IntValue -= damageSelf;
@@ -2731,7 +2731,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Nuke";
-            this.Description = "This ability deals 600% of the casters level in damage. Can only be used every 5 turns.";
+            this.Description = "This ability deals 600% of the casters level in damage. Can only be used every 4 turns.";
             this.Icon = this.SetIcon(Properties.Resources.fireball);
         }
 

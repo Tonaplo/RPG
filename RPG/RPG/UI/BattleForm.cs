@@ -297,12 +297,13 @@ namespace RPG.UI
 
             foreach (var item in battleChars)
             {
+                int newPoints = item.CurrentTurnPoints.IntValue + Function.CombatHandler.SpeedCalculator(item.UnitLevel, item.BuffedSpeed.IntValue);
                 turnpoints = (item.UnitLevel / 10) + 1;
-                if (item.CurrentTurnPoints.IntValue + 2 > turnpoints)
+                if (newPoints > turnpoints)
                     item.CurrentTurnPoints.IntValue = (item.UnitLevel / 10) + 1;
                 else
                 {
-                    item.CurrentTurnPoints.IntValue += Function.CombatHandler.SpeedCalculator(item.UnitLevel, item.BuffedSpeed.IntValue);
+                    item.CurrentTurnPoints.IntValue = newPoints;
                 }
 
             }

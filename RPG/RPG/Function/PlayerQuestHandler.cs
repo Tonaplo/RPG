@@ -222,12 +222,12 @@ namespace RPG.Function
 
                     for (int i = 0; i < 2; i++)
                     {
-                        int temp = r.Next(0, 11);
+                        int temp = r.Next(0, 101);
                         int ilevel = _player.ControlledCharacters[r.Next(0,_player.ControlledCharacters.Count)].UnitLevel-4;
                         if(ilevel < 1)
                             ilevel = 1;
                         
-                        if(temp >=5 && ilevel > 10)
+                        if(temp >=90 && ilevel > 10)
                         {
                             itemReward = ItemGeneration.ReturnEpocalItem(ilevel);
                         }
@@ -279,12 +279,12 @@ namespace RPG.Function
 
                     for (int i = 0; i < 2; i++)
                     {
-                        int temp = r.Next(0, 11);
+                        int temp = r.Next(0, 101);
                         int ilevel = _player.ControlledCharacters[r.Next(0,_player.ControlledCharacters.Count)].UnitLevel-2;
                         if (ilevel < 1)
                             ilevel = 1;
 
-                        if(temp >=4 && ilevel > 10)
+                        if(temp >=85 && ilevel > 10)
                         {
                             itemReward = ItemGeneration.ReturnEpocalItem(ilevel);
                         }
@@ -336,12 +336,12 @@ namespace RPG.Function
 
                     for (int i = 0; i < 2; i++)
                     {
-                        int temp = r.Next(0, 11);
+                        int temp = r.Next(0, 101);
                         int ilevel = _player.ControlledCharacters[r.Next(0,_player.ControlledCharacters.Count)].UnitLevel;
                         if (ilevel < 1)
                             ilevel = 1;
 
-                        if(temp >=3 && ilevel > 10)
+                        if(temp >=80 && ilevel > 10)
                         {
                             itemReward = ItemGeneration.ReturnEpocalItem(ilevel);
                         }
@@ -393,12 +393,12 @@ namespace RPG.Function
 
                     for (int i = 0; i < 2; i++)
                     {
-                        int temp = r.Next(0, 11);
+                        int temp = r.Next(0, 101);
                         int ilevel = _player.ControlledCharacters[r.Next(0,_player.ControlledCharacters.Count)].UnitLevel+2;
                         if (ilevel < 1)
                             ilevel = 1;
 
-                        if(temp >=2 && ilevel > 10)
+                        if(temp >=75 && ilevel > 10)
                         {
                             itemReward = ItemGeneration.ReturnEpocalItem(ilevel);
                         }
@@ -450,12 +450,12 @@ namespace RPG.Function
 
                     for (int i = 0; i < 2; i++)
                     {
-                        int temp = r.Next(0, 11);
+                        int temp = r.Next(0, 101);
                         int ilevel = _player.ControlledCharacters[r.Next(0,_player.ControlledCharacters.Count)].UnitLevel+4;
                         if (ilevel < 1)
                             ilevel = 1;
 
-                        if(temp >=1 && ilevel > 10)
+                        if(temp >=70 && ilevel > 10)
                         {
                             itemReward = ItemGeneration.ReturnEpocalItem(ilevel);
                         }

@@ -155,7 +155,7 @@ namespace RPG.Function
                 return returnedItem;
             }
 
-            int itemlevel = r.Next(10, _npclevel + 1);
+            int itemlevel = r.Next(_npclevel - 5, _npclevel + 1);
 
             if (itemlevel > 55)
             {
@@ -737,7 +737,8 @@ namespace RPG.Function
             if (_weaponName == null)
                 returnedWeapon.ItemName = Function.ItemGeneration.GenerateWeaponName(returnedWeapon, true, false);
 
-            for (int i = 0; i < 3; i++)
+            int upperLimit = r.Next(1, 4);
+            for (int i = 0; i < upperLimit; i++)
             {
                 returnedWeapon.AddAttributeToItem(GetRandomAttribute(_itemlevel + r.Next(48), returnedWeapon.ItemType), r.Next(_itemlevel / 4, _itemlevel));
             }
@@ -833,7 +834,8 @@ namespace RPG.Function
             if (_armorName == null)
                 returnedArmor.ItemName = Function.ItemGeneration.GenerateArmorName(returnedArmor, true, false);
 
-            for (int i = 0; i < 3; i++)
+            int upperLimit = r.Next(1, 4);
+            for (int i = 0; i < upperLimit; i++)
             {
                 returnedArmor.AddAttributeToItem(GetRandomAttribute(_itemlevel + r.Next(48), returnedArmor.ItemType), r.Next(_itemlevel / 4, _itemlevel));
             }
@@ -896,7 +898,8 @@ namespace RPG.Function
             if (_bcName == null)
                 returnedBC.ItemName = Function.ItemGeneration.GenerateBattleCharmName(returnedBC, true, false);
 
-            for (int i = 0; i < 3; i++)
+            int upperLimit = r.Next(1, 4);
+            for (int i = 0; i < upperLimit; i++)
             {
                 returnedBC.AddAttributeToItem(GetRandomAttribute(_itemlevel + r.Next(48), returnedBC.ItemType), r.Next(_itemlevel/4, _itemlevel/2));
             }
@@ -947,8 +950,6 @@ namespace RPG.Function
         /// <returns>A list of item - the loot from the mob</returns>
         public static Item GenerateLoot(int _charLevels, int numberOfCharacters, int _npcLevels)
         {
-
-
             Item loot = new Item();
             int modifier = 0;
             int roll = 0;
@@ -973,10 +974,7 @@ namespace RPG.Function
                 loot = GenerateGrandItem((int)(_npcLevels));
             else if (fabled > roll)
             {
-                if(_npcLevels/numberOfCharacters >= 30 && r.Next(0,10) > 7)
-                    loot = ReturnEpocalItem((int)(_npcLevels)-10);
-                else
-                    loot = GenerateFabledItem((int)(_npcLevels));
+                loot = GenerateFabledItem((int)(_npcLevels));
             }
             else
                 loot = ReturnEpocalItem((int)(_npcLevels));

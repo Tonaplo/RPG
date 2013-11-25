@@ -1,10 +1,53 @@
-﻿Version 0.1.3.14 (13/11-2013):
+﻿Version 0.1.3.16 (20/11-2013):
+
+	NOTICE: I am entering a busy exam period and I also plan to rework the entire UI to be more smooth 
+	        and easier to work with. This means there wont be any new features added to the game in the
+			near future, however the game will be named and have a better look once I am done with the
+			UI overhauling.
+
+			Thank you for your patience :)
+_________________________________________________________________________________________________________
+Version 0.1.3.15 (20/11-2013):
+
+	- General:
+		- Made some tweaks to the stats given to Grand items, so they will receive less stats 
+		  on average than before.
+		- Changed the way Epochal items where awarded:
+			- The maximum item level is the level of the monster the character was fighting.
+			- The minimum item level is 5 levels below that monster.
+		- Fixed a bug, causing character with high Speed rating to gain more turnpoints than he should be able to.
+		- Speed was changed in terms of what percentages grant extra turnpoints:
+			- 0+ % Speed gives the character a chance to earn 1 extra turnpoint.
+			- 31+ % Speed gives the character a chance to earn 2 extra turnpoints.
+			- 61+ % Speed gives the character a chance to earn 3 extra turnpoints.
+			- 91+ % Speed gives the character a chance to earn 4 extra turnpoints.
+
+	- Quests:
+		- To compensate for the higher chance of getting good Epochal items, the chance to receive
+		  them from the "High Quality Items" reward choice has been reduced:
+			- Very Easy has a 10% to grant an Epochal item.
+			- Easy has a 15% to grant an Epochal item.
+			- Normal has a 20% to grant an Epochal item.
+			- Hard has a 25% to grant an Epochal item.
+			- Very Hard has a 30% to grant an Epochal item.
+
+	- Monsters:
+		- Changed the Nuke and Heal AI to nuke every 4 turns.
+
+	- Classes:
+		- Warrior:
+			- "Rampage" was changed: "The Warrior deals 150% (was 135%) of his strength in damage, 
+			  but takes 10% damage of the damage himself."
+
+_________________________________________________________________________________________________________
+Version 0.1.3.14 (13/11-2013):
 
 	- General:
 		- Speed and Crit percentages was buffed - higher percentages are now granted for lower rating.
 		- Speed and Crit was seperated - Crit now outputs slightly higher percentages than Speed.
 		- Speed was changed - At higher percentages, the character has a chance to gain more than 
 		  one extra turnpoint:
+			- 0+ % Speed gives the character a chance to earn 1 extra turnpoint.
 			- 21+ % Speed gives the character a chance to earn 2 extra turnpoints.
 			- 41+ % Speed gives the character a chance to earn 3 extra turnpoints.
 			- 61+ % Speed gives the character a chance to earn 4 extra turnpoints.

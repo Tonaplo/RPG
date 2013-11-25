@@ -38,16 +38,14 @@ namespace RPG.Function
 
             if (value < speedPercent)
             {
-                if(value < 20)
+                if(value < 30)
                     return 2;
-                else if (value < 40)
-                    return 3;
                 else if (value < 60)
+                    return 3;
+                else if (value < 90)
                     return 4;
-                else if (value < 80)
-                    return 5;
                 else
-                    return 6;
+                    return 5;
             }
             else
             {

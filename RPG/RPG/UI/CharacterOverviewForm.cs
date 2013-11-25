@@ -791,7 +791,7 @@ namespace RPG.UI
             {
                 case EnumCharClass.Warrior:
                     tt.ToolTipTitle = "Rampage";
-                    tt.Show("The Warriors deals 135% of his  strength in damage, but takes 10% damage of the damage himself.", checkBoxClass4, 5000);
+                    tt.Show("The Warriors deals 150% of his  strength in damage, but takes 10% damage of the damage himself.", checkBoxClass4, 5000);
                     break;
                 case EnumCharClass.Paladin:
                     tt.ToolTipTitle = "Raise Spirit";

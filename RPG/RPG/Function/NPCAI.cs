@@ -159,7 +159,7 @@ namespace RPG.Function
 
             aiStep++;
 
-            if (aiStep == 4)
+            if (aiStep == 5)
                 aiStep = 0;
         }
 
