@@ -637,49 +637,49 @@ namespace RPG.UI
         private void checkBoxAll1_MouseHover(object sender, EventArgs e)
         {
             tt.ToolTipTitle = "Melee Attack";
-            tt.Show("Deal damage to the target for 100% of the units attack.", checkBoxAll1, 5000);
+            tt.Show(Properties.Resources.AbilitiesDescriptionAnyMeleeAttack, checkBoxAll1, 5000);
         }
 
         private void checkBoxAll2_MouseHover(object sender, EventArgs e)
         {
                 tt.ToolTipTitle = "Battle Regeneration";
-                tt.Show("Heals the caster for 100% of the casters level.", checkBoxAll2, 5000);
+                tt.Show(Properties.Resources.AbilitiesDescriptionAnyBattleRegeneration, checkBoxAll2, 5000);
         }
 
         private void checkBoxAll3_MouseHover(object sender, EventArgs e)
         {
                 tt.ToolTipTitle = "Empowerment";
-                tt.Show("Increase the highest stat of the caster by 20%.", checkBoxAll3, 5000);
+                tt.Show(Properties.Resources.AbilitiesDescriptionAnyEmpowerment, checkBoxAll3, 5000);
         }
 
         private void checkBoxAll4_MouseHover(object sender, EventArgs e)
         {
                 tt.ToolTipTitle = "Invigorate";
-                tt.Show("Increase the maximum health of the caster by 20% of the casters highest stat.", checkBoxAll4, 5000);
+                tt.Show(Properties.Resources.AbilitiesDescriptionAnyInvigorate, checkBoxAll4, 5000);
         }
 
         private void checkBoxAll5_MouseHover(object sender, EventArgs e)
         {
                 tt.ToolTipTitle = "Double Swing";
-                tt.Show("Deal damage equal to 315% of the units attack.", checkBoxAll5, 5000);
+                tt.Show(Properties.Resources.AbilitiesDescriptionAnyDoubleSwing, checkBoxAll5, 5000);
         }
 
         private void checkBoxAll6_MouseHover(object sender, EventArgs e)
         {
                 tt.ToolTipTitle = "Opportunity";
-                tt.Show("Increases a random of your stats by 15%.", checkBoxAll6, 5000);
+                tt.Show(Properties.Resources.AbilitiesDescriptionAnyOpportunity, checkBoxAll6, 5000);
         }
 
         private void checkBoxAll7_MouseHover(object sender, EventArgs e)
         {
                 tt.ToolTipTitle = "Totalitarism";
-                tt.Show("Deals all of the units stats combined in damage.", checkBoxAll7, 5000);
+                tt.Show(Properties.Resources.AbilitiesDescriptionAnyTotalitarism, checkBoxAll7, 5000);
         }
 
         private void checkBoxAll8_MouseHover(object sender, EventArgs e)
         {
                 tt.ToolTipTitle = "Ascend";
-                tt.Show("Increases all of the units stats by 15, including max health and attack.", checkBoxAll8, 5000);
+                tt.Show(Properties.Resources.AbilitiesDescriptionAnyAscend, checkBoxAll8, 5000);
         }
 
         #endregion
@@ -692,27 +692,27 @@ namespace RPG.UI
             {
                 case EnumCharClass.Warrior:
                     tt.ToolTipTitle = "Strength";
-                    tt.Show("Deal damage to the target based on the 50% of the strength of the Warrior.", checkBoxClass1, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionWarriorStrength, checkBoxClass1, 5000);
                     break;
                 case EnumCharClass.Paladin:
                     tt.ToolTipTitle = "Wrath";
-                    tt.Show("Deals 50% of the Paladins strength in damage.", checkBoxClass1, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionPaladinWrath, checkBoxClass1, 5000);
                     break;
                 case EnumCharClass.Wizard:
                     tt.ToolTipTitle = "Fireball";
-                    tt.Show("This ability deals damage to the 1 target, based on 50% of the Wizards intellect.", checkBoxClass1, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionWizardFireball, checkBoxClass1, 5000);
                     break;
                 case EnumCharClass.Thief:
                     tt.ToolTipTitle = "Quick Attack";
-                    tt.Show("Swiftly injure the target for 50% of the casters agility.", checkBoxClass1, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionThiefQuickAttack, checkBoxClass1, 5000);
                     break;
                 case EnumCharClass.Caretaker:
                     tt.ToolTipTitle = "Body Slam";
-                    tt.Show("Deals 20% of the Caretakers maximum health in damage to the target.", checkBoxClass1, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionCaretakerBodySlam, checkBoxClass1, 5000);
                     break;
                 case EnumCharClass.Synergist:
                     tt.ToolTipTitle = "Duality";
-                    tt.Show("Deals 25% of the Synergists combined intellect and agility in damage.", checkBoxClass1, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionSynergistDuality, checkBoxClass1, 5000);
                     break;
                 default:
                     break;
@@ -725,27 +725,27 @@ namespace RPG.UI
             {
                 case EnumCharClass.Warrior:
                     tt.ToolTipTitle = "Power Strike";
-                    tt.Show("Deal damage to the target based on 90% attack damage and 10% of the Warriors strength.", checkBoxClass2, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionWarriorPowerStrike, checkBoxClass2, 5000);
                     break;
                 case EnumCharClass.Paladin:
                     tt.ToolTipTitle = "Justice";
-                    tt.Show("Deals 40% of the Paladins strength in damage and heals him for 30% of his intellect.", checkBoxClass2, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionPaladinJustice, checkBoxClass2, 5000);
                     break;
                 case EnumCharClass.Wizard:
                     tt.ToolTipTitle = "Heal";
-                    tt.Show("This Ability heals the target player for an amount equal to 25% of the Wizards Intellect.", checkBoxClass2, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionWizardHeal, checkBoxClass2, 5000);
                     break;
                 case EnumCharClass.Thief:
                     tt.ToolTipTitle = "Borrow Weapon";
-                    tt.Show("The Thief uses the best attack of his allies together with his own, dealing 65% of their combined damage.", checkBoxClass2, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionThiefBorrowWeapon, checkBoxClass2, 5000);
                     break;
                 case EnumCharClass.Caretaker:
                     tt.ToolTipTitle = "Sacrifice";
-                    tt.Show("Deals 55% of the Caretakers Agility in damage, but takes damage equal to the difference between Strength and Agility.", checkBoxClass2, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionCaretakerSacrifice, checkBoxClass2, 5000);
                     break;
                 case EnumCharClass.Synergist:
                     tt.ToolTipTitle = "Agile Mind";
-                    tt.Show("Deals damage for 55% of the Synergists Agility, but subtracts the difference between Agility and Intellect from the damage.", checkBoxClass2, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionSynergistAgileMind, checkBoxClass2, 5000);
                     break;
                 default:
                     break;
@@ -758,27 +758,27 @@ namespace RPG.UI
             {
                 case EnumCharClass.Warrior:
                     tt.ToolTipTitle = "Blind Rage";
-                    tt.Show("Deals anywhere between 175 and 75% of the Warriors strength in damage.", checkBoxClass3, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionWarriorBlindRage, checkBoxClass3, 5000);
                     break;
                 case EnumCharClass.Paladin:
                     tt.ToolTipTitle = "Serenity";
-                    tt.Show("Heals a random ally and deals damage to the target for 40% of the Paladins intellect.", checkBoxClass3, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionPaladinSerenity, checkBoxClass3, 5000);
                     break;
                 case EnumCharClass.Wizard:
                     tt.ToolTipTitle = "Flame Comet";
-                    tt.Show("Deals damage to the target for 110% of the Wizards intellect.", checkBoxClass3, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionWizardFlameComet, checkBoxClass3, 5000);
                     break;
                 case EnumCharClass.Thief:
                     tt.ToolTipTitle = "Bloodstealer";
-                    tt.Show("Deals 100% of the Thiefs agility in damage and heals him for 10% of the damage dealt.", checkBoxClass3, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionThiefBloodStealer, checkBoxClass3, 5000);
                     break;
                 case EnumCharClass.Caretaker:
                     tt.ToolTipTitle = "Lifeforce";
-                    tt.Show("Deals 90% of the Caretakers health deficit in damage to the target AND the Caretaker.", checkBoxClass3, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionCaretakerLifeForce, checkBoxClass3, 5000);
                     break;
                 case EnumCharClass.Synergist:
                     tt.ToolTipTitle = "Balance";
-                    tt.Show("Of Agility and Intellect, increases lowest stat by 15% and highest by 10%.", checkBoxClass3, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionSynergistBalance, checkBoxClass3, 5000);
                     break;
                 default:
                     break;
@@ -791,27 +791,27 @@ namespace RPG.UI
             {
                 case EnumCharClass.Warrior:
                     tt.ToolTipTitle = "Rampage";
-                    tt.Show("The Warriors deals 150% of his  strength in damage, but takes 10% damage of the damage himself.", checkBoxClass4, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionWarriorRampage, checkBoxClass4, 5000);
                     break;
                 case EnumCharClass.Paladin:
                     tt.ToolTipTitle = "Raise Spirit";
-                    tt.Show("The Paladin heals the target for 25% of his combined strength and intellect.", checkBoxClass4, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionPaladinRaiseSpirit, checkBoxClass4, 5000);
                     break;
                 case EnumCharClass.Wizard:
                     tt.ToolTipTitle = "Revitalize";
-                    tt.Show("The Wizard heals the target for 50% of her intellect.", checkBoxClass4, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionWizardRevitalize, checkBoxClass4, 5000);
                     break;
                 case EnumCharClass.Thief:
                     tt.ToolTipTitle = "Copycat";
-                    tt.Show("Deals 95% of the Thiefs allies' highest stat in damage.", checkBoxClass4, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionThiefCopyCat, checkBoxClass4, 5000);
                     break;
                 case EnumCharClass.Caretaker:
                     tt.ToolTipTitle = "Zeal of Humanity";
-                    tt.Show("Heals target ally for 75% of the Caretakers strength, but injures himself for 50% of the amount healed.", checkBoxClass4, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionCaretakerZealOfHumanity, checkBoxClass4, 5000);
                     break;
                 case EnumCharClass.Synergist:
                     tt.ToolTipTitle = "Mental Agility";
-                    tt.Show("Deals 115% of the Synergists Intellect in damage, subtracting the difference between Intellect and Agility.", checkBoxClass4, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionSynergistMentalAgility, checkBoxClass4, 5000);
                     break;
                 default:
                     break;
@@ -824,27 +824,27 @@ namespace RPG.UI
             {
                 case EnumCharClass.Warrior:
                     tt.ToolTipTitle = "Roar";
-                    tt.Show("Increases the strength of the Warrior by 40%.", checkBoxClass5, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionWarriorRoar, checkBoxClass5, 5000);
                     break;
                 case EnumCharClass.Paladin:
                     tt.ToolTipTitle = "Prayer";
-                    tt.Show("Increases the strength and intellect of the Paladin by 20%.", checkBoxClass5, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionPaladinPrayer, checkBoxClass5, 5000);
                     break;
                 case EnumCharClass.Wizard:
                     tt.ToolTipTitle = "Brilliance";
-                    tt.Show("Increases the intellect of the Wizard by 40%.", checkBoxClass5, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionWizardBrilliance, checkBoxClass5, 5000);
                     break;
                 case EnumCharClass.Thief:
                     tt.ToolTipTitle = "Swiftness";
-                    tt.Show("Increases the agility of the Thief by 40%", checkBoxClass5, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionThiefSwiftness, checkBoxClass5, 5000);
                     break;
                 case EnumCharClass.Caretaker:
                     tt.ToolTipTitle = "Action";
-                    tt.Show("Increases the strength and agility of the Caretaker by 20%.", checkBoxClass5, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionCaretakerAction, checkBoxClass5, 5000);
                     break;
                 case EnumCharClass.Synergist:
                     tt.ToolTipTitle = "Align";
-                    tt.Show("Increases the intellect and agility of the Synergist by 20%.", checkBoxClass5, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionSynergistAlign, checkBoxClass5, 5000);
                     break;
                 default:
                     break;
@@ -857,27 +857,27 @@ namespace RPG.UI
             {
                 case EnumCharClass.Warrior:
                     tt.ToolTipTitle = "Infuriate";
-                    tt.Show("Increases the Warriors attack by 25% of the Warriors health deficit.", checkBoxClass6, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionWarriorInfuriate, checkBoxClass6, 5000);
                     break;
                 case EnumCharClass.Paladin:
                     tt.ToolTipTitle = "Blessing";
-                    tt.Show("Increases the target allys' highest stat by 40%:", checkBoxClass6, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionPaladinBlessing, checkBoxClass6, 5000);
                     break;
                 case EnumCharClass.Wizard:
                     tt.ToolTipTitle = "Archon";
-                    tt.Show("Reduces maximum health by 60%, but increases intellect by 300%.", checkBoxClass6, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionWizardArchon, checkBoxClass6, 5000);
                     break;
                 case EnumCharClass.Thief:
                     tt.ToolTipTitle = "Envenom";
-                    tt.Show("Increases the Attack of the Thief by 50%.", checkBoxClass6, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionThiefEnvenom, checkBoxClass6, 5000);
                     break;
                 case EnumCharClass.Caretaker:
                     tt.ToolTipTitle = "Lifeblood";
-                    tt.Show("The Caretaker heals a target ally to full, but takes the allys' health deficit in damage.", checkBoxClass6, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionCaretakerLifeblood, checkBoxClass6, 5000);
                     break;
                 case EnumCharClass.Synergist:
                     tt.ToolTipTitle = "Collapsed Equality";
-                    tt.Show("Heals all allies for 50/37/25 % of the Synergists Intellect, but reduces intellect by 20%.", checkBoxClass6, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionSynergistCollapsedEquality, checkBoxClass6, 5000);
                     break;
                 default:
                     break;
@@ -890,27 +890,27 @@ namespace RPG.UI
             {
                 case EnumCharClass.Warrior:
                     tt.ToolTipTitle = "Execution";
-                    tt.Show("Deals 750% attack damage if the target dies from this. Otherwise, deals 150% Weapon Damage.", checkBoxClass7, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionWarriorExecution, checkBoxClass7, 5000);
                     break;
                 case EnumCharClass.Paladin:
                     tt.ToolTipTitle = "Desperate Plea";
-                    tt.Show("Heals the target for 75% of their maximum health, but decreases their maximum health by 20%.", checkBoxClass7, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionPaladinDesperatePlea, checkBoxClass7, 5000);
                     break;
                 case EnumCharClass.Wizard:
                     tt.ToolTipTitle = "Inferno";
-                    tt.Show("Deals damage to the target for 280% of the Wizards intellect.", checkBoxClass7, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionWizardInferno, checkBoxClass7, 5000);
                     break;
                 case EnumCharClass.Thief:
                     tt.ToolTipTitle = "Dirty Tricks";
-                    tt.Show("Deals 250% of the Thiefs agility and 40% of his attack as damage to the target.", checkBoxClass7, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionThiefDirtyTricks, checkBoxClass7, 5000);
                     break;
                 case EnumCharClass.Caretaker:
                     tt.ToolTipTitle = "Power and Dexterity";
-                    tt.Show("Deals 140% of the Caretakers combined Strength and Agility to the target.", checkBoxClass7, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionCaretakerPowerAndDexterity, checkBoxClass7, 5000);
                     break;
                 case EnumCharClass.Synergist:
                     tt.ToolTipTitle = "Synergy";
-                    tt.Show("Deals 145% of the Synergists combined intellect and agility as damage, but subtracts difference between them from this amount", checkBoxClass7, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionSynergistSynergy, checkBoxClass7, 5000);
                     break;
                 default:
                     break;
@@ -923,27 +923,27 @@ namespace RPG.UI
             {
                 case EnumCharClass.Warrior:
                     tt.ToolTipTitle = "Insanity";
-                    tt.Show("The Warrior deals 350% of his strength in damage to the target, but injures of his allies for 15% of the damage dealt.", checkBoxClass8, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionWarriorInsanity, checkBoxClass8, 5000);
                     break;
                 case EnumCharClass.Paladin:
                     tt.ToolTipTitle = "The Power of Faith";
-                    tt.Show("Heals the paladin to full health, but reduces all his stats by 10%.", checkBoxClass8, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionPaladinThePowerOfFaith, checkBoxClass8, 5000);
                     break;
                 case EnumCharClass.Wizard:
                     tt.ToolTipTitle = "Oracle";
-                    tt.Show("Heals all allies for 55/40/30 % of the Wizards Intellect. Percentage is dependant on number of valid targets.", checkBoxClass8, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionWizardOracle, checkBoxClass8, 5000);
                     break;
                 case EnumCharClass.Thief:
                     tt.ToolTipTitle = "Flurry";
-                    tt.Show("Deals 10% of the Thiefs Attack to the target, 10% of his agility times.", checkBoxClass8, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionThiefFlurry, checkBoxClass8, 5000);
                     break;
                 case EnumCharClass.Caretaker:
                     tt.ToolTipTitle = "Deathdefiance";
-                    tt.Show("Splits the Caretakers health deficit as healing between all allies.", checkBoxClass8, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionCaretakerDeathdefiance, checkBoxClass8, 5000);
                     break;
                 case EnumCharClass.Synergist:
                     tt.ToolTipTitle = "Complete Balance";
-                    tt.Show("Aligns all allies health to be at the average percentage and heals them for 8% of the Synergists agility and intellect.", checkBoxClass8, 5000);
+                    tt.Show(Properties.Resources.AbilitiesDescriptionSynergistCompleteBalance, checkBoxClass8, 5000);
                     break;
                 default:
                     break;

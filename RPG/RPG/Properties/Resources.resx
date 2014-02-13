@@ -235,4 +235,172 @@
   <data name="SwordNames" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SwordNames.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="AbilitiesDescriptionWarriorStrength" xml:space="preserve">
+    <value>Deal damage to the target based on the 50% of the strength of the Warrior.</value>
+  </data>
+  <data name="AbilitiesDescriptionAnyAscend" xml:space="preserve">
+    <value>Increases all of the units stats by 15, including max health and attack.</value>
+  </data>
+  <data name="AbilitiesDescriptionAnyBattleRegeneration" xml:space="preserve">
+    <value>Heals the caster for 100% of the casters level.</value>
+  </data>
+  <data name="AbilitiesDescriptionAnyDoubleSwing" xml:space="preserve">
+    <value>Deal damage equal to 315% of the units attack.</value>
+  </data>
+  <data name="AbilitiesDescriptionAnyEmpowerment" xml:space="preserve">
+    <value>Increase the highest stat of the caster by 20%.</value>
+  </data>
+  <data name="AbilitiesDescriptionAnyInvigorate" xml:space="preserve">
+    <value>Increase the maximum health of the caster by 20% of the casters highest stat.</value>
+  </data>
+  <data name="AbilitiesDescriptionAnyMeleeAttack" xml:space="preserve">
+    <value>Deal damage to the target for 100% of the units attack.</value>
+  </data>
+  <data name="AbilitiesDescriptionAnyOpportunity" xml:space="preserve">
+    <value>Increases a random of your stats by 50%.</value>
+  </data>
+  <data name="AbilitiesDescriptionAnyTotalitarism" xml:space="preserve">
+    <value>Deals all of the units stats combined in damage.</value>
+  </data>
+  <data name="AbilitiesDescriptionCaretakerAction" xml:space="preserve">
+    <value>Increases the strength and agility of the Caretaker by 20%.</value>
+  </data>
+  <data name="AbilitiesDescriptionCaretakerBodySlam" xml:space="preserve">
+    <value>Deals 20% of the Caretakers maximum health in damage to the target.</value>
+  </data>
+  <data name="AbilitiesDescriptionCaretakerDeathdefiance" xml:space="preserve">
+    <value>Splits the Caretakers health deficit as healing between all allies.</value>
+  </data>
+  <data name="AbilitiesDescriptionCaretakerLifeblood" xml:space="preserve">
+    <value>The Caretaker heals a target ally to full, but takes the allys' health deficit in damage.</value>
+  </data>
+  <data name="AbilitiesDescriptionCaretakerLifeForce" xml:space="preserve">
+    <value>Deals 90% of the Caretakers health deficit in damage to the target AND the Caretaker.</value>
+  </data>
+  <data name="AbilitiesDescriptionCaretakerPowerAndDexterity" xml:space="preserve">
+    <value>Deals 125% of the Caretakers combined Strength and Agility to the target.</value>
+  </data>
+  <data name="AbilitiesDescriptionCaretakerSacrifice" xml:space="preserve">
+    <value>Deals 55% of the Caretakers Agility in damage, but takes damage equal to the difference between Strength and Agility.</value>
+  </data>
+  <data name="AbilitiesDescriptionCaretakerZealOfHumanity" xml:space="preserve">
+    <value>Heals target ally for 75% of the Caretakers strength, but injures himself for 50% of the amount healed.</value>
+  </data>
+  <data name="AbilitiesDescriptionPaladinBlessing" xml:space="preserve">
+    <value>Increases the target allys' highest stat by 40%</value>
+  </data>
+  <data name="AbilitiesDescriptionPaladinDesperatePlea" xml:space="preserve">
+    <value>Heals the target for 75% of their maximum health, but decreases their maximum health by 20%.</value>
+  </data>
+  <data name="AbilitiesDescriptionPaladinJustice" xml:space="preserve">
+    <value>Deals 40% of the Paladins strength in damage and heals him for 30% of his intellect.</value>
+  </data>
+  <data name="AbilitiesDescriptionPaladinPrayer" xml:space="preserve">
+    <value>Increases the strength and intellect of the Paladin by 20%.</value>
+  </data>
+  <data name="AbilitiesDescriptionPaladinRaiseSpirit" xml:space="preserve">
+    <value>The Paladin heals the target for 25% of his combined strength and intellect.</value>
+  </data>
+  <data name="AbilitiesDescriptionPaladinSerenity" xml:space="preserve">
+    <value>Heals a random ally and deals damage to the target for 40% of the Paladins intellect.</value>
+  </data>
+  <data name="AbilitiesDescriptionPaladinThePowerOfFaith" xml:space="preserve">
+    <value>Heals the paladin to full health, but reduces all his stats by 10%.</value>
+  </data>
+  <data name="AbilitiesDescriptionPaladinWrath" xml:space="preserve">
+    <value>Deals 50% of the Paladins strength in damage.</value>
+  </data>
+  <data name="AbilitiesDescriptionSynergistAgileMind" xml:space="preserve">
+    <value>Deals damage for 55% of the Synergists Agility, but subtracts the difference between Agility and Intellect from the damage.</value>
+  </data>
+  <data name="AbilitiesDescriptionSynergistAlign" xml:space="preserve">
+    <value>Increases the intellect and agility of the Synergist by 20%.</value>
+  </data>
+  <data name="AbilitiesDescriptionSynergistBalance" xml:space="preserve">
+    <value>Of Agility and Intellect, increases lowest stat by 15% and highest by 10%.</value>
+  </data>
+  <data name="AbilitiesDescriptionSynergistCollapsedEquality" xml:space="preserve">
+    <value>Heals all allies for 50/37/25 % of the Synergists Intellect, but reduces intellect by 20%.</value>
+  </data>
+  <data name="AbilitiesDescriptionSynergistCompleteBalance" xml:space="preserve">
+    <value>Aligns all allies health to be at the average percentage and heals them for 8% of the Synergists agility and intellect.</value>
+  </data>
+  <data name="AbilitiesDescriptionSynergistDuality" xml:space="preserve">
+    <value>Deals 25% of the Synergists combined intellect and agility in damage.</value>
+  </data>
+  <data name="AbilitiesDescriptionSynergistMentalAgility" xml:space="preserve">
+    <value>Deals 115% of the Synergists Intellect in damage, subtracting the difference between Intellect and Agility.</value>
+  </data>
+  <data name="AbilitiesDescriptionSynergistSynergy" xml:space="preserve">
+    <value>Deals 145% of the Synergists combined intellect and agility as damage, but subtracts difference between them from this amount.</value>
+  </data>
+  <data name="AbilitiesDescriptionThiefBloodStealer" xml:space="preserve">
+    <value>Deals 100% of the Thiefs agility in damage and heals him for 10% of the damage dealt.</value>
+  </data>
+  <data name="AbilitiesDescriptionThiefBorrowWeapon" xml:space="preserve">
+    <value>The Thief uses the best attack of his allies together with his own, dealing 65% of their combined damage.</value>
+  </data>
+  <data name="AbilitiesDescriptionThiefCopyCat" xml:space="preserve">
+    <value>Deals 95% of the Thiefs allies' highest stat in damage.</value>
+  </data>
+  <data name="AbilitiesDescriptionThiefDirtyTricks" xml:space="preserve">
+    <value>Deals 250% of the Thiefs agility and 40% of his attack as damage to the target.</value>
+  </data>
+  <data name="AbilitiesDescriptionThiefEnvenom" xml:space="preserve">
+    <value>Increases the attack of the Thief by 50%.</value>
+  </data>
+  <data name="AbilitiesDescriptionThiefFlurry" xml:space="preserve">
+    <value>Deals 10% of the Thiefs Attack to the target, 10% of his agility times.</value>
+  </data>
+  <data name="AbilitiesDescriptionThiefQuickAttack" xml:space="preserve">
+    <value>Swiftly injure the target for 50% of the casters agility.</value>
+  </data>
+  <data name="AbilitiesDescriptionThiefSwiftness" xml:space="preserve">
+    <value>Increases the agility of the Thief by 40%</value>
+  </data>
+  <data name="AbilitiesDescriptionWarriorBlindRage" xml:space="preserve">
+    <value>Deals anywhere between 175 and 75% of the Warriors strength in damage.</value>
+  </data>
+  <data name="AbilitiesDescriptionWarriorExecution" xml:space="preserve">
+    <value>Deals 750% attack damage if the target dies from this. Otherwise, deals 150% Weapon Damage.</value>
+  </data>
+  <data name="AbilitiesDescriptionWarriorInfuriate" xml:space="preserve">
+    <value>Increases the Warriors attack by 25% of the Warriors health deficit.</value>
+  </data>
+  <data name="AbilitiesDescriptionWarriorInsanity" xml:space="preserve">
+    <value>The Warrior deals 350% of his strength in damage to the target, but injures of his allies for 15% of the damage dealt.</value>
+  </data>
+  <data name="AbilitiesDescriptionWarriorPowerStrike" xml:space="preserve">
+    <value>Deal damage to the target based on 90% attack damage and 10% of the Warriors strength.</value>
+  </data>
+  <data name="AbilitiesDescriptionWarriorRampage" xml:space="preserve">
+    <value>The Warriors deals 150% of his  strength in damage, but takes 10% damage of the damage himself.</value>
+  </data>
+  <data name="AbilitiesDescriptionWarriorRoar" xml:space="preserve">
+    <value>Increases the strength of the Warrior by 40%.</value>
+  </data>
+  <data name="AbilitiesDescriptionWizardArchon" xml:space="preserve">
+    <value>Reduces maximum health by 60%, but increases intellect by 300%.</value>
+  </data>
+  <data name="AbilitiesDescriptionWizardBrilliance" xml:space="preserve">
+    <value>Increases the intellect of the Wizard by 40%.</value>
+  </data>
+  <data name="AbilitiesDescriptionWizardFireball" xml:space="preserve">
+    <value>This ability deals damage to the target, based on 50% of the casters intellect.</value>
+  </data>
+  <data name="AbilitiesDescriptionWizardFlameComet" xml:space="preserve">
+    <value>Deals damage to the target for 110% of the Wizards intellect.</value>
+  </data>
+  <data name="AbilitiesDescriptionWizardHeal" xml:space="preserve">
+    <value>This ability heals the target player for 25% of the casters Intellect.</value>
+  </data>
+  <data name="AbilitiesDescriptionWizardInferno" xml:space="preserve">
+    <value>Deals damage to the target for 280% of the Wizards intellect.</value>
+  </data>
+  <data name="AbilitiesDescriptionWizardOracle" xml:space="preserve">
+    <value>Heals all allies for 55/40/30 % of the Wizards Intellect. Percentage is dependant on number of valid targets.</value>
+  </data>
+  <data name="AbilitiesDescriptionWizardRevitalize" xml:space="preserve">
+    <value>The Wizard heals the target for 50% of her intellect.</value>
+  </data>
 </root>

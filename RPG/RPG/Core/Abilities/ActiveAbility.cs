@@ -72,7 +72,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Melee Attack";
-            this.Description = "Deal damage to the target for 100% of the units attack.";
+            this.Description = Properties.Resources.AbilitiesDescriptionAnyMeleeAttack;
             this.NumberOfTargets = 1;
             this.Icon = this.Icon = this.SetIcon(Properties.Resources.meleeattack);
             this.TurnPointCost = 1;
@@ -109,7 +109,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Battle Regeneration";
-            this.Description = "Heals the caster for 100% of the casters level.";
+            this.Description = Properties.Resources.AbilitiesDescriptionAnyBattleRegeneration;
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.meleeattack);
             this.TurnPointCost = 1;
@@ -148,7 +148,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Empowerment";
-            this.Description = "Increase the highest stat of the caster by 20%.";
+            this.Description = Properties.Resources.AbilitiesDescriptionAnyEmpowerment;
             this.NumberOfTargets = 1;
             this.Icon = this.Icon = this.SetIcon(Properties.Resources.meleeattack);
             this.TurnPointCost = 2;
@@ -226,7 +226,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Invigorate";
-            this.Description = "Increase the maximum health of the caster by 20% of the casters highest stat.";
+            this.Description = Properties.Resources.AbilitiesDescriptionAnyInvigorate;
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.meleeattack);
             this.TurnPointCost = 2;
@@ -274,7 +274,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Double Swing";
-            this.Description = "Deal damage equal to 315% of the units attack.";
+            this.Description = Properties.Resources.AbilitiesDescriptionAnyDoubleSwing;
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.meleeattack);
             this.TurnPointCost = 3;
@@ -310,7 +310,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Opportunity";
-            this.Description = "Increases a random of your stats by 50%.";
+            this.Description = Properties.Resources.AbilitiesDescriptionAnyOpportunity;
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.meleeattack);
             this.TurnPointCost = 4;
@@ -375,7 +375,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Totalitarism";
-            this.Description = "Deals all of the units stats combined in damage.";
+            this.Description = Properties.Resources.AbilitiesDescriptionAnyTotalitarism;
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.meleeattack);
             this.TurnPointCost = 5;
@@ -411,7 +411,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Ascend";
-            this.Description = "Increases all of the units stats by 15, including max health and attack.";
+            this.Description = Properties.Resources.AbilitiesDescriptionAnyAscend;
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.meleeattack);
             this.TurnPointCost = 5;
@@ -462,7 +462,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Strength";
-            this.Description = "Deal damage to the target based on the 50% of the strength of the Warrior.";
+            this.Description = Properties.Resources.AbilitiesDescriptionWarriorStrength;
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.strength);
             this.TurnPointCost = 1;
@@ -498,7 +498,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Power Strike";
-            this.Description = "Deal damage to the target based on 90% attack damage and 10% of the Warriors strength.";
+            this.Description = Properties.Resources.AbilitiesDescriptionWarriorPowerStrike;
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.strength);
             this.TurnPointCost = 1;
@@ -534,7 +534,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Blind Rage";
-            this.Description = "Deals anywhere between 175 and 75% of the Warriors strength in damage.";
+            this.Description = Properties.Resources.AbilitiesDescriptionWarriorBlindRage;
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.strength);
             this.TurnPointCost = 2;
@@ -571,7 +571,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Rampage";
-            this.Description = "The Warriors deals 150% of his  strength in damage, but takes 10% damage of the damage himself.";
+            this.Description = Properties.Resources.AbilitiesDescriptionWarriorRampage;
             this.Icon = this.SetIcon(Properties.Resources.strength);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 2;
@@ -608,7 +608,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Roar";
-            this.Description = "Increases the strength of the Warrior by 40%.";
+            this.Description = Properties.Resources.AbilitiesDescriptionWarriorRoar;
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.strength);
             this.TurnPointCost = 3;
@@ -649,7 +649,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Infuriate";
-            this.Description = "Increases the Warriors attack by 25% of the Warriors health deficit.";
+            this.Description = Properties.Resources.AbilitiesDescriptionWarriorInfuriate;
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.strength);
             this.TurnPointCost = 4;
@@ -689,7 +689,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Execution";
-            this.Description = "Deals 750% attack damage if the target dies from this. Otherwise, deals 150% Weapon Damage.";
+            this.Description = Properties.Resources.AbilitiesDescriptionWarriorExecution;
             this.Icon = this.SetIcon(Properties.Resources.strength);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 5;
@@ -737,7 +737,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Insanity";
-            this.Description = "The Warrior deals 350% of his strength in damage to the target, but injures of his allies for 15% of the damage dealt.";
+            this.Description = Properties.Resources.AbilitiesDescriptionWarriorInsanity;
             this.Icon = this.SetIcon(Properties.Resources.strength);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 5;
@@ -784,7 +784,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             AbilityName = "Wrath";
-            Description = "Deals 50% of the Paladins strength in damage.";
+            Description = Properties.Resources.AbilitiesDescriptionPaladinWrath;
             this.Icon = this.SetIcon(Properties.Resources.wrath);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 1;
@@ -821,7 +821,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Justice";
-            this.Description = "Deals 40% of the Paladins strength in damage and heals him for 30% of his intellect.";
+            this.Description = Properties.Resources.AbilitiesDescriptionPaladinJustice;
             this.Icon = this.SetIcon(Properties.Resources.wrath);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 1;
@@ -864,7 +864,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Serenity";
-            this.Description = "Heals a random ally and deals damage to the target for 40% of the Paladins intellect.";
+            this.Description = Properties.Resources.AbilitiesDescriptionPaladinSerenity;
             this.Icon = this.SetIcon(Properties.Resources.wrath);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 2;
@@ -913,7 +913,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Raise Spirit";
-            this.Description = "The Paladin heals the target for 25% of his combined strength and intellect.";
+            this.Description = Properties.Resources.AbilitiesDescriptionPaladinRaiseSpirit;
             this.Icon = this.SetIcon(Properties.Resources.wrath);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 2;
@@ -961,7 +961,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Prayer";
-            this.Description = "Increases the strength and intellect of the Paladin by 20%.";
+            this.Description = Properties.Resources.AbilitiesDescriptionPaladinPrayer;
             this.Icon = this.SetIcon(Properties.Resources.wrath);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 3;
@@ -1006,7 +1006,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Blessing";
-            this.Description = "Increases the target allys' highest stat by 40%:";
+            this.Description = Properties.Resources.AbilitiesDescriptionPaladinBlessing;
             this.Icon = this.SetIcon(Properties.Resources.wrath);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 4;
@@ -1105,7 +1105,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Desperate Plea";
-            this.Description = "Heals the target for 75% of their maximum health, but decreases their maximum health by 20%.";
+            this.Description = Properties.Resources.AbilitiesDescriptionPaladinDesperatePlea;
             this.Icon = this.SetIcon(Properties.Resources.wrath);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 5;
@@ -1156,7 +1156,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "The Power of Faith";
-            this.Description = "Heals the paladin to full health, but reduces all his stats by 10%.";
+            this.Description = Properties.Resources.AbilitiesDescriptionPaladinThePowerOfFaith;
             this.Icon = this.SetIcon(Properties.Resources.wrath);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 5;
@@ -1198,7 +1198,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             AbilityName = "Fireball";
-            Description = "This ability deals damage to the 1 target, based on half of the casters intellect.";
+            Description = Properties.Resources.AbilitiesDescriptionWizardFireball;
             this.Icon = this.SetIcon(Properties.Resources.fireball);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 1;
@@ -1234,7 +1234,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             AbilityName = "Heal";
-            Description = "This Ability heals the target player for an amount equal to a quarter of the casters Intellect.";
+            Description = Properties.Resources.AbilitiesDescriptionWizardHeal;
             this.Icon = this.SetIcon(Properties.Resources.heal);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 1;
@@ -1284,7 +1284,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             AbilityName = "Flame Comet";
-            Description = "Deals damage to the target for 110% of the Wizards intellect.";
+            Description = Properties.Resources.AbilitiesDescriptionWizardFlameComet;
             this.Icon = this.SetIcon(Properties.Resources.fireball);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 2;
@@ -1320,7 +1320,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             AbilityName = "Revitalize";
-            Description = "The Wizard heals the target for 50% of her intellect.";
+            Description = Properties.Resources.AbilitiesDescriptionWizardRevitalize;
             this.Icon = this.SetIcon(Properties.Resources.heal);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 2;
@@ -1370,7 +1370,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Brilliance";
-            this.Description = "Increases the intellect of the Wizard by 40%.";
+            this.Description = Properties.Resources.AbilitiesDescriptionWizardBrilliance;
             this.Icon = this.SetIcon(Properties.Resources.fireball);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 3;
@@ -1411,7 +1411,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Archon";
-            this.Description = "Reduces maximum health by 60%, but increases intellect by 300%.";
+            this.Description = Properties.Resources.AbilitiesDescriptionWizardArchon;
             this.Icon = this.SetIcon(Properties.Resources.fireball);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 4;
@@ -1462,7 +1462,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             AbilityName = "Inferno";
-            Description = "Deals damage to the target for 280% of the Wizards intellect.";
+            Description = Properties.Resources.AbilitiesDescriptionWizardInferno;
             this.Icon = this.SetIcon(Properties.Resources.fireball);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 5;
@@ -1498,7 +1498,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             AbilityName = "Oracle";
-            Description = "Heals all allies for 55/40/30 % of the Wizards Intellect. Percentage is dependant on number of valid targets.";
+            Description = Properties.Resources.AbilitiesDescriptionWizardOracle;
             this.Icon = this.SetIcon(Properties.Resources.heal);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 5;
@@ -1573,7 +1573,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Quick Attack";
-            this.Description = "Swiftly injure the target for 50% of the casters agility.";
+            this.Description = Properties.Resources.AbilitiesDescriptionThiefQuickAttack;
             this.Icon = this.SetIcon(Properties.Resources.quickattack);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 1;
@@ -1608,7 +1608,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Borrow Weapon";
-            this.Description = "The Thief uses the best attack of his allies together with his own, dealing 65% of their combined damage.";
+            this.Description = Properties.Resources.AbilitiesDescriptionThiefBorrowWeapon;
             this.Icon = this.SetIcon(Properties.Resources.quickattack);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 1;
@@ -1656,7 +1656,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Bloodstealer";
-            this.Description = "Deals 100% of the Thiefs agility in damage and heals him for 10% of the damage dealt.";
+            this.Description = Properties.Resources.AbilitiesDescriptionThiefBloodStealer;
             this.Icon = this.SetIcon(Properties.Resources.quickattack);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 2;
@@ -1698,7 +1698,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Copycat";
-            this.Description = "Deals 95% of the Thiefs allies' highest stat in damage.";
+            this.Description = Properties.Resources.AbilitiesDescriptionThiefCopyCat;
             this.Icon = this.SetIcon(Properties.Resources.quickattack);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 2;
@@ -1760,7 +1760,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Swiftness";
-            this.Description = "Increases the agility of the Thief by 40%";
+            this.Description = Properties.Resources.AbilitiesDescriptionThiefSwiftness;
             this.Icon = this.SetIcon(Properties.Resources.quickattack);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 3;
@@ -1801,7 +1801,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Envenom";
-            this.Description = "Increases the Attack of the Thief by 50%.";
+            this.Description = Properties.Resources.AbilitiesDescriptionThiefEnvenom;
             this.Icon = this.SetIcon(Properties.Resources.quickattack);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 4;
@@ -1841,7 +1841,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Dirty Tricks";
-            this.Description = "Deals 250% of the Thiefs agility and 40% of his attack as damage to the target.";
+            this.Description = Properties.Resources.AbilitiesDescriptionThiefDirtyTricks;
             this.Icon = this.SetIcon(Properties.Resources.quickattack);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 5;
@@ -1876,7 +1876,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Flurry";
-            this.Description = "Deals 10% of the Thiefs Attack to the target, 10% of his agility times.";
+            this.Description = Properties.Resources.AbilitiesDescriptionThiefFlurry;
             this.Icon = this.SetIcon(Properties.Resources.quickattack);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 5;
@@ -1921,7 +1921,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Body Slam";
-            this.Description = "Deals 20% of the Caretakers maximum health in damage to the target.";
+            this.Description = Properties.Resources.AbilitiesDescriptionCaretakerBodySlam;
             this.Icon = this.SetIcon(Properties.Resources.bodyslam);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 1;
@@ -1956,7 +1956,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Sacrifice";
-            this.Description = "Deals 55% of the Caretakers Agility in damage, but takes damage equal to the difference between Strength and Agility.";
+            this.Description = Properties.Resources.AbilitiesDescriptionCaretakerSacrifice;
             this.Icon = this.SetIcon(Properties.Resources.bodyslam);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 1;
@@ -1995,7 +1995,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Lifeforce";
-            this.Description = "Deals 90% of the Caretakers health deficit in damage to the target AND the Caretaker.";
+            this.Description = Properties.Resources.AbilitiesDescriptionCaretakerLifeForce;
             this.Icon = this.SetIcon(Properties.Resources.bodyslam);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 2;
@@ -2033,7 +2033,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Zeal of Humanity";
-            this.Description = "Heals target ally for 75% of the Caretakers strength, but injures himself for 50% of the amount healed.";
+            this.Description = Properties.Resources.AbilitiesDescriptionCaretakerZealOfHumanity;
             this.Icon = this.SetIcon(Properties.Resources.bodyslam);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 2;
@@ -2086,7 +2086,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Action";
-            this.Description = "Increases the strength and agility of the Caretaker by 20%.";
+            this.Description = Properties.Resources.AbilitiesDescriptionCaretakerAction;
             this.Icon = this.SetIcon(Properties.Resources.bodyslam);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 3;
@@ -2131,7 +2131,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Lifeblood";
-            this.Description = "The Caretaker heals a target ally to full, but takes the allys' health deficit in damage.";
+            this.Description = Properties.Resources.AbilitiesDescriptionCaretakerLifeblood;
             this.Icon = this.SetIcon(Properties.Resources.bodyslam);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 4;
@@ -2185,7 +2185,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Power and Dexterity";
-            this.Description = "Deals 125% of the Caretakers combined Strength and Agility to the target.";
+            this.Description = Properties.Resources.AbilitiesDescriptionCaretakerPowerAndDexterity;
             this.Icon = this.SetIcon(Properties.Resources.bodyslam);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 5;
@@ -2220,7 +2220,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Deathdefiance";
-            this.Description = "Splits the Caretakers health deficit as healing between all allies.";
+            this.Description = Properties.Resources.AbilitiesDescriptionCaretakerDeathdefiance;
             this.Icon = this.SetIcon(Properties.Resources.bodyslam);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 5;
@@ -2278,7 +2278,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Duality";
-            this.Description = "Deals 25% of the Synergists combined intellect and agility in damage.";
+            this.Description = Properties.Resources.AbilitiesDescriptionSynergistDuality;
             this.Icon = this.SetIcon(Properties.Resources.duality);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 1;
@@ -2313,7 +2313,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Agile Mind";
-            this.Description = "Deals damage for 55% of the Synergists Agility, but subtracts the difference between Agility and Intellect from the damage.";
+            this.Description = Properties.Resources.AbilitiesDescriptionSynergistAgileMind;
             this.Icon = this.SetIcon(Properties.Resources.duality);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 1;
@@ -2351,7 +2351,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Balance";
-            this.Description = "Of Agility and Intellect, increases lowest stat by 15% and highest by 10%.";
+            this.Description = Properties.Resources.AbilitiesDescriptionSynergistBalance;
             this.Icon = this.SetIcon(Properties.Resources.duality);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 2;
@@ -2408,7 +2408,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Mental Agility";
-            this.Description = "Deals 115% of the Synergists Intellect in damage, subtracting the difference between Intellect and Agility.";
+            this.Description = Properties.Resources.AbilitiesDescriptionSynergistMentalAgility;
             this.Icon = this.SetIcon(Properties.Resources.duality);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 2;
@@ -2446,7 +2446,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Align";
-            this.Description = "Increases the intellect and agility of the Synergist by 20%.";
+            this.Description = Properties.Resources.AbilitiesDescriptionSynergistAlign;
             this.Icon = this.SetIcon(Properties.Resources.duality);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 3;
@@ -2492,7 +2492,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Collapsed Equality";
-            this.Description = "Heals all allies for 50/37/25 % of the Synergists Intellect, but reduces intellect by 20%.";
+            this.Description = Properties.Resources.AbilitiesDescriptionSynergistCollapsedEquality;
             this.Icon = this.SetIcon(Properties.Resources.duality);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 4;
@@ -2565,7 +2565,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Synergy";
-            this.Description = "Deals 145% of the Synergists combined intellect and agility as damage, but subtracts difference between them from this amount:";
+            this.Description = Properties.Resources.AbilitiesDescriptionSynergistSynergy;
             this.Icon = this.SetIcon(Properties.Resources.duality);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 5;
@@ -2604,7 +2604,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Complete Balance";
-            this.Description = "Aligns all allies health to be at the average percentage and heals them for 8% of the Synergists agility and intellect.";
+            this.Description = Properties.Resources.AbilitiesDescriptionSynergistCompleteBalance;
             this.Icon = this.SetIcon(Properties.Resources.duality);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 5;
