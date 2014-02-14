@@ -22,6 +22,7 @@ namespace RPG.UI
         #region Fields
         bool end = false;
         List<Core.Units.Character> battleChars;
+        List<string> liveChars = new List<string>();
         Core.Units.NPC enemy;
         Function.NPCAI ai;
         Random r = new Random();
@@ -52,6 +53,7 @@ namespace RPG.UI
             foreach (var item in battleChars)
             {
                 sum += item.UnitLevel;
+                liveChars.Add(item.UnitName);
             }
 
             int average = (int)(sum / battleChars.Count);
@@ -350,9 +352,13 @@ namespace RPG.UI
                 {
                     if (item.CurrentHP.IntValue <= 0)
                     {
-                        Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, "[" + DateTime.Now.ToShortTimeString() + "] ", Color.DarkRed);
-                        Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, item.UnitName + " has died from damage!" + Environment.NewLine, Color.DarkRed);
-                        item.CurrentTurnPoints.IntValue = 0;
+                        if (liveChars.Any(x => x == item.UnitName))
+                        {
+                            Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, "[" + DateTime.Now.ToShortTimeString() + "] ", Color.DarkRed);
+                            Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, item.UnitName + " has died from damage!" + Environment.NewLine, Color.DarkRed);
+                            item.CurrentTurnPoints.IntValue = 0;
+                            liveChars.RemoveAll(x => x == item.UnitName);
+                        }
                     }
                 }
 

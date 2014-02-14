@@ -4,6 +4,8 @@ This tab presents planned changes to the game, that has not yet been implemented
 
 	- Use the last "Support" button to  open the webpage for bug reporting.
 
+	- Add "Zones" where the player can battle in.
+
 	- I have an idea of how to save data on the server, rendering local copies useless.
 		- Simply name each .xml file after the user and check that there's only 1 of 
 		  that user name. Then save these files in a ''Data'' folder on the server.
@@ -34,12 +36,6 @@ This tab presents planned changes to the game, that has not yet been implemented
 	- Add Buffs and Debuffs to the game.
 		- Adjust Abilities so there are more buffing abilities, heal over time or likewise.
 
-	- NAME the game.
-
-	- Change the Thief's Copycat ability. Right now it's only good for being "less carried"
-	  in multiplayer.
-
 Known bugs:
 
-	- On computers where the used font is not installed, alot of text scaling errores occur.
 	- Using buffs on other characters in a battle causes a wrong hover text.

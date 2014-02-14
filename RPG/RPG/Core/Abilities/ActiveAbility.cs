@@ -2660,20 +2660,23 @@ namespace RPG.Core.Abilities
         int damageValue = 0;
         public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
         {
+            string damagedone = "";
+            Random r = new Random();
             for (int i = 0; i < _targets.Count; i++)
             {
                 int index;
                 do
                 {
-                    index = DateTime.Now.Millisecond % _targets.Count;
+                    index = r.Next(0, _targets.Count);
                 } while (_targets[index].CurrentHP.IntValue <= 0);
 
                 int damage = (int)Math.Abs(_caster.UnitLevel * 1.75);
 
                 _targets[index].CurrentHP.IntValue -= damage;
 
-                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _targets[index].UnitName + " for " + damage + "!";
+                 damagedone += _targets[index].UnitName + " for " + damage + ", ";
             }
+            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + damagedone + "!";
         }
     }
 
@@ -2726,15 +2729,17 @@ namespace RPG.Core.Abilities
         int damageValue = 0;
         public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
         {
+            string damagedone = "";
             int damage = Math.Abs(_caster.UnitLevel * 6);
             for (int i = 0; i < _targets.Count; i++)
             {
                 if (_targets[i].CurrentHP.IntValue > 0)
                 {
                     _targets[i].CurrentHP.IntValue -= damage;
-                    this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _targets[i].UnitName + " for " + damage + "!";
+                    damagedone += _targets[i].UnitName + " for " + damage + ", ";
                 }
             }
+            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + damagedone + "!";
         }
     }
 
@@ -2757,12 +2762,14 @@ namespace RPG.Core.Abilities
         int damageValue = 0;
         public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
         {
+            string damagedone = "";
+            Random r = new Random();
             for (int i = 0; i < _targets.Count; i++)
             {
                 int index;
                 do
                 {
-                    index = DateTime.Now.Millisecond % _targets.Count;
+                    index = r.Next(0, _targets.Count);
                 } while (_targets[index].CurrentHP.IntValue <= 0);
 
                 int damage = Math.Abs(_caster.UnitLevel);
@@ -2775,8 +2782,9 @@ namespace RPG.Core.Abilities
 
                 _targets[index].CurrentHP.IntValue -= damage;
 
-                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _targets[index].UnitName + " for " + damage + " and heals himself for " + healing + "!";
+                damagedone = _targets[index].UnitName + " for " + damage + " and heals himself for " + healing + ", ";
             }
+            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + damagedone + "!";
         }
     }
 
