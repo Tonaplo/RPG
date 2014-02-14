@@ -29,22 +29,19 @@ namespace RPG
             this.BackgroundImage = Function.GeneralFunctions.ResizeImage(Properties.Resources.background, labelBackgroundIGNORE.Size);
             player = _player;
 
-
-            comboBoxChooseChar.Items.Add("None");
-
-            int y = 1;
+            charList.Clear();
             
-            foreach (var item in _player.ControlledCharacters)
+            foreach (var item in _player.PrefChar)
             {
-                comboBoxChooseChar.Items.Add(item.UnitName);
-                if (item.UnitName == player.PrefChar)
-                    comboBoxChooseChar.SelectedIndex = y;
-
-                y++;
+                charList.Add(player.ControlledCharacters.Single(x => x.UnitName == item));
             }
 
-            if(player.PrefChar == "None")
-                comboBoxChooseChar.SelectedIndex = 1;
+            foreach (var item in player.ControlledCharacters)
+            {
+                comboBoxChooseChar.Items.Add(item.UnitName);
+            }
+
+                comboBoxChooseChar.SelectedIndex = 0;
 
             SetCharacterUserControl(comboBoxChooseChar.SelectedIndex);
 
@@ -56,6 +53,7 @@ namespace RPG
 
             comboBoxDifficulty.SelectedIndex = _player.PrefDifficulty;
 
+            SetCharLabel();
         }
 
         #region Functions

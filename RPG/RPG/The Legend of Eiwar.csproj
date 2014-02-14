@@ -14,7 +14,7 @@
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>ftp://ftp.tonaplo.dk/RPG/</PublishUrl>
+    <PublishUrl>ftp://ftp.tonaplo.dk/PublishedProjects/The Legend of Eiwar/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -22,22 +22,22 @@
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>true</UpdateRequired>
+    <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://www.tonaplo.dk/RPG/</InstallUrl>
-    <UpdateUrl>http://www.tonaplo.dk/RPG/</UpdateUrl>
+    <InstallUrl>http://www.tonaplo.dk/PublishedProjects/The Legend of Eiwar/</InstallUrl>
+    <UpdateUrl>http://www.tonaplo.dk/PublishedProjects/The Legend of Eiwar/</UpdateUrl>
     <SupportUrl>https://docs.google.com/forms/d/15iHbzt2H74AGrO3oVzdlIc08Q1vP3_cegFcdOmP02Hk/viewform</SupportUrl>
     <ErrorReportUrl>https://docs.google.com/forms/d/15iHbzt2H74AGrO3oVzdlIc08Q1vP3_cegFcdOmP02Hk/viewform</ErrorReportUrl>
     <TargetCulture>en</TargetCulture>
-    <ProductName>RPG</ProductName>
+    <ProductName>The Legend of Eiwar</ProductName>
     <PublisherName>Anders Vagner</PublisherName>
-    <SuiteName>RPG</SuiteName>
+    <SuiteName>The Legend of Eiwar</SuiteName>
     <MinimumRequiredVersion>0.1.1.8</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>16</ApplicationRevision>
-    <ApplicationVersion>0.1.3.%2a</ApplicationVersion>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>0.1.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>

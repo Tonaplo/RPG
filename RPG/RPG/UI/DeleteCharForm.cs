@@ -141,10 +141,7 @@ namespace RPG.UI
         private void btDelete_Click(object sender, EventArgs e)
         {
             Function.SoundManager.PlayButtonSound();
-            if (choosechar.UnitName == player.PrefChar)
-            {
-                player.PrefChar = "None";
-            }
+            player.PrefChar.RemoveAll(x => x == choosechar.UnitName);
 
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();

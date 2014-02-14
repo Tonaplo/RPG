@@ -1,4 +1,4 @@
-﻿Version 0.1.4.20 (13/02-2014):
+﻿Version 0.1.4.1 (13/02-2014):
 
 	- General:
 		- The game was named! It is now called:

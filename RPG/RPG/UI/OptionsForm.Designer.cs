@@ -33,8 +33,8 @@
             this.labelDifficultyLevel = new System.Windows.Forms.Label();
             this.comboBoxDifficulty = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxChooseChar = new System.Windows.Forms.ComboBox();
             this.bnAbandon = new System.Windows.Forms.Button();
+            this.listBoxChars = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // bnOk
@@ -45,9 +45,9 @@
             this.bnOk.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.bnOk.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.bnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnOk.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnOk.ForeColor = System.Drawing.Color.Yellow;
-            this.bnOk.Location = new System.Drawing.Point(45, 206);
+            this.bnOk.Location = new System.Drawing.Point(45, 220);
             this.bnOk.Name = "bnOk";
             this.bnOk.Size = new System.Drawing.Size(174, 35);
             this.bnOk.TabIndex = 29;
@@ -69,7 +69,7 @@
             // labelDifficultyLevel
             // 
             this.labelDifficultyLevel.BackColor = System.Drawing.Color.Transparent;
-            this.labelDifficultyLevel.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDifficultyLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDifficultyLevel.ForeColor = System.Drawing.Color.Yellow;
             this.labelDifficultyLevel.Location = new System.Drawing.Point(45, 12);
             this.labelDifficultyLevel.Name = "labelDifficultyLevel";
@@ -82,37 +82,25 @@
             // 
             this.comboBoxDifficulty.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.comboBoxDifficulty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxDifficulty.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxDifficulty.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxDifficulty.ForeColor = System.Drawing.Color.Yellow;
             this.comboBoxDifficulty.FormattingEnabled = true;
             this.comboBoxDifficulty.Location = new System.Drawing.Point(45, 37);
             this.comboBoxDifficulty.Name = "comboBoxDifficulty";
-            this.comboBoxDifficulty.Size = new System.Drawing.Size(174, 23);
+            this.comboBoxDifficulty.Size = new System.Drawing.Size(174, 21);
             this.comboBoxDifficulty.TabIndex = 32;
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(45, 76);
+            this.label1.Location = new System.Drawing.Point(45, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 22);
             this.label1.TabIndex = 33;
             this.label1.Text = "Standard Battle Character:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // comboBoxChooseChar
-            // 
-            this.comboBoxChooseChar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.comboBoxChooseChar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxChooseChar.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxChooseChar.ForeColor = System.Drawing.Color.Yellow;
-            this.comboBoxChooseChar.FormattingEnabled = true;
-            this.comboBoxChooseChar.Location = new System.Drawing.Point(45, 101);
-            this.comboBoxChooseChar.Name = "comboBoxChooseChar";
-            this.comboBoxChooseChar.Size = new System.Drawing.Size(174, 23);
-            this.comboBoxChooseChar.TabIndex = 34;
             // 
             // bnAbandon
             // 
@@ -122,9 +110,9 @@
             this.bnAbandon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.bnAbandon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.bnAbandon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnAbandon.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnAbandon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnAbandon.ForeColor = System.Drawing.Color.Yellow;
-            this.bnAbandon.Location = new System.Drawing.Point(45, 141);
+            this.bnAbandon.Location = new System.Drawing.Point(45, 161);
             this.bnAbandon.Name = "bnAbandon";
             this.bnAbandon.Size = new System.Drawing.Size(174, 24);
             this.bnAbandon.TabIndex = 35;
@@ -132,14 +120,23 @@
             this.bnAbandon.UseVisualStyleBackColor = false;
             this.bnAbandon.Click += new System.EventHandler(this.bnAbandon_Click);
             // 
+            // listBoxChars
+            // 
+            this.listBoxChars.FormattingEnabled = true;
+            this.listBoxChars.Location = new System.Drawing.Point(45, 86);
+            this.listBoxChars.Name = "listBoxChars";
+            this.listBoxChars.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listBoxChars.Size = new System.Drawing.Size(174, 69);
+            this.listBoxChars.TabIndex = 36;
+            // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(260, 267);
+            this.Controls.Add(this.listBoxChars);
             this.Controls.Add(this.bnAbandon);
-            this.Controls.Add(this.comboBoxChooseChar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxDifficulty);
             this.Controls.Add(this.labelDifficultyLevel);
@@ -160,7 +157,7 @@
         private System.Windows.Forms.Label labelDifficultyLevel;
         private System.Windows.Forms.ComboBox comboBoxDifficulty;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBoxChooseChar;
         private System.Windows.Forms.Button bnAbandon;
+        private System.Windows.Forms.ListBox listBoxChars;
     }
 }

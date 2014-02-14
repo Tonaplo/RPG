@@ -4,8 +4,6 @@ This tab presents planned changes to the game, that has not yet been implemented
 
 	- Use the last "Support" button to  open the webpage for bug reporting.
 
-	- Selecting a preferred character in the Options menu needs to be changed to a list of chars.
-
 	- I have an idea of how to save data on the server, rendering local copies useless.
 		- Simply name each .xml file after the user and check that there's only 1 of 
 		  that user name. Then save these files in a ''Data'' folder on the server.
@@ -45,4 +43,3 @@ Known bugs:
 
 	- On computers where the used font is not installed, alot of text scaling errores occur.
 	- Using buffs on other characters in a battle causes a wrong hover text.
-	- After a character has died in battle, the NPC will carry on attacking that character.

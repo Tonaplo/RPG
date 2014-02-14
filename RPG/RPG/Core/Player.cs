@@ -15,7 +15,7 @@ namespace RPG.Core
         private List<Item> inventoryOfPlayer = new List<Item>();
         private int dust = 0;
         private int prefDifficulty;
-        private string prefChar;
+        private List<string> prefChar;
         private PlayerQuest currentQuest = null;
         #endregion
 
@@ -31,7 +31,7 @@ namespace RPG.Core
             this.inventoryOfPlayer = new List<Item>();
             this.ControlledCharacters = new List<Units.Character>();
             this.dust = 0;
-            this.prefChar = "None";
+            this.prefChar = new List<string>(); ;
             this.prefDifficulty = 0;
         }
 
@@ -84,7 +84,7 @@ namespace RPG.Core
             set { prefDifficulty = value; }
         }
 
-        public string PrefChar
+        public List<string> PrefChar
         {
             get { return prefChar; }
             set { prefChar = value; }

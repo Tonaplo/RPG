@@ -26,19 +26,10 @@ namespace RPG.UI
 
             player = _player;
 
-            comboBoxChooseChar.Items.Add("None");
-            int i = 1;
             foreach (var item in _player.ControlledCharacters)
             {
-                comboBoxChooseChar.Items.Add(item.UnitName);
-                if (item.UnitName == player.PrefChar)
-                    comboBoxChooseChar.SelectedIndex = i;
-
-                i++;
+                listBoxChars.Items.Add(item.UnitName);
             }
-
-            if (player.PrefChar == "None")
-                comboBoxChooseChar.SelectedIndex = 0;
 
             comboBoxDifficulty.Items.Add("Very Easy (Level - 4)");
             comboBoxDifficulty.Items.Add("Easy (Level - 2)");
@@ -101,7 +92,11 @@ namespace RPG.UI
         {
             Function.SoundManager.PlayButtonSound();
             player.PrefDifficulty = comboBoxDifficulty.SelectedIndex;
-            player.PrefChar = comboBoxChooseChar.SelectedItem.ToString();
+            player.PrefChar.Clear();
+            foreach (var item in listBoxChars.Items)
+            {
+                player.PrefChar.Add(item.ToString());
+            }
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
         }

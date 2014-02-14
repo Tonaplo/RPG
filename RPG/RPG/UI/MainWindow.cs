@@ -32,7 +32,7 @@ namespace RPG
             Function.SoundManager.PlayMainMenuMusic();
 
             if (player.PrefChar == null)
-                player.PrefChar = "None";
+                player.PrefChar.Add("None");
             if (player.CurrentQuest != null)
             {
                 player.CurrentQuest.UpdateQuest(player, 1, null, 0, 0, 1.0, new List<EnumCharClass>());
