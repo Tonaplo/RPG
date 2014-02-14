@@ -52,13 +52,11 @@ namespace RPG.Core
 
         public Image GetIcon()
         {
-
             return Function.GeneralFunctions.Base64ToImage(icon);
         }
 
         public string SetIcon(Image _icon)
         {
-
             icon = Function.GeneralFunctions.ImageToBase64(_icon, System.Drawing.Imaging.ImageFormat.Png);
             return icon;
         }

@@ -135,11 +135,11 @@ namespace RPG.Function
             int expGained = 0;
             int hp = 0;
             if (realLevel <= 1)
-                hp = 5 * numberOfChars * ((_npcLevel/10)+1);
+                hp = (int)(5 * numberOfChars*1.2 * ((_npcLevel/10)+1));
             else if (realLevel == 2)
-                hp = (realLevel * 4) * numberOfChars + (realLevel / 10) * 2;
+                hp = (int)((realLevel * 4) * numberOfChars * 1.2 + (realLevel / 10) * 2);
             else
-                hp = (realLevel * (realLevel - 1)) * numberOfChars + (_npcLevel / 10) * 2;
+                hp = (int)((realLevel * (realLevel - 1)) * numberOfChars * 1.2 + (_npcLevel / 10) * 2);
 
             if (_difficulty == -4)
                 expGained = 0;
@@ -151,6 +151,8 @@ namespace RPG.Function
                 expGained = (int)(realLevel * 1.2);
             else if (_difficulty == 4)
                 expGained = (int)(realLevel * 1.5);
+
+            expGained *= (int)(0.9 + (double)numberOfChars/6.0);
 
             Core.Units.NPC returnedNPC = new Core.Units.NPC(_npcName, realLevel, hp, hp, _npcType, expGained, null, null);
 

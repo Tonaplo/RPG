@@ -87,7 +87,8 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>RPG_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationFramework" />
@@ -150,6 +151,12 @@
     <Compile Include="UI\DeleteCharForm.Designer.cs">
       <DependentUpon>DeleteCharForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\FindBattle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FindBattle.Designer.cs">
+      <DependentUpon>FindBattle.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\MessageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,11 +216,11 @@
     <Compile Include="Core\Unit.cs" />
     <Compile Include="Core\Units\Character.cs" />
     <Compile Include="Core\Units\NPC.cs" />
-    <Compile Include="UI\FindBattleForm.cs">
+    <Compile Include="UI\FindLocalBattleForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\FindBattleForm.Designer.cs">
-      <DependentUpon>FindBattleForm.cs</DependentUpon>
+    <Compile Include="UI\FindLocalBattleForm.Designer.cs">
+      <DependentUpon>FindLocalBattleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Function\CombatHandler.cs" />
     <Compile Include="Function\GeneralFunctions.cs" />
@@ -261,6 +268,9 @@
     <EmbeddedResource Include="UI\DeleteCharForm.resx">
       <DependentUpon>DeleteCharForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\FindBattle.resx">
+      <DependentUpon>FindBattle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\MessageForm.resx">
       <DependentUpon>MessageForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -282,8 +292,8 @@
     <EmbeddedResource Include="UI\CharacterCreationForm.resx">
       <DependentUpon>CharacterCreationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\FindBattleForm.resx">
-      <DependentUpon>FindBattleForm.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FindLocalBattleForm.resx">
+      <DependentUpon>FindLocalBattleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -318,7 +328,6 @@
     <EmbeddedResource Include="Resources\Pericl.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <None Include="RPG_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Classes.txt" />

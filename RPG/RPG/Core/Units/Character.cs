@@ -648,11 +648,11 @@ namespace RPG.Core.Units
                     {
                         if (!_reset)
                         {
-                            RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Copycat!");
+                            RPG.UI.MessageForm mes = new UI.MessageForm(this.UnitName + " learned Poisoned Blade!");
                             mes.ShowDialog();
                         }
-                        this.AddPassiveAbility(new Abilities.ThiefCopycat(this, null, null, null, EnumAbilityClassReq.THIEF));
-                        this.AddActiveAbility(new Abilities.ThiefCopycat(this, null, null, null, EnumAbilityClassReq.THIEF));
+                        this.AddPassiveAbility(new Abilities.ThiefPoisonedBlade(this, null, null, null, EnumAbilityClassReq.THIEF));
+                        this.AddActiveAbility(new Abilities.ThiefPoisonedBlade(this, null, null, null, EnumAbilityClassReq.THIEF));
                     }
                     if (this.UnitLevel == 35)
                     {

@@ -274,7 +274,7 @@
   <data name="AbilitiesDescriptionCaretakerLifeblood" xml:space="preserve">
     <value>The Caretaker heals a target ally to full, but takes the allys' health deficit in damage.</value>
   </data>
-  <data name="AbilitiesDescriptionCaretakerLifeForce" xml:space="preserve">
+  <data name="AbilitiesDescriptionCaretakerLifeforce" xml:space="preserve">
     <value>Deals 90% of the Caretakers health deficit in damage to the target AND the Caretaker.</value>
   </data>
   <data name="AbilitiesDescriptionCaretakerPowerAndDexterity" xml:space="preserve">
@@ -334,17 +334,17 @@
   <data name="AbilitiesDescriptionSynergistSynergy" xml:space="preserve">
     <value>Deals 145% of the Synergists combined intellect and agility as damage, but subtracts difference between them from this amount.</value>
   </data>
-  <data name="AbilitiesDescriptionThiefBloodStealer" xml:space="preserve">
+  <data name="AbilitiesDescriptionThiefBloodstealer" xml:space="preserve">
     <value>Deals 100% of the Thiefs agility in damage and heals him for 10% of the damage dealt.</value>
   </data>
   <data name="AbilitiesDescriptionThiefBorrowWeapon" xml:space="preserve">
     <value>The Thief uses the best attack of his allies together with his own, dealing 65% of their combined damage.</value>
   </data>
-  <data name="AbilitiesDescriptionThiefCopyCat" xml:space="preserve">
-    <value>Deals 95% of the Thiefs allies' highest stat in damage.</value>
+  <data name="AbilitiesDescriptionThiefPoisonedBlade" xml:space="preserve">
+    <value>Deals 130% of the Thiefs Attack and 65% of his Agility in damage.</value>
   </data>
   <data name="AbilitiesDescriptionThiefDirtyTricks" xml:space="preserve">
-    <value>Deals 250% of the Thiefs agility and 40% of his attack as damage to the target.</value>
+    <value>Deals 250% of the Thiefs agility and 40% of his Attack as damage to the target.</value>
   </data>
   <data name="AbilitiesDescriptionThiefEnvenom" xml:space="preserve">
     <value>Increases the attack of the Thief by 50%.</value>
@@ -402,5 +402,173 @@
   </data>
   <data name="AbilitiesDescriptionWizardRevitalize" xml:space="preserve">
     <value>The Wizard heals the target for 50% of her intellect.</value>
+  </data>
+  <data name="AbilitiesTitleAnyAscend" xml:space="preserve">
+    <value>Ascend</value>
+  </data>
+  <data name="AbilitiesTitleAnyBattleRegeneration" xml:space="preserve">
+    <value>Battle Regeneration</value>
+  </data>
+  <data name="AbilitiesTitleAnyDoubleSwing" xml:space="preserve">
+    <value>Double Swing</value>
+  </data>
+  <data name="AbilitiesTitleAnyEmpowerment" xml:space="preserve">
+    <value>Empowerment</value>
+  </data>
+  <data name="AbilitiesTitleAnyInvigorate" xml:space="preserve">
+    <value>Invigorate</value>
+  </data>
+  <data name="AbilitiesTitleAnyMeleeAttack" xml:space="preserve">
+    <value>Melee Attack</value>
+  </data>
+  <data name="AbilitiesTitleAnyOpportunity" xml:space="preserve">
+    <value>Opportunity</value>
+  </data>
+  <data name="AbilitiesTitleAnyTotalitarism" xml:space="preserve">
+    <value>Totalitarism</value>
+  </data>
+  <data name="AbilitiesTitleCaretakerAction" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="AbilitiesTitleCaretakerBodySlam" xml:space="preserve">
+    <value>Body Slam</value>
+  </data>
+  <data name="AbilitiesTitleCaretakerDeathdefiance" xml:space="preserve">
+    <value>Deathdefiance</value>
+  </data>
+  <data name="AbilitiesTitleCaretakerLifeblood" xml:space="preserve">
+    <value>Lifeblood</value>
+  </data>
+  <data name="AbilitiesTitleCaretakerLifeforce" xml:space="preserve">
+    <value>Lifeforce</value>
+  </data>
+  <data name="AbilitiesTitleCaretakerPowerAndDexterity" xml:space="preserve">
+    <value>Power And Dexterity</value>
+  </data>
+  <data name="AbilitiesTitleCaretakerSacrifice" xml:space="preserve">
+    <value>Sacrifice</value>
+  </data>
+  <data name="AbilitiesTitleCaretakerZealOfHumanity" xml:space="preserve">
+    <value>OfHumanity</value>
+  </data>
+  <data name="AbilitiesTitlePaladinBlessing" xml:space="preserve">
+    <value>Blessing</value>
+  </data>
+  <data name="AbilitiesTitlePaladinDesperatePlea" xml:space="preserve">
+    <value>Desperate Plea</value>
+  </data>
+  <data name="AbilitiesTitlePaladinJustice" xml:space="preserve">
+    <value>Justice</value>
+  </data>
+  <data name="AbilitiesTitlePaladinPrayer" xml:space="preserve">
+    <value>Prayer</value>
+  </data>
+  <data name="AbilitiesTitlePaladinRaiseSpirit" xml:space="preserve">
+    <value>Raise Spirit</value>
+  </data>
+  <data name="AbilitiesTitlePaladinSerenity" xml:space="preserve">
+    <value>Paladin Serenity</value>
+  </data>
+  <data name="AbilitiesTitlePaladinThePowerOfFaith" xml:space="preserve">
+    <value>The Power Of Faith</value>
+  </data>
+  <data name="AbilitiesTitlePaladinWrath" xml:space="preserve">
+    <value>Wrath</value>
+  </data>
+  <data name="AbilitiesTitleSynergistAgileMind" xml:space="preserve">
+    <value>Agile Mind</value>
+  </data>
+  <data name="AbilitiesTitleSynergistAlign" xml:space="preserve">
+    <value>Align</value>
+  </data>
+  <data name="AbilitiesTitleSynergistBalance" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+  <data name="AbilitiesTitleSynergistCollapsedEquality" xml:space="preserve">
+    <value>Collapsed Equality</value>
+  </data>
+  <data name="AbilitiesTitleSynergistCompleteBalance" xml:space="preserve">
+    <value>Complete Balance</value>
+  </data>
+  <data name="AbilitiesTitleSynergistDuality" xml:space="preserve">
+    <value>Duality</value>
+  </data>
+  <data name="AbilitiesTitleSynergistMentalAgility" xml:space="preserve">
+    <value>Mental Agility</value>
+  </data>
+  <data name="AbilitiesTitleSynergistSynergy" xml:space="preserve">
+    <value>Synergy</value>
+  </data>
+  <data name="AbilitiesTitleThiefBloodstealer" xml:space="preserve">
+    <value>Bloodstealer</value>
+  </data>
+  <data name="AbilitiesTitleThiefBorrowWeapon" xml:space="preserve">
+    <value>Borrow Weapon</value>
+  </data>
+  <data name="AbilitiesTitleThiefDirtyTricks" xml:space="preserve">
+    <value>Dirty Tricks</value>
+  </data>
+  <data name="AbilitiesTitleThiefEnvenom" xml:space="preserve">
+    <value>Envenom</value>
+  </data>
+  <data name="AbilitiesTitleThiefFlurry" xml:space="preserve">
+    <value>Flurry</value>
+  </data>
+  <data name="AbilitiesTitleThiefPoisonedBlade" xml:space="preserve">
+    <value>Poisoned Blade</value>
+  </data>
+  <data name="AbilitiesTitleThiefQuickAttack" xml:space="preserve">
+    <value>Quick Attack</value>
+  </data>
+  <data name="AbilitiesTitleThiefSwiftness" xml:space="preserve">
+    <value>Swiftness</value>
+  </data>
+  <data name="AbilitiesTitleWarriorBlindRage" xml:space="preserve">
+    <value>Blind Rage</value>
+  </data>
+  <data name="AbilitiesTitleWarriorExecution" xml:space="preserve">
+    <value>Execution</value>
+  </data>
+  <data name="AbilitiesTitleWarriorInfuriate" xml:space="preserve">
+    <value>Infuriate</value>
+  </data>
+  <data name="AbilitiesTitleWarriorInsanity" xml:space="preserve">
+    <value>Insanity</value>
+  </data>
+  <data name="AbilitiesTitleWarriorPowerStrike" xml:space="preserve">
+    <value>Power Strike</value>
+  </data>
+  <data name="AbilitiesTitleWarriorRampage" xml:space="preserve">
+    <value>Rampage</value>
+  </data>
+  <data name="AbilitiesTitleWarriorRoar" xml:space="preserve">
+    <value>Roar</value>
+  </data>
+  <data name="AbilitiesTitleWarriorStrength" xml:space="preserve">
+    <value>Strength</value>
+  </data>
+  <data name="AbilitiesTitleWizardArchon" xml:space="preserve">
+    <value>Archon</value>
+  </data>
+  <data name="AbilitiesTitleWizardBrilliance" xml:space="preserve">
+    <value>Brilliance</value>
+  </data>
+  <data name="AbilitiesTitleWizardFireball" xml:space="preserve">
+    <value>Fireball</value>
+  </data>
+  <data name="AbilitiesTitleWizardFlameComet" xml:space="preserve">
+    <value>Flame Comet</value>
+  </data>
+  <data name="AbilitiesTitleWizardHeal" xml:space="preserve">
+    <value>Heal</value>
+  </data>
+  <data name="AbilitiesTitleWizardInferno" xml:space="preserve">
+    <value>Inferno</value>
+  </data>
+  <data name="AbilitiesTitleWizardOracle" xml:space="preserve">
+    <value>Oracle</value>
+  </data>
+  <data name="AbilitiesTitleWizardRevitalize" xml:space="preserve">
+    <value>Revitalize</value>
   </data>
 </root>

@@ -71,7 +71,7 @@ namespace RPG.Core.Abilities
         public MeleeAttack(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Melee Attack";
+            this.AbilityName = Properties.Resources.AbilitiesTitleAnyMeleeAttack;
             this.Description = Properties.Resources.AbilitiesDescriptionAnyMeleeAttack;
             this.NumberOfTargets = 1;
             this.Icon = this.Icon = this.SetIcon(Properties.Resources.meleeattack);
@@ -108,7 +108,7 @@ namespace RPG.Core.Abilities
         public BattleRegeneration(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Battle Regeneration";
+            this.AbilityName = Properties.Resources.AbilitiesTitleAnyBattleRegeneration;
             this.Description = Properties.Resources.AbilitiesDescriptionAnyBattleRegeneration;
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.meleeattack);
@@ -147,7 +147,7 @@ namespace RPG.Core.Abilities
         public Empowerment(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Empowerment";
+            this.AbilityName = Properties.Resources.AbilitiesTitleAnyEmpowerment;
             this.Description = Properties.Resources.AbilitiesDescriptionAnyEmpowerment;
             this.NumberOfTargets = 1;
             this.Icon = this.Icon = this.SetIcon(Properties.Resources.meleeattack);
@@ -225,7 +225,7 @@ namespace RPG.Core.Abilities
         public Invigorate(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Invigorate";
+            this.AbilityName = Properties.Resources.AbilitiesTitleAnyInvigorate;
             this.Description = Properties.Resources.AbilitiesDescriptionAnyInvigorate;
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.meleeattack);
@@ -273,7 +273,7 @@ namespace RPG.Core.Abilities
         public DoubleSwing(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Double Swing";
+            this.AbilityName = Properties.Resources.AbilitiesTitleAnyDoubleSwing;
             this.Description = Properties.Resources.AbilitiesDescriptionAnyDoubleSwing;
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.meleeattack);
@@ -309,7 +309,7 @@ namespace RPG.Core.Abilities
         public Opportunity(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Opportunity";
+            this.AbilityName = Properties.Resources.AbilitiesTitleAnyOpportunity;
             this.Description = Properties.Resources.AbilitiesDescriptionAnyOpportunity;
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.meleeattack);
@@ -374,7 +374,7 @@ namespace RPG.Core.Abilities
         public Totalitarism(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Totalitarism";
+            this.AbilityName = Properties.Resources.AbilitiesTitleAnyTotalitarism;
             this.Description = Properties.Resources.AbilitiesDescriptionAnyTotalitarism;
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.meleeattack);
@@ -410,7 +410,7 @@ namespace RPG.Core.Abilities
         public Ascend(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Ascend";
+            this.AbilityName = Properties.Resources.AbilitiesTitleAnyAscend;
             this.Description = Properties.Resources.AbilitiesDescriptionAnyAscend;
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.meleeattack);
@@ -461,7 +461,7 @@ namespace RPG.Core.Abilities
         public WarriorStrength(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Strength";
+            this.AbilityName = Properties.Resources.AbilitiesTitleWarriorStrength;
             this.Description = Properties.Resources.AbilitiesDescriptionWarriorStrength;
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.strength);
@@ -497,7 +497,7 @@ namespace RPG.Core.Abilities
         public WarriorPowerStrike(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Power Strike";
+            this.AbilityName = Properties.Resources.AbilitiesTitleWarriorPowerStrike;
             this.Description = Properties.Resources.AbilitiesDescriptionWarriorPowerStrike;
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.strength);
@@ -533,7 +533,7 @@ namespace RPG.Core.Abilities
         public WarriorBlindRage(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Blind Rage";
+            this.AbilityName = Properties.Resources.AbilitiesTitleWarriorBlindRage;
             this.Description = Properties.Resources.AbilitiesDescriptionWarriorBlindRage;
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.strength);
@@ -570,7 +570,7 @@ namespace RPG.Core.Abilities
         public WarriorRampage(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Rampage";
+            this.AbilityName = Properties.Resources.AbilitiesTitleWarriorRampage;
             this.Description = Properties.Resources.AbilitiesDescriptionWarriorRampage;
             this.Icon = this.SetIcon(Properties.Resources.strength);
             this.NumberOfTargets = 1;
@@ -607,7 +607,7 @@ namespace RPG.Core.Abilities
         public WarriorRoar(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Roar";
+            this.AbilityName = Properties.Resources.AbilitiesTitleWarriorRoar;
             this.Description = Properties.Resources.AbilitiesDescriptionWarriorRoar;
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.strength);
@@ -648,7 +648,7 @@ namespace RPG.Core.Abilities
         public WarriorInfuriate(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Infuriate";
+            this.AbilityName = Properties.Resources.AbilitiesTitleWarriorInfuriate;
             this.Description = Properties.Resources.AbilitiesDescriptionWarriorInfuriate;
             this.NumberOfTargets = 1;
             this.Icon = this.SetIcon(Properties.Resources.strength);
@@ -688,7 +688,7 @@ namespace RPG.Core.Abilities
         public WarriorExecution(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Execution";
+            this.AbilityName = Properties.Resources.AbilitiesTitleWarriorExecution;
             this.Description = Properties.Resources.AbilitiesDescriptionWarriorExecution;
             this.Icon = this.SetIcon(Properties.Resources.strength);
             this.NumberOfTargets = 1;
@@ -736,7 +736,7 @@ namespace RPG.Core.Abilities
         public WarriorInsanity(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Insanity";
+            this.AbilityName = Properties.Resources.AbilitiesTitleWarriorInsanity;
             this.Description = Properties.Resources.AbilitiesDescriptionWarriorInsanity;
             this.Icon = this.SetIcon(Properties.Resources.strength);
             this.NumberOfTargets = 1;
@@ -783,7 +783,7 @@ namespace RPG.Core.Abilities
         public PaladinWrath(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            AbilityName = "Wrath";
+            AbilityName = Properties.Resources.AbilitiesTitlePaladinWrath; 
             Description = Properties.Resources.AbilitiesDescriptionPaladinWrath;
             this.Icon = this.SetIcon(Properties.Resources.wrath);
             this.NumberOfTargets = 1;
@@ -820,7 +820,7 @@ namespace RPG.Core.Abilities
         public PaladinJustice(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Justice";
+            this.AbilityName = Properties.Resources.AbilitiesTitlePaladinJustice;
             this.Description = Properties.Resources.AbilitiesDescriptionPaladinJustice;
             this.Icon = this.SetIcon(Properties.Resources.wrath);
             this.NumberOfTargets = 1;
@@ -863,7 +863,7 @@ namespace RPG.Core.Abilities
         public PaladinSerenity(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Serenity";
+            this.AbilityName = Properties.Resources.AbilitiesTitlePaladinSerenity;
             this.Description = Properties.Resources.AbilitiesDescriptionPaladinSerenity;
             this.Icon = this.SetIcon(Properties.Resources.wrath);
             this.NumberOfTargets = 1;
@@ -912,7 +912,7 @@ namespace RPG.Core.Abilities
         public PaladinRaiseSpirit(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Raise Spirit";
+            this.AbilityName = Properties.Resources.AbilitiesTitlePaladinRaiseSpirit;
             this.Description = Properties.Resources.AbilitiesDescriptionPaladinRaiseSpirit;
             this.Icon = this.SetIcon(Properties.Resources.wrath);
             this.NumberOfTargets = 1;
@@ -960,7 +960,7 @@ namespace RPG.Core.Abilities
         public PaladinPrayer(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Prayer";
+            this.AbilityName = Properties.Resources.AbilitiesTitlePaladinPrayer;
             this.Description = Properties.Resources.AbilitiesDescriptionPaladinPrayer;
             this.Icon = this.SetIcon(Properties.Resources.wrath);
             this.NumberOfTargets = 1;
@@ -1005,7 +1005,7 @@ namespace RPG.Core.Abilities
         public PaladinBlessing(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Blessing";
+            this.AbilityName = Properties.Resources.AbilitiesTitlePaladinBlessing;
             this.Description = Properties.Resources.AbilitiesDescriptionPaladinBlessing;
             this.Icon = this.SetIcon(Properties.Resources.wrath);
             this.NumberOfTargets = 1;
@@ -1104,7 +1104,7 @@ namespace RPG.Core.Abilities
         public PaladinDesperatePlea(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Desperate Plea";
+            this.AbilityName = Properties.Resources.AbilitiesTitlePaladinDesperatePlea;
             this.Description = Properties.Resources.AbilitiesDescriptionPaladinDesperatePlea;
             this.Icon = this.SetIcon(Properties.Resources.wrath);
             this.NumberOfTargets = 1;
@@ -1155,7 +1155,7 @@ namespace RPG.Core.Abilities
         public PaladinThePowerOfFaith(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "The Power of Faith";
+            this.AbilityName = Properties.Resources.AbilitiesTitlePaladinThePowerOfFaith;
             this.Description = Properties.Resources.AbilitiesDescriptionPaladinThePowerOfFaith;
             this.Icon = this.SetIcon(Properties.Resources.wrath);
             this.NumberOfTargets = 1;
@@ -1197,7 +1197,7 @@ namespace RPG.Core.Abilities
         public WizardFireball(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            AbilityName = "Fireball";
+            AbilityName = Properties.Resources.AbilitiesTitleWizardFireball;
             Description = Properties.Resources.AbilitiesDescriptionWizardFireball;
             this.Icon = this.SetIcon(Properties.Resources.fireball);
             this.NumberOfTargets = 1;
@@ -1233,7 +1233,7 @@ namespace RPG.Core.Abilities
         public WizardHeal(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            AbilityName = "Heal";
+            AbilityName = Properties.Resources.AbilitiesTitleWizardHeal;
             Description = Properties.Resources.AbilitiesDescriptionWizardHeal;
             this.Icon = this.SetIcon(Properties.Resources.heal);
             this.NumberOfTargets = 1;
@@ -1283,7 +1283,7 @@ namespace RPG.Core.Abilities
         public WizardFlameComet(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            AbilityName = "Flame Comet";
+            AbilityName = Properties.Resources.AbilitiesTitleWizardFlameComet;
             Description = Properties.Resources.AbilitiesDescriptionWizardFlameComet;
             this.Icon = this.SetIcon(Properties.Resources.fireball);
             this.NumberOfTargets = 1;
@@ -1319,7 +1319,7 @@ namespace RPG.Core.Abilities
         public WizardRevitalize(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            AbilityName = "Revitalize";
+            AbilityName = Properties.Resources.AbilitiesTitleWizardRevitalize;
             Description = Properties.Resources.AbilitiesDescriptionWizardRevitalize;
             this.Icon = this.SetIcon(Properties.Resources.heal);
             this.NumberOfTargets = 1;
@@ -1369,7 +1369,7 @@ namespace RPG.Core.Abilities
         public WizardBrilliance(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Brilliance";
+            this.AbilityName = Properties.Resources.AbilitiesTitleWizardBrilliance;
             this.Description = Properties.Resources.AbilitiesDescriptionWizardBrilliance;
             this.Icon = this.SetIcon(Properties.Resources.fireball);
             this.NumberOfTargets = 1;
@@ -1410,7 +1410,7 @@ namespace RPG.Core.Abilities
         public WizardArchon(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Archon";
+            this.AbilityName = Properties.Resources.AbilitiesTitleWizardArchon;
             this.Description = Properties.Resources.AbilitiesDescriptionWizardArchon;
             this.Icon = this.SetIcon(Properties.Resources.fireball);
             this.NumberOfTargets = 1;
@@ -1461,7 +1461,7 @@ namespace RPG.Core.Abilities
         public WizardInferno(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            AbilityName = "Inferno";
+            AbilityName = Properties.Resources.AbilitiesTitleWizardInferno;
             Description = Properties.Resources.AbilitiesDescriptionWizardInferno;
             this.Icon = this.SetIcon(Properties.Resources.fireball);
             this.NumberOfTargets = 1;
@@ -1497,7 +1497,7 @@ namespace RPG.Core.Abilities
         public WizardOracle(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            AbilityName = "Oracle";
+            AbilityName = Properties.Resources.AbilitiesTitleWizardOracle;
             Description = Properties.Resources.AbilitiesDescriptionWizardOracle;
             this.Icon = this.SetIcon(Properties.Resources.heal);
             this.NumberOfTargets = 1;
@@ -1572,7 +1572,7 @@ namespace RPG.Core.Abilities
         public ThiefQuickAttack(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Quick Attack";
+            this.AbilityName = Properties.Resources.AbilitiesTitleThiefQuickAttack;
             this.Description = Properties.Resources.AbilitiesDescriptionThiefQuickAttack;
             this.Icon = this.SetIcon(Properties.Resources.quickattack);
             this.NumberOfTargets = 1;
@@ -1607,7 +1607,7 @@ namespace RPG.Core.Abilities
         public ThiefBorrowWeapon(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Borrow Weapon";
+            this.AbilityName = Properties.Resources.AbilitiesTitleThiefBorrowWeapon;
             this.Description = Properties.Resources.AbilitiesDescriptionThiefBorrowWeapon;
             this.Icon = this.SetIcon(Properties.Resources.quickattack);
             this.NumberOfTargets = 1;
@@ -1655,8 +1655,8 @@ namespace RPG.Core.Abilities
         public ThiefBloodstealer(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Bloodstealer";
-            this.Description = Properties.Resources.AbilitiesDescriptionThiefBloodStealer;
+            this.AbilityName = Properties.Resources.AbilitiesTitleThiefBloodstealer;
+            this.Description = Properties.Resources.AbilitiesDescriptionThiefBloodstealer;
             this.Icon = this.SetIcon(Properties.Resources.quickattack);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 2;
@@ -1690,15 +1690,15 @@ namespace RPG.Core.Abilities
     }
 
     /// <summary>
-    /// Copycat: "Deals 95% of the Thiefs allies' highest stat in damage."
+    /// Poisoned Blade
     /// </summary>
-    public class ThiefCopycat : ActiveAbility
+    public class ThiefPoisonedBlade : ActiveAbility
     {
-        public ThiefCopycat(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+        public ThiefPoisonedBlade(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Copycat";
-            this.Description = Properties.Resources.AbilitiesDescriptionThiefCopyCat;
+            this.AbilityName = Properties.Resources.AbilitiesTitleThiefPoisonedBlade;
+            this.Description = Properties.Resources.AbilitiesDescriptionThiefPoisonedBlade;
             this.Icon = this.SetIcon(Properties.Resources.quickattack);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 2;
@@ -1708,46 +1708,20 @@ namespace RPG.Core.Abilities
         /// <summary>
         /// Used only for XML Serialization
         /// </summary>
-        public ThiefCopycat()
+        public ThiefPoisonedBlade()
         { }
 
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _targets)
         {
             double critModifier = Function.CombatHandler.CritCalculator(_caster.UnitLevel, _caster.BuffedCrit.IntValue);
-            int best = 0;
-            int damage = 0;
-            EnumAttributeType type = EnumAttributeType.Strength;
-            string statOwner = "";
+            int damage = (int)((_caster.BuffedAttackDamage.IntValue * 1.3 + _caster.BuffedAgility.IntValue * 0.65) * critModifier);
 
-            foreach (var item in _allies)
-            {
-                if (item.BuffedIntellingence.IntValue > best)
-                {
-                    statOwner = item.UnitName;
-                    best = item.BuffedIntellingence.IntValue;
-                    type = EnumAttributeType.Intellect;
-                }
-                if (item.BuffedStrength.IntValue > best)
-                {
-                    statOwner = item.UnitName;
-                    best = item.BuffedStrength.IntValue;
-                    type = EnumAttributeType.Strength;
-                }
-                if (item.BuffedAgility.IntValue > best)
-                {
-                    statOwner = item.UnitName;
-                    best = item.BuffedAgility.IntValue;
-                    type = EnumAttributeType.Agility;
-                }
-            }
-
-            damage = (int)((best * 0.95) * critModifier);
             _targets.CurrentHP.IntValue -= damage;
 
             if (critModifier == 1.0)
-                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _targets.UnitName + " dealing " + damage + " by using " + statOwner + "'s " + type.ToString().ToLower() + "!";
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _targets.UnitName + " dealing " + damage + "!";
             else
-                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _targets.UnitName + " critting for " + damage + " by using " + statOwner + "'s " + type.ToString().ToLower() + "!";
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _targets.UnitName + " critting for " + damage + "!";
         }
     }
 
@@ -1759,7 +1733,7 @@ namespace RPG.Core.Abilities
         public ThiefSwiftness(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Swiftness";
+            this.AbilityName = Properties.Resources.AbilitiesTitleThiefSwiftness;
             this.Description = Properties.Resources.AbilitiesDescriptionThiefSwiftness;
             this.Icon = this.SetIcon(Properties.Resources.quickattack);
             this.NumberOfTargets = 1;
@@ -1800,7 +1774,7 @@ namespace RPG.Core.Abilities
         public ThiefEnvenom(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Envenom";
+            this.AbilityName = Properties.Resources.AbilitiesTitleThiefEnvenom;
             this.Description = Properties.Resources.AbilitiesDescriptionThiefEnvenom;
             this.Icon = this.SetIcon(Properties.Resources.quickattack);
             this.NumberOfTargets = 1;
@@ -1840,7 +1814,7 @@ namespace RPG.Core.Abilities
         public ThiefDirtyTricks(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Dirty Tricks";
+            this.AbilityName = Properties.Resources.AbilitiesTitleThiefDirtyTricks;
             this.Description = Properties.Resources.AbilitiesDescriptionThiefDirtyTricks;
             this.Icon = this.SetIcon(Properties.Resources.quickattack);
             this.NumberOfTargets = 1;
@@ -1875,7 +1849,7 @@ namespace RPG.Core.Abilities
         public ThiefFlurry(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Flurry";
+            this.AbilityName = Properties.Resources.AbilitiesTitleThiefFlurry;
             this.Description = Properties.Resources.AbilitiesDescriptionThiefFlurry;
             this.Icon = this.SetIcon(Properties.Resources.quickattack);
             this.NumberOfTargets = 1;
@@ -1920,7 +1894,7 @@ namespace RPG.Core.Abilities
         public CaretakerBodySlam(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Body Slam";
+            this.AbilityName = Properties.Resources.AbilitiesTitleCaretakerBodySlam;
             this.Description = Properties.Resources.AbilitiesDescriptionCaretakerBodySlam;
             this.Icon = this.SetIcon(Properties.Resources.bodyslam);
             this.NumberOfTargets = 1;
@@ -1955,7 +1929,7 @@ namespace RPG.Core.Abilities
         public CaretakerSacrifice(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Sacrifice";
+            this.AbilityName = Properties.Resources.AbilitiesTitleCaretakerSacrifice;
             this.Description = Properties.Resources.AbilitiesDescriptionCaretakerSacrifice;
             this.Icon = this.SetIcon(Properties.Resources.bodyslam);
             this.NumberOfTargets = 1;
@@ -1994,8 +1968,8 @@ namespace RPG.Core.Abilities
         public CaretakerLifeforce(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Lifeforce";
-            this.Description = Properties.Resources.AbilitiesDescriptionCaretakerLifeForce;
+            this.AbilityName = Properties.Resources.AbilitiesTitleCaretakerLifeforce;
+            this.Description = Properties.Resources.AbilitiesDescriptionCaretakerLifeforce;
             this.Icon = this.SetIcon(Properties.Resources.bodyslam);
             this.NumberOfTargets = 1;
             this.TurnPointCost = 2;
@@ -2032,7 +2006,7 @@ namespace RPG.Core.Abilities
         public CaretakerZealOfHumanity(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Zeal of Humanity";
+            this.AbilityName = Properties.Resources.AbilitiesTitleCaretakerZealOfHumanity;
             this.Description = Properties.Resources.AbilitiesDescriptionCaretakerZealOfHumanity;
             this.Icon = this.SetIcon(Properties.Resources.bodyslam);
             this.NumberOfTargets = 1;
@@ -2085,7 +2059,7 @@ namespace RPG.Core.Abilities
         public CaretakerAction(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Action";
+            this.AbilityName = Properties.Resources.AbilitiesTitleCaretakerAction;
             this.Description = Properties.Resources.AbilitiesDescriptionCaretakerAction;
             this.Icon = this.SetIcon(Properties.Resources.bodyslam);
             this.NumberOfTargets = 1;
@@ -2130,7 +2104,7 @@ namespace RPG.Core.Abilities
         public CaretakerLifeblood(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Lifeblood";
+            this.AbilityName = Properties.Resources.AbilitiesTitleCaretakerLifeblood;
             this.Description = Properties.Resources.AbilitiesDescriptionCaretakerLifeblood;
             this.Icon = this.SetIcon(Properties.Resources.bodyslam);
             this.NumberOfTargets = 1;
@@ -2184,7 +2158,7 @@ namespace RPG.Core.Abilities
         public CaretakerPowerAndDexterity(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Power and Dexterity";
+            this.AbilityName = Properties.Resources.AbilitiesTitleCaretakerPowerAndDexterity;
             this.Description = Properties.Resources.AbilitiesDescriptionCaretakerPowerAndDexterity;
             this.Icon = this.SetIcon(Properties.Resources.bodyslam);
             this.NumberOfTargets = 1;
@@ -2219,7 +2193,7 @@ namespace RPG.Core.Abilities
         public CaretakerDeathdefiance(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Deathdefiance";
+            this.AbilityName = Properties.Resources.AbilitiesTitleCaretakerDeathdefiance;
             this.Description = Properties.Resources.AbilitiesDescriptionCaretakerDeathdefiance;
             this.Icon = this.SetIcon(Properties.Resources.bodyslam);
             this.NumberOfTargets = 1;
@@ -2277,7 +2251,7 @@ namespace RPG.Core.Abilities
         public SynergistDuality(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Duality";
+            this.AbilityName = Properties.Resources.AbilitiesTitleSynergistDuality;
             this.Description = Properties.Resources.AbilitiesDescriptionSynergistDuality;
             this.Icon = this.SetIcon(Properties.Resources.duality);
             this.NumberOfTargets = 1;
@@ -2312,7 +2286,7 @@ namespace RPG.Core.Abilities
         public SynergistAgileMind(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Agile Mind";
+            this.AbilityName = Properties.Resources.AbilitiesTitleSynergistAgileMind;
             this.Description = Properties.Resources.AbilitiesDescriptionSynergistAgileMind;
             this.Icon = this.SetIcon(Properties.Resources.duality);
             this.NumberOfTargets = 1;
@@ -2350,7 +2324,7 @@ namespace RPG.Core.Abilities
         public SynergistBalance(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Balance";
+            this.AbilityName = Properties.Resources.AbilitiesTitleSynergistBalance;
             this.Description = Properties.Resources.AbilitiesDescriptionSynergistBalance;
             this.Icon = this.SetIcon(Properties.Resources.duality);
             this.NumberOfTargets = 1;
@@ -2407,7 +2381,7 @@ namespace RPG.Core.Abilities
         public SynergistMentalAgility(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Mental Agility";
+            this.AbilityName = Properties.Resources.AbilitiesTitleSynergistMentalAgility;
             this.Description = Properties.Resources.AbilitiesDescriptionSynergistMentalAgility;
             this.Icon = this.SetIcon(Properties.Resources.duality);
             this.NumberOfTargets = 1;
@@ -2445,7 +2419,7 @@ namespace RPG.Core.Abilities
         public SynergistAlign(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Align";
+            this.AbilityName = Properties.Resources.AbilitiesTitleSynergistAlign;
             this.Description = Properties.Resources.AbilitiesDescriptionSynergistAlign;
             this.Icon = this.SetIcon(Properties.Resources.duality);
             this.NumberOfTargets = 1;
@@ -2491,7 +2465,7 @@ namespace RPG.Core.Abilities
         public SynergistCollapsedEquality(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Collapsed Equality";
+            this.AbilityName = Properties.Resources.AbilitiesTitleSynergistCollapsedEquality;
             this.Description = Properties.Resources.AbilitiesDescriptionSynergistCollapsedEquality;
             this.Icon = this.SetIcon(Properties.Resources.duality);
             this.NumberOfTargets = 1;
@@ -2564,7 +2538,7 @@ namespace RPG.Core.Abilities
         public SynergistSynergy(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Synergy";
+            this.AbilityName = Properties.Resources.AbilitiesTitleSynergistSynergy;
             this.Description = Properties.Resources.AbilitiesDescriptionSynergistSynergy;
             this.Icon = this.SetIcon(Properties.Resources.duality);
             this.NumberOfTargets = 1;
@@ -2603,7 +2577,7 @@ namespace RPG.Core.Abilities
         public SynergistCompleteBalance(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            this.AbilityName = "Complete Balance";
+            this.AbilityName = Properties.Resources.AbilitiesTitleSynergistCompleteBalance;
             this.Description = Properties.Resources.AbilitiesDescriptionSynergistCompleteBalance;
             this.Icon = this.SetIcon(Properties.Resources.duality);
             this.NumberOfTargets = 1;
@@ -2881,6 +2855,68 @@ namespace RPG.Core.Abilities
     #endregion
 
     #region Unused abilities (Old abilities that are there for save purposes only)
+
+    /// <summary>
+    /// Copycat: "Deals 95% of the Thiefs allies' highest stat in damage."
+    /// </summary>
+    public class ThiefCopycat : ActiveAbility
+    {
+        public ThiefCopycat(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
+        {
+            this.AbilityName = "Copycat";
+            this.Description = Properties.Resources.AbilitiesDescriptionThiefPoisonedBlade;
+            this.Icon = this.SetIcon(Properties.Resources.quickattack);
+            this.NumberOfTargets = 1;
+            this.TurnPointCost = 2;
+            this.DamageOrHealing = EnumActiveAbilityType.Damage;
+        }
+
+        /// <summary>
+        /// Used only for XML Serialization
+        /// </summary>
+        public ThiefCopycat()
+        { }
+
+        public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _targets)
+        {
+            double critModifier = Function.CombatHandler.CritCalculator(_caster.UnitLevel, _caster.BuffedCrit.IntValue);
+            int best = 0;
+            int damage = 0;
+            EnumAttributeType type = EnumAttributeType.Strength;
+            string statOwner = "";
+
+            foreach (var item in _allies)
+            {
+                if (item.BuffedIntellingence.IntValue > best)
+                {
+                    statOwner = item.UnitName;
+                    best = item.BuffedIntellingence.IntValue;
+                    type = EnumAttributeType.Intellect;
+                }
+                if (item.BuffedStrength.IntValue > best)
+                {
+                    statOwner = item.UnitName;
+                    best = item.BuffedStrength.IntValue;
+                    type = EnumAttributeType.Strength;
+                }
+                if (item.BuffedAgility.IntValue > best)
+                {
+                    statOwner = item.UnitName;
+                    best = item.BuffedAgility.IntValue;
+                    type = EnumAttributeType.Agility;
+                }
+            }
+
+            damage = (int)((best * 0.95) * critModifier);
+            _targets.CurrentHP.IntValue -= damage;
+
+            if (critModifier == 1.0)
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _targets.UnitName + " dealing " + damage + " by using " + statOwner + "'s " + type.ToString().ToLower() + "!";
+            else
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _targets.UnitName + " critting for " + damage + " by using " + statOwner + "'s " + type.ToString().ToLower() + "!";
+        }
+    }
 
     /// <summary>
     /// Balance - Agility: "Decreases intellect by 10%, but increases agility by this amount."

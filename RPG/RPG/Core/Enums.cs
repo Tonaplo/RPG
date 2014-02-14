@@ -19,6 +19,13 @@ namespace RPG.Core
         Synergist, // Hybrid Agility/Intellect Class, Support character with Damage/Healing abilities
     }
 
+    public enum EnumBattleMode
+    {
+        Single,
+        Local,
+        Online
+    }
+
     public enum EnumQuestRewardType
     {
         Experience, 

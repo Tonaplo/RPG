@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPG", "RPG\RPG.csproj", "{DFD95EA2-8194-477D-9250-E26D1DDD1B1A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "The Legend of Eiwar", "RPG\The Legend of Eiwar.csproj", "{DFD95EA2-8194-477D-9250-E26D1DDD1B1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

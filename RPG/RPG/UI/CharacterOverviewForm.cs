@@ -308,42 +308,42 @@ namespace RPG.UI
         {
             if (checkBoxAll1.Enabled == true)
             {
-                checkBoxAll1.Text = "Melee Attack";
+                checkBoxAll1.Text = Properties.Resources.AbilitiesTitleAnyMeleeAttack;
                 checkBoxAll1.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.meleeattack, new Size(20, 20));
             }
             if (checkBoxAll2.Enabled == true)
             {
-                checkBoxAll2.Text = "Battle Regeneration";
+                checkBoxAll2.Text = Properties.Resources.AbilitiesTitleAnyBattleRegeneration;
                 checkBoxAll2.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.meleeattack, new Size(20, 20));
             }
             if (checkBoxAll3.Enabled == true)
             {
-                checkBoxAll3.Text = "Empowerment";
+                checkBoxAll3.Text = Properties.Resources.AbilitiesTitleAnyEmpowerment;
                 checkBoxAll3.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.meleeattack, new Size(20, 20));
             }
             if (checkBoxAll4.Enabled == true)
             {
-                checkBoxAll4.Text = "Invigorate";
+                checkBoxAll4.Text = Properties.Resources.AbilitiesTitleAnyInvigorate;
                 checkBoxAll4.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.meleeattack, new Size(20, 20));
             }
             if (checkBoxAll5.Enabled == true)
             {
-                checkBoxAll5.Text = "Double Swing";
+                checkBoxAll5.Text = Properties.Resources.AbilitiesTitleAnyDoubleSwing;
                 checkBoxAll5.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.meleeattack, new Size(20, 20));
             }
             if (checkBoxAll6.Enabled == true)
             {
-                checkBoxAll6.Text = "Opportunity";
+                checkBoxAll6.Text = Properties.Resources.AbilitiesTitleAnyOpportunity;
                 checkBoxAll6.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.meleeattack, new Size(20, 20));
             }
             if (checkBoxAll7.Enabled == true)
             {
-                checkBoxAll7.Text = "Totalitarism";
+                checkBoxAll7.Text = Properties.Resources.AbilitiesTitleAnyTotalitarism;
                 checkBoxAll7.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.meleeattack, new Size(20, 20));
             }
             if (checkBoxAll8.Enabled == true)
             {
-                checkBoxAll8.Text = "Ascend";
+                checkBoxAll8.Text = Properties.Resources.AbilitiesTitleAnyAscend;
                 checkBoxAll8.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.meleeattack, new Size(20, 20));
             }
         }
@@ -352,42 +352,42 @@ namespace RPG.UI
         {
             if (checkBoxClass1.Enabled == true)
             {
-                checkBoxClass1.Text = "Strength";
+                checkBoxClass1.Text = Properties.Resources.AbilitiesTitleWarriorStrength;
                 checkBoxClass1.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.strength, new Size(20, 20));
             }
             if (checkBoxClass2.Enabled == true)
             {
-                checkBoxClass2.Text = "Power Strike";
+                checkBoxClass2.Text = Properties.Resources.AbilitiesTitleWarriorPowerStrike;
                 checkBoxClass2.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.strength, new Size(20, 20));
             }
             if (checkBoxClass3.Enabled == true)
             {
-                checkBoxClass3.Text = "Blind Rage";
+                checkBoxClass3.Text = Properties.Resources.AbilitiesTitleWarriorBlindRage;
                 checkBoxClass3.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.strength, new Size(20, 20));
             }
             if (checkBoxClass4.Enabled == true)
             {
-                checkBoxClass4.Text = "Rampage";
+                checkBoxClass4.Text = Properties.Resources.AbilitiesTitleWarriorRampage;
                 checkBoxClass4.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.strength, new Size(20, 20));
             }
             if (checkBoxClass5.Enabled == true)
             {
-                checkBoxClass5.Text = "Roar";
+                checkBoxClass5.Text = Properties.Resources.AbilitiesTitleWarriorRoar;
                 checkBoxClass5.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.strength, new Size(20, 20));
             }
             if (checkBoxClass6.Enabled == true)
             {
-                checkBoxClass6.Text = "Infuriate";
+                checkBoxClass6.Text = Properties.Resources.AbilitiesTitleWarriorInfuriate;
                 checkBoxClass6.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.strength, new Size(20, 20));
             }
             if (checkBoxClass7.Enabled == true)
             {
-                checkBoxClass7.Text = "Execution";
+                checkBoxClass7.Text = Properties.Resources.AbilitiesTitleWarriorExecution;
                 checkBoxClass7.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.strength, new Size(20, 20));
             }
             if (checkBoxClass8.Enabled == true)
             {
-                checkBoxClass8.Text = "Insanity";
+                checkBoxClass8.Text = Properties.Resources.AbilitiesTitleWarriorInsanity;
                 checkBoxClass8.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.strength, new Size(20, 20));
             }
         }
@@ -396,42 +396,42 @@ namespace RPG.UI
         {
             if (checkBoxClass1.Enabled == true)
             {
-                checkBoxClass1.Text = "Fireball";
+                checkBoxClass1.Text = Properties.Resources.AbilitiesTitleWizardFireball;
                 checkBoxClass1.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.fireball, new Size(20, 20));
             }
             if (checkBoxClass2.Enabled == true)
             {
-                checkBoxClass2.Text = "Heal";
+                checkBoxClass2.Text = Properties.Resources.AbilitiesTitleWizardHeal;
                 checkBoxClass2.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.heal, new Size(20, 20));
             }
             if (checkBoxClass3.Enabled == true)
             {
-                checkBoxClass3.Text = "Flame Comet";
+                checkBoxClass3.Text = Properties.Resources.AbilitiesTitleWizardFlameComet;
                 checkBoxClass3.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.fireball, new Size(20, 20));
             }
             if (checkBoxClass4.Enabled == true)
             {
-                checkBoxClass4.Text = "Revitalize";
+                checkBoxClass4.Text = Properties.Resources.AbilitiesTitleWizardRevitalize;
                 checkBoxClass4.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.heal, new Size(20, 20));
             }
             if (checkBoxClass5.Enabled == true)
             {
-                checkBoxClass5.Text = "Brilliance";
+                checkBoxClass5.Text = Properties.Resources.AbilitiesTitleWizardBrilliance;
                 checkBoxClass5.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.heal, new Size(20, 20));
             }
             if (checkBoxClass6.Enabled == true)
             {
-                checkBoxClass6.Text = "Archon";
+                checkBoxClass6.Text = Properties.Resources.AbilitiesTitleWizardArchon;
                 checkBoxClass6.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.heal, new Size(20, 20));
             }
             if (checkBoxClass7.Enabled == true)
             {
-                checkBoxClass7.Text = "Inferno";
+                checkBoxClass7.Text = Properties.Resources.AbilitiesTitleWizardInferno;
                 checkBoxClass7.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.fireball, new Size(20, 20));
             }
             if (checkBoxClass8.Enabled == true)
             {
-                checkBoxClass8.Text = "Oracle";
+                checkBoxClass8.Text = Properties.Resources.AbilitiesTitleWizardOracle;
                 checkBoxClass8.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.heal, new Size(20, 20));
             }
         }
@@ -440,42 +440,42 @@ namespace RPG.UI
         {
             if (checkBoxClass1.Enabled == true)
             {
-                checkBoxClass1.Text = "Wrath";
+                checkBoxClass1.Text = Properties.Resources.AbilitiesTitlePaladinWrath;
                 checkBoxClass1.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.wrath, new Size(20, 20));
             }
             if (checkBoxClass2.Enabled == true)
             {
-                checkBoxClass2.Text = "Justice";
+                checkBoxClass2.Text = Properties.Resources.AbilitiesTitlePaladinJustice;
                 checkBoxClass2.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.wrath, new Size(20, 20));
             }
             if (checkBoxClass3.Enabled == true)
             {
-                checkBoxClass3.Text = "Serenity";
+                checkBoxClass3.Text = Properties.Resources.AbilitiesTitlePaladinSerenity;
                 checkBoxClass3.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.wrath, new Size(20, 20));
             }
             if (checkBoxClass4.Enabled == true)
             {
-                checkBoxClass4.Text = "Raise Spirit";
+                checkBoxClass4.Text = Properties.Resources.AbilitiesTitlePaladinRaiseSpirit;
                 checkBoxClass4.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.wrath, new Size(20, 20));
             }
             if (checkBoxClass5.Enabled == true)
             {
-                checkBoxClass5.Text = "Prayer";
+                checkBoxClass5.Text = Properties.Resources.AbilitiesTitlePaladinPrayer;
                 checkBoxClass5.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.wrath, new Size(20, 20));
             }
             if (checkBoxClass6.Enabled == true)
             {
-                checkBoxClass6.Text = "Blessing";
+                checkBoxClass6.Text = Properties.Resources.AbilitiesTitlePaladinBlessing;
                 checkBoxClass6.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.wrath, new Size(20, 20));
             }
             if (checkBoxClass7.Enabled == true)
             {
-                checkBoxClass7.Text = "Desperate Plea";
+                checkBoxClass7.Text = Properties.Resources.AbilitiesTitlePaladinDesperatePlea;
                 checkBoxClass7.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.wrath, new Size(20, 20));
             }
             if (checkBoxClass8.Enabled == true)
             {
-                checkBoxClass8.Text = "The Power of Faith";
+                checkBoxClass8.Text = Properties.Resources.AbilitiesTitlePaladinThePowerOfFaith;
                 checkBoxClass8.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.wrath, new Size(20, 20));
             }
         }
@@ -484,42 +484,42 @@ namespace RPG.UI
         {
             if (checkBoxClass1.Enabled == true)
             {
-                checkBoxClass1.Text = "Quick Attack";
+                checkBoxClass1.Text = Properties.Resources.AbilitiesTitleThiefQuickAttack;
                 checkBoxClass1.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.quickattack, new Size(20, 20));
             }
             if (checkBoxClass2.Enabled == true)
             {
-                checkBoxClass2.Text = "Borrow Weapon";
+                checkBoxClass2.Text = Properties.Resources.AbilitiesTitleThiefBorrowWeapon;
                 checkBoxClass2.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.quickattack, new Size(20, 20));
             }
             if (checkBoxClass3.Enabled == true)
             {
-                checkBoxClass3.Text = "Bloodstealer";
+                checkBoxClass3.Text = Properties.Resources.AbilitiesTitleThiefBloodstealer;
                 checkBoxClass3.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.quickattack, new Size(20, 20));
             }
             if (checkBoxClass4.Enabled == true)
             {
-                checkBoxClass4.Text = "Copycat";
+                checkBoxClass4.Text = Properties.Resources.AbilitiesTitleThiefPoisonedBlade;
                 checkBoxClass4.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.quickattack, new Size(20, 20));
             }
             if (checkBoxClass5.Enabled == true)
             {
-                checkBoxClass5.Text = "Swiftness";
+                checkBoxClass5.Text = Properties.Resources.AbilitiesTitleThiefSwiftness;
                 checkBoxClass5.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.quickattack, new Size(20, 20));
             }
             if (checkBoxClass6.Enabled == true)
             {
-                checkBoxClass6.Text = "Envenom";
+                checkBoxClass6.Text = Properties.Resources.AbilitiesTitleThiefEnvenom;
                 checkBoxClass6.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.quickattack, new Size(20, 20));
             }
             if (checkBoxClass7.Enabled == true)
             {
-                checkBoxClass7.Text = "Dirty Tricks";
+                checkBoxClass7.Text = Properties.Resources.AbilitiesTitleThiefDirtyTricks;
                 checkBoxClass7.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.quickattack, new Size(20, 20));
             }
             if (checkBoxClass8.Enabled == true)
             {
-                checkBoxClass8.Text = "Flurry";
+                checkBoxClass8.Text = Properties.Resources.AbilitiesTitleThiefFlurry;
                 checkBoxClass8.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.quickattack, new Size(20, 20));
             }
         }
@@ -528,42 +528,42 @@ namespace RPG.UI
         {
             if (checkBoxClass1.Enabled == true)
             {
-                checkBoxClass1.Text = "Body Slam";
+                checkBoxClass1.Text = Properties.Resources.AbilitiesTitleCaretakerBodySlam;
                 checkBoxClass1.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.bodyslam, new Size(20, 20));
             }
             if (checkBoxClass2.Enabled == true)
             {
-                checkBoxClass2.Text = "Sacrifice";
+                checkBoxClass2.Text = Properties.Resources.AbilitiesTitleCaretakerSacrifice;
                 checkBoxClass2.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.bodyslam, new Size(20, 20));
             }
             if (checkBoxClass3.Enabled == true)
             {
-                checkBoxClass3.Text = "Lifeforce";
+                checkBoxClass3.Text = Properties.Resources.AbilitiesTitleCaretakerLifeforce;
                 checkBoxClass3.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.bodyslam, new Size(20, 20));
             }
             if (checkBoxClass4.Enabled == true)
             {
-                checkBoxClass4.Text = "Zeal of Humanity";
+                checkBoxClass4.Text = Properties.Resources.AbilitiesTitleCaretakerZealOfHumanity;
                 checkBoxClass4.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.bodyslam, new Size(20, 20));
             }
             if (checkBoxClass5.Enabled == true)
             {
-                checkBoxClass5.Text = "Action";
+                checkBoxClass5.Text = Properties.Resources.AbilitiesTitleCaretakerAction;
                 checkBoxClass5.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.bodyslam, new Size(20, 20));
             }
             if (checkBoxClass6.Enabled == true)
             {
-                checkBoxClass6.Text = "Lifeblood";
+                checkBoxClass6.Text = Properties.Resources.AbilitiesTitleCaretakerLifeblood;
                 checkBoxClass6.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.bodyslam, new Size(20, 20));
             }
             if (checkBoxClass7.Enabled == true)
             {
-                checkBoxClass7.Text = "Power and Dexterity";
+                checkBoxClass7.Text = Properties.Resources.AbilitiesTitleCaretakerPowerAndDexterity;
                 checkBoxClass7.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.bodyslam, new Size(20, 20));
             }
             if (checkBoxClass8.Enabled == true)
             {
-                checkBoxClass8.Text = "Deathdefiance";
+                checkBoxClass8.Text = Properties.Resources.AbilitiesTitleCaretakerDeathdefiance;
                 checkBoxClass8.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.bodyslam, new Size(20, 20));
             }
         }
@@ -572,42 +572,42 @@ namespace RPG.UI
         {
             if (checkBoxClass1.Enabled == true)
             {
-                checkBoxClass1.Text = "Duality";
+                checkBoxClass1.Text = Properties.Resources.AbilitiesTitleSynergistDuality;
                 checkBoxClass1.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.duality, new Size(20, 20));
             }
             if (checkBoxClass2.Enabled == true)
             {
-                checkBoxClass2.Text = "Agile Mind";
+                checkBoxClass2.Text = Properties.Resources.AbilitiesTitleSynergistAgileMind;
                 checkBoxClass2.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.duality, new Size(20, 20));
             }
             if (checkBoxClass3.Enabled == true)
             {
-                checkBoxClass3.Text = "Balance";
+                checkBoxClass3.Text = Properties.Resources.AbilitiesTitleSynergistBalance;
                 checkBoxClass3.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.duality, new Size(20, 20));
             }
             if (checkBoxClass4.Enabled == true)
             {
-                checkBoxClass4.Text = "Mental Agility";
+                checkBoxClass4.Text = Properties.Resources.AbilitiesTitleSynergistMentalAgility;
                 checkBoxClass4.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.duality, new Size(20, 20));
             }
             if (checkBoxClass5.Enabled == true)
             {
-                checkBoxClass5.Text = "Align";
+                checkBoxClass5.Text = Properties.Resources.AbilitiesTitleSynergistAlign;
                 checkBoxClass5.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.duality, new Size(20, 20));
             }
             if (checkBoxClass6.Enabled == true)
             {
-                checkBoxClass6.Text = "Collapsed Equality";
+                checkBoxClass6.Text = Properties.Resources.AbilitiesTitleSynergistCollapsedEquality;
                 checkBoxClass6.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.duality, new Size(20, 20));
             }
             if (checkBoxClass7.Enabled == true)
             {
-                checkBoxClass7.Text = "Synergy";
+                checkBoxClass7.Text = Properties.Resources.AbilitiesTitleSynergistSynergy;
                 checkBoxClass7.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.duality, new Size(20, 20));
             }
             if (checkBoxClass8.Enabled == true)
             {
-                checkBoxClass8.Text = "Complete Balance";
+                checkBoxClass8.Text = Properties.Resources.AbilitiesTitleSynergistCompleteBalance;
                 checkBoxClass8.Image = Function.GeneralFunctions.ResizeImage(Properties.Resources.duality, new Size(20, 20));
             }
         }
@@ -636,49 +636,49 @@ namespace RPG.UI
 
         private void checkBoxAll1_MouseHover(object sender, EventArgs e)
         {
-            tt.ToolTipTitle = "Melee Attack";
+            tt.ToolTipTitle = Properties.Resources.AbilitiesTitleAnyMeleeAttack;
             tt.Show(Properties.Resources.AbilitiesDescriptionAnyMeleeAttack, checkBoxAll1, 5000);
         }
 
         private void checkBoxAll2_MouseHover(object sender, EventArgs e)
         {
-                tt.ToolTipTitle = "Battle Regeneration";
+                tt.ToolTipTitle = Properties.Resources.AbilitiesTitleAnyBattleRegeneration;
                 tt.Show(Properties.Resources.AbilitiesDescriptionAnyBattleRegeneration, checkBoxAll2, 5000);
         }
 
         private void checkBoxAll3_MouseHover(object sender, EventArgs e)
         {
-                tt.ToolTipTitle = "Empowerment";
+                tt.ToolTipTitle = Properties.Resources.AbilitiesTitleAnyEmpowerment;
                 tt.Show(Properties.Resources.AbilitiesDescriptionAnyEmpowerment, checkBoxAll3, 5000);
         }
 
         private void checkBoxAll4_MouseHover(object sender, EventArgs e)
         {
-                tt.ToolTipTitle = "Invigorate";
+                tt.ToolTipTitle = Properties.Resources.AbilitiesTitleAnyInvigorate;
                 tt.Show(Properties.Resources.AbilitiesDescriptionAnyInvigorate, checkBoxAll4, 5000);
         }
 
         private void checkBoxAll5_MouseHover(object sender, EventArgs e)
         {
-                tt.ToolTipTitle = "Double Swing";
+                tt.ToolTipTitle = Properties.Resources.AbilitiesTitleAnyDoubleSwing;
                 tt.Show(Properties.Resources.AbilitiesDescriptionAnyDoubleSwing, checkBoxAll5, 5000);
         }
 
         private void checkBoxAll6_MouseHover(object sender, EventArgs e)
         {
-                tt.ToolTipTitle = "Opportunity";
+                tt.ToolTipTitle = Properties.Resources.AbilitiesTitleAnyOpportunity;
                 tt.Show(Properties.Resources.AbilitiesDescriptionAnyOpportunity, checkBoxAll6, 5000);
         }
 
         private void checkBoxAll7_MouseHover(object sender, EventArgs e)
         {
-                tt.ToolTipTitle = "Totalitarism";
+                tt.ToolTipTitle = Properties.Resources.AbilitiesTitleAnyTotalitarism;
                 tt.Show(Properties.Resources.AbilitiesDescriptionAnyTotalitarism, checkBoxAll7, 5000);
         }
 
         private void checkBoxAll8_MouseHover(object sender, EventArgs e)
         {
-                tt.ToolTipTitle = "Ascend";
+                tt.ToolTipTitle = Properties.Resources.AbilitiesTitleAnyAscend;
                 tt.Show(Properties.Resources.AbilitiesDescriptionAnyAscend, checkBoxAll8, 5000);
         }
 
@@ -691,27 +691,27 @@ namespace RPG.UI
             switch (character.CharClass)
             {
                 case EnumCharClass.Warrior:
-                    tt.ToolTipTitle = "Strength";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleWarriorStrength;
                     tt.Show(Properties.Resources.AbilitiesDescriptionWarriorStrength, checkBoxClass1, 5000);
                     break;
                 case EnumCharClass.Paladin:
-                    tt.ToolTipTitle = "Wrath";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitlePaladinWrath;
                     tt.Show(Properties.Resources.AbilitiesDescriptionPaladinWrath, checkBoxClass1, 5000);
                     break;
                 case EnumCharClass.Wizard:
-                    tt.ToolTipTitle = "Fireball";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleWizardFireball;
                     tt.Show(Properties.Resources.AbilitiesDescriptionWizardFireball, checkBoxClass1, 5000);
                     break;
                 case EnumCharClass.Thief:
-                    tt.ToolTipTitle = "Quick Attack";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleThiefQuickAttack;
                     tt.Show(Properties.Resources.AbilitiesDescriptionThiefQuickAttack, checkBoxClass1, 5000);
                     break;
                 case EnumCharClass.Caretaker:
-                    tt.ToolTipTitle = "Body Slam";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleCaretakerBodySlam;
                     tt.Show(Properties.Resources.AbilitiesDescriptionCaretakerBodySlam, checkBoxClass1, 5000);
                     break;
                 case EnumCharClass.Synergist:
-                    tt.ToolTipTitle = "Duality";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleSynergistDuality;
                     tt.Show(Properties.Resources.AbilitiesDescriptionSynergistDuality, checkBoxClass1, 5000);
                     break;
                 default:
@@ -724,27 +724,27 @@ namespace RPG.UI
             switch (character.CharClass)
             {
                 case EnumCharClass.Warrior:
-                    tt.ToolTipTitle = "Power Strike";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleWarriorPowerStrike;
                     tt.Show(Properties.Resources.AbilitiesDescriptionWarriorPowerStrike, checkBoxClass2, 5000);
                     break;
                 case EnumCharClass.Paladin:
-                    tt.ToolTipTitle = "Justice";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitlePaladinJustice;
                     tt.Show(Properties.Resources.AbilitiesDescriptionPaladinJustice, checkBoxClass2, 5000);
                     break;
                 case EnumCharClass.Wizard:
-                    tt.ToolTipTitle = "Heal";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleWizardHeal;
                     tt.Show(Properties.Resources.AbilitiesDescriptionWizardHeal, checkBoxClass2, 5000);
                     break;
                 case EnumCharClass.Thief:
-                    tt.ToolTipTitle = "Borrow Weapon";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleThiefBorrowWeapon;
                     tt.Show(Properties.Resources.AbilitiesDescriptionThiefBorrowWeapon, checkBoxClass2, 5000);
                     break;
                 case EnumCharClass.Caretaker:
-                    tt.ToolTipTitle = "Sacrifice";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleCaretakerSacrifice;
                     tt.Show(Properties.Resources.AbilitiesDescriptionCaretakerSacrifice, checkBoxClass2, 5000);
                     break;
                 case EnumCharClass.Synergist:
-                    tt.ToolTipTitle = "Agile Mind";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleSynergistAgileMind;
                     tt.Show(Properties.Resources.AbilitiesDescriptionSynergistAgileMind, checkBoxClass2, 5000);
                     break;
                 default:
@@ -757,27 +757,27 @@ namespace RPG.UI
             switch (character.CharClass)
             {
                 case EnumCharClass.Warrior:
-                    tt.ToolTipTitle = "Blind Rage";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleWarriorBlindRage;
                     tt.Show(Properties.Resources.AbilitiesDescriptionWarriorBlindRage, checkBoxClass3, 5000);
                     break;
                 case EnumCharClass.Paladin:
-                    tt.ToolTipTitle = "Serenity";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitlePaladinSerenity;
                     tt.Show(Properties.Resources.AbilitiesDescriptionPaladinSerenity, checkBoxClass3, 5000);
                     break;
                 case EnumCharClass.Wizard:
-                    tt.ToolTipTitle = "Flame Comet";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleWizardFlameComet;
                     tt.Show(Properties.Resources.AbilitiesDescriptionWizardFlameComet, checkBoxClass3, 5000);
                     break;
                 case EnumCharClass.Thief:
-                    tt.ToolTipTitle = "Bloodstealer";
-                    tt.Show(Properties.Resources.AbilitiesDescriptionThiefBloodStealer, checkBoxClass3, 5000);
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleThiefBloodstealer;
+                    tt.Show(Properties.Resources.AbilitiesDescriptionThiefBloodstealer, checkBoxClass3, 5000);
                     break;
                 case EnumCharClass.Caretaker:
-                    tt.ToolTipTitle = "Lifeforce";
-                    tt.Show(Properties.Resources.AbilitiesDescriptionCaretakerLifeForce, checkBoxClass3, 5000);
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleCaretakerLifeforce;
+                    tt.Show(Properties.Resources.AbilitiesDescriptionCaretakerLifeforce, checkBoxClass3, 5000);
                     break;
                 case EnumCharClass.Synergist:
-                    tt.ToolTipTitle = "Balance";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleSynergistBalance;
                     tt.Show(Properties.Resources.AbilitiesDescriptionSynergistBalance, checkBoxClass3, 5000);
                     break;
                 default:
@@ -790,27 +790,27 @@ namespace RPG.UI
             switch (character.CharClass)
             {
                 case EnumCharClass.Warrior:
-                    tt.ToolTipTitle = "Rampage";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleWarriorRampage;
                     tt.Show(Properties.Resources.AbilitiesDescriptionWarriorRampage, checkBoxClass4, 5000);
                     break;
                 case EnumCharClass.Paladin:
-                    tt.ToolTipTitle = "Raise Spirit";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitlePaladinRaiseSpirit;
                     tt.Show(Properties.Resources.AbilitiesDescriptionPaladinRaiseSpirit, checkBoxClass4, 5000);
                     break;
                 case EnumCharClass.Wizard:
-                    tt.ToolTipTitle = "Revitalize";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleWizardRevitalize;
                     tt.Show(Properties.Resources.AbilitiesDescriptionWizardRevitalize, checkBoxClass4, 5000);
                     break;
                 case EnumCharClass.Thief:
-                    tt.ToolTipTitle = "Copycat";
-                    tt.Show(Properties.Resources.AbilitiesDescriptionThiefCopyCat, checkBoxClass4, 5000);
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleThiefPoisonedBlade;
+                    tt.Show(Properties.Resources.AbilitiesDescriptionThiefPoisonedBlade, checkBoxClass4, 5000);
                     break;
                 case EnumCharClass.Caretaker:
-                    tt.ToolTipTitle = "Zeal of Humanity";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleCaretakerZealOfHumanity;
                     tt.Show(Properties.Resources.AbilitiesDescriptionCaretakerZealOfHumanity, checkBoxClass4, 5000);
                     break;
                 case EnumCharClass.Synergist:
-                    tt.ToolTipTitle = "Mental Agility";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleSynergistMentalAgility;
                     tt.Show(Properties.Resources.AbilitiesDescriptionSynergistMentalAgility, checkBoxClass4, 5000);
                     break;
                 default:
@@ -823,27 +823,27 @@ namespace RPG.UI
             switch (character.CharClass)
             {
                 case EnumCharClass.Warrior:
-                    tt.ToolTipTitle = "Roar";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleWarriorRoar;
                     tt.Show(Properties.Resources.AbilitiesDescriptionWarriorRoar, checkBoxClass5, 5000);
                     break;
                 case EnumCharClass.Paladin:
-                    tt.ToolTipTitle = "Prayer";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitlePaladinPrayer;
                     tt.Show(Properties.Resources.AbilitiesDescriptionPaladinPrayer, checkBoxClass5, 5000);
                     break;
                 case EnumCharClass.Wizard:
-                    tt.ToolTipTitle = "Brilliance";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleWizardBrilliance;
                     tt.Show(Properties.Resources.AbilitiesDescriptionWizardBrilliance, checkBoxClass5, 5000);
                     break;
                 case EnumCharClass.Thief:
-                    tt.ToolTipTitle = "Swiftness";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleThiefSwiftness;
                     tt.Show(Properties.Resources.AbilitiesDescriptionThiefSwiftness, checkBoxClass5, 5000);
                     break;
                 case EnumCharClass.Caretaker:
-                    tt.ToolTipTitle = "Action";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleCaretakerAction;
                     tt.Show(Properties.Resources.AbilitiesDescriptionCaretakerAction, checkBoxClass5, 5000);
                     break;
                 case EnumCharClass.Synergist:
-                    tt.ToolTipTitle = "Align";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleSynergistAlign;
                     tt.Show(Properties.Resources.AbilitiesDescriptionSynergistAlign, checkBoxClass5, 5000);
                     break;
                 default:
@@ -856,27 +856,27 @@ namespace RPG.UI
             switch (character.CharClass)
             {
                 case EnumCharClass.Warrior:
-                    tt.ToolTipTitle = "Infuriate";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleWarriorInfuriate;
                     tt.Show(Properties.Resources.AbilitiesDescriptionWarriorInfuriate, checkBoxClass6, 5000);
                     break;
                 case EnumCharClass.Paladin:
-                    tt.ToolTipTitle = "Blessing";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitlePaladinBlessing;
                     tt.Show(Properties.Resources.AbilitiesDescriptionPaladinBlessing, checkBoxClass6, 5000);
                     break;
                 case EnumCharClass.Wizard:
-                    tt.ToolTipTitle = "Archon";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleWizardArchon;
                     tt.Show(Properties.Resources.AbilitiesDescriptionWizardArchon, checkBoxClass6, 5000);
                     break;
                 case EnumCharClass.Thief:
-                    tt.ToolTipTitle = "Envenom";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleThiefEnvenom;
                     tt.Show(Properties.Resources.AbilitiesDescriptionThiefEnvenom, checkBoxClass6, 5000);
                     break;
                 case EnumCharClass.Caretaker:
-                    tt.ToolTipTitle = "Lifeblood";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleCaretakerLifeblood;
                     tt.Show(Properties.Resources.AbilitiesDescriptionCaretakerLifeblood, checkBoxClass6, 5000);
                     break;
                 case EnumCharClass.Synergist:
-                    tt.ToolTipTitle = "Collapsed Equality";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleSynergistCollapsedEquality;
                     tt.Show(Properties.Resources.AbilitiesDescriptionSynergistCollapsedEquality, checkBoxClass6, 5000);
                     break;
                 default:
@@ -889,27 +889,27 @@ namespace RPG.UI
             switch (character.CharClass)
             {
                 case EnumCharClass.Warrior:
-                    tt.ToolTipTitle = "Execution";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleWarriorExecution;
                     tt.Show(Properties.Resources.AbilitiesDescriptionWarriorExecution, checkBoxClass7, 5000);
                     break;
                 case EnumCharClass.Paladin:
-                    tt.ToolTipTitle = "Desperate Plea";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitlePaladinDesperatePlea;
                     tt.Show(Properties.Resources.AbilitiesDescriptionPaladinDesperatePlea, checkBoxClass7, 5000);
                     break;
                 case EnumCharClass.Wizard:
-                    tt.ToolTipTitle = "Inferno";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleWizardInferno;
                     tt.Show(Properties.Resources.AbilitiesDescriptionWizardInferno, checkBoxClass7, 5000);
                     break;
                 case EnumCharClass.Thief:
-                    tt.ToolTipTitle = "Dirty Tricks";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleThiefDirtyTricks;
                     tt.Show(Properties.Resources.AbilitiesDescriptionThiefDirtyTricks, checkBoxClass7, 5000);
                     break;
                 case EnumCharClass.Caretaker:
-                    tt.ToolTipTitle = "Power and Dexterity";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleCaretakerPowerAndDexterity;
                     tt.Show(Properties.Resources.AbilitiesDescriptionCaretakerPowerAndDexterity, checkBoxClass7, 5000);
                     break;
                 case EnumCharClass.Synergist:
-                    tt.ToolTipTitle = "Synergy";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleSynergistSynergy;
                     tt.Show(Properties.Resources.AbilitiesDescriptionSynergistSynergy, checkBoxClass7, 5000);
                     break;
                 default:
@@ -922,27 +922,27 @@ namespace RPG.UI
             switch (character.CharClass)
             {
                 case EnumCharClass.Warrior:
-                    tt.ToolTipTitle = "Insanity";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleWarriorInsanity;
                     tt.Show(Properties.Resources.AbilitiesDescriptionWarriorInsanity, checkBoxClass8, 5000);
                     break;
                 case EnumCharClass.Paladin:
-                    tt.ToolTipTitle = "The Power of Faith";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitlePaladinThePowerOfFaith;
                     tt.Show(Properties.Resources.AbilitiesDescriptionPaladinThePowerOfFaith, checkBoxClass8, 5000);
                     break;
                 case EnumCharClass.Wizard:
-                    tt.ToolTipTitle = "Oracle";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleWizardOracle;
                     tt.Show(Properties.Resources.AbilitiesDescriptionWizardOracle, checkBoxClass8, 5000);
                     break;
                 case EnumCharClass.Thief:
-                    tt.ToolTipTitle = "Flurry";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleThiefFlurry;
                     tt.Show(Properties.Resources.AbilitiesDescriptionThiefFlurry, checkBoxClass8, 5000);
                     break;
                 case EnumCharClass.Caretaker:
-                    tt.ToolTipTitle = "Deathdefiance";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleCaretakerDeathdefiance;
                     tt.Show(Properties.Resources.AbilitiesDescriptionCaretakerDeathdefiance, checkBoxClass8, 5000);
                     break;
                 case EnumCharClass.Synergist:
-                    tt.ToolTipTitle = "Complete Balance";
+                    tt.ToolTipTitle = Properties.Resources.AbilitiesTitleSynergistCompleteBalance;
                     tt.Show(Properties.Resources.AbilitiesDescriptionSynergistCompleteBalance, checkBoxClass8, 5000);
                     break;
                 default:

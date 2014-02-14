@@ -48,7 +48,7 @@
             this.btNewUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btNewUser.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btNewUser.ForeColor = System.Drawing.Color.Yellow;
-            this.btNewUser.Location = new System.Drawing.Point(12, 230);
+            this.btNewUser.Location = new System.Drawing.Point(12, 264);
             this.btNewUser.Name = "btNewUser";
             this.btNewUser.Size = new System.Drawing.Size(260, 26);
             this.btNewUser.TabIndex = 18;
@@ -66,7 +66,7 @@
             this.btLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btLogin.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btLogin.ForeColor = System.Drawing.Color.Yellow;
-            this.btLogin.Location = new System.Drawing.Point(12, 198);
+            this.btLogin.Location = new System.Drawing.Point(12, 232);
             this.btLogin.Name = "btLogin";
             this.btLogin.Size = new System.Drawing.Size(260, 26);
             this.btLogin.TabIndex = 19;
@@ -79,7 +79,7 @@
             this.textBoxPlayerName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.textBoxPlayerName.Font = new System.Drawing.Font("Pericles", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPlayerName.ForeColor = System.Drawing.Color.Yellow;
-            this.textBoxPlayerName.Location = new System.Drawing.Point(12, 48);
+            this.textBoxPlayerName.Location = new System.Drawing.Point(12, 82);
             this.textBoxPlayerName.Name = "textBoxPlayerName";
             this.textBoxPlayerName.Size = new System.Drawing.Size(260, 28);
             this.textBoxPlayerName.TabIndex = 20;
@@ -92,7 +92,7 @@
             this.textBoxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.textBoxPassword.Font = new System.Drawing.Font("Pericles", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.ForeColor = System.Drawing.Color.Yellow;
-            this.textBoxPassword.Location = new System.Drawing.Point(12, 82);
+            this.textBoxPassword.Location = new System.Drawing.Point(12, 116);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(260, 28);
             this.textBoxPassword.TabIndex = 21;
@@ -107,18 +107,19 @@
             this.labelLogin.BackColor = System.Drawing.Color.Transparent;
             this.labelLogin.Font = new System.Drawing.Font("Pericles", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLogin.ForeColor = System.Drawing.Color.Yellow;
-            this.labelLogin.Location = new System.Drawing.Point(12, 9);
+            this.labelLogin.Location = new System.Drawing.Point(32, 9);
             this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(253, 23);
+            this.labelLogin.Size = new System.Drawing.Size(222, 46);
             this.labelLogin.TabIndex = 22;
-            this.labelLogin.Text = "Welcome to <The Game>";
+            this.labelLogin.Text = "Welcome to\r\nThe Legend of Eiwar";
+            this.labelLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Pericles", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(12, 113);
+            this.label1.Location = new System.Drawing.Point(12, 147);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(260, 76);
             this.label1.TabIndex = 23;
@@ -136,7 +137,7 @@
             this.bnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bnExit.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnExit.ForeColor = System.Drawing.Color.Yellow;
-            this.bnExit.Location = new System.Drawing.Point(12, 262);
+            this.bnExit.Location = new System.Drawing.Point(12, 296);
             this.bnExit.Name = "bnExit";
             this.bnExit.Size = new System.Drawing.Size(260, 26);
             this.bnExit.TabIndex = 24;
@@ -152,7 +153,7 @@
             this.labelBackgroundIGNORE.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelBackgroundIGNORE.Location = new System.Drawing.Point(0, 0);
             this.labelBackgroundIGNORE.Name = "labelBackgroundIGNORE";
-            this.labelBackgroundIGNORE.Size = new System.Drawing.Size(284, 300);
+            this.labelBackgroundIGNORE.Size = new System.Drawing.Size(284, 342);
             this.labelBackgroundIGNORE.TabIndex = 25;
             // 
             // LoginForm
@@ -160,7 +161,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(284, 300);
+            this.ClientSize = new System.Drawing.Size(284, 342);
             this.Controls.Add(this.bnExit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelLogin);

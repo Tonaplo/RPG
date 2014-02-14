@@ -35,7 +35,7 @@ namespace RPG
                 player.PrefChar = "None";
             if (player.CurrentQuest != null)
             {
-                player.CurrentQuest.UpdateQuest(player, 1, null, 0, 0, 1.0, EnumCharClass.Caretaker);
+                player.CurrentQuest.UpdateQuest(player, 1, null, 0, 0, 1.0, new List<EnumCharClass>());
             }
 
             playerlist = _playerlist;
@@ -251,6 +251,97 @@ namespace RPG
             }
         }
 
+        #region Battle related functions
+
+        private List<Item> GenerateLoot(int difficulty, int averagePlayerLevel, int numberOfPlayers, int enemyLevel)
+        {
+            List<Item> loot = new List<Item>();
+            loot.Add(Function.ItemGeneration.GenerateLoot(averagePlayerLevel, numberOfPlayers, enemyLevel));
+            loot.Add(Function.ItemGeneration.GenerateLoot(averagePlayerLevel, numberOfPlayers, enemyLevel));
+            if (difficulty < 0)
+                loot.Add(Function.ItemGeneration.GenerateLoot(averagePlayerLevel, numberOfPlayers, enemyLevel));
+
+            if (loot.Count == 2)
+            {
+                if (loot[0].ItemName == loot[1].ItemName)
+                    loot[0].ItemName = Function.ItemGeneration.RandomizeNewName(loot[0]);
+            }
+
+            if (loot.Count == 3)
+            {
+                if (loot[0].ItemName == loot[1].ItemName && loot[1].ItemName == loot[2].ItemName)
+                {
+                    loot[0].ItemName = Function.ItemGeneration.RandomizeNewName(loot[0]);
+                    loot[1].ItemName = Function.ItemGeneration.RandomizeNewName(loot[1]);
+                }
+                if (loot[0].ItemName == loot[1].ItemName)
+                {
+                    loot[0].ItemName = Function.ItemGeneration.RandomizeNewName(loot[0]);
+                }
+                if (loot[0].ItemName == loot[2].ItemName)
+                {
+                    loot[0].ItemName = Function.ItemGeneration.RandomizeNewName(loot[0]);
+                }
+                if (loot[1].ItemName == loot[2].ItemName)
+                {
+                    loot[1].ItemName = Function.ItemGeneration.RandomizeNewName(loot[1]);
+                }
+            }
+
+            if (loot.Count > 0)
+            {
+                foreach (var item in loot)
+                {
+                    this.player.AddItemToInventory(item);
+                }
+            }
+
+            return loot;
+        }
+
+        private void CheckForQuest(int difficulty, Core.Units.NPC enemy, int healingdone, double percent, List<Core.EnumCharClass> usedclass)
+        {
+            if (player.CurrentQuest != null)
+            {
+                player.CurrentQuest.UpdateQuest(player, difficulty, enemy, healingdone, enemy.BuffedHP.IntValue, percent, usedclass);
+
+                if (player.CurrentQuest.questcompleted == true)
+                    PlayerQuestHandler.BeginNewQuest(player);
+            }
+            else
+            {
+                Function.PlayerQuestHandler.BeginNewQuest(player);
+            }
+        }
+
+        private double ReturnLowestPercent(List<Core.Units.Character> list)
+        {
+            double percent = 100.0;
+
+            foreach (var item in list)
+            {
+                if (((double)item.BuffedHP.IntValue / (double)item.CurrentHP.IntValue) < percent)
+                    percent = (double)item.BuffedHP.IntValue / (double)item.CurrentHP.IntValue;
+            }
+
+            return percent;
+        }
+
+        private int ReturnAverageLevel(List<Core.Units.Character> list)
+        {
+            int average = 0;
+
+            foreach (var item in list)
+            {
+                average += item.UnitLevel;
+            }
+
+            average /= list.Count;
+
+            return average;
+        }
+        #endregion
+
         #endregion
 
         #region Events
@@ -276,94 +367,51 @@ namespace RPG
             Function.SoundManager.PlayButtonSound();
             if (player.ControlledCharacters.Count > 0)
             {
-                FindBattleForm battlechoose = new FindBattleForm(player);
+                FindLocalBattleForm battlechoose = new FindLocalBattleForm(player);
                 var result = battlechoose.ShowDialog();
                 if (result == System.Windows.Forms.DialogResult.OK)
                 {
-                    if (battlechoose.Singleplayer)
+                    List<Core.Units.Character> list = new List<Core.Units.Character>();
+
+                    foreach (var item in battlechoose.ReturnChars())
                     {
-                        List<Core.Units.Character> list = new List<Core.Units.Character>();
-                        list.Add(battlechoose.ReturnChar());
-                        Function.SoundManager.PauseMainMenuMusic();
+                        list.Add(item);
+                    }
+                        
+                    Function.SoundManager.PauseMainMenuMusic();
 
-                        BattleForm battle = new BattleForm(list, battlechoose.ReturnDifficulty(), battlechoose.Singleplayer);
-                        if (battle.ShowDialog() == DialogResult.OK)
+                    BattleForm battle = new BattleForm(list, battlechoose.ReturnDifficulty());
+                    if (battle.ShowDialog() == DialogResult.OK)
+                    {
+                        Function.SoundManager.ResumeMainMenuMusic();
+                        list = battle.ReturnChars(player);
+
+                        List<EnumCharClass> classesUsed = new List<EnumCharClass>();
+                        foreach (var item in list)
                         {
-                            Function.SoundManager.ResumeMainMenuMusic();
-                            Core.Units.Character removing = this.player.ControlledCharacters.Find(x => x.UnitName == battle.ReturnChar(player).UnitName);
-                            List<Item> loot = new List<Item>();
-
-                            loot.Add(Function.ItemGeneration.GenerateLoot(removing.UnitLevel, battle.ReturnNumberOfPlayers(), battle.ReturnedEnemy().UnitLevel));
-                            loot.Add(Function.ItemGeneration.GenerateLoot(removing.UnitLevel, battle.ReturnNumberOfPlayers(), battle.ReturnedEnemy().UnitLevel));
-                            if(battlechoose.ReturnDifficulty() < 0)
-                                loot.Add(Function.ItemGeneration.GenerateLoot(removing.UnitLevel, battle.ReturnNumberOfPlayers(), battle.ReturnedEnemy().UnitLevel));
-
-                            if (loot.Count == 2)
-                            {
-                                if (loot[0].ItemName == loot[1].ItemName)
-                                    loot[0].ItemName = Function.ItemGeneration.RandomizeNewName(loot[0]);
-                            }
-
-                            if (loot.Count == 3)
-                            {
-                                if (loot[0].ItemName == loot[1].ItemName && loot[1].ItemName == loot[2].ItemName)
-                                {
-                                    loot[0].ItemName = Function.ItemGeneration.RandomizeNewName(loot[0]);
-                                    loot[1].ItemName = Function.ItemGeneration.RandomizeNewName(loot[1]);
-                                }
-                                if (loot[0].ItemName == loot[1].ItemName)
-                                {
-                                    loot[0].ItemName = Function.ItemGeneration.RandomizeNewName(loot[0]);
-                                }
-                                if (loot[0].ItemName == loot[2].ItemName)
-                                {
-                                    loot[0].ItemName = Function.ItemGeneration.RandomizeNewName(loot[0]);
-                                }
-                                if (loot[1].ItemName == loot[2].ItemName)
-                                {
-                                    loot[1].ItemName = Function.ItemGeneration.RandomizeNewName(loot[1]);
-                                }
-                            }
-
-                            if (loot.Count > 0)
-                            {
-                                foreach (var item in loot)
-                                {
-                                    this.player.AddItemToInventory(item);
-                                }
-                            }
-
-                            if (player.CurrentQuest != null)
-                            {
-                                player.CurrentQuest.UpdateQuest(player, battlechoose.ReturnDifficulty(), battle.ReturnedEnemy(), battle.ReturnedHealingDone(), battle.ReturnedEnemy().BuffedHP.IntValue, (double)battle.ReturnChar(player).CurrentHP.IntValue / (double)battle.ReturnChar(player).BuffedHP.IntValue, battle.ReturnChar(player).CharClass);
-
-                                if (player.CurrentQuest.questcompleted == true)
-                                    PlayerQuestHandler.BeginNewQuest(player);
-                                
-                            }
-                            else
-                            {
-                                Function.PlayerQuestHandler.BeginNewQuest(player);
-                            }
-
-                            UpdateQuestVisual();
-
-                            this.player.ControlledCharacters.Remove(removing);
-                            this.player.ControlledCharacters.Add(battle.ReturnChar(player));
-
-                            UpdateChars();
-
-                            UpdateInventoryVisual();
+                            classesUsed.Add(item.CharClass);
                         }
-                        else
+
+                        List<Item> loot = GenerateLoot(battlechoose.ReturnDifficulty(), ReturnAverageLevel(list), battle.ReturnNumberOfPlayers(), battle.ReturnedEnemy().UnitLevel);
+                        CheckForQuest(battlechoose.ReturnDifficulty(), battle.ReturnedEnemy(), battle.ReturnedHealingDone(), ReturnLowestPercent(list), classesUsed);
+                            
+
+                        UpdateQuestVisual();
+
+                        foreach (var item in list)
                         {
-                            UpdateChars();
+                            this.player.ControlledCharacters.RemoveAll(x => x.UnitName == item.UnitName);
                         }
+                        
+                        this.player.ControlledCharacters.AddRange(battle.ReturnChars(player));
+
+                        UpdateChars();
+
+                        UpdateInventoryVisual();
                     }
                     else
                     {
-                        RPG.UI.MessageForm mes = new RPG.UI.MessageForm("Multiplayer is not implemented yet!");
-                        mes.ShowDialog();
+                        UpdateChars();
                     }
                 }
             }

@@ -82,6 +82,7 @@ namespace RPG.Function
                 //Thief Abilities
                 typeof(ThiefBloodstealer),
                 typeof(ThiefBorrowWeapon),
+                typeof(ThiefPoisonedBlade),
                 typeof(ThiefCopycat),
                 typeof(ThiefDirtyTricks),
                 typeof(ThiefEnvenom),

@@ -20,7 +20,6 @@ namespace RPG.UI
     public partial class BattleForm : Form
     {
         #region Fields
-        bool singleplayer;
         bool end = false;
         List<Core.Units.Character> battleChars;
         Core.Units.NPC enemy;
@@ -37,8 +36,7 @@ namespace RPG.UI
         /// </summary>
         /// <param name="_listOfChars"></param>
         /// <param name="_difficulty"></param>
-        /// <param name="_singlePlayer"></param>
-        public BattleForm(List<Core.Units.Character> _listOfChars, int _difficulty, bool _singlePlayer)
+        public BattleForm(List<Core.Units.Character> _listOfChars, int _difficulty)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterParent;
@@ -46,8 +44,6 @@ namespace RPG.UI
             Function.SoundManager.PlayBattleMusic();
 
             numberOfPlayers = _listOfChars.Count;
-
-            singleplayer = _singlePlayer;
 
             battleChars = _listOfChars;
 
@@ -190,16 +186,9 @@ namespace RPG.UI
             }
         }
 
-        public Core.Units.Character ReturnChar(Core.Player _player)
+        public List<Core.Units.Character> ReturnChars(Core.Player _player)
         {
-            foreach (var item in battleChars)
-            {
-                if (item.Owner == _player.UserName)
-                    return item;
-            }
-            RPG.UI.MessageForm mes = new MessageForm("ERROR! No owner of the player was found!");
-            mes.ShowDialog();
-            return null;
+            return battleChars;
         }
 
         public int ReturnNumberOfPlayers()
@@ -381,10 +370,7 @@ namespace RPG.UI
             Function.SoundManager.PlayButtonSound();
             if (!end)
             {
-                if (singleplayer)
-                {
-                    DoAITurn();
-                }
+                DoAITurn();
             }
             else
             {

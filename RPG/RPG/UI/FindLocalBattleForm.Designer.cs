@@ -1,6 +1,6 @@
 ﻿namespace RPG
 {
-    partial class FindBattleForm
+    partial class FindLocalBattleForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,15 +29,14 @@
         private void InitializeComponent()
         {
             this.btSinglePlayer = new System.Windows.Forms.Button();
-            this.bnMultiplayer = new System.Windows.Forms.Button();
             this.flowLayoutPanelBattleChar = new System.Windows.Forms.FlowLayoutPanel();
             this.bnCancel = new System.Windows.Forms.Button();
             this.comboBoxChooseChar = new System.Windows.Forms.ComboBox();
             this.labelBackgroundIGNORE = new System.Windows.Forms.Label();
-            this.labelNumberOfPlayer1 = new System.Windows.Forms.Label();
-            this.labelNumberOfPlayer2 = new System.Windows.Forms.Label();
-            this.comboBoxNumberOfPlayers = new System.Windows.Forms.ComboBox();
             this.comboBoxDifficulty = new System.Windows.Forms.ComboBox();
+            this.bnAddChar = new System.Windows.Forms.Button();
+            this.bnRemoveChar = new System.Windows.Forms.Button();
+            this.labelSelectedChars = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btSinglePlayer
@@ -50,38 +49,20 @@
             this.btSinglePlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSinglePlayer.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSinglePlayer.ForeColor = System.Drawing.Color.Yellow;
-            this.btSinglePlayer.Location = new System.Drawing.Point(193, 179);
+            this.btSinglePlayer.Location = new System.Drawing.Point(11, 319);
             this.btSinglePlayer.Name = "btSinglePlayer";
-            this.btSinglePlayer.Size = new System.Drawing.Size(163, 23);
+            this.btSinglePlayer.Size = new System.Drawing.Size(170, 23);
             this.btSinglePlayer.TabIndex = 17;
-            this.btSinglePlayer.Text = "Find Single Player Battle";
+            this.btSinglePlayer.Text = "Battle!";
             this.btSinglePlayer.UseVisualStyleBackColor = false;
             this.btSinglePlayer.Click += new System.EventHandler(this.btSinglePlayer_Click);
-            // 
-            // bnMultiplayer
-            // 
-            this.bnMultiplayer.BackColor = System.Drawing.Color.DarkRed;
-            this.bnMultiplayer.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.bnMultiplayer.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
-            this.bnMultiplayer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.bnMultiplayer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.bnMultiplayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnMultiplayer.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnMultiplayer.ForeColor = System.Drawing.Color.Yellow;
-            this.bnMultiplayer.Location = new System.Drawing.Point(193, 208);
-            this.bnMultiplayer.Name = "bnMultiplayer";
-            this.bnMultiplayer.Size = new System.Drawing.Size(163, 23);
-            this.bnMultiplayer.TabIndex = 18;
-            this.bnMultiplayer.Text = "Find MultiPlayer Battle";
-            this.bnMultiplayer.UseVisualStyleBackColor = false;
-            this.bnMultiplayer.Click += new System.EventHandler(this.bnMultiplayer_Click);
             // 
             // flowLayoutPanelBattleChar
             // 
             this.flowLayoutPanelBattleChar.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanelBattleChar.Location = new System.Drawing.Point(12, 12);
             this.flowLayoutPanelBattleChar.Name = "flowLayoutPanelBattleChar";
-            this.flowLayoutPanelBattleChar.Size = new System.Drawing.Size(344, 155);
+            this.flowLayoutPanelBattleChar.Size = new System.Drawing.Size(350, 155);
             this.flowLayoutPanelBattleChar.TabIndex = 19;
             // 
             // bnCancel
@@ -94,9 +75,9 @@
             this.bnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bnCancel.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnCancel.ForeColor = System.Drawing.Color.Yellow;
-            this.bnCancel.Location = new System.Drawing.Point(193, 237);
+            this.bnCancel.Location = new System.Drawing.Point(193, 319);
             this.bnCancel.Name = "bnCancel";
-            this.bnCancel.Size = new System.Drawing.Size(163, 23);
+            this.bnCancel.Size = new System.Drawing.Size(169, 23);
             this.bnCancel.TabIndex = 20;
             this.bnCancel.Text = "Cancel";
             this.bnCancel.UseVisualStyleBackColor = false;
@@ -109,9 +90,9 @@
             this.comboBoxChooseChar.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxChooseChar.ForeColor = System.Drawing.Color.Yellow;
             this.comboBoxChooseChar.FormattingEnabled = true;
-            this.comboBoxChooseChar.Location = new System.Drawing.Point(13, 179);
+            this.comboBoxChooseChar.Location = new System.Drawing.Point(12, 179);
             this.comboBoxChooseChar.Name = "comboBoxChooseChar";
-            this.comboBoxChooseChar.Size = new System.Drawing.Size(174, 23);
+            this.comboBoxChooseChar.Size = new System.Drawing.Size(169, 23);
             this.comboBoxChooseChar.TabIndex = 21;
             this.comboBoxChooseChar.SelectedIndexChanged += new System.EventHandler(this.comboBoxChooseChar_SelectedIndexChanged);
             // 
@@ -123,44 +104,8 @@
             this.labelBackgroundIGNORE.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelBackgroundIGNORE.Location = new System.Drawing.Point(0, 0);
             this.labelBackgroundIGNORE.Name = "labelBackgroundIGNORE";
-            this.labelBackgroundIGNORE.Size = new System.Drawing.Size(368, 270);
+            this.labelBackgroundIGNORE.Size = new System.Drawing.Size(375, 354);
             this.labelBackgroundIGNORE.TabIndex = 22;
-            // 
-            // labelNumberOfPlayer1
-            // 
-            this.labelNumberOfPlayer1.BackColor = System.Drawing.Color.Transparent;
-            this.labelNumberOfPlayer1.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumberOfPlayer1.ForeColor = System.Drawing.Color.Yellow;
-            this.labelNumberOfPlayer1.Location = new System.Drawing.Point(12, 213);
-            this.labelNumberOfPlayer1.Name = "labelNumberOfPlayer1";
-            this.labelNumberOfPlayer1.Size = new System.Drawing.Size(81, 18);
-            this.labelNumberOfPlayer1.TabIndex = 23;
-            this.labelNumberOfPlayer1.Text = "Group with";
-            this.labelNumberOfPlayer1.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // labelNumberOfPlayer2
-            // 
-            this.labelNumberOfPlayer2.BackColor = System.Drawing.Color.Transparent;
-            this.labelNumberOfPlayer2.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumberOfPlayer2.ForeColor = System.Drawing.Color.Yellow;
-            this.labelNumberOfPlayer2.Location = new System.Drawing.Point(137, 214);
-            this.labelNumberOfPlayer2.Name = "labelNumberOfPlayer2";
-            this.labelNumberOfPlayer2.Size = new System.Drawing.Size(50, 18);
-            this.labelNumberOfPlayer2.TabIndex = 24;
-            this.labelNumberOfPlayer2.Text = "players";
-            this.labelNumberOfPlayer2.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // comboBoxNumberOfPlayers
-            // 
-            this.comboBoxNumberOfPlayers.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.comboBoxNumberOfPlayers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxNumberOfPlayers.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxNumberOfPlayers.ForeColor = System.Drawing.Color.Yellow;
-            this.comboBoxNumberOfPlayers.FormattingEnabled = true;
-            this.comboBoxNumberOfPlayers.Location = new System.Drawing.Point(99, 208);
-            this.comboBoxNumberOfPlayers.Name = "comboBoxNumberOfPlayers";
-            this.comboBoxNumberOfPlayers.Size = new System.Drawing.Size(32, 23);
-            this.comboBoxNumberOfPlayers.TabIndex = 25;
             // 
             // comboBoxDifficulty
             // 
@@ -169,29 +114,76 @@
             this.comboBoxDifficulty.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxDifficulty.ForeColor = System.Drawing.Color.Yellow;
             this.comboBoxDifficulty.FormattingEnabled = true;
-            this.comboBoxDifficulty.Location = new System.Drawing.Point(12, 234);
+            this.comboBoxDifficulty.Location = new System.Drawing.Point(193, 179);
             this.comboBoxDifficulty.Name = "comboBoxDifficulty";
-            this.comboBoxDifficulty.Size = new System.Drawing.Size(174, 23);
+            this.comboBoxDifficulty.Size = new System.Drawing.Size(169, 23);
             this.comboBoxDifficulty.TabIndex = 26;
             // 
-            // FindBattleForm
+            // bnAddChar
+            // 
+            this.bnAddChar.BackColor = System.Drawing.Color.DarkRed;
+            this.bnAddChar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bnAddChar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
+            this.bnAddChar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.bnAddChar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.bnAddChar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bnAddChar.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnAddChar.ForeColor = System.Drawing.Color.Yellow;
+            this.bnAddChar.Location = new System.Drawing.Point(12, 208);
+            this.bnAddChar.Name = "bnAddChar";
+            this.bnAddChar.Size = new System.Drawing.Size(170, 23);
+            this.bnAddChar.TabIndex = 27;
+            this.bnAddChar.Text = "Add Character";
+            this.bnAddChar.UseVisualStyleBackColor = false;
+            this.bnAddChar.Click += new System.EventHandler(this.bnAddChar_Click);
+            // 
+            // bnRemoveChar
+            // 
+            this.bnRemoveChar.BackColor = System.Drawing.Color.DarkRed;
+            this.bnRemoveChar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bnRemoveChar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
+            this.bnRemoveChar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.bnRemoveChar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.bnRemoveChar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bnRemoveChar.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnRemoveChar.ForeColor = System.Drawing.Color.Yellow;
+            this.bnRemoveChar.Location = new System.Drawing.Point(192, 208);
+            this.bnRemoveChar.Name = "bnRemoveChar";
+            this.bnRemoveChar.Size = new System.Drawing.Size(170, 23);
+            this.bnRemoveChar.TabIndex = 28;
+            this.bnRemoveChar.Text = "Remove Character";
+            this.bnRemoveChar.UseVisualStyleBackColor = false;
+            this.bnRemoveChar.Click += new System.EventHandler(this.bnRemoveChar_Click);
+            // 
+            // labelSelectedChars
+            // 
+            this.labelSelectedChars.BackColor = System.Drawing.Color.Transparent;
+            this.labelSelectedChars.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSelectedChars.ForeColor = System.Drawing.Color.Yellow;
+            this.labelSelectedChars.Location = new System.Drawing.Point(12, 234);
+            this.labelSelectedChars.Name = "labelSelectedChars";
+            this.labelSelectedChars.Size = new System.Drawing.Size(350, 82);
+            this.labelSelectedChars.TabIndex = 29;
+            this.labelSelectedChars.Text = "Battling Characters:";
+            this.labelSelectedChars.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // FindLocalMultiBattleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(368, 270);
+            this.ClientSize = new System.Drawing.Size(375, 354);
+            this.Controls.Add(this.labelSelectedChars);
+            this.Controls.Add(this.bnRemoveChar);
+            this.Controls.Add(this.bnAddChar);
             this.Controls.Add(this.comboBoxDifficulty);
-            this.Controls.Add(this.comboBoxNumberOfPlayers);
-            this.Controls.Add(this.labelNumberOfPlayer2);
-            this.Controls.Add(this.labelNumberOfPlayer1);
             this.Controls.Add(this.comboBoxChooseChar);
             this.Controls.Add(this.bnCancel);
             this.Controls.Add(this.flowLayoutPanelBattleChar);
-            this.Controls.Add(this.bnMultiplayer);
             this.Controls.Add(this.btSinglePlayer);
             this.Controls.Add(this.labelBackgroundIGNORE);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FindBattleForm";
+            this.Name = "FindLocalMultiBattleForm";
             this.Text = "FindBattleForm";
             this.Load += new System.EventHandler(this.FindBattleForm_Load);
             this.ResumeLayout(false);
@@ -201,14 +193,13 @@
         #endregion
 
         private System.Windows.Forms.Button btSinglePlayer;
-        private System.Windows.Forms.Button bnMultiplayer;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelBattleChar;
         private System.Windows.Forms.Button bnCancel;
         private System.Windows.Forms.ComboBox comboBoxChooseChar;
         private System.Windows.Forms.Label labelBackgroundIGNORE;
-        private System.Windows.Forms.Label labelNumberOfPlayer1;
-        private System.Windows.Forms.Label labelNumberOfPlayer2;
-        private System.Windows.Forms.ComboBox comboBoxNumberOfPlayers;
         private System.Windows.Forms.ComboBox comboBoxDifficulty;
+        private System.Windows.Forms.Button bnAddChar;
+        private System.Windows.Forms.Button bnRemoveChar;
+        private System.Windows.Forms.Label labelSelectedChars;
     }
 }

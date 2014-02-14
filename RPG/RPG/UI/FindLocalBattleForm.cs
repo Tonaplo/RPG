@@ -13,27 +13,22 @@ using System.Runtime.InteropServices;
 
 namespace RPG
 {
-    public partial class FindBattleForm : Form
+    public partial class FindLocalBattleForm : Form
     {
 
         #region Fields
         Player player;
         Core.Units.Character choosechar;
-        bool singleplayer = false;
+        List<Core.Units.Character> charList = new List<Core.Units.Character>();
         #endregion
-        public FindBattleForm(Player _player)
+
+        public FindLocalBattleForm(Player _player)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterParent;
             this.BackgroundImage = Function.GeneralFunctions.ResizeImage(Properties.Resources.background, labelBackgroundIGNORE.Size);
             player = _player;
 
-            for (int i = 1; i < 4; i++)
-            {
-                comboBoxNumberOfPlayers.Items.Add(i);
-            }
-
-            comboBoxNumberOfPlayers.SelectedIndex = 0;
 
             comboBoxChooseChar.Items.Add("None");
 
@@ -139,9 +134,9 @@ namespace RPG
         /// Returns the character choosen to Battle
         /// </summary>
         /// <returns></returns>
-        public Core.Units.Character ReturnChar()
+        public List<Core.Units.Character> ReturnChars()
         {
-            return choosechar;
+            return charList;
         }
 
         /// <summary>
@@ -168,13 +163,15 @@ namespace RPG
             
         }
 
-        /// <summary>
-        /// This function returns true if singleplayer was choosen
-        /// </summary>
-        /// <returns></returns>
-        public bool ReturnPlayMode()
+        private void SetCharLabel()
         {
-            return singleplayer;
+            string chars = "";
+            foreach (var item in charList)
+            {
+                chars += item.UnitName + Environment.NewLine;
+            }
+
+            labelSelectedChars.Text = "Battling Characters:" + Environment.NewLine + Environment.NewLine + chars;
         }
         #endregion
 
@@ -197,9 +194,14 @@ namespace RPG
             Function.SoundManager.PlayButtonSound();
             if (choosechar.UnitActiveAbilities.Count > 0)
             {
-                this.DialogResult = System.Windows.Forms.DialogResult.OK;
-                singleplayer = true;
-                this.Close();
+                if (charList.Count > 0)
+                    this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                else
+                {
+                    MessageForm mes = new MessageForm("You have selected no characters to do battle with!");
+                    mes.ShowDialog();
+                }
+
             }
             else
             {
@@ -208,18 +210,12 @@ namespace RPG
             }
         }
 
-        public bool Singleplayer
-        {
-            get { return singleplayer; }
-        }
-
         private void bnMultiplayer_Click(object sender, EventArgs e)
         {
             Function.SoundManager.PlayButtonSound();
             if (choosechar.UnitActiveAbilities.Count > 0)
             {
                 this.DialogResult = System.Windows.Forms.DialogResult.OK;
-                singleplayer = false;
                 this.Close();
             }
             else
@@ -230,5 +226,33 @@ namespace RPG
         }
 
         #endregion
+
+        private void bnAddChar_Click(object sender, EventArgs e)
+        {
+            if (charList.Contains(choosechar))
+            {
+                MessageForm mes = new MessageForm("That Character is battling already!");
+                mes.ShowDialog();
+            }
+            else
+            {
+                charList.Add(choosechar);
+                SetCharLabel();
+            }
+        }
+
+        private void bnRemoveChar_Click(object sender, EventArgs e)
+        {
+            if (charList.Contains(choosechar))
+            {
+                charList.Remove(choosechar);
+                SetCharLabel();
+            }
+            else
+            {
+                MessageForm mes = new MessageForm("That Character is not already battling!");
+                mes.ShowDialog();
+            }
+        }
     }
 }
