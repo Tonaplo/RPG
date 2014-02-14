@@ -39,20 +39,20 @@
             // 
             this.comboBoxChooseChar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.comboBoxChooseChar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxChooseChar.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxChooseChar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxChooseChar.ForeColor = System.Drawing.Color.Yellow;
             this.comboBoxChooseChar.FormattingEnabled = true;
-            this.comboBoxChooseChar.Location = new System.Drawing.Point(13, 179);
+            this.comboBoxChooseChar.Location = new System.Drawing.Point(12, 188);
             this.comboBoxChooseChar.Name = "comboBoxChooseChar";
-            this.comboBoxChooseChar.Size = new System.Drawing.Size(343, 23);
+            this.comboBoxChooseChar.Size = new System.Drawing.Size(346, 21);
             this.comboBoxChooseChar.TabIndex = 23;
             this.comboBoxChooseChar.SelectedIndexChanged += new System.EventHandler(this.comboBoxChooseChar_SelectedIndexChanged);
             // 
             // flowLayoutPanelBattleChar
             // 
-            this.flowLayoutPanelBattleChar.Location = new System.Drawing.Point(12, 12);
+            this.flowLayoutPanelBattleChar.Location = new System.Drawing.Point(10, 10);
             this.flowLayoutPanelBattleChar.Name = "flowLayoutPanelBattleChar";
-            this.flowLayoutPanelBattleChar.Size = new System.Drawing.Size(344, 155);
+            this.flowLayoutPanelBattleChar.Size = new System.Drawing.Size(348, 172);
             this.flowLayoutPanelBattleChar.TabIndex = 22;
             // 
             // bnCancel
@@ -63,11 +63,11 @@
             this.bnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.bnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.bnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnCancel.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnCancel.ForeColor = System.Drawing.Color.Yellow;
-            this.bnCancel.Location = new System.Drawing.Point(196, 208);
+            this.bnCancel.Location = new System.Drawing.Point(198, 213);
             this.bnCancel.Name = "bnCancel";
-            this.bnCancel.Size = new System.Drawing.Size(163, 23);
+            this.bnCancel.Size = new System.Drawing.Size(160, 36);
             this.bnCancel.TabIndex = 25;
             this.bnCancel.Text = "Cancel";
             this.bnCancel.UseVisualStyleBackColor = false;
@@ -81,11 +81,11 @@
             this.btDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btDelete.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btDelete.ForeColor = System.Drawing.Color.Yellow;
-            this.btDelete.Location = new System.Drawing.Point(13, 208);
+            this.btDelete.Location = new System.Drawing.Point(12, 213);
             this.btDelete.Name = "btDelete";
-            this.btDelete.Size = new System.Drawing.Size(163, 23);
+            this.btDelete.Size = new System.Drawing.Size(160, 36);
             this.btDelete.TabIndex = 24;
             this.btDelete.Text = "Delete";
             this.btDelete.UseVisualStyleBackColor = false;
@@ -99,21 +99,21 @@
             this.labelBackgroundIGNORE.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelBackgroundIGNORE.Location = new System.Drawing.Point(0, 0);
             this.labelBackgroundIGNORE.Name = "labelBackgroundIGNORE";
-            this.labelBackgroundIGNORE.Size = new System.Drawing.Size(371, 244);
+            this.labelBackgroundIGNORE.Size = new System.Drawing.Size(370, 262);
             this.labelBackgroundIGNORE.TabIndex = 26;
             // 
             // DeleteCharForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(371, 244);
+            this.ClientSize = new System.Drawing.Size(370, 262);
             this.Controls.Add(this.bnCancel);
             this.Controls.Add(this.btDelete);
             this.Controls.Add(this.comboBoxChooseChar);
             this.Controls.Add(this.flowLayoutPanelBattleChar);
             this.Controls.Add(this.labelBackgroundIGNORE);
-            this.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DeleteCharForm";
             this.Text = "DeleteCharForm";

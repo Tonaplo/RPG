@@ -52,7 +52,7 @@
             // lbCharStats
             // 
             this.lbCharStats.BackColor = System.Drawing.Color.Transparent;
-            this.lbCharStats.Font = new System.Drawing.Font("Pericles", 5.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCharStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCharStats.ForeColor = System.Drawing.Color.Yellow;
             this.lbCharStats.Location = new System.Drawing.Point(89, 27);
             this.lbCharStats.Name = "lbCharStats";
@@ -63,12 +63,12 @@
             // comboBoxAbilities
             // 
             this.comboBoxAbilities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAbilities.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxAbilities.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxAbilities.ForeColor = System.Drawing.Color.DarkRed;
             this.comboBoxAbilities.FormattingEnabled = true;
             this.comboBoxAbilities.Location = new System.Drawing.Point(249, 57);
             this.comboBoxAbilities.Name = "comboBoxAbilities";
-            this.comboBoxAbilities.Size = new System.Drawing.Size(124, 23);
+            this.comboBoxAbilities.Size = new System.Drawing.Size(124, 21);
             this.comboBoxAbilities.TabIndex = 6;
             this.comboBoxAbilities.SelectedIndexChanged += new System.EventHandler(this.comboBoxAbilities_SelectedIndexChanged);
             // 
@@ -76,7 +76,7 @@
             // 
             this.lbTurnpoints.BackColor = System.Drawing.Color.Transparent;
             this.lbTurnpoints.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbTurnpoints.Font = new System.Drawing.Font("Pericles", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTurnpoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTurnpoints.ForeColor = System.Drawing.Color.Yellow;
             this.lbTurnpoints.Location = new System.Drawing.Point(248, 35);
             this.lbTurnpoints.Name = "lbTurnpoints";
@@ -89,11 +89,11 @@
             // 
             this.checkBoxPlayer1.AutoSize = true;
             this.checkBoxPlayer1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBoxPlayer1.Font = new System.Drawing.Font("Pericles", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxPlayer1.ForeColor = System.Drawing.Color.Yellow;
             this.checkBoxPlayer1.Location = new System.Drawing.Point(6, 19);
             this.checkBoxPlayer1.Name = "checkBoxPlayer1";
-            this.checkBoxPlayer1.Size = new System.Drawing.Size(59, 14);
+            this.checkBoxPlayer1.Size = new System.Drawing.Size(52, 14);
             this.checkBoxPlayer1.TabIndex = 10;
             this.checkBoxPlayer1.Text = "Player 1";
             this.checkBoxPlayer1.UseVisualStyleBackColor = false;
@@ -103,11 +103,11 @@
             // 
             this.checkBoxPlayer2.AutoSize = true;
             this.checkBoxPlayer2.BackColor = System.Drawing.Color.Transparent;
-            this.checkBoxPlayer2.Font = new System.Drawing.Font("Pericles", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxPlayer2.ForeColor = System.Drawing.Color.Yellow;
             this.checkBoxPlayer2.Location = new System.Drawing.Point(71, 19);
             this.checkBoxPlayer2.Name = "checkBoxPlayer2";
-            this.checkBoxPlayer2.Size = new System.Drawing.Size(61, 14);
+            this.checkBoxPlayer2.Size = new System.Drawing.Size(52, 14);
             this.checkBoxPlayer2.TabIndex = 11;
             this.checkBoxPlayer2.Text = "Player 2";
             this.checkBoxPlayer2.UseVisualStyleBackColor = false;
@@ -117,11 +117,11 @@
             // 
             this.checkBoxPlayer3.AutoSize = true;
             this.checkBoxPlayer3.BackColor = System.Drawing.Color.Transparent;
-            this.checkBoxPlayer3.Font = new System.Drawing.Font("Pericles", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxPlayer3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxPlayer3.ForeColor = System.Drawing.Color.Yellow;
             this.checkBoxPlayer3.Location = new System.Drawing.Point(5, 39);
             this.checkBoxPlayer3.Name = "checkBoxPlayer3";
-            this.checkBoxPlayer3.Size = new System.Drawing.Size(60, 14);
+            this.checkBoxPlayer3.Size = new System.Drawing.Size(52, 14);
             this.checkBoxPlayer3.TabIndex = 12;
             this.checkBoxPlayer3.Text = "Player 3";
             this.checkBoxPlayer3.UseVisualStyleBackColor = false;
@@ -131,11 +131,11 @@
             // 
             this.checkBoxPlayer4.AutoSize = true;
             this.checkBoxPlayer4.BackColor = System.Drawing.Color.Transparent;
-            this.checkBoxPlayer4.Font = new System.Drawing.Font("Pericles", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxPlayer4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxPlayer4.ForeColor = System.Drawing.Color.Yellow;
             this.checkBoxPlayer4.Location = new System.Drawing.Point(71, 39);
             this.checkBoxPlayer4.Name = "checkBoxPlayer4";
-            this.checkBoxPlayer4.Size = new System.Drawing.Size(61, 14);
+            this.checkBoxPlayer4.Size = new System.Drawing.Size(52, 14);
             this.checkBoxPlayer4.TabIndex = 13;
             this.checkBoxPlayer4.Text = "Player 4";
             this.checkBoxPlayer4.UseVisualStyleBackColor = false;
@@ -155,11 +155,11 @@
             // 
             this.checkBoxEnemy.AutoSize = true;
             this.checkBoxEnemy.BackColor = System.Drawing.Color.Transparent;
-            this.checkBoxEnemy.Font = new System.Drawing.Font("Pericles", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxEnemy.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxEnemy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.checkBoxEnemy.Location = new System.Drawing.Point(39, 59);
             this.checkBoxEnemy.Name = "checkBoxEnemy";
-            this.checkBoxEnemy.Size = new System.Drawing.Size(53, 14);
+            this.checkBoxEnemy.Size = new System.Drawing.Size(48, 14);
             this.checkBoxEnemy.TabIndex = 14;
             this.checkBoxEnemy.Text = "Enemy";
             this.checkBoxEnemy.UseVisualStyleBackColor = false;
@@ -187,7 +187,7 @@
             this.btAttack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btAttack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btAttack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAttack.Font = new System.Drawing.Font("Pericles", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAttack.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAttack.ForeColor = System.Drawing.Color.Yellow;
             this.btAttack.Location = new System.Drawing.Point(248, 3);
             this.btAttack.Name = "btAttack";
@@ -201,7 +201,7 @@
             // labelAbilityDescription
             // 
             this.labelAbilityDescription.BackColor = System.Drawing.Color.Transparent;
-            this.labelAbilityDescription.Font = new System.Drawing.Font("Pericles", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAbilityDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAbilityDescription.ForeColor = System.Drawing.Color.Yellow;
             this.labelAbilityDescription.Location = new System.Drawing.Point(377, 0);
             this.labelAbilityDescription.Name = "labelAbilityDescription";
@@ -227,7 +227,7 @@
             // labelHealthRemaining
             // 
             this.labelHealthRemaining.BackColor = System.Drawing.Color.DarkGreen;
-            this.labelHealthRemaining.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHealthRemaining.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHealthRemaining.Location = new System.Drawing.Point(0, 0);
             this.labelHealthRemaining.Margin = new System.Windows.Forms.Padding(0);
             this.labelHealthRemaining.Name = "labelHealthRemaining";
@@ -239,7 +239,7 @@
             // 
             this.lbBuffs.BackColor = System.Drawing.Color.Transparent;
             this.lbBuffs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbBuffs.Font = new System.Drawing.Font("Pericles", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBuffs.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBuffs.ForeColor = System.Drawing.Color.Yellow;
             this.lbBuffs.Location = new System.Drawing.Point(201, 0);
             this.lbBuffs.Name = "lbBuffs";
@@ -261,7 +261,7 @@
             // 
             // ucCharacterBattle
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Controls.Add(this.flpBuffsAndDebuffs);
@@ -274,7 +274,7 @@
             this.Controls.Add(this.lbTurnpoints);
             this.Controls.Add(this.lbCharStats);
             this.Controls.Add(this.pictureBoxChar);
-            this.Font = new System.Drawing.Font("Pericles", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ucCharacterBattle";
             this.Size = new System.Drawing.Size(500, 155);
             this.Load += new System.EventHandler(this.ucCharacterBattle_Load);

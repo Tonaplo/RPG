@@ -135,6 +135,9 @@ namespace RPG.Function
                 typeof(NormalPercentRemaining),
                 typeof(HardPercentRemaining),
                 typeof(VeryHardPercentRemaining),
+                // NPC Types
+                typeof(RPG.Core.EnumMonsterType),
+                typeof(RPG.Core.Units.NPC),
             };
             #endregion
             return types;

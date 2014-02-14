@@ -57,7 +57,7 @@
             this.btSupport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btSupport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btSupport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSupport.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSupport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSupport.ForeColor = System.Drawing.Color.Yellow;
             this.btSupport.Location = new System.Drawing.Point(4, 2);
             this.btSupport.Name = "btSupport";
@@ -77,7 +77,7 @@
             this.btAddCharacter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btAddCharacter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btAddCharacter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAddCharacter.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAddCharacter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAddCharacter.ForeColor = System.Drawing.Color.Yellow;
             this.btAddCharacter.Location = new System.Drawing.Point(170, 2);
             this.btAddCharacter.Name = "btAddCharacter";
@@ -97,7 +97,7 @@
             this.btRandomizeStat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btRandomizeStat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btRandomizeStat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btRandomizeStat.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btRandomizeStat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btRandomizeStat.ForeColor = System.Drawing.Color.Yellow;
             this.btRandomizeStat.Location = new System.Drawing.Point(668, 2);
             this.btRandomizeStat.Name = "btRandomizeStat";
@@ -117,9 +117,9 @@
             this.btDisenchant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btDisenchant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btDisenchant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btDisenchant.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDisenchant.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btDisenchant.ForeColor = System.Drawing.Color.Yellow;
-            this.btDisenchant.Location = new System.Drawing.Point(641, 662);
+            this.btDisenchant.Location = new System.Drawing.Point(641, 710);
             this.btDisenchant.Name = "btDisenchant";
             this.btDisenchant.Size = new System.Drawing.Size(170, 44);
             this.btDisenchant.TabIndex = 13;
@@ -137,7 +137,7 @@
             this.btExitGame.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btExitGame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btExitGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btExitGame.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btExitGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btExitGame.ForeColor = System.Drawing.Color.Yellow;
             this.btExitGame.Location = new System.Drawing.Point(834, 2);
             this.btExitGame.Name = "btExitGame";
@@ -153,10 +153,10 @@
             // 
             this.flpCharacters.BackColor = System.Drawing.Color.Transparent;
             this.flpCharacters.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.flpCharacters.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flpCharacters.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flpCharacters.Location = new System.Drawing.Point(3, 64);
             this.flpCharacters.Name = "flpCharacters";
-            this.flpCharacters.Size = new System.Drawing.Size(350, 642);
+            this.flpCharacters.Size = new System.Drawing.Size(350, 690);
             this.flpCharacters.TabIndex = 15;
             // 
             // btBattle
@@ -167,9 +167,9 @@
             this.btBattle.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btBattle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btBattle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btBattle.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBattle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btBattle.ForeColor = System.Drawing.Color.Yellow;
-            this.btBattle.Location = new System.Drawing.Point(359, 662);
+            this.btBattle.Location = new System.Drawing.Point(359, 710);
             this.btBattle.Name = "btBattle";
             this.btBattle.Size = new System.Drawing.Size(276, 44);
             this.btBattle.TabIndex = 19;
@@ -183,26 +183,26 @@
             // 
             this.textBoxChat.AcceptsReturn = true;
             this.textBoxChat.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textBoxChat.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxChat.ForeColor = System.Drawing.Color.DarkRed;
-            this.textBoxChat.Location = new System.Drawing.Point(359, 629);
+            this.textBoxChat.Location = new System.Drawing.Point(360, 684);
             this.textBoxChat.MaxLength = 300;
             this.textBoxChat.Name = "textBoxChat";
             this.textBoxChat.ShortcutsEnabled = false;
-            this.textBoxChat.Size = new System.Drawing.Size(276, 22);
+            this.textBoxChat.Size = new System.Drawing.Size(276, 20);
             this.textBoxChat.TabIndex = 20;
             this.textBoxChat.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxChat_KeyDown);
             // 
             // richTextBoxActionbox
             // 
             this.richTextBoxActionbox.BackColor = System.Drawing.SystemColors.InfoText;
-            this.richTextBoxActionbox.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxActionbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxActionbox.ForeColor = System.Drawing.SystemColors.Window;
             this.richTextBoxActionbox.Location = new System.Drawing.Point(360, 64);
             this.richTextBoxActionbox.Name = "richTextBoxActionbox";
             this.richTextBoxActionbox.ReadOnly = true;
             this.richTextBoxActionbox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBoxActionbox.Size = new System.Drawing.Size(275, 559);
+            this.richTextBoxActionbox.Size = new System.Drawing.Size(275, 614);
             this.richTextBoxActionbox.TabIndex = 21;
             this.richTextBoxActionbox.Text = "";
             // 
@@ -210,13 +210,13 @@
             // 
             this.listBoxInventory.BackColor = System.Drawing.Color.Black;
             this.listBoxInventory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.listBoxInventory.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxInventory.ForeColor = System.Drawing.Color.Yellow;
             this.listBoxInventory.FormattingEnabled = true;
             this.listBoxInventory.ItemHeight = 15;
             this.listBoxInventory.Location = new System.Drawing.Point(641, 107);
             this.listBoxInventory.Name = "listBoxInventory";
-            this.listBoxInventory.Size = new System.Drawing.Size(353, 454);
+            this.listBoxInventory.Size = new System.Drawing.Size(353, 484);
             this.listBoxInventory.TabIndex = 22;
             this.listBoxInventory.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listBox_DrawItem);
             this.listBoxInventory.SelectedIndexChanged += new System.EventHandler(this.listBoxInventory_SelectedIndexChanged);
@@ -226,7 +226,7 @@
             // labelInventory
             // 
             this.labelInventory.BackColor = System.Drawing.Color.Transparent;
-            this.labelInventory.Font = new System.Drawing.Font("Pericles", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInventory.ForeColor = System.Drawing.Color.Yellow;
             this.labelInventory.Location = new System.Drawing.Point(642, 64);
             this.labelInventory.Name = "labelInventory";
@@ -243,7 +243,7 @@
             this.labelBackgroundIGNORE.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelBackgroundIGNORE.Location = new System.Drawing.Point(0, 0);
             this.labelBackgroundIGNORE.Name = "labelBackgroundIGNORE";
-            this.labelBackgroundIGNORE.Size = new System.Drawing.Size(1000, 716);
+            this.labelBackgroundIGNORE.Size = new System.Drawing.Size(1000, 766);
             this.labelBackgroundIGNORE.TabIndex = 24;
             // 
             // btDeleteCharacter
@@ -254,7 +254,7 @@
             this.btDeleteCharacter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btDeleteCharacter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btDeleteCharacter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btDeleteCharacter.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDeleteCharacter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btDeleteCharacter.ForeColor = System.Drawing.Color.Yellow;
             this.btDeleteCharacter.Location = new System.Drawing.Point(336, 2);
             this.btDeleteCharacter.Name = "btDeleteCharacter";
@@ -274,9 +274,9 @@
             this.btDisenchantAll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btDisenchantAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btDisenchantAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btDisenchantAll.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDisenchantAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btDisenchantAll.ForeColor = System.Drawing.Color.Yellow;
-            this.btDisenchantAll.Location = new System.Drawing.Point(824, 662);
+            this.btDisenchantAll.Location = new System.Drawing.Point(824, 710);
             this.btDisenchantAll.Name = "btDisenchantAll";
             this.btDisenchantAll.Size = new System.Drawing.Size(170, 44);
             this.btDisenchantAll.TabIndex = 26;
@@ -289,9 +289,9 @@
             // labelCurrentItem
             // 
             this.labelCurrentItem.BackColor = System.Drawing.Color.Transparent;
-            this.labelCurrentItem.Font = new System.Drawing.Font("Pericles", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCurrentItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCurrentItem.ForeColor = System.Drawing.Color.Yellow;
-            this.labelCurrentItem.Location = new System.Drawing.Point(641, 563);
+            this.labelCurrentItem.Location = new System.Drawing.Point(641, 611);
             this.labelCurrentItem.Name = "labelCurrentItem";
             this.labelCurrentItem.Size = new System.Drawing.Size(353, 96);
             this.labelCurrentItem.TabIndex = 27;
@@ -306,7 +306,7 @@
             this.bnOptions.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.bnOptions.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.bnOptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnOptions.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnOptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnOptions.ForeColor = System.Drawing.Color.Yellow;
             this.bnOptions.Location = new System.Drawing.Point(502, 2);
             this.bnOptions.Name = "bnOptions";
@@ -322,7 +322,7 @@
             this.flpQuestBar.BackColor = System.Drawing.Color.Transparent;
             this.flpQuestBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.flpQuestBar.Controls.Add(this.labelQuestBar);
-            this.flpQuestBar.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flpQuestBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flpQuestBar.ForeColor = System.Drawing.Color.White;
             this.flpQuestBar.Location = new System.Drawing.Point(4, 40);
             this.flpQuestBar.Margin = new System.Windows.Forms.Padding(0);
@@ -335,7 +335,7 @@
             // labelQuestBar
             // 
             this.labelQuestBar.BackColor = System.Drawing.Color.MidnightBlue;
-            this.labelQuestBar.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelQuestBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelQuestBar.Location = new System.Drawing.Point(0, 0);
             this.labelQuestBar.Margin = new System.Windows.Forms.Padding(0);
             this.labelQuestBar.Name = "labelQuestBar";
@@ -348,7 +348,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1000, 716);
+            this.ClientSize = new System.Drawing.Size(1000, 766);
             this.Controls.Add(this.flpQuestBar);
             this.Controls.Add(this.bnOptions);
             this.Controls.Add(this.labelCurrentItem);

@@ -67,6 +67,10 @@ namespace RPG.Core.Units
             else
                 this.UnitActiveAbilities = _aa;
         }
+
+        /// Purely for XML
+        public NPC()
+        { }
         #endregion
 
         #region Functions

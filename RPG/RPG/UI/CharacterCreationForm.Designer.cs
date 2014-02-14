@@ -49,11 +49,11 @@
             this.btCreate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btCreate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btCreate.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCreate.ForeColor = System.Drawing.Color.Yellow;
-            this.btCreate.Location = new System.Drawing.Point(158, 362);
+            this.btCreate.Location = new System.Drawing.Point(12, 392);
             this.btCreate.Name = "btCreate";
-            this.btCreate.Size = new System.Drawing.Size(130, 26);
+            this.btCreate.Size = new System.Drawing.Size(130, 34);
             this.btCreate.TabIndex = 14;
             this.btCreate.Text = "Create Character";
             this.btCreate.UseVisualStyleBackColor = false;
@@ -62,12 +62,12 @@
             // textBoxCharacterName
             // 
             this.textBoxCharacterName.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textBoxCharacterName.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCharacterName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCharacterName.ForeColor = System.Drawing.Color.Red;
             this.textBoxCharacterName.Location = new System.Drawing.Point(60, 12);
             this.textBoxCharacterName.MaxLength = 15;
             this.textBoxCharacterName.Name = "textBoxCharacterName";
-            this.textBoxCharacterName.Size = new System.Drawing.Size(180, 22);
+            this.textBoxCharacterName.Size = new System.Drawing.Size(180, 20);
             this.textBoxCharacterName.TabIndex = 15;
             this.textBoxCharacterName.Text = "Name";
             this.textBoxCharacterName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -81,11 +81,11 @@
             this.btCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btCancel.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCancel.ForeColor = System.Drawing.Color.Yellow;
-            this.btCancel.Location = new System.Drawing.Point(12, 362);
+            this.btCancel.Location = new System.Drawing.Point(158, 392);
             this.btCancel.Name = "btCancel";
-            this.btCancel.Size = new System.Drawing.Size(130, 26);
+            this.btCancel.Size = new System.Drawing.Size(130, 34);
             this.btCancel.TabIndex = 16;
             this.btCancel.Text = "Cancel";
             this.btCancel.UseVisualStyleBackColor = false;
@@ -124,11 +124,11 @@
             // labelClassDescription
             // 
             this.labelClassDescription.BackColor = System.Drawing.Color.Transparent;
-            this.labelClassDescription.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelClassDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelClassDescription.ForeColor = System.Drawing.Color.Yellow;
             this.labelClassDescription.Location = new System.Drawing.Point(12, 283);
             this.labelClassDescription.Name = "labelClassDescription";
-            this.labelClassDescription.Size = new System.Drawing.Size(276, 76);
+            this.labelClassDescription.Size = new System.Drawing.Size(276, 106);
             this.labelClassDescription.TabIndex = 19;
             this.labelClassDescription.Text = "WARRIOR\r\n\r\nA pure Strength class, dealing uncontrollable damage to whatever is ar" +
     "ound him.\"";
@@ -142,7 +142,7 @@
             this.labelBackgroundIGNORE.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelBackgroundIGNORE.Location = new System.Drawing.Point(0, 0);
             this.labelBackgroundIGNORE.Name = "labelBackgroundIGNORE";
-            this.labelBackgroundIGNORE.Size = new System.Drawing.Size(300, 400);
+            this.labelBackgroundIGNORE.Size = new System.Drawing.Size(300, 438);
             this.labelBackgroundIGNORE.TabIndex = 0;
             // 
             // pictureBoxClass
@@ -160,7 +160,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(300, 400);
+            this.ClientSize = new System.Drawing.Size(300, 438);
             this.Controls.Add(this.pictureBoxClass);
             this.Controls.Add(this.labelClassDescription);
             this.Controls.Add(this.pictureBoxLeftArrow);

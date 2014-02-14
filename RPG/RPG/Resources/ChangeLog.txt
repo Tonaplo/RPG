@@ -1,4 +1,4 @@
-﻿Version 0.1.4.1 (13/02-2014):
+﻿Version 0.1.4.2 (13/02-2014):
 
 	- General:
 		- The game was named! It is now called:
@@ -7,6 +7,10 @@
 
 		- A new game mode was added! You can now play with multiple of your characters against the computer!
 		- The UI has not be rewamped completely, but certain elements have been significantly improved!
+		- The bug with text being out of place has been fixed.
+
+	- Monsters:
+		- Monster AI's were modified to take into account how many players it is battling against.
 
 	- Classes:
 		-Thief: "Copycat" was removed and replaced with "Poisoned Blade":

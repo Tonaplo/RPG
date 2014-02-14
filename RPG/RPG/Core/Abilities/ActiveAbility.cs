@@ -2660,17 +2660,20 @@ namespace RPG.Core.Abilities
         int damageValue = 0;
         public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
         {
-            int index;
-            do
+            for (int i = 0; i < _targets.Count; i++)
             {
-                index = DateTime.Now.Millisecond % _targets.Count;
-            } while (_targets[index].CurrentHP.IntValue <= 0);
-            
-            int damage = (int)Math.Abs(_caster.UnitLevel*1.75);
+                int index;
+                do
+                {
+                    index = DateTime.Now.Millisecond % _targets.Count;
+                } while (_targets[index].CurrentHP.IntValue <= 0);
 
-            _targets[index].CurrentHP.IntValue -= damage;
+                int damage = (int)Math.Abs(_caster.UnitLevel * 1.75);
 
-            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _targets[index].UnitName + " for " + damage + "!";
+                _targets[index].CurrentHP.IntValue -= damage;
+
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _targets[index].UnitName + " for " + damage + "!";
+            }
         }
     }
 
@@ -2723,17 +2726,15 @@ namespace RPG.Core.Abilities
         int damageValue = 0;
         public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
         {
-            int index;
-            do
-            {
-                index = DateTime.Now.Millisecond % _targets.Count;
-            } while (_targets[index].CurrentHP.IntValue <= 0);
-
             int damage = Math.Abs(_caster.UnitLevel * 6);
-
-            _targets[index].CurrentHP.IntValue -= damage;
-
-            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _targets[index].UnitName + " for " + damage + "!";
+            for (int i = 0; i < _targets.Count; i++)
+            {
+                if (_targets[i].CurrentHP.IntValue > 0)
+                {
+                    _targets[i].CurrentHP.IntValue -= damage;
+                    this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _targets[i].UnitName + " for " + damage + "!";
+                }
+            }
         }
     }
 
@@ -2756,23 +2757,26 @@ namespace RPG.Core.Abilities
         int damageValue = 0;
         public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
         {
-            int index;
-            do
+            for (int i = 0; i < _targets.Count; i++)
             {
-                index = DateTime.Now.Millisecond % _targets.Count;
-            } while (_targets[index].CurrentHP.IntValue <= 0);
+                int index;
+                do
+                {
+                    index = DateTime.Now.Millisecond % _targets.Count;
+                } while (_targets[index].CurrentHP.IntValue <= 0);
 
-            int damage = Math.Abs(_caster.UnitLevel);
-            int healing = (int)(_caster.BuffedHP.IntValue * 0.05);
+                int damage = Math.Abs(_caster.UnitLevel);
+                int healing = (int)(_caster.BuffedHP.IntValue * 0.05);
 
-            if (healing + _caster.CurrentHP.IntValue >= _caster.BuffedHP.IntValue)
-                _caster.CurrentHP.IntValue = _caster.BuffedHP.IntValue;
-            else
-                _caster.CurrentHP.IntValue += healing;
+                if (healing + _caster.CurrentHP.IntValue >= _caster.BuffedHP.IntValue)
+                    _caster.CurrentHP.IntValue = _caster.BuffedHP.IntValue;
+                else
+                    _caster.CurrentHP.IntValue += healing;
 
-            _targets[index].CurrentHP.IntValue -= damage;
+                _targets[index].CurrentHP.IntValue -= damage;
 
-            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _targets[index].UnitName + " for " + damage + " and heals himself for " + healing + "!";
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _targets[index].UnitName + " for " + damage + " and heals himself for " + healing + "!";
+            }
         }
     }
 

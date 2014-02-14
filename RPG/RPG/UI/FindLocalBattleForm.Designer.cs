@@ -47,9 +47,9 @@
             this.btSinglePlayer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btSinglePlayer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btSinglePlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSinglePlayer.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSinglePlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSinglePlayer.ForeColor = System.Drawing.Color.Yellow;
-            this.btSinglePlayer.Location = new System.Drawing.Point(11, 319);
+            this.btSinglePlayer.Location = new System.Drawing.Point(11, 342);
             this.btSinglePlayer.Name = "btSinglePlayer";
             this.btSinglePlayer.Size = new System.Drawing.Size(170, 23);
             this.btSinglePlayer.TabIndex = 17;
@@ -73,9 +73,9 @@
             this.bnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.bnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.bnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnCancel.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnCancel.ForeColor = System.Drawing.Color.Yellow;
-            this.bnCancel.Location = new System.Drawing.Point(193, 319);
+            this.bnCancel.Location = new System.Drawing.Point(193, 342);
             this.bnCancel.Name = "bnCancel";
             this.bnCancel.Size = new System.Drawing.Size(169, 23);
             this.bnCancel.TabIndex = 20;
@@ -87,12 +87,12 @@
             // 
             this.comboBoxChooseChar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.comboBoxChooseChar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxChooseChar.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxChooseChar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxChooseChar.ForeColor = System.Drawing.Color.Yellow;
             this.comboBoxChooseChar.FormattingEnabled = true;
             this.comboBoxChooseChar.Location = new System.Drawing.Point(12, 179);
             this.comboBoxChooseChar.Name = "comboBoxChooseChar";
-            this.comboBoxChooseChar.Size = new System.Drawing.Size(169, 23);
+            this.comboBoxChooseChar.Size = new System.Drawing.Size(169, 21);
             this.comboBoxChooseChar.TabIndex = 21;
             this.comboBoxChooseChar.SelectedIndexChanged += new System.EventHandler(this.comboBoxChooseChar_SelectedIndexChanged);
             // 
@@ -104,19 +104,19 @@
             this.labelBackgroundIGNORE.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelBackgroundIGNORE.Location = new System.Drawing.Point(0, 0);
             this.labelBackgroundIGNORE.Name = "labelBackgroundIGNORE";
-            this.labelBackgroundIGNORE.Size = new System.Drawing.Size(375, 354);
+            this.labelBackgroundIGNORE.Size = new System.Drawing.Size(375, 377);
             this.labelBackgroundIGNORE.TabIndex = 22;
             // 
             // comboBoxDifficulty
             // 
             this.comboBoxDifficulty.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.comboBoxDifficulty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxDifficulty.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxDifficulty.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxDifficulty.ForeColor = System.Drawing.Color.Yellow;
             this.comboBoxDifficulty.FormattingEnabled = true;
             this.comboBoxDifficulty.Location = new System.Drawing.Point(193, 179);
             this.comboBoxDifficulty.Name = "comboBoxDifficulty";
-            this.comboBoxDifficulty.Size = new System.Drawing.Size(169, 23);
+            this.comboBoxDifficulty.Size = new System.Drawing.Size(169, 21);
             this.comboBoxDifficulty.TabIndex = 26;
             // 
             // bnAddChar
@@ -127,7 +127,7 @@
             this.bnAddChar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.bnAddChar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.bnAddChar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnAddChar.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnAddChar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnAddChar.ForeColor = System.Drawing.Color.Yellow;
             this.bnAddChar.Location = new System.Drawing.Point(12, 208);
             this.bnAddChar.Name = "bnAddChar";
@@ -145,7 +145,7 @@
             this.bnRemoveChar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.bnRemoveChar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.bnRemoveChar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnRemoveChar.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnRemoveChar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnRemoveChar.ForeColor = System.Drawing.Color.Yellow;
             this.bnRemoveChar.Location = new System.Drawing.Point(192, 208);
             this.bnRemoveChar.Name = "bnRemoveChar";
@@ -158,21 +158,21 @@
             // labelSelectedChars
             // 
             this.labelSelectedChars.BackColor = System.Drawing.Color.Transparent;
-            this.labelSelectedChars.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSelectedChars.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSelectedChars.ForeColor = System.Drawing.Color.Yellow;
             this.labelSelectedChars.Location = new System.Drawing.Point(12, 234);
             this.labelSelectedChars.Name = "labelSelectedChars";
-            this.labelSelectedChars.Size = new System.Drawing.Size(350, 82);
+            this.labelSelectedChars.Size = new System.Drawing.Size(350, 105);
             this.labelSelectedChars.TabIndex = 29;
             this.labelSelectedChars.Text = "Battling Characters:";
             this.labelSelectedChars.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // FindLocalMultiBattleForm
+            // FindLocalBattleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(375, 354);
+            this.ClientSize = new System.Drawing.Size(375, 377);
             this.Controls.Add(this.labelSelectedChars);
             this.Controls.Add(this.bnRemoveChar);
             this.Controls.Add(this.bnAddChar);
@@ -183,7 +183,7 @@
             this.Controls.Add(this.btSinglePlayer);
             this.Controls.Add(this.labelBackgroundIGNORE);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FindLocalMultiBattleForm";
+            this.Name = "FindLocalBattleForm";
             this.Text = "FindBattleForm";
             this.Load += new System.EventHandler(this.FindBattleForm_Load);
             this.ResumeLayout(false);

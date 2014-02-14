@@ -43,17 +43,17 @@
             this.labelBackgroundIGNORE.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelBackgroundIGNORE.Location = new System.Drawing.Point(0, 0);
             this.labelBackgroundIGNORE.Name = "labelBackgroundIGNORE";
-            this.labelBackgroundIGNORE.Size = new System.Drawing.Size(331, 161);
+            this.labelBackgroundIGNORE.Size = new System.Drawing.Size(284, 198);
             this.labelBackgroundIGNORE.TabIndex = 24;
             // 
             // labelNumberOfPlayer1
             // 
             this.labelNumberOfPlayer1.BackColor = System.Drawing.Color.Transparent;
-            this.labelNumberOfPlayer1.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNumberOfPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNumberOfPlayer1.ForeColor = System.Drawing.Color.Yellow;
-            this.labelNumberOfPlayer1.Location = new System.Drawing.Point(12, 9);
+            this.labelNumberOfPlayer1.Location = new System.Drawing.Point(10, 8);
             this.labelNumberOfPlayer1.Name = "labelNumberOfPlayer1";
-            this.labelNumberOfPlayer1.Size = new System.Drawing.Size(307, 54);
+            this.labelNumberOfPlayer1.Size = new System.Drawing.Size(263, 73);
             this.labelNumberOfPlayer1.TabIndex = 25;
             this.labelNumberOfPlayer1.Text = "Congratulations!\r\nYou completed your current quest!\r\nPlease choose what reward yo" +
     "u want to receive:\r\n";
@@ -67,11 +67,11 @@
             this.bnItem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.bnItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.bnItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnItem.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnItem.ForeColor = System.Drawing.Color.Yellow;
-            this.bnItem.Location = new System.Drawing.Point(12, 95);
+            this.bnItem.Location = new System.Drawing.Point(10, 120);
             this.bnItem.Name = "bnItem";
-            this.bnItem.Size = new System.Drawing.Size(307, 23);
+            this.bnItem.Size = new System.Drawing.Size(263, 30);
             this.bnItem.TabIndex = 26;
             this.bnItem.Text = "High Quality Items";
             this.bnItem.UseVisualStyleBackColor = false;
@@ -85,11 +85,11 @@
             this.bnExperience.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.bnExperience.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.bnExperience.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnExperience.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnExperience.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnExperience.ForeColor = System.Drawing.Color.Yellow;
-            this.bnExperience.Location = new System.Drawing.Point(12, 66);
+            this.bnExperience.Location = new System.Drawing.Point(10, 84);
             this.bnExperience.Name = "bnExperience";
-            this.bnExperience.Size = new System.Drawing.Size(307, 23);
+            this.bnExperience.Size = new System.Drawing.Size(263, 30);
             this.bnExperience.TabIndex = 27;
             this.bnExperience.Text = "Experience for all character";
             this.bnExperience.UseVisualStyleBackColor = false;
@@ -103,11 +103,11 @@
             this.bnDust.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.bnDust.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.bnDust.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnDust.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnDust.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnDust.ForeColor = System.Drawing.Color.Yellow;
-            this.bnDust.Location = new System.Drawing.Point(12, 124);
+            this.bnDust.Location = new System.Drawing.Point(10, 156);
             this.bnDust.Name = "bnDust";
-            this.bnDust.Size = new System.Drawing.Size(307, 23);
+            this.bnDust.Size = new System.Drawing.Size(263, 30);
             this.bnDust.TabIndex = 28;
             this.bnDust.Text = "Dust for Stat Randomization";
             this.bnDust.UseVisualStyleBackColor = false;
@@ -115,16 +115,16 @@
             // 
             // ChooseQuestRewardForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(331, 161);
+            this.ClientSize = new System.Drawing.Size(284, 198);
             this.Controls.Add(this.bnDust);
             this.Controls.Add(this.bnExperience);
             this.Controls.Add(this.bnItem);
             this.Controls.Add(this.labelNumberOfPlayer1);
             this.Controls.Add(this.labelBackgroundIGNORE);
-            this.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ChooseQuestRewardForm";
             this.Text = "ChooseQuestRewardForm";

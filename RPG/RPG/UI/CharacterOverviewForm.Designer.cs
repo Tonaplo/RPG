@@ -83,9 +83,9 @@
             // 
             this.labelAllClassesAbilities.BackColor = System.Drawing.Color.Transparent;
             this.labelAllClassesAbilities.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelAllClassesAbilities.Location = new System.Drawing.Point(355, 210);
+            this.labelAllClassesAbilities.Location = new System.Drawing.Point(306, 209);
             this.labelAllClassesAbilities.Name = "labelAllClassesAbilities";
-            this.labelAllClassesAbilities.Size = new System.Drawing.Size(275, 22);
+            this.labelAllClassesAbilities.Size = new System.Drawing.Size(236, 19);
             this.labelAllClassesAbilities.TabIndex = 0;
             this.labelAllClassesAbilities.Text = "all classes abilities:";
             this.labelAllClassesAbilities.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -94,9 +94,9 @@
             // 
             this.labelClassAbilities.BackColor = System.Drawing.Color.Transparent;
             this.labelClassAbilities.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelClassAbilities.Location = new System.Drawing.Point(641, 210);
+            this.labelClassAbilities.Location = new System.Drawing.Point(551, 209);
             this.labelClassAbilities.Name = "labelClassAbilities";
-            this.labelClassAbilities.Size = new System.Drawing.Size(275, 22);
+            this.labelClassAbilities.Size = new System.Drawing.Size(236, 19);
             this.labelClassAbilities.TabIndex = 1;
             this.labelClassAbilities.Text = "<Class> only:";
             this.labelClassAbilities.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -112,9 +112,9 @@
             this.groupBoxAllClasses.Controls.Add(this.checkBoxAll3);
             this.groupBoxAllClasses.Controls.Add(this.checkBoxAll2);
             this.groupBoxAllClasses.Controls.Add(this.checkBoxAll1);
-            this.groupBoxAllClasses.Location = new System.Drawing.Point(355, 235);
+            this.groupBoxAllClasses.Location = new System.Drawing.Point(306, 231);
             this.groupBoxAllClasses.Name = "groupBoxAllClasses";
-            this.groupBoxAllClasses.Size = new System.Drawing.Size(275, 281);
+            this.groupBoxAllClasses.Size = new System.Drawing.Size(236, 265);
             this.groupBoxAllClasses.TabIndex = 2;
             this.groupBoxAllClasses.TabStop = false;
             // 
@@ -123,12 +123,12 @@
             this.checkBoxAll8.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxAll8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxAll8.Enabled = false;
-            this.checkBoxAll8.Location = new System.Drawing.Point(142, 210);
+            this.checkBoxAll8.Location = new System.Drawing.Point(122, 200);
             this.checkBoxAll8.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxAll8.Name = "checkBoxAll8";
             this.checkBoxAll8.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxAll8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxAll8.Size = new System.Drawing.Size(120, 62);
+            this.checkBoxAll8.Size = new System.Drawing.Size(103, 62);
             this.checkBoxAll8.TabIndex = 7;
             this.checkBoxAll8.Text = "Locked\r\nLevel 57";
             this.checkBoxAll8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -141,12 +141,12 @@
             this.checkBoxAll7.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxAll7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxAll7.Enabled = false;
-            this.checkBoxAll7.Location = new System.Drawing.Point(142, 145);
+            this.checkBoxAll7.Location = new System.Drawing.Point(122, 138);
             this.checkBoxAll7.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxAll7.Name = "checkBoxAll7";
             this.checkBoxAll7.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxAll7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxAll7.Size = new System.Drawing.Size(120, 62);
+            this.checkBoxAll7.Size = new System.Drawing.Size(103, 62);
             this.checkBoxAll7.TabIndex = 6;
             this.checkBoxAll7.Text = "Locked\r\nLevel 50";
             this.checkBoxAll7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -159,12 +159,12 @@
             this.checkBoxAll6.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxAll6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxAll6.Enabled = false;
-            this.checkBoxAll6.Location = new System.Drawing.Point(142, 80);
+            this.checkBoxAll6.Location = new System.Drawing.Point(122, 76);
             this.checkBoxAll6.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxAll6.Name = "checkBoxAll6";
             this.checkBoxAll6.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxAll6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxAll6.Size = new System.Drawing.Size(120, 62);
+            this.checkBoxAll6.Size = new System.Drawing.Size(103, 62);
             this.checkBoxAll6.TabIndex = 5;
             this.checkBoxAll6.Text = "Locked\r\nLevel 40";
             this.checkBoxAll6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -177,12 +177,12 @@
             this.checkBoxAll5.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxAll5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxAll5.Enabled = false;
-            this.checkBoxAll5.Location = new System.Drawing.Point(142, 15);
+            this.checkBoxAll5.Location = new System.Drawing.Point(121, 14);
             this.checkBoxAll5.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxAll5.Name = "checkBoxAll5";
             this.checkBoxAll5.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxAll5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxAll5.Size = new System.Drawing.Size(120, 62);
+            this.checkBoxAll5.Size = new System.Drawing.Size(103, 62);
             this.checkBoxAll5.TabIndex = 4;
             this.checkBoxAll5.Text = "Locked\r\nLevel 30";
             this.checkBoxAll5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -195,12 +195,12 @@
             this.checkBoxAll4.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxAll4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxAll4.Enabled = false;
-            this.checkBoxAll4.Location = new System.Drawing.Point(16, 210);
+            this.checkBoxAll4.Location = new System.Drawing.Point(14, 200);
             this.checkBoxAll4.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxAll4.Name = "checkBoxAll4";
             this.checkBoxAll4.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxAll4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxAll4.Size = new System.Drawing.Size(120, 62);
+            this.checkBoxAll4.Size = new System.Drawing.Size(103, 62);
             this.checkBoxAll4.TabIndex = 3;
             this.checkBoxAll4.Text = "Locked\r\nLevel 20";
             this.checkBoxAll4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -213,12 +213,12 @@
             this.checkBoxAll3.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxAll3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxAll3.Enabled = false;
-            this.checkBoxAll3.Location = new System.Drawing.Point(16, 145);
+            this.checkBoxAll3.Location = new System.Drawing.Point(12, 138);
             this.checkBoxAll3.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxAll3.Name = "checkBoxAll3";
             this.checkBoxAll3.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxAll3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxAll3.Size = new System.Drawing.Size(120, 62);
+            this.checkBoxAll3.Size = new System.Drawing.Size(103, 62);
             this.checkBoxAll3.TabIndex = 2;
             this.checkBoxAll3.Text = "Locked\r\nLevel 10";
             this.checkBoxAll3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -231,12 +231,12 @@
             this.checkBoxAll2.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxAll2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxAll2.Enabled = false;
-            this.checkBoxAll2.Location = new System.Drawing.Point(16, 80);
+            this.checkBoxAll2.Location = new System.Drawing.Point(12, 76);
             this.checkBoxAll2.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxAll2.Name = "checkBoxAll2";
             this.checkBoxAll2.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxAll2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxAll2.Size = new System.Drawing.Size(120, 62);
+            this.checkBoxAll2.Size = new System.Drawing.Size(103, 62);
             this.checkBoxAll2.TabIndex = 1;
             this.checkBoxAll2.Text = "Locked\r\nLevel 5";
             this.checkBoxAll2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -249,12 +249,12 @@
             this.checkBoxAll1.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxAll1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxAll1.Enabled = false;
-            this.checkBoxAll1.Location = new System.Drawing.Point(16, 15);
+            this.checkBoxAll1.Location = new System.Drawing.Point(14, 14);
             this.checkBoxAll1.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxAll1.Name = "checkBoxAll1";
             this.checkBoxAll1.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxAll1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxAll1.Size = new System.Drawing.Size(120, 62);
+            this.checkBoxAll1.Size = new System.Drawing.Size(103, 62);
             this.checkBoxAll1.TabIndex = 0;
             this.checkBoxAll1.Text = "Locked\r\nLevel 1";
             this.checkBoxAll1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -273,9 +273,9 @@
             this.groupBoxClass.Controls.Add(this.checkBoxClass3);
             this.groupBoxClass.Controls.Add(this.checkBoxClass2);
             this.groupBoxClass.Controls.Add(this.checkBoxClass1);
-            this.groupBoxClass.Location = new System.Drawing.Point(641, 235);
+            this.groupBoxClass.Location = new System.Drawing.Point(551, 231);
             this.groupBoxClass.Name = "groupBoxClass";
-            this.groupBoxClass.Size = new System.Drawing.Size(275, 281);
+            this.groupBoxClass.Size = new System.Drawing.Size(236, 265);
             this.groupBoxClass.TabIndex = 3;
             this.groupBoxClass.TabStop = false;
             // 
@@ -284,12 +284,12 @@
             this.checkBoxClass8.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxClass8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxClass8.Enabled = false;
-            this.checkBoxClass8.Location = new System.Drawing.Point(142, 210);
+            this.checkBoxClass8.Location = new System.Drawing.Point(122, 200);
             this.checkBoxClass8.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxClass8.Name = "checkBoxClass8";
             this.checkBoxClass8.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxClass8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxClass8.Size = new System.Drawing.Size(120, 62);
+            this.checkBoxClass8.Size = new System.Drawing.Size(103, 62);
             this.checkBoxClass8.TabIndex = 8;
             this.checkBoxClass8.Text = "Locked\r\nLevel 60";
             this.checkBoxClass8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -302,12 +302,12 @@
             this.checkBoxClass7.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxClass7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxClass7.Enabled = false;
-            this.checkBoxClass7.Location = new System.Drawing.Point(142, 145);
+            this.checkBoxClass7.Location = new System.Drawing.Point(122, 138);
             this.checkBoxClass7.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxClass7.Name = "checkBoxClass7";
             this.checkBoxClass7.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxClass7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxClass7.Size = new System.Drawing.Size(120, 62);
+            this.checkBoxClass7.Size = new System.Drawing.Size(103, 62);
             this.checkBoxClass7.TabIndex = 7;
             this.checkBoxClass7.Text = "Locked\r\nLevel 55";
             this.checkBoxClass7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -320,12 +320,12 @@
             this.checkBoxClass6.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxClass6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxClass6.Enabled = false;
-            this.checkBoxClass6.Location = new System.Drawing.Point(142, 80);
+            this.checkBoxClass6.Location = new System.Drawing.Point(122, 76);
             this.checkBoxClass6.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxClass6.Name = "checkBoxClass6";
             this.checkBoxClass6.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxClass6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxClass6.Size = new System.Drawing.Size(120, 62);
+            this.checkBoxClass6.Size = new System.Drawing.Size(103, 62);
             this.checkBoxClass6.TabIndex = 6;
             this.checkBoxClass6.Text = "Locked\r\nLevel 45";
             this.checkBoxClass6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -338,12 +338,12 @@
             this.checkBoxClass5.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxClass5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxClass5.Enabled = false;
-            this.checkBoxClass5.Location = new System.Drawing.Point(142, 18);
+            this.checkBoxClass5.Location = new System.Drawing.Point(122, 14);
             this.checkBoxClass5.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxClass5.Name = "checkBoxClass5";
             this.checkBoxClass5.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxClass5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxClass5.Size = new System.Drawing.Size(120, 62);
+            this.checkBoxClass5.Size = new System.Drawing.Size(103, 62);
             this.checkBoxClass5.TabIndex = 5;
             this.checkBoxClass5.Text = "Locked\r\nLevel 35";
             this.checkBoxClass5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -356,12 +356,12 @@
             this.checkBoxClass4.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxClass4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxClass4.Enabled = false;
-            this.checkBoxClass4.Location = new System.Drawing.Point(16, 210);
+            this.checkBoxClass4.Location = new System.Drawing.Point(14, 200);
             this.checkBoxClass4.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxClass4.Name = "checkBoxClass4";
             this.checkBoxClass4.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxClass4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxClass4.Size = new System.Drawing.Size(120, 62);
+            this.checkBoxClass4.Size = new System.Drawing.Size(103, 62);
             this.checkBoxClass4.TabIndex = 4;
             this.checkBoxClass4.Text = "Locked\r\nLevel 25";
             this.checkBoxClass4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -374,12 +374,12 @@
             this.checkBoxClass3.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxClass3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxClass3.Enabled = false;
-            this.checkBoxClass3.Location = new System.Drawing.Point(16, 145);
+            this.checkBoxClass3.Location = new System.Drawing.Point(14, 138);
             this.checkBoxClass3.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxClass3.Name = "checkBoxClass3";
             this.checkBoxClass3.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxClass3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxClass3.Size = new System.Drawing.Size(120, 62);
+            this.checkBoxClass3.Size = new System.Drawing.Size(103, 62);
             this.checkBoxClass3.TabIndex = 3;
             this.checkBoxClass3.Text = "Locked\r\nLevel 15";
             this.checkBoxClass3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -392,12 +392,12 @@
             this.checkBoxClass2.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxClass2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxClass2.Enabled = false;
-            this.checkBoxClass2.Location = new System.Drawing.Point(16, 80);
+            this.checkBoxClass2.Location = new System.Drawing.Point(14, 76);
             this.checkBoxClass2.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxClass2.Name = "checkBoxClass2";
             this.checkBoxClass2.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxClass2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxClass2.Size = new System.Drawing.Size(120, 62);
+            this.checkBoxClass2.Size = new System.Drawing.Size(103, 62);
             this.checkBoxClass2.TabIndex = 2;
             this.checkBoxClass2.Text = "Locked\r\nLevel 8";
             this.checkBoxClass2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -410,12 +410,12 @@
             this.checkBoxClass1.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxClass1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxClass1.Enabled = false;
-            this.checkBoxClass1.Location = new System.Drawing.Point(16, 15);
+            this.checkBoxClass1.Location = new System.Drawing.Point(14, 14);
             this.checkBoxClass1.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxClass1.Name = "checkBoxClass1";
             this.checkBoxClass1.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxClass1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxClass1.Size = new System.Drawing.Size(120, 62);
+            this.checkBoxClass1.Size = new System.Drawing.Size(103, 62);
             this.checkBoxClass1.TabIndex = 1;
             this.checkBoxClass1.Text = "Locked\r\nLevel 2";
             this.checkBoxClass1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -431,11 +431,11 @@
             this.btDone.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btDone.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btDone.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btDone.ForeColor = System.Drawing.Color.Yellow;
-            this.btDone.Location = new System.Drawing.Point(497, 522);
+            this.btDone.Location = new System.Drawing.Point(428, 502);
             this.btDone.Name = "btDone";
-            this.btDone.Size = new System.Drawing.Size(419, 26);
+            this.btDone.Size = new System.Drawing.Size(359, 29);
             this.btDone.TabIndex = 32;
             this.btDone.Text = "Done";
             this.btDone.UseVisualStyleBackColor = false;
@@ -444,11 +444,11 @@
             // labelCharHeader
             // 
             this.labelCharHeader.BackColor = System.Drawing.Color.Transparent;
-            this.labelCharHeader.Font = new System.Drawing.Font("Pericles", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCharHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCharHeader.ForeColor = System.Drawing.Color.Maroon;
-            this.labelCharHeader.Location = new System.Drawing.Point(98, 12);
+            this.labelCharHeader.Location = new System.Drawing.Point(84, 10);
             this.labelCharHeader.Name = "labelCharHeader";
-            this.labelCharHeader.Size = new System.Drawing.Size(241, 120);
+            this.labelCharHeader.Size = new System.Drawing.Size(207, 104);
             this.labelCharHeader.TabIndex = 34;
             this.labelCharHeader.Text = "<Name> \r\n<Class>\r\nLevel <xx>";
             this.labelCharHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -457,9 +457,9 @@
             // 
             this.labelGearHeadTitle.BackColor = System.Drawing.Color.Transparent;
             this.labelGearHeadTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelGearHeadTitle.Location = new System.Drawing.Point(7, 148);
+            this.labelGearHeadTitle.Location = new System.Drawing.Point(6, 144);
             this.labelGearHeadTitle.Name = "labelGearHeadTitle";
-            this.labelGearHeadTitle.Size = new System.Drawing.Size(110, 16);
+            this.labelGearHeadTitle.Size = new System.Drawing.Size(95, 25);
             this.labelGearHeadTitle.TabIndex = 35;
             this.labelGearHeadTitle.Text = "Head Armor:";
             this.labelGearHeadTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -468,9 +468,9 @@
             // 
             this.labelGearChestTitle.BackColor = System.Drawing.Color.Transparent;
             this.labelGearChestTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelGearChestTitle.Location = new System.Drawing.Point(123, 148);
+            this.labelGearChestTitle.Location = new System.Drawing.Point(105, 144);
             this.labelGearChestTitle.Name = "labelGearChestTitle";
-            this.labelGearChestTitle.Size = new System.Drawing.Size(110, 16);
+            this.labelGearChestTitle.Size = new System.Drawing.Size(95, 25);
             this.labelGearChestTitle.TabIndex = 36;
             this.labelGearChestTitle.Text = "Chest Armor:";
             this.labelGearChestTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -479,9 +479,9 @@
             // 
             this.labelGearLegsTitle.BackColor = System.Drawing.Color.Transparent;
             this.labelGearLegsTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelGearLegsTitle.Location = new System.Drawing.Point(238, 148);
+            this.labelGearLegsTitle.Location = new System.Drawing.Point(204, 144);
             this.labelGearLegsTitle.Name = "labelGearLegsTitle";
-            this.labelGearLegsTitle.Size = new System.Drawing.Size(110, 16);
+            this.labelGearLegsTitle.Size = new System.Drawing.Size(95, 25);
             this.labelGearLegsTitle.TabIndex = 37;
             this.labelGearLegsTitle.Text = "Leg Armor:";
             this.labelGearLegsTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -490,10 +490,10 @@
             // 
             this.labelGearHeadText.BackColor = System.Drawing.Color.Transparent;
             this.labelGearHeadText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelGearHeadText.Font = new System.Drawing.Font("Pericles", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGearHeadText.Location = new System.Drawing.Point(7, 170);
+            this.labelGearHeadText.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGearHeadText.Location = new System.Drawing.Point(6, 174);
             this.labelGearHeadText.Name = "labelGearHeadText";
-            this.labelGearHeadText.Size = new System.Drawing.Size(110, 168);
+            this.labelGearHeadText.Size = new System.Drawing.Size(95, 165);
             this.labelGearHeadText.TabIndex = 38;
             this.labelGearHeadText.Text = "Head Armor:";
             // 
@@ -501,10 +501,10 @@
             // 
             this.labelGearChestText.BackColor = System.Drawing.Color.Transparent;
             this.labelGearChestText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelGearChestText.Font = new System.Drawing.Font("Pericles", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGearChestText.Location = new System.Drawing.Point(123, 170);
+            this.labelGearChestText.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGearChestText.Location = new System.Drawing.Point(105, 174);
             this.labelGearChestText.Name = "labelGearChestText";
-            this.labelGearChestText.Size = new System.Drawing.Size(110, 168);
+            this.labelGearChestText.Size = new System.Drawing.Size(95, 165);
             this.labelGearChestText.TabIndex = 39;
             this.labelGearChestText.Text = "Head Armor:";
             // 
@@ -512,10 +512,10 @@
             // 
             this.labelGearLegText.BackColor = System.Drawing.Color.Transparent;
             this.labelGearLegText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelGearLegText.Font = new System.Drawing.Font("Pericles", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGearLegText.Location = new System.Drawing.Point(239, 170);
+            this.labelGearLegText.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGearLegText.Location = new System.Drawing.Point(205, 174);
             this.labelGearLegText.Name = "labelGearLegText";
-            this.labelGearLegText.Size = new System.Drawing.Size(110, 168);
+            this.labelGearLegText.Size = new System.Drawing.Size(95, 165);
             this.labelGearLegText.TabIndex = 40;
             this.labelGearLegText.Text = "Head Armor:";
             // 
@@ -523,10 +523,10 @@
             // 
             this.labelGearBCharm2Text.BackColor = System.Drawing.Color.Transparent;
             this.labelGearBCharm2Text.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelGearBCharm2Text.Font = new System.Drawing.Font("Pericles", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGearBCharm2Text.Location = new System.Drawing.Point(239, 383);
+            this.labelGearBCharm2Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGearBCharm2Text.Location = new System.Drawing.Point(205, 364);
             this.labelGearBCharm2Text.Name = "labelGearBCharm2Text";
-            this.labelGearBCharm2Text.Size = new System.Drawing.Size(110, 168);
+            this.labelGearBCharm2Text.Size = new System.Drawing.Size(95, 165);
             this.labelGearBCharm2Text.TabIndex = 46;
             this.labelGearBCharm2Text.Text = "Head Armor:";
             // 
@@ -534,10 +534,10 @@
             // 
             this.labelGearBCharm1Text.BackColor = System.Drawing.Color.Transparent;
             this.labelGearBCharm1Text.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelGearBCharm1Text.Font = new System.Drawing.Font("Pericles", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGearBCharm1Text.Location = new System.Drawing.Point(123, 383);
+            this.labelGearBCharm1Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGearBCharm1Text.Location = new System.Drawing.Point(105, 364);
             this.labelGearBCharm1Text.Name = "labelGearBCharm1Text";
-            this.labelGearBCharm1Text.Size = new System.Drawing.Size(110, 168);
+            this.labelGearBCharm1Text.Size = new System.Drawing.Size(95, 165);
             this.labelGearBCharm1Text.TabIndex = 45;
             this.labelGearBCharm1Text.Text = "Head Armor:";
             // 
@@ -545,10 +545,10 @@
             // 
             this.labelGearWeaponText.BackColor = System.Drawing.Color.Transparent;
             this.labelGearWeaponText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelGearWeaponText.Font = new System.Drawing.Font("Pericles", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGearWeaponText.Location = new System.Drawing.Point(7, 380);
+            this.labelGearWeaponText.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGearWeaponText.Location = new System.Drawing.Point(6, 361);
             this.labelGearWeaponText.Name = "labelGearWeaponText";
-            this.labelGearWeaponText.Size = new System.Drawing.Size(110, 168);
+            this.labelGearWeaponText.Size = new System.Drawing.Size(95, 168);
             this.labelGearWeaponText.TabIndex = 44;
             this.labelGearWeaponText.Text = "Head Armor:";
             // 
@@ -556,9 +556,9 @@
             // 
             this.labelGearBCharm2Title.BackColor = System.Drawing.Color.Transparent;
             this.labelGearBCharm2Title.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelGearBCharm2Title.Location = new System.Drawing.Point(239, 361);
+            this.labelGearBCharm2Title.Location = new System.Drawing.Point(205, 339);
             this.labelGearBCharm2Title.Name = "labelGearBCharm2Title";
-            this.labelGearBCharm2Title.Size = new System.Drawing.Size(110, 16);
+            this.labelGearBCharm2Title.Size = new System.Drawing.Size(95, 20);
             this.labelGearBCharm2Title.TabIndex = 43;
             this.labelGearBCharm2Title.Text = "BattleCharm 2:";
             this.labelGearBCharm2Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -567,9 +567,9 @@
             // 
             this.labelGearBCharm1Title.BackColor = System.Drawing.Color.Transparent;
             this.labelGearBCharm1Title.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelGearBCharm1Title.Location = new System.Drawing.Point(123, 361);
+            this.labelGearBCharm1Title.Location = new System.Drawing.Point(105, 339);
             this.labelGearBCharm1Title.Name = "labelGearBCharm1Title";
-            this.labelGearBCharm1Title.Size = new System.Drawing.Size(110, 16);
+            this.labelGearBCharm1Title.Size = new System.Drawing.Size(95, 20);
             this.labelGearBCharm1Title.TabIndex = 42;
             this.labelGearBCharm1Title.Text = "BattleCharm 1:";
             this.labelGearBCharm1Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -578,9 +578,9 @@
             // 
             this.labelGearWeaponTitle.BackColor = System.Drawing.Color.Transparent;
             this.labelGearWeaponTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelGearWeaponTitle.Location = new System.Drawing.Point(7, 361);
+            this.labelGearWeaponTitle.Location = new System.Drawing.Point(6, 339);
             this.labelGearWeaponTitle.Name = "labelGearWeaponTitle";
-            this.labelGearWeaponTitle.Size = new System.Drawing.Size(110, 16);
+            this.labelGearWeaponTitle.Size = new System.Drawing.Size(95, 20);
             this.labelGearWeaponTitle.TabIndex = 41;
             this.labelGearWeaponTitle.Text = "Weapon:";
             this.labelGearWeaponTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -589,19 +589,19 @@
             // 
             this.labelBaseAttributes.BackColor = System.Drawing.Color.Transparent;
             this.labelBaseAttributes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelBaseAttributes.Font = new System.Drawing.Font("Pericles", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBaseAttributes.Location = new System.Drawing.Point(355, 80);
+            this.labelBaseAttributes.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBaseAttributes.Location = new System.Drawing.Point(304, 69);
             this.labelBaseAttributes.Name = "labelBaseAttributes";
-            this.labelBaseAttributes.Size = new System.Drawing.Size(194, 121);
+            this.labelBaseAttributes.Size = new System.Drawing.Size(167, 140);
             this.labelBaseAttributes.TabIndex = 47;
             // 
             // labelAttributesHeader
             // 
             this.labelAttributesHeader.BackColor = System.Drawing.Color.Transparent;
             this.labelAttributesHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelAttributesHeader.Location = new System.Drawing.Point(355, 12);
+            this.labelAttributesHeader.Location = new System.Drawing.Point(304, 10);
             this.labelAttributesHeader.Name = "labelAttributesHeader";
-            this.labelAttributesHeader.Size = new System.Drawing.Size(561, 23);
+            this.labelAttributesHeader.Size = new System.Drawing.Size(481, 20);
             this.labelAttributesHeader.TabIndex = 48;
             this.labelAttributesHeader.Text = "Attributes:";
             this.labelAttributesHeader.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -609,9 +609,9 @@
             // pictureBoxChar
             // 
             this.pictureBoxChar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxChar.Location = new System.Drawing.Point(7, 12);
+            this.pictureBoxChar.Location = new System.Drawing.Point(6, 10);
             this.pictureBoxChar.Name = "pictureBoxChar";
-            this.pictureBoxChar.Size = new System.Drawing.Size(80, 120);
+            this.pictureBoxChar.Size = new System.Drawing.Size(69, 104);
             this.pictureBoxChar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxChar.TabIndex = 33;
             this.pictureBoxChar.TabStop = false;
@@ -624,16 +624,16 @@
             this.labelBackgroundIGNORE.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelBackgroundIGNORE.Location = new System.Drawing.Point(0, 0);
             this.labelBackgroundIGNORE.Name = "labelBackgroundIGNORE";
-            this.labelBackgroundIGNORE.Size = new System.Drawing.Size(928, 560);
+            this.labelBackgroundIGNORE.Size = new System.Drawing.Size(795, 537);
             this.labelBackgroundIGNORE.TabIndex = 49;
             // 
             // labelBaseAttributesHeader
             // 
             this.labelBaseAttributesHeader.BackColor = System.Drawing.Color.Transparent;
             this.labelBaseAttributesHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelBaseAttributesHeader.Location = new System.Drawing.Point(355, 44);
+            this.labelBaseAttributesHeader.Location = new System.Drawing.Point(304, 38);
             this.labelBaseAttributesHeader.Name = "labelBaseAttributesHeader";
-            this.labelBaseAttributesHeader.Size = new System.Drawing.Size(194, 23);
+            this.labelBaseAttributesHeader.Size = new System.Drawing.Size(167, 20);
             this.labelBaseAttributesHeader.TabIndex = 50;
             this.labelBaseAttributesHeader.Text = "Base Attributes:";
             this.labelBaseAttributesHeader.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -642,9 +642,9 @@
             // 
             this.labelBuffedAttributesHeader.BackColor = System.Drawing.Color.Transparent;
             this.labelBuffedAttributesHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelBuffedAttributesHeader.Location = new System.Drawing.Point(722, 44);
+            this.labelBuffedAttributesHeader.Location = new System.Drawing.Point(619, 38);
             this.labelBuffedAttributesHeader.Name = "labelBuffedAttributesHeader";
-            this.labelBuffedAttributesHeader.Size = new System.Drawing.Size(194, 23);
+            this.labelBuffedAttributesHeader.Size = new System.Drawing.Size(167, 20);
             this.labelBuffedAttributesHeader.TabIndex = 52;
             this.labelBuffedAttributesHeader.Text = "Buffed Attributes:";
             this.labelBuffedAttributesHeader.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -653,20 +653,20 @@
             // 
             this.labelBuffedAttributes.BackColor = System.Drawing.Color.Transparent;
             this.labelBuffedAttributes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelBuffedAttributes.Font = new System.Drawing.Font("Pericles", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBuffedAttributes.Location = new System.Drawing.Point(722, 80);
+            this.labelBuffedAttributes.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBuffedAttributes.Location = new System.Drawing.Point(619, 69);
             this.labelBuffedAttributes.Name = "labelBuffedAttributes";
-            this.labelBuffedAttributes.Size = new System.Drawing.Size(194, 121);
+            this.labelBuffedAttributes.Size = new System.Drawing.Size(167, 140);
             this.labelBuffedAttributes.TabIndex = 51;
             // 
             // labelLevelAttribute
             // 
             this.labelLevelAttribute.BackColor = System.Drawing.Color.Transparent;
             this.labelLevelAttribute.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelLevelAttribute.Font = new System.Drawing.Font("Pericles", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLevelAttribute.Location = new System.Drawing.Point(555, 109);
+            this.labelLevelAttribute.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLevelAttribute.Location = new System.Drawing.Point(476, 94);
             this.labelLevelAttribute.Name = "labelLevelAttribute";
-            this.labelLevelAttribute.Size = new System.Drawing.Size(161, 63);
+            this.labelLevelAttribute.Size = new System.Drawing.Size(138, 86);
             this.labelLevelAttribute.TabIndex = 53;
             // 
             // btAddToAttribute
@@ -677,11 +677,11 @@
             this.btAddToAttribute.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btAddToAttribute.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btAddToAttribute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAddToAttribute.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAddToAttribute.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAddToAttribute.ForeColor = System.Drawing.Color.Yellow;
-            this.btAddToAttribute.Location = new System.Drawing.Point(555, 44);
+            this.btAddToAttribute.Location = new System.Drawing.Point(476, 38);
             this.btAddToAttribute.Name = "btAddToAttribute";
-            this.btAddToAttribute.Size = new System.Drawing.Size(161, 26);
+            this.btAddToAttribute.Size = new System.Drawing.Size(138, 23);
             this.btAddToAttribute.TabIndex = 54;
             this.btAddToAttribute.Text = "Increase Attribute";
             this.btAddToAttribute.UseVisualStyleBackColor = false;
@@ -695,11 +695,11 @@
             this.btAutoLevel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btAutoLevel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btAutoLevel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAutoLevel.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAutoLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAutoLevel.ForeColor = System.Drawing.Color.Yellow;
-            this.btAutoLevel.Location = new System.Drawing.Point(355, 522);
+            this.btAutoLevel.Location = new System.Drawing.Point(305, 502);
             this.btAutoLevel.Name = "btAutoLevel";
-            this.btAutoLevel.Size = new System.Drawing.Size(136, 26);
+            this.btAutoLevel.Size = new System.Drawing.Size(117, 29);
             this.btAutoLevel.TabIndex = 55;
             this.btAutoLevel.Text = "Auto Level";
             this.btAutoLevel.UseVisualStyleBackColor = false;
@@ -708,12 +708,12 @@
             // comboBoxAttributes
             // 
             this.comboBoxAttributes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAttributes.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxAttributes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxAttributes.ForeColor = System.Drawing.Color.DarkRed;
             this.comboBoxAttributes.FormattingEnabled = true;
-            this.comboBoxAttributes.Location = new System.Drawing.Point(555, 83);
+            this.comboBoxAttributes.Location = new System.Drawing.Point(476, 72);
             this.comboBoxAttributes.Name = "comboBoxAttributes";
-            this.comboBoxAttributes.Size = new System.Drawing.Size(161, 23);
+            this.comboBoxAttributes.Size = new System.Drawing.Size(139, 21);
             this.comboBoxAttributes.TabIndex = 56;
             // 
             // btResetStats
@@ -724,11 +724,11 @@
             this.btResetStats.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btResetStats.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btResetStats.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btResetStats.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btResetStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btResetStats.ForeColor = System.Drawing.Color.Yellow;
-            this.btResetStats.Location = new System.Drawing.Point(555, 175);
+            this.btResetStats.Location = new System.Drawing.Point(475, 183);
             this.btResetStats.Name = "btResetStats";
-            this.btResetStats.Size = new System.Drawing.Size(161, 26);
+            this.btResetStats.Size = new System.Drawing.Size(138, 23);
             this.btResetStats.TabIndex = 57;
             this.btResetStats.Text = "Reset Attributes";
             this.btResetStats.UseVisualStyleBackColor = false;
@@ -736,10 +736,10 @@
             // 
             // CharacterOverviewForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(928, 560);
+            this.ClientSize = new System.Drawing.Size(795, 537);
             this.Controls.Add(this.btResetStats);
             this.Controls.Add(this.comboBoxAttributes);
             this.Controls.Add(this.btAutoLevel);
@@ -770,7 +770,7 @@
             this.Controls.Add(this.labelClassAbilities);
             this.Controls.Add(this.labelAllClassesAbilities);
             this.Controls.Add(this.labelBackgroundIGNORE);
-            this.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Yellow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CharacterOverviewForm";
