@@ -44,5 +44,5 @@ This tab presents planned changes to the game, that has not yet been implemented
 Known bugs:
 
 	- On computers where the used font is not installed, alot of text scaling errores occur.
-	- Using buffs on other characters in a battle does not have the intended effect.
+	- Using buffs on other characters in a battle causes a wrong hover text.
 	- After a character has died in battle, the NPC will carry on attacking that character.

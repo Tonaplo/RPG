@@ -166,6 +166,8 @@ namespace RPG.UI
 
                     temp += battleChars[i].UnitName + "!";
 
+                    UpdateIndexedControls(indexes);
+
                     Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, "[" + DateTime.Now.ToShortTimeString() + "] ", Color.DarkSeaGreen);
                     Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, ab.ChatString + Environment.NewLine, Color.DarkOrange);
                 }
@@ -361,6 +363,14 @@ namespace RPG.UI
                 }
                 else
                     return true;
+        }
+
+        private void UpdateIndexedControls(List<int> indices)
+        {
+            foreach (var item in indices)
+            {
+                (flpCharacters.Controls[item] as ucCharacterBattle).Update();
+            }
         }
         #endregion
 

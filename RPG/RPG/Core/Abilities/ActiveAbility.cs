@@ -2660,7 +2660,12 @@ namespace RPG.Core.Abilities
         int damageValue = 0;
         public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
         {
-            int index = DateTime.Now.Millisecond % _targets.Count;
+            int index;
+            do
+            {
+                index = DateTime.Now.Millisecond % _targets.Count;
+            } while (_targets[index].CurrentHP.IntValue <= 0);
+            
             int damage = (int)Math.Abs(_caster.UnitLevel*1.75);
 
             _targets[index].CurrentHP.IntValue -= damage;
@@ -2718,7 +2723,12 @@ namespace RPG.Core.Abilities
         int damageValue = 0;
         public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
         {
-            int index = DateTime.Now.Millisecond % _targets.Count;
+            int index;
+            do
+            {
+                index = DateTime.Now.Millisecond % _targets.Count;
+            } while (_targets[index].CurrentHP.IntValue <= 0);
+
             int damage = Math.Abs(_caster.UnitLevel * 6);
 
             _targets[index].CurrentHP.IntValue -= damage;
@@ -2746,7 +2756,12 @@ namespace RPG.Core.Abilities
         int damageValue = 0;
         public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
         {
-            int index = DateTime.Now.Millisecond % _targets.Count;
+            int index;
+            do
+            {
+                index = DateTime.Now.Millisecond % _targets.Count;
+            } while (_targets[index].CurrentHP.IntValue <= 0);
+
             int damage = Math.Abs(_caster.UnitLevel);
             int healing = (int)(_caster.BuffedHP.IntValue * 0.05);
 
