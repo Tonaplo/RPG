@@ -64,22 +64,22 @@ namespace RPG.Core.Abilities
         public Invigorated(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            int buff = (int)(_char.BuffedAgility.IntValue * 0.15);
+            int buff = (int)(_char.BuffedAgility.IntValue * 0.2);
             string stat = "Agility";
 
             if (_char.BuffedAgility.IntValue < _char.BuffedIntellingence.IntValue)
             {
-                buff = (int)(_char.BuffedIntellingence.IntValue * 0.15);
+                buff = (int)(_char.BuffedIntellingence.IntValue * 0.2);
                 stat = "Intellect";
                 if (_char.BuffedIntellingence.IntValue < _char.BuffedStrength.IntValue)
                 {
-                    buff = (int)(_char.BuffedStrength.IntValue * 0.15);
+                    buff = (int)(_char.BuffedStrength.IntValue * 0.2);
                     stat = "Strength";
                 }
             }
             else if (_char.BuffedAgility.IntValue < _char.BuffedStrength.IntValue)
             {
-                buff = (int)(_char.BuffedStrength.IntValue * 0.15);
+                buff = (int)(_char.BuffedStrength.IntValue * 0.2);
                 stat = "Strength";
             }
 
@@ -156,7 +156,7 @@ namespace RPG.Core.Abilities
         public Infuriated(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            int buff = (int)((_char.BuffedHP.IntValue - _char.CurrentHP.IntValue)*0.4);
+            int buff = (int)((_char.BuffedHP.IntValue - _char.CurrentHP.IntValue)*0.25);
             this.AbilityName = "Infuriated";
             this.Description = _char.UnitName + " is Infuriated and has " + buff + " more Attack Damage!";
             this.Icon = this.Icon = this.SetIcon(Properties.Resources.meleeattack);
@@ -195,22 +195,22 @@ namespace RPG.Core.Abilities
         public Blessed(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
             : base(_char, _name, _description, _icon, _classReq)
         {
-            int buff = (int)(_char.BuffedAgility.IntValue * 0.2);
+            int buff = (int)(_char.BuffedAgility.IntValue * 0.4);
             string stat = "Agility";
 
             if (_char.BuffedAgility.IntValue < _char.BuffedIntellingence.IntValue)
             {
-                buff = (int)(_char.BuffedIntellingence.IntValue * 0.2);
+                buff = (int)(_char.BuffedIntellingence.IntValue * 0.4);
                 stat = "Intellect";
                 if (_char.BuffedIntellingence.IntValue < _char.BuffedStrength.IntValue)
                 {
-                    buff = (int)(_char.BuffedStrength.IntValue * 0.2);
+                    buff = (int)(_char.BuffedStrength.IntValue * 0.4);
                     stat = "Strength";
                 }
             }
             else if (_char.BuffedAgility.IntValue < _char.BuffedStrength.IntValue)
             {
-                buff = (int)(_char.BuffedStrength.IntValue * 0.2);
+                buff = (int)(_char.BuffedStrength.IntValue * 0.4);
                 stat = "Strength";
             }
 

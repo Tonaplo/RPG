@@ -1037,7 +1037,7 @@ namespace RPG.Core.Abilities
 
             if (!_allies[index].UnitBuffsAndDebuffs.Any(x => x.AbilityName == "Blessed"))
             {
-                _allies[index].UnitBuffsAndDebuffs.Add(new Blessed(_caster, null, null, null, EnumAbilityClassReq.ANY));
+                _allies[index].UnitBuffsAndDebuffs.Add(new Blessed(_allies[index], null, null, null, EnumAbilityClassReq.ANY));
 
                 if (_allies[index].BuffedAgility.IntValue > best)
                 {
@@ -1090,7 +1090,7 @@ namespace RPG.Core.Abilities
             }
             else
             {
-                this.ChatString = _caster.UnitName + " is already affected by " + this.AbilityName + "!";
+                this.ChatString = _allies[index].UnitName + " is already affected by " + this.AbilityName + "!";
                 _caster.CurrentTurnPoints.IntValue += this.TurnPointCost;
             }
         }
@@ -2668,7 +2668,7 @@ namespace RPG.Core.Abilities
                 do
                 {
                     index = r.Next(0, _targets.Count);
-                } while (_targets[index].CurrentHP.IntValue <= 0);
+                } while (_targets[index].CurrentHP.IntValue <= 0 && _targets.Any(x => x.CurrentHP.IntValue > 0));
 
                 int damage = (int)Math.Abs(_caster.UnitLevel * 1.75);
 
@@ -2770,7 +2770,7 @@ namespace RPG.Core.Abilities
                 do
                 {
                     index = r.Next(0, _targets.Count);
-                } while (_targets[index].CurrentHP.IntValue <= 0);
+                } while (_targets[index].CurrentHP.IntValue <= 0 && _targets.Any(x => x.CurrentHP.IntValue > 0));
 
                 int damage = Math.Abs(_caster.UnitLevel);
                 int healing = (int)(_caster.BuffedHP.IntValue * 0.05);
@@ -2835,11 +2835,17 @@ namespace RPG.Core.Abilities
         public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
         {
             int damage = (int)Math.Abs((_caster.BuffedHP.IntValue-_caster.CurrentHP.IntValue) * 0.15);
-            Random r = new Random();
-            int i = r.Next(_targets.Count);
-            _targets[i].CurrentHP.IntValue -= damage;
 
-            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _targets[i].UnitName + ", dealing " + damage + "!";
+            Random r = new Random();
+            int index;
+            do
+            {
+                index = r.Next(_targets.Count);
+            } while (_targets[index].CurrentHP.IntValue < 0 && _targets.Any(x => x.CurrentHP.IntValue > 0));
+
+            _targets[index].CurrentHP.IntValue -= damage;
+
+            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _targets[index].UnitName + ", dealing " + damage + "!";
         }
     }
 
@@ -2849,7 +2855,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Growing Despair";
-            this.Description = "This ability deals increasing damage to all characters.";
+            this.Description = "This ability deals increasing damage to a character.";
             this.Icon = this.SetIcon(Properties.Resources.strength);
             
         }
@@ -2864,14 +2870,16 @@ namespace RPG.Core.Abilities
         public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
         {
             int damage = (int)(_caster.UnitLevel * (0.5 * iteration));
-
-            foreach (var item in _targets)
+            Random r = new Random();
+            int index;
+            do
             {
-                item.CurrentHP.IntValue -= damage;
-            }
+                index = r.Next(_targets.Count);
+            } while (_targets[index].CurrentHP.IntValue < 0 && _targets.Any(x => x.CurrentHP.IntValue > 0));
 
-
-            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on all characters, dealing " + damage + " to each!";
+            _targets[index].CurrentHP.IntValue -= damage;
+            
+            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _targets[index].UnitName + ", dealing " + damage + " to each!";
             iteration++;
         }
     }
