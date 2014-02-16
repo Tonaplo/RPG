@@ -135,6 +135,11 @@ namespace RPG.Function
                 typeof(NormalPercentRemaining),
                 typeof(HardPercentRemaining),
                 typeof(VeryHardPercentRemaining),
+                typeof(VeryEasyNPCType),
+                typeof(EasyNPCType),
+                typeof(NormalNPCType),
+                typeof(HardNPCType),
+                typeof(VeryHardNPCType),
                 // NPC Types
                 typeof(RPG.Core.EnumMonsterType),
                 typeof(RPG.Core.Units.NPC),

@@ -58,7 +58,7 @@ namespace RPG.UI
             howtoplay.ReadOnly = true;
             howtoplay.ScrollBars = RichTextBoxScrollBars.Vertical;
             howtoplay.Multiline = true;
-            RichTextBoxExtensions.AppendText(howtoplay, "Welcome to <The Game>!" + Environment.NewLine + Environment.NewLine + Environment.NewLine, Color.DarkOrange);
+            RichTextBoxExtensions.AppendText(howtoplay, "Welcome to The Legend of Eiwar!" + Environment.NewLine + Environment.NewLine + Environment.NewLine, Color.DarkOrange);
             RichTextBoxExtensions.AppendText(howtoplay, "<The Game> is a Turn based Role Playing Game, where you fight against monsters either singleplayer or together with others!", Color.Honeydew);
             RichTextBoxExtensions.AppendText(howtoplay, " You start out by creating a character using the \"Add Character\" button. You also choose between six classes:" + Environment.NewLine + Environment.NewLine, Color.Honeydew);
             RichTextBoxExtensions.AppendText(howtoplay, "Warrior:" + Environment.NewLine, Color.Red);

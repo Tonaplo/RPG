@@ -41,7 +41,7 @@ namespace RPG
             playerlist = _playerlist;
             this.BackgroundImage = GeneralFunctions.ResizeImage(Properties.Resources.background, labelBackgroundIGNORE.Size);
 
-            this.richTextBoxActionbox.Text =   "Welcome to <The Game>" + Environment.NewLine +
+            this.richTextBoxActionbox.Text =   "Welcome to The Legend of Eiwar" + Environment.NewLine +
                                                 "Version : " + ServerManagement.GetRunningVersion() + Environment.NewLine + Environment.NewLine +
                                                 "Click the support tab to instructions on how to play and to see changes!" + Environment.NewLine +
                                                 "If you find a bug or believe there is a balance issue in the game, please report this with the " +

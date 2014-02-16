@@ -1,4 +1,4 @@
-﻿Version 0.1.4.3 (13/02-2014):
+﻿Version 0.1.4.6 (13/02-2014):
 
 	- General:
 		- The game was named! It is now called:
@@ -8,9 +8,10 @@
 		- A new game mode was added! You can now play with multiple of your characters against the computer!
 		- The UI has not be rewamped completely, but certain elements have been significantly improved!
 		- The bug with text being out of place has been fixed.
-		- Fixed a bug where the game would crash when the player lost a battle to a "Fireball" and
+		- Fixed a bug where the game would crash when the player lost a battle to a "Fireball" or a
 		  "Atonement Smite" opponent.
 		- Fixed a bug where "Desperation" and "Growing Despair" opponents would deal damage to dead players.
+		- Fixed a crash that would occur when trying to exit the game while on the "NPC Type" quest.
 
 	- Monsters:
 		- Monster AI's were modified to take into account how many players it is battling against.
