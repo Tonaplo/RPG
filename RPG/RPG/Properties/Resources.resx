@@ -266,7 +266,7 @@
     <value>Increases the strength and agility of the Caretaker by 20%.</value>
   </data>
   <data name="AbilitiesDescriptionCaretakerBodySlam" xml:space="preserve">
-    <value>Deals 20% of the Caretakers maximum health in damage to the target.</value>
+    <value>Deals 25% of the Caretakers maximum health in damage to the target.</value>
   </data>
   <data name="AbilitiesDescriptionCaretakerDeathdefiance" xml:space="preserve">
     <value>Splits the Caretakers health deficit as healing between all allies.</value>
@@ -341,7 +341,7 @@
     <value>The Thief uses the best attack of his allies together with his own, dealing 65% of their combined damage.</value>
   </data>
   <data name="AbilitiesDescriptionThiefPoisonedBlade" xml:space="preserve">
-    <value>Deals 130% of the Thiefs Attack and 65% of his Agility in damage.</value>
+    <value>Deals 140% of the Thiefs Attack and 75% of his Agility in damage.</value>
   </data>
   <data name="AbilitiesDescriptionThiefDirtyTricks" xml:space="preserve">
     <value>Deals 250% of the Thiefs agility and 40% of his Attack as damage to the target.</value>

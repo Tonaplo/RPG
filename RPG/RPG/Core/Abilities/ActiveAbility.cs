@@ -1714,7 +1714,7 @@ namespace RPG.Core.Abilities
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _targets)
         {
             double critModifier = Function.CombatHandler.CritCalculator(_caster.UnitLevel, _caster.BuffedCrit.IntValue);
-            int damage = (int)((_caster.BuffedAttackDamage.IntValue * 1.3 + _caster.BuffedAgility.IntValue * 0.65) * critModifier);
+            int damage = (int)((_caster.BuffedAttackDamage.IntValue * 1.4 + _caster.BuffedAgility.IntValue * 0.75) * critModifier);
 
             _targets.CurrentHP.IntValue -= damage;
 
@@ -1911,7 +1911,7 @@ namespace RPG.Core.Abilities
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _targets)
         {
             double critModifier = Function.CombatHandler.CritCalculator(_caster.UnitLevel, _caster.BuffedCrit.IntValue);
-            int damage = (int)((_caster.BuffedHP.IntValue * 0.2) * critModifier);
+            int damage = (int)((_caster.BuffedHP.IntValue * 0.25) * critModifier);
             _targets.CurrentHP.IntValue -= damage;
 
             if (critModifier == 1.0)
@@ -2821,7 +2821,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Desperation";
-            this.Description = "This ability deals 15% of the monsters health deficit in damage to all characters!";
+            this.Description = "This ability deals 15% of the monsters health deficit in damage to a character!";
             this.Icon = this.SetIcon(Properties.Resources.strength);
         }
 
@@ -2835,14 +2835,11 @@ namespace RPG.Core.Abilities
         public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
         {
             int damage = (int)Math.Abs((_caster.BuffedHP.IntValue-_caster.CurrentHP.IntValue) * 0.15);
+            Random r = new Random();
+            int i = r.Next(_targets.Count);
+            _targets[i].CurrentHP.IntValue -= damage;
 
-            foreach (var item in _targets)
-            {
-                item.CurrentHP.IntValue -= damage;
-            }
-            
-
-            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on all characters, dealing " + damage + " to each!";
+            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _targets[i].UnitName + ", dealing " + damage + "!";
         }
     }
 

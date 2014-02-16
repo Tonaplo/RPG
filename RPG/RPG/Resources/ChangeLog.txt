@@ -11,12 +11,18 @@
 
 	- Monsters:
 		- Monster AI's were modified to take into account how many players it is battling against.
+		- "Desperation" was changed: "This ability deals 15% of the monsters health deficit in damage 
+		  to a (was all) character!". Monsters with "Desperation" were unkillable by parties.
 
 	- Classes:
-		-Thief: "Copycat" was removed and replaced with "Poisoned Blade":
-			- Poisoned Blade: "Deals 130% of the Thiefs Attack and 65% of his Agility in damage."
+		- Thief: 
+			- "Copycat" was removed and replaced with "Poisoned Blade":
+			- Poisoned Blade: "Deals 140% of the Thiefs Attack and 75% of his Agility in damage."
 			- "Borrow Weapon" was changed: "The Thief uses the best attack of his allies together with 
 			  his own, dealing 85% (was 65%) of their combined damage."
+		- Caretaker:
+			- "Bodyslam" was changed: "Deals 25% (was 20%) of the Caretakers maximum health in damage
+			  to the target."
 		
 _________________________________________________________________________________________________________
 Version 0.1.3.16 (20/11-2013):

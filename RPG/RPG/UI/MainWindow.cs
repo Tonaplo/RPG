@@ -320,7 +320,7 @@ namespace RPG
 
             foreach (var item in list)
             {
-                if (((double)item.BuffedHP.IntValue / (double)item.CurrentHP.IntValue) < percent)
+                if (((((double)item.CurrentHP.IntValue) / (double)item.BuffedHP.IntValue)*100) < percent)
                     percent = (double)item.BuffedHP.IntValue / (double)item.CurrentHP.IntValue;
             }
 
