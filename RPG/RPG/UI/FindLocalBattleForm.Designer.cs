@@ -49,9 +49,9 @@
             this.btSinglePlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSinglePlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSinglePlayer.ForeColor = System.Drawing.Color.Yellow;
-            this.btSinglePlayer.Location = new System.Drawing.Point(11, 342);
+            this.btSinglePlayer.Location = new System.Drawing.Point(11, 336);
             this.btSinglePlayer.Name = "btSinglePlayer";
-            this.btSinglePlayer.Size = new System.Drawing.Size(170, 23);
+            this.btSinglePlayer.Size = new System.Drawing.Size(170, 35);
             this.btSinglePlayer.TabIndex = 17;
             this.btSinglePlayer.Text = "Battle!";
             this.btSinglePlayer.UseVisualStyleBackColor = false;
@@ -75,9 +75,9 @@
             this.bnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnCancel.ForeColor = System.Drawing.Color.Yellow;
-            this.bnCancel.Location = new System.Drawing.Point(193, 342);
+            this.bnCancel.Location = new System.Drawing.Point(193, 336);
             this.bnCancel.Name = "bnCancel";
-            this.bnCancel.Size = new System.Drawing.Size(169, 23);
+            this.bnCancel.Size = new System.Drawing.Size(169, 35);
             this.bnCancel.TabIndex = 20;
             this.bnCancel.Text = "Cancel";
             this.bnCancel.UseVisualStyleBackColor = false;
@@ -162,7 +162,7 @@
             this.labelSelectedChars.ForeColor = System.Drawing.Color.Yellow;
             this.labelSelectedChars.Location = new System.Drawing.Point(12, 234);
             this.labelSelectedChars.Name = "labelSelectedChars";
-            this.labelSelectedChars.Size = new System.Drawing.Size(350, 105);
+            this.labelSelectedChars.Size = new System.Drawing.Size(350, 98);
             this.labelSelectedChars.TabIndex = 29;
             this.labelSelectedChars.Text = "Battling Characters:";
             this.labelSelectedChars.TextAlign = System.Drawing.ContentAlignment.TopCenter;

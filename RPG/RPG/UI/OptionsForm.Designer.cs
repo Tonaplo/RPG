@@ -47,7 +47,7 @@
             this.bnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnOk.ForeColor = System.Drawing.Color.Yellow;
-            this.bnOk.Location = new System.Drawing.Point(45, 220);
+            this.bnOk.Location = new System.Drawing.Point(45, 201);
             this.bnOk.Name = "bnOk";
             this.bnOk.Size = new System.Drawing.Size(174, 35);
             this.bnOk.TabIndex = 29;
@@ -63,7 +63,7 @@
             this.labelBackgroundIGNORE.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelBackgroundIGNORE.Location = new System.Drawing.Point(0, 0);
             this.labelBackgroundIGNORE.Name = "labelBackgroundIGNORE";
-            this.labelBackgroundIGNORE.Size = new System.Drawing.Size(260, 267);
+            this.labelBackgroundIGNORE.Size = new System.Drawing.Size(260, 258);
             this.labelBackgroundIGNORE.TabIndex = 30;
             // 
             // labelDifficultyLevel
@@ -134,7 +134,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(260, 267);
+            this.ClientSize = new System.Drawing.Size(260, 258);
             this.Controls.Add(this.listBoxChars);
             this.Controls.Add(this.bnAbandon);
             this.Controls.Add(this.label1);

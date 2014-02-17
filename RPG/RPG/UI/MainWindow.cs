@@ -14,7 +14,6 @@ using RPG.Function;
 using System.Drawing.Text;
 using System.Runtime.InteropServices;
 
-
 namespace RPG
 {
     public partial class MainWindow : Form

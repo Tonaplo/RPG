@@ -356,9 +356,9 @@ namespace RPG.UI
                         {
                             Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, "[" + DateTime.Now.ToShortTimeString() + "] ", Color.DarkRed);
                             Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, item.UnitName + " has died from damage!" + Environment.NewLine, Color.DarkRed);
-                            item.CurrentTurnPoints.IntValue = 0;
                             liveChars.RemoveAll(x => x == item.UnitName);
                         }
+                        item.CurrentTurnPoints.IntValue = 0;
                     }
                 }
 

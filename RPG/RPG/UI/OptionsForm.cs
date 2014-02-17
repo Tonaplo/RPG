@@ -31,6 +31,11 @@ namespace RPG.UI
                 listBoxChars.Items.Add(item.UnitName);
             }
 
+            foreach (var tem in _player.PrefChar)
+            {
+                listBoxChars.SelectedItems.Add(tem);
+            }
+
             comboBoxDifficulty.Items.Add("Very Easy (Level - 4)");
             comboBoxDifficulty.Items.Add("Easy (Level - 2)");
             comboBoxDifficulty.Items.Add("Normal (Level)");
@@ -93,7 +98,7 @@ namespace RPG.UI
             Function.SoundManager.PlayButtonSound();
             player.PrefDifficulty = comboBoxDifficulty.SelectedIndex;
             player.PrefChar.Clear();
-            foreach (var item in listBoxChars.Items)
+            foreach (var item in listBoxChars.SelectedItems)
             {
                 player.PrefChar.Add(item.ToString());
             }

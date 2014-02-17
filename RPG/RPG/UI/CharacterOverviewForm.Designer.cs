@@ -85,7 +85,7 @@
             this.labelAllClassesAbilities.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelAllClassesAbilities.Location = new System.Drawing.Point(306, 209);
             this.labelAllClassesAbilities.Name = "labelAllClassesAbilities";
-            this.labelAllClassesAbilities.Size = new System.Drawing.Size(236, 19);
+            this.labelAllClassesAbilities.Size = new System.Drawing.Size(265, 19);
             this.labelAllClassesAbilities.TabIndex = 0;
             this.labelAllClassesAbilities.Text = "all classes abilities:";
             this.labelAllClassesAbilities.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -94,9 +94,9 @@
             // 
             this.labelClassAbilities.BackColor = System.Drawing.Color.Transparent;
             this.labelClassAbilities.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelClassAbilities.Location = new System.Drawing.Point(551, 209);
+            this.labelClassAbilities.Location = new System.Drawing.Point(572, 209);
             this.labelClassAbilities.Name = "labelClassAbilities";
-            this.labelClassAbilities.Size = new System.Drawing.Size(236, 19);
+            this.labelClassAbilities.Size = new System.Drawing.Size(265, 19);
             this.labelClassAbilities.TabIndex = 1;
             this.labelClassAbilities.Text = "<Class> only:";
             this.labelClassAbilities.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -114,7 +114,7 @@
             this.groupBoxAllClasses.Controls.Add(this.checkBoxAll1);
             this.groupBoxAllClasses.Location = new System.Drawing.Point(306, 231);
             this.groupBoxAllClasses.Name = "groupBoxAllClasses";
-            this.groupBoxAllClasses.Size = new System.Drawing.Size(236, 265);
+            this.groupBoxAllClasses.Size = new System.Drawing.Size(265, 265);
             this.groupBoxAllClasses.TabIndex = 2;
             this.groupBoxAllClasses.TabStop = false;
             // 
@@ -123,12 +123,12 @@
             this.checkBoxAll8.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxAll8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxAll8.Enabled = false;
-            this.checkBoxAll8.Location = new System.Drawing.Point(122, 200);
+            this.checkBoxAll8.Location = new System.Drawing.Point(137, 200);
             this.checkBoxAll8.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxAll8.Name = "checkBoxAll8";
             this.checkBoxAll8.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxAll8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxAll8.Size = new System.Drawing.Size(103, 62);
+            this.checkBoxAll8.Size = new System.Drawing.Size(125, 62);
             this.checkBoxAll8.TabIndex = 7;
             this.checkBoxAll8.Text = "Locked\r\nLevel 57";
             this.checkBoxAll8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -141,12 +141,12 @@
             this.checkBoxAll7.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxAll7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxAll7.Enabled = false;
-            this.checkBoxAll7.Location = new System.Drawing.Point(122, 138);
+            this.checkBoxAll7.Location = new System.Drawing.Point(137, 138);
             this.checkBoxAll7.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxAll7.Name = "checkBoxAll7";
             this.checkBoxAll7.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxAll7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxAll7.Size = new System.Drawing.Size(103, 62);
+            this.checkBoxAll7.Size = new System.Drawing.Size(125, 62);
             this.checkBoxAll7.TabIndex = 6;
             this.checkBoxAll7.Text = "Locked\r\nLevel 50";
             this.checkBoxAll7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -159,12 +159,12 @@
             this.checkBoxAll6.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxAll6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxAll6.Enabled = false;
-            this.checkBoxAll6.Location = new System.Drawing.Point(122, 76);
+            this.checkBoxAll6.Location = new System.Drawing.Point(137, 76);
             this.checkBoxAll6.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxAll6.Name = "checkBoxAll6";
             this.checkBoxAll6.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxAll6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxAll6.Size = new System.Drawing.Size(103, 62);
+            this.checkBoxAll6.Size = new System.Drawing.Size(125, 62);
             this.checkBoxAll6.TabIndex = 5;
             this.checkBoxAll6.Text = "Locked\r\nLevel 40";
             this.checkBoxAll6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -177,12 +177,12 @@
             this.checkBoxAll5.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxAll5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxAll5.Enabled = false;
-            this.checkBoxAll5.Location = new System.Drawing.Point(121, 14);
+            this.checkBoxAll5.Location = new System.Drawing.Point(137, 14);
             this.checkBoxAll5.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxAll5.Name = "checkBoxAll5";
             this.checkBoxAll5.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxAll5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxAll5.Size = new System.Drawing.Size(103, 62);
+            this.checkBoxAll5.Size = new System.Drawing.Size(125, 62);
             this.checkBoxAll5.TabIndex = 4;
             this.checkBoxAll5.Text = "Locked\r\nLevel 30";
             this.checkBoxAll5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -195,12 +195,12 @@
             this.checkBoxAll4.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxAll4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxAll4.Enabled = false;
-            this.checkBoxAll4.Location = new System.Drawing.Point(14, 200);
+            this.checkBoxAll4.Location = new System.Drawing.Point(3, 200);
             this.checkBoxAll4.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxAll4.Name = "checkBoxAll4";
             this.checkBoxAll4.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxAll4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxAll4.Size = new System.Drawing.Size(103, 62);
+            this.checkBoxAll4.Size = new System.Drawing.Size(125, 62);
             this.checkBoxAll4.TabIndex = 3;
             this.checkBoxAll4.Text = "Locked\r\nLevel 20";
             this.checkBoxAll4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -213,12 +213,12 @@
             this.checkBoxAll3.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxAll3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxAll3.Enabled = false;
-            this.checkBoxAll3.Location = new System.Drawing.Point(12, 138);
+            this.checkBoxAll3.Location = new System.Drawing.Point(3, 138);
             this.checkBoxAll3.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxAll3.Name = "checkBoxAll3";
             this.checkBoxAll3.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxAll3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxAll3.Size = new System.Drawing.Size(103, 62);
+            this.checkBoxAll3.Size = new System.Drawing.Size(125, 62);
             this.checkBoxAll3.TabIndex = 2;
             this.checkBoxAll3.Text = "Locked\r\nLevel 10";
             this.checkBoxAll3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -231,12 +231,12 @@
             this.checkBoxAll2.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxAll2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxAll2.Enabled = false;
-            this.checkBoxAll2.Location = new System.Drawing.Point(12, 76);
+            this.checkBoxAll2.Location = new System.Drawing.Point(3, 76);
             this.checkBoxAll2.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxAll2.Name = "checkBoxAll2";
             this.checkBoxAll2.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxAll2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxAll2.Size = new System.Drawing.Size(103, 62);
+            this.checkBoxAll2.Size = new System.Drawing.Size(125, 62);
             this.checkBoxAll2.TabIndex = 1;
             this.checkBoxAll2.Text = "Locked\r\nLevel 5";
             this.checkBoxAll2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -249,12 +249,12 @@
             this.checkBoxAll1.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxAll1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxAll1.Enabled = false;
-            this.checkBoxAll1.Location = new System.Drawing.Point(14, 14);
+            this.checkBoxAll1.Location = new System.Drawing.Point(3, 14);
             this.checkBoxAll1.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxAll1.Name = "checkBoxAll1";
             this.checkBoxAll1.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxAll1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxAll1.Size = new System.Drawing.Size(103, 62);
+            this.checkBoxAll1.Size = new System.Drawing.Size(125, 62);
             this.checkBoxAll1.TabIndex = 0;
             this.checkBoxAll1.Text = "Locked\r\nLevel 1";
             this.checkBoxAll1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -273,9 +273,9 @@
             this.groupBoxClass.Controls.Add(this.checkBoxClass3);
             this.groupBoxClass.Controls.Add(this.checkBoxClass2);
             this.groupBoxClass.Controls.Add(this.checkBoxClass1);
-            this.groupBoxClass.Location = new System.Drawing.Point(551, 231);
+            this.groupBoxClass.Location = new System.Drawing.Point(572, 231);
             this.groupBoxClass.Name = "groupBoxClass";
-            this.groupBoxClass.Size = new System.Drawing.Size(236, 265);
+            this.groupBoxClass.Size = new System.Drawing.Size(265, 265);
             this.groupBoxClass.TabIndex = 3;
             this.groupBoxClass.TabStop = false;
             // 
@@ -284,12 +284,12 @@
             this.checkBoxClass8.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxClass8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxClass8.Enabled = false;
-            this.checkBoxClass8.Location = new System.Drawing.Point(122, 200);
+            this.checkBoxClass8.Location = new System.Drawing.Point(137, 200);
             this.checkBoxClass8.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxClass8.Name = "checkBoxClass8";
             this.checkBoxClass8.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxClass8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxClass8.Size = new System.Drawing.Size(103, 62);
+            this.checkBoxClass8.Size = new System.Drawing.Size(125, 62);
             this.checkBoxClass8.TabIndex = 8;
             this.checkBoxClass8.Text = "Locked\r\nLevel 60";
             this.checkBoxClass8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -302,12 +302,12 @@
             this.checkBoxClass7.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxClass7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxClass7.Enabled = false;
-            this.checkBoxClass7.Location = new System.Drawing.Point(122, 138);
+            this.checkBoxClass7.Location = new System.Drawing.Point(137, 138);
             this.checkBoxClass7.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxClass7.Name = "checkBoxClass7";
             this.checkBoxClass7.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxClass7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxClass7.Size = new System.Drawing.Size(103, 62);
+            this.checkBoxClass7.Size = new System.Drawing.Size(125, 62);
             this.checkBoxClass7.TabIndex = 7;
             this.checkBoxClass7.Text = "Locked\r\nLevel 55";
             this.checkBoxClass7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -320,12 +320,12 @@
             this.checkBoxClass6.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxClass6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxClass6.Enabled = false;
-            this.checkBoxClass6.Location = new System.Drawing.Point(122, 76);
+            this.checkBoxClass6.Location = new System.Drawing.Point(137, 76);
             this.checkBoxClass6.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxClass6.Name = "checkBoxClass6";
             this.checkBoxClass6.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxClass6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxClass6.Size = new System.Drawing.Size(103, 62);
+            this.checkBoxClass6.Size = new System.Drawing.Size(125, 62);
             this.checkBoxClass6.TabIndex = 6;
             this.checkBoxClass6.Text = "Locked\r\nLevel 45";
             this.checkBoxClass6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -338,12 +338,12 @@
             this.checkBoxClass5.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxClass5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxClass5.Enabled = false;
-            this.checkBoxClass5.Location = new System.Drawing.Point(122, 14);
+            this.checkBoxClass5.Location = new System.Drawing.Point(137, 14);
             this.checkBoxClass5.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxClass5.Name = "checkBoxClass5";
             this.checkBoxClass5.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxClass5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxClass5.Size = new System.Drawing.Size(103, 62);
+            this.checkBoxClass5.Size = new System.Drawing.Size(125, 62);
             this.checkBoxClass5.TabIndex = 5;
             this.checkBoxClass5.Text = "Locked\r\nLevel 35";
             this.checkBoxClass5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -356,12 +356,12 @@
             this.checkBoxClass4.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxClass4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxClass4.Enabled = false;
-            this.checkBoxClass4.Location = new System.Drawing.Point(14, 200);
+            this.checkBoxClass4.Location = new System.Drawing.Point(3, 200);
             this.checkBoxClass4.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxClass4.Name = "checkBoxClass4";
             this.checkBoxClass4.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxClass4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxClass4.Size = new System.Drawing.Size(103, 62);
+            this.checkBoxClass4.Size = new System.Drawing.Size(125, 62);
             this.checkBoxClass4.TabIndex = 4;
             this.checkBoxClass4.Text = "Locked\r\nLevel 25";
             this.checkBoxClass4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -374,12 +374,12 @@
             this.checkBoxClass3.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxClass3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxClass3.Enabled = false;
-            this.checkBoxClass3.Location = new System.Drawing.Point(14, 138);
+            this.checkBoxClass3.Location = new System.Drawing.Point(3, 138);
             this.checkBoxClass3.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxClass3.Name = "checkBoxClass3";
             this.checkBoxClass3.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxClass3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxClass3.Size = new System.Drawing.Size(103, 62);
+            this.checkBoxClass3.Size = new System.Drawing.Size(125, 62);
             this.checkBoxClass3.TabIndex = 3;
             this.checkBoxClass3.Text = "Locked\r\nLevel 15";
             this.checkBoxClass3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -392,12 +392,12 @@
             this.checkBoxClass2.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxClass2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxClass2.Enabled = false;
-            this.checkBoxClass2.Location = new System.Drawing.Point(14, 76);
+            this.checkBoxClass2.Location = new System.Drawing.Point(3, 76);
             this.checkBoxClass2.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxClass2.Name = "checkBoxClass2";
             this.checkBoxClass2.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxClass2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxClass2.Size = new System.Drawing.Size(103, 62);
+            this.checkBoxClass2.Size = new System.Drawing.Size(125, 62);
             this.checkBoxClass2.TabIndex = 2;
             this.checkBoxClass2.Text = "Locked\r\nLevel 8";
             this.checkBoxClass2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -410,12 +410,12 @@
             this.checkBoxClass1.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxClass1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBoxClass1.Enabled = false;
-            this.checkBoxClass1.Location = new System.Drawing.Point(14, 14);
+            this.checkBoxClass1.Location = new System.Drawing.Point(3, 14);
             this.checkBoxClass1.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxClass1.Name = "checkBoxClass1";
             this.checkBoxClass1.Padding = new System.Windows.Forms.Padding(3);
             this.checkBoxClass1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxClass1.Size = new System.Drawing.Size(103, 62);
+            this.checkBoxClass1.Size = new System.Drawing.Size(125, 62);
             this.checkBoxClass1.TabIndex = 1;
             this.checkBoxClass1.Text = "Locked\r\nLevel 2";
             this.checkBoxClass1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -435,7 +435,7 @@
             this.btDone.ForeColor = System.Drawing.Color.Yellow;
             this.btDone.Location = new System.Drawing.Point(428, 502);
             this.btDone.Name = "btDone";
-            this.btDone.Size = new System.Drawing.Size(359, 29);
+            this.btDone.Size = new System.Drawing.Size(409, 29);
             this.btDone.TabIndex = 32;
             this.btDone.Text = "Done";
             this.btDone.UseVisualStyleBackColor = false;
@@ -601,7 +601,7 @@
             this.labelAttributesHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelAttributesHeader.Location = new System.Drawing.Point(304, 10);
             this.labelAttributesHeader.Name = "labelAttributesHeader";
-            this.labelAttributesHeader.Size = new System.Drawing.Size(481, 20);
+            this.labelAttributesHeader.Size = new System.Drawing.Size(533, 20);
             this.labelAttributesHeader.TabIndex = 48;
             this.labelAttributesHeader.Text = "Attributes:";
             this.labelAttributesHeader.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -624,7 +624,7 @@
             this.labelBackgroundIGNORE.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelBackgroundIGNORE.Location = new System.Drawing.Point(0, 0);
             this.labelBackgroundIGNORE.Name = "labelBackgroundIGNORE";
-            this.labelBackgroundIGNORE.Size = new System.Drawing.Size(795, 537);
+            this.labelBackgroundIGNORE.Size = new System.Drawing.Size(843, 537);
             this.labelBackgroundIGNORE.TabIndex = 49;
             // 
             // labelBaseAttributesHeader
@@ -642,7 +642,7 @@
             // 
             this.labelBuffedAttributesHeader.BackColor = System.Drawing.Color.Transparent;
             this.labelBuffedAttributesHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelBuffedAttributesHeader.Location = new System.Drawing.Point(619, 38);
+            this.labelBuffedAttributesHeader.Location = new System.Drawing.Point(670, 35);
             this.labelBuffedAttributesHeader.Name = "labelBuffedAttributesHeader";
             this.labelBuffedAttributesHeader.Size = new System.Drawing.Size(167, 20);
             this.labelBuffedAttributesHeader.TabIndex = 52;
@@ -654,7 +654,7 @@
             this.labelBuffedAttributes.BackColor = System.Drawing.Color.Transparent;
             this.labelBuffedAttributes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelBuffedAttributes.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBuffedAttributes.Location = new System.Drawing.Point(619, 69);
+            this.labelBuffedAttributes.Location = new System.Drawing.Point(670, 66);
             this.labelBuffedAttributes.Name = "labelBuffedAttributes";
             this.labelBuffedAttributes.Size = new System.Drawing.Size(167, 140);
             this.labelBuffedAttributes.TabIndex = 51;
@@ -666,7 +666,7 @@
             this.labelLevelAttribute.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLevelAttribute.Location = new System.Drawing.Point(476, 94);
             this.labelLevelAttribute.Name = "labelLevelAttribute";
-            this.labelLevelAttribute.Size = new System.Drawing.Size(138, 86);
+            this.labelLevelAttribute.Size = new System.Drawing.Size(188, 86);
             this.labelLevelAttribute.TabIndex = 53;
             // 
             // btAddToAttribute
@@ -681,7 +681,7 @@
             this.btAddToAttribute.ForeColor = System.Drawing.Color.Yellow;
             this.btAddToAttribute.Location = new System.Drawing.Point(476, 38);
             this.btAddToAttribute.Name = "btAddToAttribute";
-            this.btAddToAttribute.Size = new System.Drawing.Size(138, 23);
+            this.btAddToAttribute.Size = new System.Drawing.Size(188, 23);
             this.btAddToAttribute.TabIndex = 54;
             this.btAddToAttribute.Text = "Increase Attribute";
             this.btAddToAttribute.UseVisualStyleBackColor = false;
@@ -713,7 +713,7 @@
             this.comboBoxAttributes.FormattingEnabled = true;
             this.comboBoxAttributes.Location = new System.Drawing.Point(476, 72);
             this.comboBoxAttributes.Name = "comboBoxAttributes";
-            this.comboBoxAttributes.Size = new System.Drawing.Size(139, 21);
+            this.comboBoxAttributes.Size = new System.Drawing.Size(188, 21);
             this.comboBoxAttributes.TabIndex = 56;
             // 
             // btResetStats
@@ -728,7 +728,7 @@
             this.btResetStats.ForeColor = System.Drawing.Color.Yellow;
             this.btResetStats.Location = new System.Drawing.Point(475, 183);
             this.btResetStats.Name = "btResetStats";
-            this.btResetStats.Size = new System.Drawing.Size(138, 23);
+            this.btResetStats.Size = new System.Drawing.Size(189, 23);
             this.btResetStats.TabIndex = 57;
             this.btResetStats.Text = "Reset Attributes";
             this.btResetStats.UseVisualStyleBackColor = false;
@@ -739,7 +739,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(795, 537);
+            this.ClientSize = new System.Drawing.Size(843, 537);
             this.Controls.Add(this.btResetStats);
             this.Controls.Add(this.comboBoxAttributes);
             this.Controls.Add(this.btAutoLevel);
