@@ -126,16 +126,18 @@ namespace RPG.Core.Abilities
         {
             double critModifier = Function.CombatHandler.CritCalculator(_caster.UnitLevel, _caster.BuffedCrit.IntValue);
             int heal = (int)(_caster.UnitLevel * critModifier);
+            int index = alliesIndexes[0];
 
-            if ((_caster.CurrentHP.IntValue + (int)(heal) > _caster.BuffedHP.IntValue))
-                _caster.CurrentHP.IntValue = _caster.BuffedHP.IntValue;
+
+            if ((_allies[index].CurrentHP.IntValue + (int)(heal) > _allies[index].BuffedHP.IntValue))
+                _allies[index].CurrentHP.IntValue = _allies[index].BuffedHP.IntValue;
             else
-                _caster.CurrentHP.IntValue += (int)(heal);
+                _allies[index].CurrentHP.IntValue += (int)(heal);
 
             if (critModifier == 1.0)
-                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _caster.UnitName + " healing for " + heal + "!";
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _allies[index].UnitName + " healing for " + heal + "!";
             else
-                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _caster.UnitName + " critically healing for " + heal + "!";
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _allies[index].UnitName + " critically healing for " + heal + "!";
         }
     }
 
@@ -163,37 +165,53 @@ namespace RPG.Core.Abilities
 
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _target)
         {
-            if (!_caster.UnitBuffsAndDebuffs.Any(x => x.AbilityName == "Empowered"))
+            int index = alliesIndexes[0];
+
+            if (!_allies[index].UnitBuffsAndDebuffs.Any(x => x.AbilityName == "Empowered"))
             {
-                _caster.UnitBuffsAndDebuffs.Add(new Empowered(_caster, null, null, null, EnumAbilityClassReq.ANY));
-                int stat = _caster.BuffedStrength.IntValue;
-                EnumAttributeType type = EnumAttributeType.Strength;
+                _allies[index].UnitBuffsAndDebuffs.Add(new Empowered(_allies[index], null, null, null, EnumAbilityClassReq.ANY));
+                int statCaster = _caster.BuffedStrength.IntValue;
+                int statTarget = _allies[index].BuffedStrength.IntValue;
+                EnumAttributeType typeCaster = EnumAttributeType.Strength;
+                EnumAttributeType typeTarget = EnumAttributeType.Strength;
 
-                if (_caster.BuffedAgility.IntValue > stat)
+                if (_caster.BuffedAgility.IntValue > statCaster)
                 {
-                    stat = _caster.BuffedAgility.IntValue;
-                    type = EnumAttributeType.Agility;
+                    statCaster = _caster.BuffedAgility.IntValue;
+                    typeCaster = EnumAttributeType.Agility;
                 }
 
-                if (_caster.BuffedIntellingence.IntValue > stat)
+                if (_caster.BuffedIntellingence.IntValue > statCaster)
                 {
-                    stat = _caster.BuffedIntellingence.IntValue;
-                    type = EnumAttributeType.Intellect;
+                    statCaster = _caster.BuffedIntellingence.IntValue;
+                    typeCaster = EnumAttributeType.Intellect;
                 }
 
-                switch (type)
+                if (_allies[index].BuffedAgility.IntValue > statTarget)
+                {
+                    statTarget = _caster.BuffedAgility.IntValue;
+                    typeTarget = EnumAttributeType.Agility;
+                }
+
+                if (_allies[index].BuffedIntellingence.IntValue > statTarget)
+                {
+                    statTarget = _caster.BuffedIntellingence.IntValue;
+                    typeTarget = EnumAttributeType.Intellect;
+                }
+
+                switch (typeTarget)
                 {
                     case EnumAttributeType.Strength:
-                        _caster.BuffedStrength.IntValue += (int)(stat * 0.2);
-                        _caster.BuffedHP.IntValue += (int)(stat * 0.2 * 0.3);
+                        _allies[index].BuffedStrength.IntValue += (int)(statCaster * 0.2);
+                        _allies[index].BuffedHP.IntValue += (int)(statCaster * 0.2 * 0.3);
                         break;
                     case EnumAttributeType.Agility:
-                        _caster.BuffedAgility.IntValue += (int)(stat * 0.2);
-                        _caster.BuffedSpeed.IntValue += (int)(stat * 0.2 * 0.3);
+                        _allies[index].BuffedAgility.IntValue += (int)(statCaster * 0.2);
+                        _allies[index].BuffedSpeed.IntValue += (int)(statCaster * 0.2 * 0.3);
                         break;
                     case EnumAttributeType.Intellect:
-                        _caster.BuffedIntellingence.IntValue += (int)(stat * 0.2);
-                        _caster.BuffedCrit.IntValue += (int)(stat * 0.2 * 0.3);
+                        _allies[index].BuffedIntellingence.IntValue += (int)(statCaster * 0.2);
+                        _allies[index].BuffedCrit.IntValue += (int)(statCaster * 0.2 * 0.3);
                         break;
                     case EnumAttributeType.Health:
                         break;
@@ -207,11 +225,11 @@ namespace RPG.Core.Abilities
                         break;
                 }
 
-                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing " + type.ToString().ToLower() + " by " + (int)(stat * 0.2) + "!";
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " (" + typeCaster + "), increasing " + typeTarget.ToString().ToLower() + " of " + _allies[index].UnitName + " by " + (int)(statCaster * 0.2) + "!";
             }
             else
             {
-                this.ChatString = _caster.UnitName + " is already affected by " + this.AbilityName + "!";
+                this.ChatString = _allies[index].UnitName + " is already affected by " + this.AbilityName + "!";
                 _caster.CurrentTurnPoints.IntValue += this.TurnPointCost;
             }
         }
@@ -241,9 +259,10 @@ namespace RPG.Core.Abilities
 
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _target)
         {
-            if (!_caster.UnitBuffsAndDebuffs.Any(x => x.AbilityName == "Invigorated"))
+            int index = alliesIndexes[0];
+            if (!_allies[index].UnitBuffsAndDebuffs.Any(x => x.AbilityName == "Invigorated"))
             {
-                _caster.UnitBuffsAndDebuffs.Add(new Invigorated(_caster, null, null, null, EnumAbilityClassReq.ANY));
+                _allies[index].UnitBuffsAndDebuffs.Add(new Invigorated(_allies[index], null, null, null, EnumAbilityClassReq.ANY));
                 int stat = _caster.BuffedStrength.IntValue;
 
                 if (_caster.BuffedAgility.IntValue > stat)
@@ -253,13 +272,13 @@ namespace RPG.Core.Abilities
                     stat = _caster.BuffedIntellingence.IntValue;
 
 
-                _caster.BuffedHP.IntValue += (int)(stat * 0.2);
+                _allies[index].BuffedHP.IntValue += (int)(stat * 0.2);
 
-                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing maxmimum health by " + (int)(stat * 0.2) + "!";
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _allies[index].UnitName + ", increasing maxmimum health by " + (int)(stat * 0.2) + "!";
             }
             else
             {
-                this.ChatString = _caster.UnitName + " is already affected by " + this.AbilityName + "!";
+                this.ChatString = _allies[index].UnitName + " is already affected by " + this.AbilityName + "!";
                 _caster.CurrentTurnPoints.IntValue += this.TurnPointCost;
             }
         }
@@ -325,9 +344,10 @@ namespace RPG.Core.Abilities
 
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _target)
         {
-            if (!_caster.UnitBuffsAndDebuffs.Any(x => x.AbilityName == "Oportunist"))
+            int index = alliesIndexes[0];
+            if (!_allies[index].UnitBuffsAndDebuffs.Any(x => x.AbilityName == "Oportunist"))
             {
-                _caster.UnitBuffsAndDebuffs.Add(new Oportunist(_caster, null, null, null, EnumAbilityClassReq.ANY));
+                _allies[index].UnitBuffsAndDebuffs.Add(new Oportunist(_allies[index], null, null, null, EnumAbilityClassReq.ANY));
                 Random r = new Random();
                 EnumAttributeType type = EnumAttributeType.Agility;
                 int buff = 0;
@@ -335,32 +355,32 @@ namespace RPG.Core.Abilities
                 switch (r.Next(0,2))
                 {
                     case 0:
-                        buff = (int)(_caster.BuffedAgility.IntValue * 0.5);
-                        _caster.BuffedAgility.IntValue += buff;
-                        _caster.BuffedSpeed.IntValue += (int)(buff * 0.3);
+                        buff = (int)(_allies[index].BuffedAgility.IntValue * 0.5);
+                        _allies[index].BuffedAgility.IntValue += buff;
+                        _allies[index].BuffedSpeed.IntValue += (int)(buff * 0.3);
                         type = EnumAttributeType.Agility;
                         break;
                     case 1:
-                        buff = (int)(_caster.BuffedIntellingence.IntValue * 0.5);
-                        _caster.BuffedIntellingence.IntValue += buff;
-                        _caster.BuffedCrit.IntValue += (int)(buff * 0.3);
+                        buff = (int)(_allies[index].BuffedIntellingence.IntValue * 0.5);
+                        _allies[index].BuffedIntellingence.IntValue += buff;
+                        _allies[index].BuffedCrit.IntValue += (int)(buff * 0.3);
                         type = EnumAttributeType.Intellect;
                         break;
                     case 2:
-                        buff = (int)(_caster.BuffedStrength.IntValue * 0.5);
-                        _caster.BuffedStrength.IntValue += buff;
-                        _caster.BuffedHP.IntValue += (int)(buff * 0.3);
+                        buff = (int)(_allies[index].BuffedStrength.IntValue * 0.5);
+                        _allies[index].BuffedStrength.IntValue += buff;
+                        _allies[index].BuffedHP.IntValue += (int)(buff * 0.3);
                         type = EnumAttributeType.Strength;
                         break;
                     default:
                         break;
                 }
 
-                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + ", increasing " + type.ToString().ToLower() + " by " + buff + "!";
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _allies[index].UnitName + ", increasing " + type.ToString().ToLower() + " by " + buff + "!";
             }
             else
             {
-                this.ChatString = _caster.UnitName + " is already affected by " + this.AbilityName + "!";
+                this.ChatString = _allies[index].UnitName + " is already affected by " + this.AbilityName + "!";
                 _caster.CurrentTurnPoints.IntValue += this.TurnPointCost;
             }
         }
@@ -426,24 +446,25 @@ namespace RPG.Core.Abilities
 
         public override void UseAbility(Units.Character _caster, List<Units.Character> _allies, List<int> alliesIndexes, Units.NPC _target)
         {
-            if (!_caster.UnitBuffsAndDebuffs.Any(x => x.AbilityName == "Ascended"))
+            int index = alliesIndexes[0];
+            if (!_allies[index].UnitBuffsAndDebuffs.Any(x => x.AbilityName == "Ascended"))
             {
-                _caster.UnitBuffsAndDebuffs.Add(new Ascended(_caster, null, null, null, EnumAbilityClassReq.ANY));
-                _caster.BuffedAttackDamage.IntValue += 15;
-                _caster.BuffedAgility.IntValue += 15;
-                _caster.BuffedHP.IntValue += 15;
-                _caster.BuffedIntellingence.IntValue += 15;
-                _caster.BuffedStrength.IntValue += 15;
+                _allies[index].UnitBuffsAndDebuffs.Add(new Ascended(_allies[index], null, null, null, EnumAbilityClassReq.ANY));
+                _allies[index].BuffedAttackDamage.IntValue += 15;
+                _allies[index].BuffedAgility.IntValue += 15;
+                _allies[index].BuffedHP.IntValue += 15;
+                _allies[index].BuffedIntellingence.IntValue += 15;
+                _allies[index].BuffedStrength.IntValue += 15;
 
-                _caster.BuffedHP.IntValue += (int)(15*0.3);
-                _caster.BuffedSpeed.IntValue += (int)(15 * 0.3);
-                _caster.BuffedCrit.IntValue += (int)(15 * 0.3);
+                _allies[index].BuffedHP.IntValue += (int)(15 * 0.3);
+                _allies[index].BuffedSpeed.IntValue += (int)(15 * 0.3);
+                _allies[index].BuffedCrit.IntValue += (int)(15 * 0.3);
 
-                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " increasing all stats by 15!";
+                this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _allies[index].UnitName + " increasing all stats by 15!";
             }
             else
             {
-                this.ChatString = _caster.UnitName + " is already affected by " + this.AbilityName + "!";
+                this.ChatString = _allies[index].UnitName + " is already affected by " + this.AbilityName + "!";
                 _caster.CurrentTurnPoints.IntValue += this.TurnPointCost;
             }
         }

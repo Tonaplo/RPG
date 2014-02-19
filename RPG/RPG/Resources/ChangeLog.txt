@@ -19,6 +19,16 @@
 		  to a (was all) character!". Monsters with "Desperation" were unkillable by parties.
 
 	- Classes:
+		- All:
+			- All of the shared class buffing abilities were changed to be able to target allies:
+				- "Ascend": "Increases all of the targets (was units) stats by 15, including max health
+				  and attack."
+				- "Battle Regeneration": "Heals the target (was caster) for 100% of the casters level."
+				- "Empowerment": "Increase the highest stat of the target (was caster) by 20% of the 
+				  casters highest stat."
+				- "Invigorate": "Increase the maximum health of the target by 20% of the casters highest stat."
+				- "Opportunity": "Increases a random of your targets (was your) stats by 50%."
+
 		- Thief: 
 			- "Copycat" was removed and replaced with "Poisoned Blade":
 			- Poisoned Blade: "Deals 140% of the Thiefs Attack and 75% of his Agility in damage."

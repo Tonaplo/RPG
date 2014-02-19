@@ -70,7 +70,7 @@ namespace RPG.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Heals the caster for 100% of the casters level..
+        ///   Looks up a localized string similar to Heals the target for 100% of the casters level..
         /// </summary>
         internal static string AbilitiesDescriptionAnyBattleRegeneration {
             get {
@@ -88,7 +88,7 @@ namespace RPG.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Increase the highest stat of the caster by 20%..
+        ///   Looks up a localized string similar to Increase the highest stat of the target by 20% of the casters highest stat..
         /// </summary>
         internal static string AbilitiesDescriptionAnyEmpowerment {
             get {
@@ -97,7 +97,7 @@ namespace RPG.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Increase the maximum health of the caster by 20% of the casters highest stat..
+        ///   Looks up a localized string similar to Increase the maximum health of the target by 20% of the casters highest stat..
         /// </summary>
         internal static string AbilitiesDescriptionAnyInvigorate {
             get {
@@ -115,7 +115,7 @@ namespace RPG.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Increases a random of your stats by 50%..
+        ///   Looks up a localized string similar to Increases a random of your targets stats by 50%..
         /// </summary>
         internal static string AbilitiesDescriptionAnyOpportunity {
             get {
@@ -1174,7 +1174,7 @@ namespace RPG.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Version 0.1.4.3 (13/02-2014):
+        ///   Looks up a localized string similar to Version 0.1.4.6 (13/02-2014):
         ///
         ///	- General:
         ///		- The game was named! It is now called:
@@ -1184,10 +1184,9 @@ namespace RPG.Properties {
         ///		- A new game mode was added! You can now play with multiple of your characters against the computer!
         ///		- The UI has not be rewamped completely, but certain elements have been significantly improved!
         ///		- The bug with text being out of place has been fixed.
-        ///
-        ///	- Monsters:
-        ///		- Monster AI&apos;s were modified to take into account how many players it is battling against.
-        ///		- &quot;Desperation&quot; was [rest of string was truncated]&quot;;.
+        ///		- Fixed a bug where the game would crash when the player lost a battle to a &quot;Fireball&quot; or a
+        ///		  &quot;Atonement Smite&quot; opponent.
+        ///		- [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ChangeLog {
             get {

@@ -242,22 +242,22 @@
     <value>Increases all of the units stats by 15, including max health and attack.</value>
   </data>
   <data name="AbilitiesDescriptionAnyBattleRegeneration" xml:space="preserve">
-    <value>Heals the caster for 100% of the casters level.</value>
+    <value>Heals the target for 100% of the casters level.</value>
   </data>
   <data name="AbilitiesDescriptionAnyDoubleSwing" xml:space="preserve">
     <value>Deal damage equal to 315% of the units attack.</value>
   </data>
   <data name="AbilitiesDescriptionAnyEmpowerment" xml:space="preserve">
-    <value>Increase the highest stat of the caster by 20%.</value>
+    <value>Increase the highest stat of the target by 20% of the casters highest stat.</value>
   </data>
   <data name="AbilitiesDescriptionAnyInvigorate" xml:space="preserve">
-    <value>Increase the maximum health of the caster by 20% of the casters highest stat.</value>
+    <value>Increase the maximum health of the target by 20% of the casters highest stat.</value>
   </data>
   <data name="AbilitiesDescriptionAnyMeleeAttack" xml:space="preserve">
     <value>Deal damage to the target for 100% of the units attack.</value>
   </data>
   <data name="AbilitiesDescriptionAnyOpportunity" xml:space="preserve">
-    <value>Increases a random of your stats by 50%.</value>
+    <value>Increases a random of your targets stats by 50%.</value>
   </data>
   <data name="AbilitiesDescriptionAnyTotalitarism" xml:space="preserve">
     <value>Deals all of the units stats combined in damage.</value>
