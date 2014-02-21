@@ -46,7 +46,7 @@
             this.btHowToPlay.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btHowToPlay.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btHowToPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btHowToPlay.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btHowToPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btHowToPlay.ForeColor = System.Drawing.Color.Yellow;
             this.btHowToPlay.Location = new System.Drawing.Point(12, 12);
             this.btHowToPlay.Name = "btHowToPlay";
@@ -64,7 +64,7 @@
             this.btFAQ.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btFAQ.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btFAQ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btFAQ.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btFAQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btFAQ.ForeColor = System.Drawing.Color.Yellow;
             this.btFAQ.Location = new System.Drawing.Point(600, 12);
             this.btFAQ.Name = "btFAQ";
@@ -82,14 +82,15 @@
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Yellow;
             this.button2.Location = new System.Drawing.Point(798, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(190, 30);
             this.button2.TabIndex = 13;
-            this.button2.Text = "Support";
+            this.button2.Text = "Bug/Suggestion Report";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btUpcomming
             // 
@@ -99,7 +100,7 @@
             this.btUpcomming.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btUpcomming.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btUpcomming.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btUpcomming.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btUpcomming.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btUpcomming.ForeColor = System.Drawing.Color.Yellow;
             this.btUpcomming.Location = new System.Drawing.Point(404, 12);
             this.btUpcomming.Name = "btUpcomming";
@@ -117,7 +118,7 @@
             this.btChangeLog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btChangeLog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btChangeLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btChangeLog.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btChangeLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btChangeLog.ForeColor = System.Drawing.Color.Yellow;
             this.btChangeLog.Location = new System.Drawing.Point(208, 12);
             this.btChangeLog.Name = "btChangeLog";
@@ -135,7 +136,7 @@
             this.btDone.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btDone.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btDone.Font = new System.Drawing.Font("Pericles", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btDone.ForeColor = System.Drawing.Color.Yellow;
             this.btDone.Location = new System.Drawing.Point(12, 662);
             this.btDone.Name = "btDone";

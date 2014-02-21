@@ -276,6 +276,27 @@ namespace RPG.Function
 
         #endregion
 
+        public static void OpenFeedbackWindow()
+        {
+            string target = "https://docs.google.com/forms/d/16gp7xTZvtP6zsQ9UwheVaeVm3hP7zlt9hq2ufDsZSZY/viewform";
+
+            try
+            {
+                System.Diagnostics.Process.Start(target);
+            }
+            catch
+                (
+                 System.ComponentModel.Win32Exception noBrowser)
+            {
+                if (noBrowser.ErrorCode == -2147467259)
+                    System.Windows.MessageBox.Show(noBrowser.Message);
+            }
+            catch (System.Exception other)
+            {
+                System.Windows.MessageBox.Show(other.Message);
+            }
+        }
+
         public static void ConnectToDatabase()
         {
 

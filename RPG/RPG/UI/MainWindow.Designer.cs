@@ -46,6 +46,7 @@
             this.bnOptions = new System.Windows.Forms.Button();
             this.flpQuestBar = new System.Windows.Forms.FlowLayoutPanel();
             this.labelQuestBar = new System.Windows.Forms.Label();
+            this.labelDust = new System.Windows.Forms.Label();
             this.flpQuestBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -293,7 +294,7 @@
             this.labelCurrentItem.ForeColor = System.Drawing.Color.Yellow;
             this.labelCurrentItem.Location = new System.Drawing.Point(641, 611);
             this.labelCurrentItem.Name = "labelCurrentItem";
-            this.labelCurrentItem.Size = new System.Drawing.Size(353, 96);
+            this.labelCurrentItem.Size = new System.Drawing.Size(187, 96);
             this.labelCurrentItem.TabIndex = 27;
             this.labelCurrentItem.Text = "Nothing Selected!";
             this.labelCurrentItem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -343,12 +344,25 @@
             this.labelQuestBar.TabIndex = 0;
             this.labelQuestBar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // labelDust
+            // 
+            this.labelDust.BackColor = System.Drawing.Color.Transparent;
+            this.labelDust.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDust.ForeColor = System.Drawing.Color.Yellow;
+            this.labelDust.Location = new System.Drawing.Point(822, 608);
+            this.labelDust.Name = "labelDust";
+            this.labelDust.Size = new System.Drawing.Size(166, 96);
+            this.labelDust.TabIndex = 30;
+            this.labelDust.Text = "This item would give xx dust.\r\n\r\nYou currently have yy dust.";
+            this.labelDust.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1000, 766);
+            this.Controls.Add(this.labelDust);
             this.Controls.Add(this.flpQuestBar);
             this.Controls.Add(this.bnOptions);
             this.Controls.Add(this.labelCurrentItem);
@@ -400,6 +414,7 @@
         private System.Windows.Forms.Button bnOptions;
         private System.Windows.Forms.FlowLayoutPanel flpQuestBar;
         private System.Windows.Forms.Label labelQuestBar;
+        private System.Windows.Forms.Label labelDust;
     }
 }
 

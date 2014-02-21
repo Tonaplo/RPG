@@ -1174,7 +1174,7 @@ namespace RPG.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Version 0.1.4.6 (13/02-2014):
+        ///   Looks up a localized string similar to Version 0.1.4.7 (20/02-2014):
         ///
         ///	- General:
         ///		- The game was named! It is now called:
@@ -1183,10 +1183,9 @@ namespace RPG.Properties {
         ///
         ///		- A new game mode was added! You can now play with multiple of your characters against the computer!
         ///		- The UI has not be rewamped completely, but certain elements have been significantly improved!
+        ///		- You can now see how much Dust an item would give if disenchanted and how much dust you have now.
         ///		- The bug with text being out of place has been fixed.
-        ///		- Fixed a bug where the game would crash when the player lost a battle to a &quot;Fireball&quot; or a
-        ///		  &quot;Atonement Smite&quot; opponent.
-        ///		- [rest of string was truncated]&quot;;.
+        ///		- Fixed a bug where the gam [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ChangeLog {
             get {
@@ -1209,6 +1208,60 @@ namespace RPG.Properties {
         internal static string DaggerNames {
             get {
                 return ResourceManager.GetString("DaggerNames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A protector of the weak, he deals damage and heals based on his health. His abilities are based on Strength, Agility and Health..
+        /// </summary>
+        internal static string DescriptionCaretaker {
+            get {
+                return ResourceManager.GetString("DescriptionCaretaker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A crusader of the church, he focuses on healing while dealing damage. His abilities are based on Strength and Intellect..
+        /// </summary>
+        internal static string DescriptionPaladin {
+            get {
+                return ResourceManager.GetString("DescriptionPaladin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A cunning and agile equilibrium, she always seeks to perfect balance between stats to deal devasteting damage to enemies. Her abilities are based on Agility and Intellect..
+        /// </summary>
+        internal static string DescriptionSynergist {
+            get {
+                return ResourceManager.GetString("DescriptionSynergist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Working in a shadows, the Thief deales damage with his quickness and &apos;&apos;borrows&apos;&apos; equipment from his allies. His abilities are based on Agility and Attack..
+        /// </summary>
+        internal static string DescriptionThief {
+            get {
+                return ResourceManager.GetString("DescriptionThief", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A torrent of fury, dealing uncontrollable damage to whatever is around him. His abilities are based on Strength and Attack..
+        /// </summary>
+        internal static string DescriptionWarrior {
+            get {
+                return ResourceManager.GetString("DescriptionWarrior", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An enigma of power, who deals great amounts of magical damage or heals grivieus wounds. Her abilities are based on Intellect..
+        /// </summary>
+        internal static string DescriptionWizard {
+            get {
+                return ResourceManager.GetString("DescriptionWizard", resourceCulture);
             }
         }
         

@@ -301,18 +301,28 @@ namespace RPG.Function
             }
         }
 
-        public static int ReturnExtraDust(Item _item)
+        public static int ReturnDust(Item _item)
         {
+            int dust = (_item.ItemLevel / 10);
+            int stats = 0;
+
+            foreach (var item in _item.stats)
+            {
+                stats += item.IntValue;
+            }
+
             if (_item.ItemQuality == EnumItemQuality.Normal)
-                return 0;
+                dust += (int)(stats * 0.03) + 2;
             if (_item.ItemQuality == EnumItemQuality.Grand)
-                return 1;
+                dust += (int)(stats * 0.05) + 3;
             if (_item.ItemQuality == EnumItemQuality.Fabled)
-                return 1;
+                dust += (int)(stats * 0.07) + 4;
             if (_item.ItemQuality == EnumItemQuality.Epochal)
-                return 5;
+                dust += (int)(stats*0.1) + 5;
             else
-                return 0;
+                dust += (int)(stats * 1);
+
+            return dust;
         }
     }
 

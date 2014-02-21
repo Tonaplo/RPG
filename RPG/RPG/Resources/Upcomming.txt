@@ -2,8 +2,6 @@ This tab presents planned changes to the game, that has not yet been implemented
 
 	- Finish up the support tab with facts about the game and instructions on how to play.
 
-	- Use the last "Support" button to  open the webpage for bug reporting.
-
 	- Add "Zones" where the player can battle in.
 
 	- I have an idea of how to save data on the server, rendering local copies useless.
@@ -19,6 +17,8 @@ This tab presents planned changes to the game, that has not yet been implemented
 
 	- Add more icons and graphics.
 
+	- Add achievements to the game.
+
 	- Add a BOSS difficulty to choose from.
 
 	- Add more NPCAIs to the game.
@@ -33,9 +33,7 @@ This tab presents planned changes to the game, that has not yet been implemented
 		- Add Animations of characters hitting NPCs and vice versa.
 	  Currently, DirectX errores during installment on all development computers.
 
-	- Add Buffs and Debuffs to the game.
+	- Add more Buffs and Debuffs to the game.
 		- Adjust Abilities so there are more buffing abilities, heal over time or likewise.
 
 Known bugs:
-
-	- Using buffs on other characters in a battle causes a wrong hover text.

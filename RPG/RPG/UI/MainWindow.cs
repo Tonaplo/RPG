@@ -40,11 +40,11 @@ namespace RPG
             playerlist = _playerlist;
             this.BackgroundImage = GeneralFunctions.ResizeImage(Properties.Resources.background, labelBackgroundIGNORE.Size);
 
-            this.richTextBoxActionbox.Text =   "Welcome to The Legend of Eiwar" + Environment.NewLine +
+            this.richTextBoxActionbox.Text = "Welcome to The Legend of Eiwar" + Environment.NewLine +
                                                 "Version : " + ServerManagement.GetRunningVersion() + Environment.NewLine + Environment.NewLine +
                                                 "Click the support tab to instructions on how to play and to see changes!" + Environment.NewLine +
-                                                "If you find a bug or believe there is a balance issue in the game, please report this with the " +
-                                                "following link: https://docs.google.com/forms/d/15iHbzt2H74AGrO3oVzdlIc08Q1vP3_cegFcdOmP02Hk/viewform" + Environment.NewLine; 
+                                                "If you find a bug or believe there is a balance issue in the game, please report this by pressing " +
+                                                "the ''Support'' button and using the ''Bug/Suggestion Report'' function.";
 
             listBoxInventory.DataSource = player.InventoryOfPlayer;
             listBoxInventory.DisplayMember = "ItemName";
@@ -72,6 +72,7 @@ namespace RPG
             }
 
             UpdateQuestVisual();
+            UpdateDustLabel();
         }
 
         #region Functions
@@ -129,6 +130,20 @@ namespace RPG
             listBoxInventory.DataSource = this.player.InventoryOfPlayer;
             listBoxInventory.DisplayMember = "InventoryDisplay";
             listBoxInventory.Refresh();
+            UpdateDustLabel();
+        }
+
+        private void UpdateDustLabel()
+        {
+            string ifSelectedItem = "";
+            if (listBoxInventory.SelectedIndex != -1)
+            {
+                int index = listBoxInventory.SelectedIndex;
+                var currentItem = this.player.InventoryOfPlayer[index];
+                ifSelectedItem = "This item would grant you " + GeneralFunctions.ReturnDust(currentItem) + " dust." + Environment.NewLine + Environment.NewLine;
+            }
+
+            labelDust.Text = ifSelectedItem + "You currently have " + this.player.Dust + " dust.";
         }
 
         private void NewPlayer()
@@ -454,7 +469,7 @@ namespace RPG
             if (listBoxInventory.SelectedItem != null)
             {
                 int temp = listBoxInventory.SelectedIndex;
-                this.player.Dust += (this.player.InventoryOfPlayer[temp].ItemLevel / 10) + 1 + GeneralFunctions.ReturnExtraDust(this.player.InventoryOfPlayer[temp]);
+                this.player.Dust += GeneralFunctions.ReturnDust(this.player.InventoryOfPlayer[temp]);
                 this.player.InventoryOfPlayer.Remove(this.player.InventoryOfPlayer[temp]);
                 UpdateInventoryVisual();
                 listBoxInventory.SelectedIndex = listBoxInventory.Items.Count - 1;
@@ -477,7 +492,7 @@ namespace RPG
             {
                 if (this.player.InventoryOfPlayer[count].ItemQuality == EnumItemQuality.Normal || this.player.InventoryOfPlayer[count].ItemQuality == EnumItemQuality.Grand)
                 {
-                    this.player.Dust += (this.player.InventoryOfPlayer[count].ItemLevel / 10) + 1 + GeneralFunctions.ReturnExtraDust(this.player.InventoryOfPlayer[count]);
+                    this.player.Dust += GeneralFunctions.ReturnDust(this.player.InventoryOfPlayer[count]);
                     this.player.InventoryOfPlayer.Remove(this.player.InventoryOfPlayer[count]);
                 }
                 else
@@ -541,6 +556,7 @@ namespace RPG
                 this.labelCurrentItem.Text = "Nothing Selected!";
                 this.labelCurrentItem.ForeColor = Color.Yellow;
             }
+            UpdateDustLabel();
         }
 
         private void listBox_DrawItem(object sender, DrawItemEventArgs e)

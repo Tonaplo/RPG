@@ -59,20 +59,20 @@ namespace RPG.UI
             howtoplay.ScrollBars = RichTextBoxScrollBars.Vertical;
             howtoplay.Multiline = true;
             RichTextBoxExtensions.AppendText(howtoplay, "Welcome to The Legend of Eiwar!" + Environment.NewLine + Environment.NewLine + Environment.NewLine, Color.DarkOrange);
-            RichTextBoxExtensions.AppendText(howtoplay, "<The Game> is a Turn based Role Playing Game, where you fight against monsters either singleplayer or together with others!", Color.Honeydew);
+            RichTextBoxExtensions.AppendText(howtoplay, "The Legend of Eiwar is a Turn based Role Playing Game, where you fight against monsters either singleplayer or together with others!", Color.Honeydew);
             RichTextBoxExtensions.AppendText(howtoplay, " You start out by creating a character using the \"Add Character\" button. You also choose between six classes:" + Environment.NewLine + Environment.NewLine, Color.Honeydew);
             RichTextBoxExtensions.AppendText(howtoplay, "Warrior:" + Environment.NewLine, Color.Red);
-            RichTextBoxExtensions.AppendText(howtoplay, "   A torrent of fury, dealing uncontrollable damage to whatever is around him. His abilities are based on Strength and Attack." + Environment.NewLine + Environment.NewLine, Color.Honeydew);
+            RichTextBoxExtensions.AppendText(howtoplay, "   " + Properties.Resources.DescriptionWarrior + Environment.NewLine + Environment.NewLine, Color.Honeydew);
             RichTextBoxExtensions.AppendText(howtoplay, "Paladin:" + Environment.NewLine, Color.Red);
-            RichTextBoxExtensions.AppendText(howtoplay, "   A crusader of the church, he focused on healing while dealing damage. His abilities are based on Strength and Intellect." + Environment.NewLine + Environment.NewLine, Color.Honeydew);
+            RichTextBoxExtensions.AppendText(howtoplay, "   " + Properties.Resources.DescriptionPaladin + Environment.NewLine + Environment.NewLine, Color.Honeydew);
             RichTextBoxExtensions.AppendText(howtoplay, "Wizard:" + Environment.NewLine, Color.Red);
-            RichTextBoxExtensions.AppendText(howtoplay, "   An enigma of power, who deals great amounts of magical damage or heals grivieus wounds. Her abilities are based on Intellect." + Environment.NewLine + Environment.NewLine, Color.Honeydew);
+            RichTextBoxExtensions.AppendText(howtoplay, "   " + Properties.Resources.DescriptionWizard + Environment.NewLine + Environment.NewLine, Color.Honeydew);
             RichTextBoxExtensions.AppendText(howtoplay, "Thief:" + Environment.NewLine, Color.Red);
-            RichTextBoxExtensions.AppendText(howtoplay, "   Working in a shadows, the Thief deales damage with his quickness and ''borrows'' equipment from his allies. His abilities are based on Agility and Attack." + Environment.NewLine + Environment.NewLine, Color.Honeydew);
+            RichTextBoxExtensions.AppendText(howtoplay, "   " + Properties.Resources.DescriptionThief + Environment.NewLine + Environment.NewLine, Color.Honeydew);
             RichTextBoxExtensions.AppendText(howtoplay, "Caretaker:" + Environment.NewLine, Color.Red);
-            RichTextBoxExtensions.AppendText(howtoplay, "   A protector of the weak, he deals damage and heals based on his health. His abilities are based on Strength, Agility and Health." + Environment.NewLine + Environment.NewLine, Color.Honeydew);
+            RichTextBoxExtensions.AppendText(howtoplay, "   " + Properties.Resources.DescriptionCaretaker + Environment.NewLine + Environment.NewLine, Color.Honeydew);
             RichTextBoxExtensions.AppendText(howtoplay, "Synergist:" + Environment.NewLine, Color.Red);
-            RichTextBoxExtensions.AppendText(howtoplay, "   A cunning and agile equilibrium, she always seeks to perfect balance between stats to deal devasteting damage to enemies. Her abilities are based on Agility and Intellect." + Environment.NewLine + Environment.NewLine, Color.Honeydew);
+            RichTextBoxExtensions.AppendText(howtoplay, "   " + Properties.Resources.DescriptionSynergist + Environment.NewLine + Environment.NewLine, Color.Honeydew);
             RichTextBoxExtensions.AppendText(howtoplay, "Combat: The Basics:" + Environment.NewLine + Environment.NewLine, Color.OrangeRed);
             RichTextBoxExtensions.AppendText(howtoplay, "You enter a battle with you character by clicking the \"Find Battle\" button. Entering a battle makes you face off with a dangerous foe!", Color.Honeydew);
             RichTextBoxExtensions.AppendText(howtoplay, " First, however, you must select which character you want to battle with and how difficult the battle should be! Once you have made your choice, enter a single- or multiplayer battle!" + Environment.NewLine, Color.Honeydew);
@@ -242,5 +242,10 @@ namespace RPG.UI
         }
 
         #endregion
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           Function.ServerManagement.OpenFeedbackWindow();
+        }
     }
 }

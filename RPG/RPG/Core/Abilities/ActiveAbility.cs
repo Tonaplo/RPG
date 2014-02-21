@@ -2770,7 +2770,7 @@ namespace RPG.Core.Abilities
             : base(_char, _name, _description, _icon, _classReq)
         {
             this.AbilityName = "Atonement Smite";
-            this.Description = "This ability deals the units level in damage and heals it for 5% of its maximum health.";
+            this.Description = "This ability deals the units level in damage and heals it for 2% of its maximum health.";
             this.Icon = this.SetIcon(Properties.Resources.fireball);
         }
 
@@ -2794,7 +2794,7 @@ namespace RPG.Core.Abilities
                 } while (_targets[index].CurrentHP.IntValue <= 0 && _targets.Any(x => x.CurrentHP.IntValue > 0));
 
                 int damage = Math.Abs(_caster.UnitLevel);
-                int healing = (int)(_caster.BuffedHP.IntValue * 0.05);
+                int healing = (int)(_caster.BuffedHP.IntValue * 0.02);
 
                 if (healing + _caster.CurrentHP.IntValue >= _caster.BuffedHP.IntValue)
                     _caster.CurrentHP.IntValue = _caster.BuffedHP.IntValue;
@@ -2803,7 +2803,7 @@ namespace RPG.Core.Abilities
 
                 _targets[index].CurrentHP.IntValue -= damage;
 
-                damagedone = _targets[index].UnitName + " for " + damage + " and heals himself for " + healing + ", ";
+                damagedone += _targets[index].UnitName + " for " + damage + " and heals himself for " + healing + ", ";
             }
             this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + damagedone + "!";
         }

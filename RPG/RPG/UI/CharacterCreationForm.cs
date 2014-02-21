@@ -114,32 +114,32 @@ namespace RPG
             {
                 case 0:
                     finalclass = Core.EnumCharClass.Warrior;
-                    labelClassDescription.Text = finalclass.ToString() + "\n\nA pure Strength class, dealing uncontrollable damage to whatever is around him.";
+                    labelClassDescription.Text = finalclass.ToString() + "\n\n" + Properties.Resources.DescriptionWarrior;
                     pictureBoxClass.Image = Properties.Resources.warrior;
                     break;
                 case 1:
                     finalclass = Core.EnumCharClass.Paladin;
-                    labelClassDescription.Text = finalclass.ToString() + "\n\nA hybrid Strength/Intellect Class, focusing on healing while dealing damage.";
+                    labelClassDescription.Text = finalclass.ToString() + "\n\n" + Properties.Resources.DescriptionPaladin;
                     pictureBoxClass.Image = Properties.Resources.paladin;
                     break;
                 case 2:
                     finalclass = Core.EnumCharClass.Wizard;
-                    labelClassDescription.Text = finalclass.ToString() + "\n\nA pure Intellect class, who deals great amounts of magical damage or heals grivieus wounds.";
+                    labelClassDescription.Text = finalclass.ToString() + "\n\n" + Properties.Resources.DescriptionWizard;
                     pictureBoxClass.Image = Properties.Resources.wizard;
                     break;
                 case 3:
                     finalclass = Core.EnumCharClass.Thief;
-                    labelClassDescription.Text = finalclass.ToString() + "\n\nA pure Agility Class, dealing damage with his weapon and agility, and ''borrows'' equipment from his allies.";
+                    labelClassDescription.Text = finalclass.ToString() + "\n\n" + Properties.Resources.DescriptionThief;
                     pictureBoxClass.Image = Properties.Resources.thief;
                     break;
                 case 4:
                     finalclass = Core.EnumCharClass.Caretaker;
-                    labelClassDescription.Text = finalclass.ToString() + "\n\nA hybrid Strength/Agility Class, he deals damage and heals based on his health.";
+                    labelClassDescription.Text = finalclass.ToString() + "\n\n" + Properties.Resources.DescriptionCaretaker;
                     pictureBoxClass.Image = Properties.Resources.caretaker;
                     break;
                 case 5:
                     finalclass = Core.EnumCharClass.Synergist;
-                    labelClassDescription.Text = finalclass.ToString() + "\n\nA hybrid Agility/Intellect Class, always seeking to perfect balance between stats to deal devasteting damage to enemies.";
+                    labelClassDescription.Text = finalclass.ToString() + "\n\n" + Properties.Resources.DescriptionSynergist;
                     pictureBoxClass.Image = Properties.Resources.synergist;
                     break;
                 default:

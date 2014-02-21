@@ -571,4 +571,22 @@
   <data name="AbilitiesTitleWizardRevitalize" xml:space="preserve">
     <value>Revitalize</value>
   </data>
+  <data name="DescriptionCaretaker" xml:space="preserve">
+    <value>A protector of the weak, he deals damage and heals based on his health. His abilities are based on Strength, Agility and Health.</value>
+  </data>
+  <data name="DescriptionPaladin" xml:space="preserve">
+    <value>A crusader of the church, he focuses on healing while dealing damage. His abilities are based on Strength and Intellect.</value>
+  </data>
+  <data name="DescriptionSynergist" xml:space="preserve">
+    <value>A cunning and agile equilibrium, she always seeks to perfect balance between stats to deal devasteting damage to enemies. Her abilities are based on Agility and Intellect.</value>
+  </data>
+  <data name="DescriptionThief" xml:space="preserve">
+    <value>Working in a shadows, the Thief deales damage with his quickness and ''borrows'' equipment from his allies. His abilities are based on Agility and Attack.</value>
+  </data>
+  <data name="DescriptionWarrior" xml:space="preserve">
+    <value>A torrent of fury, dealing uncontrollable damage to whatever is around him. His abilities are based on Strength and Attack.</value>
+  </data>
+  <data name="DescriptionWizard" xml:space="preserve">
+    <value>An enigma of power, who deals great amounts of magical damage or heals grivieus wounds. Her abilities are based on Intellect.</value>
+  </data>
 </root>
