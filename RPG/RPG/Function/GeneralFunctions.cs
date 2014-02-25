@@ -312,15 +312,13 @@ namespace RPG.Function
             }
 
             if (_item.ItemQuality == EnumItemQuality.Normal)
-                dust += (int)(stats * 0.03) + 2;
+                dust += (int)(stats * 0.2) + 2;
             if (_item.ItemQuality == EnumItemQuality.Grand)
-                dust += (int)(stats * 0.05) + 3;
+                dust += (int)(stats * 0.3) + 3;
             if (_item.ItemQuality == EnumItemQuality.Fabled)
-                dust += (int)(stats * 0.07) + 4;
+                dust += (int)(stats * 0.4) + 4;
             if (_item.ItemQuality == EnumItemQuality.Epochal)
-                dust += (int)(stats*0.1) + 5;
-            else
-                dust += (int)(stats * 1);
+                dust += (int)(stats*0.5) + 5;
 
             return dust;
         }

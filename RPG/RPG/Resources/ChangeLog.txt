@@ -3,7 +3,9 @@
 	- General:
 		- Fixed a bug where the amount of available dust would not visually update after randomizing stats.
 		- Fixed a bug where the fourth stat on an item would not be visible if the item had a long name.
-
+		- Fixed a bug where quests of ''NPCType'' would not be completeable after a save.
+		- Fixed a bug where Epochal items would grant alot less dust than other items.
+		- Lowered the amount of dust granted by disenchanted items.
 
 _________________________________________________________________________________________________________
 Version 0.1.4.7 (20/02-2014):

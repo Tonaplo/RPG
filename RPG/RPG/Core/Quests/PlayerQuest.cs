@@ -959,8 +959,9 @@ namespace RPG.Core
             if (monsterType == null)
             {
                 monsterType = Function.PlayerQuestHandler.ReturnRandomMonsterType();
-                this.questText = "Defeat 3 " + monsterType + " of Very Easy difficulty";
+                
             }
+            this.questText = "Defeat 3 " + monsterType + " of Very Easy difficulty";
 
             if (_difficulty == -4 && monsterType == _enemy.TypeOfNPC)
             {
@@ -999,8 +1000,8 @@ namespace RPG.Core
             if (monsterType == null)
             {
                 monsterType = Function.PlayerQuestHandler.ReturnRandomMonsterType();
-                this.questText = "Defeat 3 " + monsterType + " of Easy difficulty";
             }
+            this.questText = "Defeat 3 " + monsterType + " of Easy difficulty";
 
             if (_difficulty == -2 && monsterType == _enemy.TypeOfNPC)
             {
@@ -1039,8 +1040,9 @@ namespace RPG.Core
             if (monsterType == null)
             {
                 monsterType = Function.PlayerQuestHandler.ReturnRandomMonsterType();
-                this.questText = "Defeat 3 " + monsterType + " of Normal difficulty";
+                
             }
+            this.questText = "Defeat 3 " + monsterType + " of Normal difficulty";
 
             if (_difficulty == 0 && monsterType == _enemy.TypeOfNPC)
             {
@@ -1079,9 +1081,9 @@ namespace RPG.Core
             if (monsterType == null)
             {
                 monsterType = Function.PlayerQuestHandler.ReturnRandomMonsterType();
-                this.questText = "Defeat 3 " + monsterType + " of Hard difficulty";
             }
-
+            this.questText = "Defeat 3 " + monsterType + " of Hard difficulty";
+            
             if (_difficulty == 2 && monsterType == _enemy.TypeOfNPC)
             {
                 this.currentValue++;
@@ -1119,8 +1121,8 @@ namespace RPG.Core
             if (monsterType == null)
             {
                 monsterType = Function.PlayerQuestHandler.ReturnRandomMonsterType();
-                this.questText = "Defeat 3 " + monsterType + " of Very Hard difficulty";
             }
+            this.questText = "Defeat 3 " + monsterType + " of Very Hard difficulty";
 
             if (_difficulty == 4 && monsterType == _enemy.TypeOfNPC)
             {
