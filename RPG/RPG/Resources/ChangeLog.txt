@@ -6,6 +6,8 @@
 		- Fixed a bug where quests of ''NPCType'' would not be completeable after a save.
 		- Fixed a bug where Epochal items would grant alot less dust than other items.
 		- Lowered the amount of dust granted by disenchanted items.
+		- Added a count on the Inventory label, so the player can see how many items he has.
+		- Fixed a bug where players would look like they had turnpoints left after winning a battle.
 
 _________________________________________________________________________________________________________
 Version 0.1.4.7 (20/02-2014):

@@ -113,11 +113,7 @@ namespace RPG.UI
                     Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, "[" + DateTime.Now.ToShortTimeString() + "] ", Color.DarkSeaGreen);
                     Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, ab.ChatString + Environment.NewLine, Color.DarkOrange);
 
-                    if (!CheckPlayersHealth())
-                    {
-                        end = true;
-                        this.bnTurnDone.Text = "Quit the battle";
-                    }
+                    CheckPlayersHealth();
                 }
                 else
                 {
@@ -183,11 +179,7 @@ namespace RPG.UI
 
             (flpNPCs.Controls[0] as ucNPC).Update();
 
-            if (CheckNPCHealth())
-            {
-                end = true;
-                this.bnTurnDone.Text = "Quit the battle";
-            }
+            CheckNPCHealth();
         }
 
         public List<Core.Units.Character> ReturnChars(Core.Player _player)
@@ -321,25 +313,28 @@ namespace RPG.UI
         /// <summary>
         /// This function checks the health of the enemy and gives players experience if the monster has fallen.
         /// </summary>
-        /// <returns>true if the monster is dead, false otherwise</returns>
-        private bool CheckNPCHealth()
+        private void CheckNPCHealth()
         {
             if (enemy.CurrentHP.IntValue <= 0)
             {
                 Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, "[" + DateTime.Now.ToShortTimeString() + "] ", Color.LightGreen);
                 Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, enemy.UnitName + " has been defeated! you recieve " + enemy.ExperienceYielded + " in experience!" + Environment.NewLine, Color.LightGreen);
-
+                
+                end = true;
+                this.bnTurnDone.Text = "Quit the battle";
                 foreach (var item in battleChars)
                 {
                     item.CharRecieveXP(enemy.ExperienceYielded);
                     item.CurrentTurnPoints.IntValue = 0;
                 }
-                
-                result = System.Windows.Forms.DialogResult.OK;
-                return true;
-            }
 
-            return false;
+                foreach (var item in flpCharacters.Controls)
+                {
+                    (item as ucCharacterBattle).Update();
+                }
+
+                result = System.Windows.Forms.DialogResult.OK;
+            }
         }
 
         /// <summary>

@@ -46,8 +46,6 @@ namespace RPG
                                                 "If you find a bug or believe there is a balance issue in the game, please report this by pressing " +
                                                 "the ''Support'' button and using the ''Bug/Suggestion Report'' function.";
 
-            listBoxInventory.DataSource = player.InventoryOfPlayer;
-            listBoxInventory.DisplayMember = "ItemName";
 
             foreach (var item in player.ControlledCharacters)
             {
@@ -73,6 +71,7 @@ namespace RPG
 
             UpdateQuestVisual();
             UpdateDustLabel();
+            UpdateInventoryVisual();
         }
 
         #region Functions
@@ -130,6 +129,7 @@ namespace RPG
             listBoxInventory.DataSource = this.player.InventoryOfPlayer;
             listBoxInventory.DisplayMember = "InventoryDisplay";
             listBoxInventory.Refresh();
+            labelInventory.Text = "Inventory (" + player.InventoryOfPlayer.Count + "/30)";
             UpdateDustLabel();
         }
 
