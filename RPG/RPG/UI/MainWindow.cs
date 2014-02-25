@@ -518,6 +518,7 @@ namespace RPG
             {
                 RandomizeStatForm rsform = new RandomizeStatForm(this.player);
                 rsform.ShowDialog();
+                UpdateDustLabel();
                 UpdateChars();
             }
             else 
@@ -525,6 +526,7 @@ namespace RPG
                 RPG.UI.MessageForm mes = new RPG.UI.MessageForm("You have not choosen an item or you have no items in your inventory!");
                 mes.ShowDialog();
             }
+
         }
 
         private void btAddCharacter_Click(object sender, EventArgs e)

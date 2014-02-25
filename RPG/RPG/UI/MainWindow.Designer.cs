@@ -217,7 +217,7 @@
             this.listBoxInventory.ItemHeight = 15;
             this.listBoxInventory.Location = new System.Drawing.Point(641, 107);
             this.listBoxInventory.Name = "listBoxInventory";
-            this.listBoxInventory.Size = new System.Drawing.Size(353, 484);
+            this.listBoxInventory.Size = new System.Drawing.Size(353, 454);
             this.listBoxInventory.TabIndex = 22;
             this.listBoxInventory.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listBox_DrawItem);
             this.listBoxInventory.SelectedIndexChanged += new System.EventHandler(this.listBoxInventory_SelectedIndexChanged);
@@ -292,9 +292,9 @@
             this.labelCurrentItem.BackColor = System.Drawing.Color.Transparent;
             this.labelCurrentItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCurrentItem.ForeColor = System.Drawing.Color.Yellow;
-            this.labelCurrentItem.Location = new System.Drawing.Point(641, 611);
+            this.labelCurrentItem.Location = new System.Drawing.Point(641, 564);
             this.labelCurrentItem.Name = "labelCurrentItem";
-            this.labelCurrentItem.Size = new System.Drawing.Size(187, 96);
+            this.labelCurrentItem.Size = new System.Drawing.Size(187, 143);
             this.labelCurrentItem.TabIndex = 27;
             this.labelCurrentItem.Text = "Nothing Selected!";
             this.labelCurrentItem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -349,9 +349,9 @@
             this.labelDust.BackColor = System.Drawing.Color.Transparent;
             this.labelDust.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDust.ForeColor = System.Drawing.Color.Yellow;
-            this.labelDust.Location = new System.Drawing.Point(822, 608);
+            this.labelDust.Location = new System.Drawing.Point(834, 564);
             this.labelDust.Name = "labelDust";
-            this.labelDust.Size = new System.Drawing.Size(166, 96);
+            this.labelDust.Size = new System.Drawing.Size(154, 140);
             this.labelDust.TabIndex = 30;
             this.labelDust.Text = "This item would give xx dust.\r\n\r\nYou currently have yy dust.";
             this.labelDust.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
