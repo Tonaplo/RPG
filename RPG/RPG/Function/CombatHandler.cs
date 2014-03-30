@@ -62,5 +62,51 @@ namespace RPG.Function
         {
             return (int)((double)_critRating / ((_unitLevel + 1) * 0.19));
         }
+
+        public static bool RequiresNoTarget(Ability ab)
+        {
+            if (ab.AbilityName == Properties.Resources.AbilitiesTitleAnyEmpowerment)
+                return true;
+            if (ab.AbilityName == Properties.Resources.AbilitiesTitleAnyInvigorate)
+                return true;
+            if (ab.AbilityName == Properties.Resources.AbilitiesTitleAnyOpportunity)
+                return true;
+            if (ab.AbilityName == Properties.Resources.AbilitiesTitleAnyAscend)
+                return true;
+            if (ab.AbilityName == Properties.Resources.AbilitiesTitleWarriorRoar)
+                return true;
+            if (ab.AbilityName == Properties.Resources.AbilitiesTitleWarriorInfuriate)
+                return true;
+            if (ab.AbilityName == Properties.Resources.AbilitiesTitlePaladinPrayer)
+                return true;
+            if (ab.AbilityName == Properties.Resources.AbilitiesTitlePaladinThePowerOfFaith)
+                return true;
+            if (ab.AbilityName == Properties.Resources.AbilitiesTitleWizardBrilliance)
+                return true;
+            if (ab.AbilityName == Properties.Resources.AbilitiesTitleWizardArchon)
+                return true;
+            if (ab.AbilityName == Properties.Resources.AbilitiesTitleThiefSwiftness)
+                return true;
+            if (ab.AbilityName == Properties.Resources.AbilitiesTitleThiefEnvenom)
+                return true;
+            if (ab.AbilityName == Properties.Resources.AbilitiesTitleCaretakerZealOfHumanity)
+                return true;
+            if (ab.AbilityName == Properties.Resources.AbilitiesTitleCaretakerAction)
+                return true;
+            if (ab.AbilityName == Properties.Resources.AbilitiesTitleCaretakerDeathdefiance)
+                return true;
+            if (ab.AbilityName == Properties.Resources.AbilitiesTitleSynergistBalance)
+                return true;
+            if (ab.AbilityName == Properties.Resources.AbilitiesTitleSynergistAlign)
+                return true;
+            if (ab.AbilityName == Properties.Resources.AbilitiesTitleSynergistCollapsedEquality)
+                return true;
+            if (ab.AbilityName == Properties.Resources.AbilitiesTitleSynergistCompleteBalance)
+                return true;
+            if (ab.AbilityName == Properties.Resources.AbilitiesTitleWizardOracle)
+                return true;
+
+            return false;
+        }
     }
 }

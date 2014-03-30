@@ -175,7 +175,11 @@ namespace RPG.UI
                     mes.ShowDialog();
                 }
             }
-            control.Update();
+            foreach (var item in flpCharacters.Controls)
+            {
+                (item as ucCharacterBattle).Update();
+            }
+            
 
             (flpNPCs.Controls[0] as ucNPC).Update();
 

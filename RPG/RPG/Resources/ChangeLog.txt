@@ -1,4 +1,4 @@
-﻿Version 0.1.4.8 (25/02-2014):
+﻿Version 0.1.4.9 (25/02-2014):
 
 	- General:
 		- Fixed a bug where the amount of available dust would not visually update after randomizing stats.
@@ -8,6 +8,22 @@
 		- Lowered the amount of dust granted by disenchanted items.
 		- Added a count on the Inventory label, so the player can see how many items he has.
 		- Fixed a bug where players would look like they had turnpoints left after winning a battle.
+		- Changed the target selecting UI, so it is more clear which targets are eligible for an ability.
+		  This includes selfbuffs and abilities requiring no targets.
+
+	- Quests:
+		- Significantly changed the amount of experience awarded by quests:
+			- Very Easy: 5% of total experience needed for next level.
+			- Easy: 10% of total experience needed for next level.
+			- Normal: 15% of total experience needed for next level.
+			- Hard: 20% of total experience needed for next level.
+			- Very Hard: 25% of total experience needed for next level.
+		- Significantly changed the amount of dust awarded by quests:
+			- Very Easy: The sum of the levels of all characters.
+			- Easy: 2 times the sum of the levels of all characters.
+			- Normal: 3 times the sum of the levels of all characters.
+			- Hard: 4 times the sum of the levels of all characters.
+			- Very Hard: 5 times the sum of the levels of all characters.
 
 _________________________________________________________________________________________________________
 Version 0.1.4.7 (20/02-2014):

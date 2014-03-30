@@ -97,7 +97,7 @@
             this.checkBoxPlayer1.TabIndex = 10;
             this.checkBoxPlayer1.Text = "Player 1";
             this.checkBoxPlayer1.UseVisualStyleBackColor = false;
-            this.checkBoxPlayer1.CheckedChanged += new System.EventHandler(this.checkBoxPlayer1_CheckedChanged);
+            this.checkBoxPlayer1.CheckedChanged += new System.EventHandler(this.checkBoxPlayer_CheckedChanged);
             // 
             // checkBoxPlayer2
             // 
@@ -111,7 +111,7 @@
             this.checkBoxPlayer2.TabIndex = 11;
             this.checkBoxPlayer2.Text = "Player 2";
             this.checkBoxPlayer2.UseVisualStyleBackColor = false;
-            this.checkBoxPlayer2.CheckedChanged += new System.EventHandler(this.checkBoxPlayer2_CheckedChanged);
+            this.checkBoxPlayer2.CheckedChanged += new System.EventHandler(this.checkBoxPlayer_CheckedChanged);
             // 
             // checkBoxPlayer3
             // 
@@ -119,13 +119,13 @@
             this.checkBoxPlayer3.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxPlayer3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxPlayer3.ForeColor = System.Drawing.Color.Yellow;
-            this.checkBoxPlayer3.Location = new System.Drawing.Point(5, 39);
+            this.checkBoxPlayer3.Location = new System.Drawing.Point(6, 57);
             this.checkBoxPlayer3.Name = "checkBoxPlayer3";
             this.checkBoxPlayer3.Size = new System.Drawing.Size(52, 14);
             this.checkBoxPlayer3.TabIndex = 12;
             this.checkBoxPlayer3.Text = "Player 3";
             this.checkBoxPlayer3.UseVisualStyleBackColor = false;
-            this.checkBoxPlayer3.CheckedChanged += new System.EventHandler(this.checkBoxPlayer3_CheckedChanged);
+            this.checkBoxPlayer3.CheckedChanged += new System.EventHandler(this.checkBoxPlayer_CheckedChanged);
             // 
             // checkBoxPlayer4
             // 
@@ -133,13 +133,13 @@
             this.checkBoxPlayer4.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxPlayer4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxPlayer4.ForeColor = System.Drawing.Color.Yellow;
-            this.checkBoxPlayer4.Location = new System.Drawing.Point(71, 39);
+            this.checkBoxPlayer4.Location = new System.Drawing.Point(70, 57);
             this.checkBoxPlayer4.Name = "checkBoxPlayer4";
             this.checkBoxPlayer4.Size = new System.Drawing.Size(52, 14);
             this.checkBoxPlayer4.TabIndex = 13;
             this.checkBoxPlayer4.Text = "Player 4";
             this.checkBoxPlayer4.UseVisualStyleBackColor = false;
-            this.checkBoxPlayer4.CheckedChanged += new System.EventHandler(this.checkBoxPlayer4_CheckedChanged);
+            this.checkBoxPlayer4.CheckedChanged += new System.EventHandler(this.checkBoxPlayer_CheckedChanged);
             // 
             // pictureBoxChar
             // 
@@ -157,7 +157,7 @@
             this.checkBoxEnemy.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxEnemy.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxEnemy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.checkBoxEnemy.Location = new System.Drawing.Point(39, 59);
+            this.checkBoxEnemy.Location = new System.Drawing.Point(39, 39);
             this.checkBoxEnemy.Name = "checkBoxEnemy";
             this.checkBoxEnemy.Size = new System.Drawing.Size(48, 14);
             this.checkBoxEnemy.TabIndex = 14;

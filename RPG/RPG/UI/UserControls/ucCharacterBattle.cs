@@ -16,12 +16,16 @@ namespace RPG.UI.UserControls
     {
         Core.Units.Character character;
         Core.Abilities.ActiveAbility selectedAbility;
+        int numberOfChars;
+        int friendTargets;
 
         public ucCharacterBattle(Core.Units.Character _character, int _numberOfCharacters)
         {
             InitializeComponent();
             this.BackColor = Color.Transparent;
             character = _character;
+            numberOfChars = _numberOfCharacters;
+            friendTargets = 0;
 
             labelHealthRemaining.Width = flpHealthBar.Width;
             labelHealthRemaining.Text = character.CurrentHP.IntValue + "/" + character.BuffedHP.IntValue + " (100%)";
@@ -31,13 +35,6 @@ namespace RPG.UI.UserControls
             lbCharStats.Text = Function.GeneralFunctions.ReturnCharBattleString(this.character);
 
             pictureBoxChar.Image = Function.GeneralFunctions.ReturnImageForClass(character);
-
-            if (_numberOfCharacters < 4)
-                checkBoxPlayer4.Visible = false;
-            if (_numberOfCharacters < 3)
-                checkBoxPlayer3.Visible = false;
-            if (_numberOfCharacters < 2)
-                checkBoxPlayer2.Visible = false;
 
             foreach (var item in character.UnitActiveAbilities)
 	        {
@@ -51,6 +48,8 @@ namespace RPG.UI.UserControls
                 checkBoxEnemy.Checked = true;
             else
                 checkBoxPlayer1.Checked = false;
+
+            HideInvalidCheckboxes();
         }
 
         #region Font Stuff
@@ -194,6 +193,66 @@ namespace RPG.UI.UserControls
 
         #endregion
 
+        #region Internal Functions
+
+        private void HideInvalidCheckboxes()
+        {
+            if (Function.CombatHandler.RequiresNoTarget(selectedAbility))
+            {
+                checkBoxPlayer4.Visible = false;
+                checkBoxPlayer3.Visible = false;
+                checkBoxPlayer2.Visible = false;
+                checkBoxPlayer1.Visible = false;
+                checkBoxEnemy.Visible = false;
+            }
+            else if (selectedAbility.DamageOrHealing == EnumActiveAbilityType.Healing)
+            {
+                checkBoxEnemy.Visible = false;
+                switch (numberOfChars)
+                {
+                    case 4:
+                        checkBoxPlayer4.Visible = true;
+                        checkBoxPlayer3.Visible = true;
+                        checkBoxPlayer2.Visible = true;
+                        checkBoxPlayer1.Visible = true;
+                        break;
+                    case 3:
+                        checkBoxPlayer3.Visible = true;
+                        checkBoxPlayer2.Visible = true;
+                        checkBoxPlayer1.Visible = true;
+                        break;
+                    case 2:
+                        checkBoxPlayer2.Visible = true;
+                        checkBoxPlayer1.Visible = true;
+                        break;
+                    case 1:
+                        checkBoxPlayer1.Visible = true;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                checkBoxEnemy.Visible = true;
+                checkBoxPlayer4.Visible = false;
+                checkBoxPlayer3.Visible = false;
+                checkBoxPlayer2.Visible = false;
+                checkBoxPlayer1.Visible = false;
+            }
+        }
+
+        private bool ValidCheckFriendly()
+        {
+            if (selectedAbility.NumberOfTargets < friendTargets)
+                return false;
+
+            return true;
+        }
+
+        #endregion
+
+        #region Events
 
         private void comboBoxAbilities_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -207,10 +266,12 @@ namespace RPG.UI.UserControls
 
             if (selectedAbility.DamageOrHealing == EnumActiveAbilityType.Damage)
                 checkBoxEnemy.Checked = true;
+
+            HideInvalidCheckboxes();
         }
 
         #region Checkbox functions
-        private void checkBoxPlayer1_CheckedChanged(object sender, EventArgs e)
+        private void checkBoxPlayer_CheckedChanged(object sender, EventArgs e)
         {
             if ((sender as CheckBox).Checked == true)
             {
@@ -222,63 +283,21 @@ namespace RPG.UI.UserControls
                 }
                 else
                 {
-                    checkBoxEnemy.Checked = false;
-                }
-            }
-            
-        }
+                    friendTargets++;
+                    if (ValidCheckFriendly())
+                        checkBoxEnemy.Checked = false;
+                    else 
+                    {
+                        (sender as CheckBox).Checked = false;
+                        RPG.UI.MessageForm mes = new RPG.UI.MessageForm("You've selected too many targets! Choose at most " + selectedAbility.NumberOfTargets + " targets!");
+                        mes.ShowDialog();
+                        
+                    }
 
-        private void checkBoxPlayer2_CheckedChanged(object sender, EventArgs e)
-        {
-            if ((sender as CheckBox).Checked == true)
-            {
-                if (selectedAbility.DamageOrHealing == EnumActiveAbilityType.Damage)
-                {
-                    RPG.UI.MessageForm mes = new RPG.UI.MessageForm("This ability deals damage! Select the enemy!");
-                    mes.ShowDialog();
-                    (sender as CheckBox).Checked = false;
-                }
-                else
-                {
-                    checkBoxEnemy.Checked = false;
                 }
             }
-            
-        }
-
-        private void checkBoxPlayer3_CheckedChanged(object sender, EventArgs e)
-        {
-            if ((sender as CheckBox).Checked == true)
-            {
-                if (selectedAbility.DamageOrHealing == EnumActiveAbilityType.Damage)
-                {
-                    RPG.UI.MessageForm mes = new RPG.UI.MessageForm("This ability deals damage! Select the enemy!");
-                    mes.ShowDialog();
-                    (sender as CheckBox).Checked = false;
-                }
-                else
-                {
-                    checkBoxEnemy.Checked = false;
-                }
-            }
-            
-        }
-
-        private void checkBoxPlayer4_CheckedChanged(object sender, EventArgs e)
-        {
-            if ((sender as CheckBox).Checked == true)
-            {
-                if (selectedAbility.DamageOrHealing == EnumActiveAbilityType.Damage)
-                {
-                    RPG.UI.MessageForm mes = new RPG.UI.MessageForm("This ability deals damage! Select the enemy!");
-                    mes.ShowDialog();
-                    (sender as CheckBox).Checked = false;
-                }
-                else
-                {
-                    checkBoxEnemy.Checked = false;
-                }
-            }
+            else
+                friendTargets--;
             
         }
 
@@ -353,5 +372,7 @@ namespace RPG.UI.UserControls
                 }
             }
         }
+
+        #endregion
     }
 }

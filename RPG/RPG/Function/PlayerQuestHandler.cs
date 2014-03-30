@@ -212,7 +212,7 @@ namespace RPG.Function
                 case EnumQuestRewardType.Experience:
                     foreach (var item in _player.ControlledCharacters)
                     {
-                        xpReward = (int)(item.CharXPToLevel * (0.5 / (item.UnitLevel + 3)));
+                        xpReward = (int)(item.CharXPToLevel * 0.05);
                         item.CharRecieveXP(xpReward);
                         mes = new MessageForm(item.UnitName + " received " + xpReward + " experience!");
                         mes.ShowDialog();
@@ -245,7 +245,7 @@ namespace RPG.Function
                 case EnumQuestRewardType.Dust:
                     foreach (var item in _player.ControlledCharacters)
                     {
-                        dustReward += (int)(item.UnitLevel * 0.5);
+                        dustReward += (int)(item.UnitLevel);
                     }
                     mes = new MessageForm("You received a total of " + dustReward + " Dust!");
                     _player.Dust += dustReward;
@@ -269,7 +269,7 @@ namespace RPG.Function
                 case EnumQuestRewardType.Experience:
                     foreach (var item in _player.ControlledCharacters)
                     {
-                        xpReward = (int)(item.CharXPToLevel * (1.0 / (item.UnitLevel + 3)));
+                        xpReward = (int)(item.CharXPToLevel * 0.10);
                         item.CharRecieveXP(xpReward);
                         mes = new MessageForm(item.UnitName + " received " + xpReward + " experience!");
                         mes.ShowDialog();
@@ -302,7 +302,7 @@ namespace RPG.Function
                 case EnumQuestRewardType.Dust:
                     foreach (var item in _player.ControlledCharacters)
                     {
-                        dustReward += (int)(item.UnitLevel * 0.75);
+                        dustReward += (int)(item.UnitLevel * 2);
                     }
                     mes = new MessageForm("You received a total of " + dustReward + " Dust!");
                     _player.Dust += dustReward;
@@ -326,7 +326,7 @@ namespace RPG.Function
                 case EnumQuestRewardType.Experience:
                     foreach (var item in _player.ControlledCharacters)
                     {
-                        xpReward = (int)(item.CharXPToLevel * (1.5 / (item.UnitLevel + 3)));
+                        xpReward = (int)(item.CharXPToLevel * 0.15);
                         item.CharRecieveXP(xpReward);
                         mes = new MessageForm(item.UnitName + " received " + xpReward + " experience!");
                         mes.ShowDialog();
@@ -359,7 +359,7 @@ namespace RPG.Function
                 case EnumQuestRewardType.Dust:
                     foreach (var item in _player.ControlledCharacters)
                     {
-                        dustReward += (int)(item.UnitLevel * 1.0);
+                        dustReward += (int)(item.UnitLevel * 3);
                     }
                     mes = new MessageForm("You received a total of " + dustReward + " Dust!");
                     _player.Dust += dustReward;
@@ -383,7 +383,7 @@ namespace RPG.Function
                 case EnumQuestRewardType.Experience:
                     foreach (var item in _player.ControlledCharacters)
                     {
-                        xpReward = (int)(item.CharXPToLevel * (2.0 / (item.UnitLevel + 3)));
+                        xpReward = (int)(item.CharXPToLevel * 0.20);
                         item.CharRecieveXP(xpReward);
                         mes = new MessageForm(item.UnitName + " received " + xpReward + " experience!");
                         mes.ShowDialog();
@@ -416,7 +416,7 @@ namespace RPG.Function
                 case EnumQuestRewardType.Dust:
                     foreach (var item in _player.ControlledCharacters)
                     {
-                        dustReward += (int)(item.UnitLevel * 1.25);
+                        dustReward += (int)(item.UnitLevel * 4);
                     }
                     mes = new MessageForm("You received a total of " + dustReward + " Dust!");
                     _player.Dust += dustReward;
@@ -440,7 +440,7 @@ namespace RPG.Function
                 case EnumQuestRewardType.Experience:
                     foreach (var item in _player.ControlledCharacters)
                     {
-                        xpReward = (int)(item.CharXPToLevel * (2.5/(item.UnitLevel+3)));
+                        xpReward = (int)(item.CharXPToLevel * 0.25);
                         item.CharRecieveXP(xpReward);
                         mes = new MessageForm(item.UnitName + " received " + xpReward + " experience!");
                         mes.ShowDialog();
@@ -473,7 +473,7 @@ namespace RPG.Function
                 case EnumQuestRewardType.Dust:
                     foreach (var item in _player.ControlledCharacters)
                     {
-                        dustReward += (int)(item.UnitLevel * 1.5);
+                        dustReward += (int)(item.UnitLevel * 5);
                     }
                     mes = new MessageForm("You received a total of " + dustReward + " Dust!");
                     _player.Dust += dustReward;
