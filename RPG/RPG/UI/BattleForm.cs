@@ -123,7 +123,7 @@ namespace RPG.UI
             }
             else
             {
-                if (control.CheckBoxP1Status || control.CheckBoxP2Status || control.CheckBoxP3Status  || control.CheckBoxP4Status)
+                if (control.CheckBoxP1Status || control.CheckBoxP2Status || control.CheckBoxP3Status  || control.CheckBoxP4Status || Function.CombatHandler.RequiresNoTarget(ab))
                 {
                     List<int> indexes = new List<int>();
 
@@ -154,16 +154,6 @@ namespace RPG.UI
                     if (postHP > previousHP)
                         healingDone += Math.Abs(postHP - previousHP);
 
-                    string temp = "";
-                    int i = 0;
-
-                    for (i = 0; i < indexes.Count-1; i++)
-                    {
-                        temp += battleChars[i].UnitName + " and ";
-                    }
-
-                    temp += battleChars[i].UnitName + "!";
-
                     UpdateIndexedControls(indexes);
 
                     Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, "[" + DateTime.Now.ToShortTimeString() + "] ", Color.DarkSeaGreen);
@@ -175,11 +165,11 @@ namespace RPG.UI
                     mes.ShowDialog();
                 }
             }
+
             foreach (var item in flpCharacters.Controls)
             {
                 (item as ucCharacterBattle).Update();
             }
-            
 
             (flpNPCs.Controls[0] as ucNPC).Update();
 

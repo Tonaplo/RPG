@@ -1,4 +1,4 @@
-﻿Version 0.1.4.9 (25/02-2014):
+﻿Version 0.1.4.10 (25/02-2014):
 
 	- General:
 		- Fixed a bug where the amount of available dust would not visually update after randomizing stats.

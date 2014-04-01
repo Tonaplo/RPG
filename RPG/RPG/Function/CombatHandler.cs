@@ -65,8 +65,6 @@ namespace RPG.Function
 
         public static bool RequiresNoTarget(Ability ab)
         {
-            if (ab.AbilityName == Properties.Resources.AbilitiesTitleAnyEmpowerment)
-                return true;
             if (ab.AbilityName == Properties.Resources.AbilitiesTitleAnyInvigorate)
                 return true;
             if (ab.AbilityName == Properties.Resources.AbilitiesTitleAnyOpportunity)
