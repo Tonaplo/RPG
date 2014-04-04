@@ -30,8 +30,8 @@ namespace RPG
             player = _player;
             Function.SoundManager.PlayMainMenuMusic();
 
-            if (player.PrefChar == null)
-                player.PrefChar.Add("None");
+            if (player.Settings.PrefChars == null)
+                player.Settings.PrefChars.Add("None");
             if (player.CurrentQuest != null)
             {
                 player.CurrentQuest.UpdateQuest(player, 1, null, 0, 0, 1.0, new List<EnumCharClass>());
@@ -363,6 +363,7 @@ namespace RPG
         private void btExitGame_Click(object sender, EventArgs e)
         {
             Function.SoundManager.PlayButtonSound();
+            player.Settings.ThisVersion = (Function.ServerManagement.GetRunningVersion()).ToString();
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             fbd.Description = "Choose a location to save your list of players. This will work as a backup case case anything changes!";
 

@@ -31,7 +31,7 @@ namespace RPG.UI
                 listBoxChars.Items.Add(item.UnitName);
             }
 
-            foreach (var tem in _player.PrefChar)
+            foreach (var tem in _player.Settings.PrefChars)
             {
                 listBoxChars.SelectedItems.Add(tem);
             }
@@ -42,7 +42,7 @@ namespace RPG.UI
             comboBoxDifficulty.Items.Add("Hard (Level + 2)");
             comboBoxDifficulty.Items.Add("Very Hard (Level + 4)");
 
-            comboBoxDifficulty.SelectedIndex = _player.PrefDifficulty;
+            comboBoxDifficulty.SelectedIndex = _player.Settings.PrefDifficulty;
         }
 
         #region Font Stuff
@@ -96,11 +96,11 @@ namespace RPG.UI
         private void bnOK_Click(object sender, EventArgs e)
         {
             Function.SoundManager.PlayButtonSound();
-            player.PrefDifficulty = comboBoxDifficulty.SelectedIndex;
-            player.PrefChar.Clear();
+            player.Settings.PrefDifficulty = comboBoxDifficulty.SelectedIndex;
+            player.Settings.PrefChars.Clear();
             foreach (var item in listBoxChars.SelectedItems)
             {
-                player.PrefChar.Add(item.ToString());
+                player.Settings.PrefChars.Add(item.ToString());
             }
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();

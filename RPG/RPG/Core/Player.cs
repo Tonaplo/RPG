@@ -14,9 +14,8 @@ namespace RPG.Core
         private List<Units.Character> controlledCharacters = new List<Units.Character>();
         private List<Item> inventoryOfPlayer = new List<Item>();
         private int dust = 0;
-        private int prefDifficulty;
-        private List<string> prefChar;
         private PlayerQuest currentQuest = null;
+        private PlayerSettings settings = new PlayerSettings(RPG.Function.ServerManagement.GetRunningVersion());
         #endregion
 
         #region Constructors
@@ -31,8 +30,6 @@ namespace RPG.Core
             this.inventoryOfPlayer = new List<Item>();
             this.ControlledCharacters = new List<Units.Character>();
             this.dust = 0;
-            this.prefChar = new List<string>(); ;
-            this.prefDifficulty = 0;
         }
 
         /// <summary>
@@ -78,22 +75,16 @@ namespace RPG.Core
             set { dust = value; }
         }
 
-        public int PrefDifficulty
-        {
-            get { return prefDifficulty; }
-            set { prefDifficulty = value; }
-        }
-
-        public List<string> PrefChar
-        {
-            get { return prefChar; }
-            set { prefChar = value; }
-        }
-
         public PlayerQuest CurrentQuest
         {
             get { return currentQuest; }
             set { currentQuest = value; }
+        }
+
+        public PlayerSettings Settings
+        {
+            get { return settings; }
+            set { settings = value; }
         }
 
         #endregion

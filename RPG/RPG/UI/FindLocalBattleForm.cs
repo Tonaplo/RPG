@@ -31,7 +31,7 @@ namespace RPG
 
             charList.Clear();
             
-            foreach (var item in _player.PrefChar)
+            foreach (var item in _player.Settings.PrefChars)
             {
                 charList.Add(player.ControlledCharacters.Single(x => x.UnitName == item));
             }
@@ -51,7 +51,7 @@ namespace RPG
             comboBoxDifficulty.Items.Add("Hard (Level + 2)");
             comboBoxDifficulty.Items.Add("Very Hard (Level + 4)");
 
-            comboBoxDifficulty.SelectedIndex = _player.PrefDifficulty;
+            comboBoxDifficulty.SelectedIndex = _player.Settings.PrefDifficulty;
 
             SetCharLabel();
         }

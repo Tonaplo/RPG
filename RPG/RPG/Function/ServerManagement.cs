@@ -32,14 +32,14 @@ namespace RPG.Function
                 return Assembly.GetExecutingAssembly().GetName().Version;
         }
 
-        #region Temporary Save and Load Players
+        #region XML Save and Load Players
 
         private static Type[] Types()
         {
             #region Declaration of all inherited types
             Type[] types = new Type[] 
             { 
-                
+                typeof(PlayerSettings),
                 typeof(Weapon), 
                 typeof(Armor), 
                 typeof(BattleCharm),
@@ -274,6 +274,9 @@ namespace RPG.Function
 
         }
 
+        #endregion
+
+        #region Functions for correcting erronoues XML Files
         #endregion
 
         public static void OpenFeedbackWindow()
