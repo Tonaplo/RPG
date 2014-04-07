@@ -111,6 +111,7 @@
   <ItemGroup>
     <Compile Include="Core\Abilities\BuffsAndDebuffs.cs" />
     <Compile Include="Core\Enums.cs" />
+    <Compile Include="Core\PlayerSettings.cs" />
     <Compile Include="Core\Quests\PlayerQuest.cs" />
     <Compile Include="Function\Battle.cs" />
     <Compile Include="Function\PlayerQuestHandler.cs" />

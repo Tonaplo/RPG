@@ -43,6 +43,18 @@ namespace RPG.UI
             comboBoxDifficulty.Items.Add("Very Hard (Level + 4)");
 
             comboBoxDifficulty.SelectedIndex = _player.Settings.PrefDifficulty;
+
+            if (player.Settings.SoundOn)
+            {
+                radioButtonSoundOn.Checked = true;
+                numericUpDownSound.Value = player.Settings.SoundVolume;
+                numericUpDownSound.Enabled = true;
+            }
+            else
+            {
+                radioButtonSoundOff.Checked = true;
+                numericUpDownSound.Enabled = false;
+            }
         }
 
         #region Font Stuff
@@ -102,6 +114,7 @@ namespace RPG.UI
             {
                 player.Settings.PrefChars.Add(item.ToString());
             }
+            player.Settings.SoundVolume = (int)numericUpDownSound.Value;
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
         }
@@ -114,6 +127,37 @@ namespace RPG.UI
             mes.ShowDialog();
         }
 
+        private void radioButtonSound_CheckedChanged(object sender, EventArgs e)
+        {
+            if (sender == radioButtonSoundOff)
+            {
+                player.Settings.SoundOn = false;
+                numericUpDownSound.Enabled = false;
+            }
+            else if (sender == radioButtonSoundOn)
+            {
+                player.Settings.SoundOn = true;
+                numericUpDownSound.Value = player.Settings.SoundVolume;
+                numericUpDownSound.Enabled = true;
+            }
 
+            Function.SoundManager.PlayMain(player.Settings.SoundOn, this);
+        }
+
+        private void numericUpDownSound_ValueChanged(object sender, EventArgs e)
+        {
+            if (numericUpDownSound.Value <= 10 || numericUpDownSound.Value >= 0)
+                player.Settings.SoundVolume = (int)numericUpDownSound.Value;
+            else if (numericUpDownSound.Value > 10)
+            {
+                player.Settings.SoundVolume = 10;
+                numericUpDownSound.Value = 10;
+            }
+            else
+            {
+                player.Settings.SoundVolume = 0;
+                numericUpDownSound.Value = 0;
+            }
+        }
     }
 }

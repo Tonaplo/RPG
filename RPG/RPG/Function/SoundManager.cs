@@ -7,6 +7,8 @@ using System.Windows;
 using System.Reflection;
 using System.Windows.Media;
 using System.IO;
+using RPG.Core;
+using System.Windows.Forms;
 
 namespace RPG.Function
 {
@@ -21,6 +23,29 @@ namespace RPG.Function
             backMusic1 = new SoundPlayer(Properties.Resources.backmusic1);
             backMusic2 = new SoundPlayer(Properties.Resources.backmusic2);
 
+        }
+        public static void PlayMain(bool shouldPlay, Form sender)
+        {
+            if (shouldPlay)
+            {
+                if (sender is MainWindow || sender is UI.ChangeGearForm ||
+                    sender is UI.CharacterOverviewForm || sender is UI.ChooseQuestRewardForm ||
+                    sender is UI.DeleteCharForm || sender is UI.MessageForm ||
+                    sender is UI.OptionsForm || sender is UI.QuestDifficultyForm ||
+                    sender is UI.RandomizeStatForm || sender is UI.SupportForm)
+                {
+                    PlayMainMenuMusic();
+                }
+                else
+                {
+                    PlayBattleMusic();
+                }
+            }
+            else
+            {
+                StopBattleMusic();
+                StopMainMenuMusic();
+            }
         }
 
         public static void PlayButtonSound()
@@ -43,7 +68,7 @@ namespace RPG.Function
 
         public static void StopMainMenuMusic()
         {
-            //backMusic1.Stop();
+            backMusic1.Stop();
         }
 
         public static void ResumeMainMenuMusic()

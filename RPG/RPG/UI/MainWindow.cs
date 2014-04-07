@@ -28,7 +28,7 @@ namespace RPG
         {
             InitializeComponent();
             player = _player;
-            Function.SoundManager.PlayMainMenuMusic();
+            Function.SoundManager.PlayMain(player.Settings.SoundOn, this);
 
             if (player.Settings.PrefChars == null)
                 player.Settings.PrefChars.Add("None");

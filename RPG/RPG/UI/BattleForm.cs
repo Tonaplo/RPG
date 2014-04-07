@@ -42,7 +42,7 @@ namespace RPG.UI
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterParent;
             this.BackgroundImage = GeneralFunctions.ResizeImage(Properties.Resources.background, labelBackgroundIGNORE.Size);
-            Function.SoundManager.PlayBattleMusic();
+            Function.SoundManager.PlayMain(true, this);
 
             numberOfPlayers = _listOfChars.Count;
 
