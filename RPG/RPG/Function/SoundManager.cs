@@ -6,6 +6,7 @@ using System.Media;
 using System.Windows;
 using System.Reflection;
 using System.Windows.Media;
+using System.Runtime.InteropServices;
 using System.IO;
 using RPG.Core;
 using System.Windows.Forms;
@@ -17,15 +18,29 @@ namespace RPG.Function
         private static SoundPlayer backMusic1;
         private static SoundPlayer backMusic2;
 
+        [DllImport("winmm.dll")]
+        public static extern int waveOutGetVolume(IntPtr hwo, out uint dwVolume);
+        [DllImport("winmm.dll")]
+        public static extern int waveOutSetVolume(IntPtr hwo, uint dwVolume);
+
         public static void InitializeSounds()
         {
-           
             backMusic1 = new SoundPlayer(Properties.Resources.backmusic1);
             backMusic2 = new SoundPlayer(Properties.Resources.backmusic2);
+            uint CurrVol = 0;
+            waveOutGetVolume(IntPtr.Zero, out CurrVol);
+            
 
         }
-        public static void PlayMain(bool shouldPlay, Form sender)
+
+        public static void PlayMain(bool shouldPlay, Form sender, int volume)
         {
+            int NewVolume = ((ushort.MaxValue / 10) * volume);
+            uint NewVolumeAllChannels = (((uint)NewVolume & 0x0000ffff) | ((uint)NewVolume << 16));
+
+            // Set the volume
+            waveOutSetVolume(IntPtr.Zero, NewVolumeAllChannels);
+
             if (shouldPlay)
             {
                 if (sender is MainWindow || sender is UI.ChangeGearForm ||
@@ -95,6 +110,15 @@ namespace RPG.Function
         public static void StopBattleMusic()
         {
             //backMusic2.Stop();
+        }
+
+        public static void AdjustVolume(int volume)
+        {
+            int NewVolume = ((ushort.MaxValue / 10) * volume);
+            uint NewVolumeAllChannels = (((uint)NewVolume & 0x0000ffff) | ((uint)NewVolume << 16));
+
+            // Set the volume
+            waveOutSetVolume(IntPtr.Zero, NewVolumeAllChannels);
         }
     }
 }

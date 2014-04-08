@@ -141,7 +141,7 @@ namespace RPG.UI
                 numericUpDownSound.Enabled = true;
             }
 
-            Function.SoundManager.PlayMain(player.Settings.SoundOn, this);
+            Function.SoundManager.PlayMain(player.Settings.SoundOn, this, player.Settings.SoundVolume);
         }
 
         private void numericUpDownSound_ValueChanged(object sender, EventArgs e)
@@ -158,6 +158,8 @@ namespace RPG.UI
                 player.Settings.SoundVolume = 0;
                 numericUpDownSound.Value = 0;
             }
+
+            Function.SoundManager.AdjustVolume(player.Settings.SoundVolume);
         }
     }
 }

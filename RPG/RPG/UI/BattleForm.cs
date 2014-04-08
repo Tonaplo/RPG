@@ -37,12 +37,12 @@ namespace RPG.UI
         /// </summary>
         /// <param name="_listOfChars"></param>
         /// <param name="_difficulty"></param>
-        public BattleForm(List<Core.Units.Character> _listOfChars, int _difficulty)
+        public BattleForm(List<Core.Units.Character> _listOfChars, int _difficulty, RPG.Core.PlayerSettings settings)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterParent;
             this.BackgroundImage = GeneralFunctions.ResizeImage(Properties.Resources.background, labelBackgroundIGNORE.Size);
-            Function.SoundManager.PlayMain(true, this);
+            Function.SoundManager.PlayMain(settings.SoundOn, this, settings.SoundVolume);
 
             numberOfPlayers = _listOfChars.Count;
 

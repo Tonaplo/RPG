@@ -1,4 +1,13 @@
-﻿Version 0.1.4.10 (25/02-2014):
+﻿Version 0.1.4.11 (08/04-2014):
+	
+	- General:
+		- More options where added!
+			- Alot of the options code was refactored to better support changing versions and
+			  new features!
+			- Ability to turn sound on and off added!
+			- Ability to adjust sound volume added!
+_________________________________________________________________________________________________________
+Version 0.1.4.10 (25/02-2014):
 
 	- General:
 		- Fixed a bug where the amount of available dust would not visually update after randomizing stats.

@@ -28,7 +28,7 @@ namespace RPG
         {
             InitializeComponent();
             player = _player;
-            Function.SoundManager.PlayMain(player.Settings.SoundOn, this);
+            Function.SoundManager.PlayMain(player.Settings.SoundOn, this, player.Settings.SoundVolume);
 
             if (player.Settings.PrefChars == null)
                 player.Settings.PrefChars.Add("None");
@@ -395,7 +395,7 @@ namespace RPG
                         
                     Function.SoundManager.PauseMainMenuMusic();
 
-                    BattleForm battle = new BattleForm(list, battlechoose.ReturnDifficulty());
+                    BattleForm battle = new BattleForm(list, battlechoose.ReturnDifficulty(), player.Settings);
                     if (battle.ShowDialog() == DialogResult.OK)
                     {
                         Function.SoundManager.ResumeMainMenuMusic();
