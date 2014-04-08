@@ -34,7 +34,7 @@ namespace RPG
                 player.Settings.PrefChars.Add("None");
             if (player.CurrentQuest != null)
             {
-                player.CurrentQuest.UpdateQuest(player, 1, null, 0, 0, 1.0, new List<EnumCharClass>());
+                player.CurrentQuest.UpdateQuest(player, 1, null, 0, 0, 1.0, new List<EnumCharClass>(), false);
             }
 
             playerlist = _playerlist;
@@ -313,12 +313,13 @@ namespace RPG
             return loot;
         }
 
-        private void CheckForQuest(int difficulty, Core.Units.NPC enemy, int healingdone, double percent, List<Core.EnumCharClass> usedclass)
+        private void CheckForQuest(int difficulty, Core.Units.NPC enemy, int healingdone, double percent, List<Core.EnumCharClass> usedclass, bool battleWasWon)
         {
             if (player.CurrentQuest != null)
             {
-                player.CurrentQuest.UpdateQuest(player, difficulty, enemy, healingdone, enemy.BuffedHP.IntValue, percent, usedclass);
-
+                
+                player.CurrentQuest.UpdateQuest(player, difficulty, enemy, healingdone, enemy.BuffedHP.IntValue, percent, usedclass, battleWasWon);
+                
                 if (player.CurrentQuest.questcompleted == true)
                     PlayerQuestHandler.BeginNewQuest(player);
             }
@@ -387,6 +388,7 @@ namespace RPG
                 if (result == System.Windows.Forms.DialogResult.OK)
                 {
                     List<Core.Units.Character> list = new List<Core.Units.Character>();
+                    bool battleWasWon = false;
 
                     foreach (var item in battlechoose.ReturnChars())
                     {
@@ -401,33 +403,30 @@ namespace RPG
                         Function.SoundManager.ResumeMainMenuMusic();
                         list = battle.ReturnChars(player);
 
-                        List<EnumCharClass> classesUsed = new List<EnumCharClass>();
-                        foreach (var item in list)
-                        {
-                            classesUsed.Add(item.CharClass);
-                        }
-
                         List<Item> loot = GenerateLoot(battlechoose.ReturnDifficulty(), ReturnAverageLevel(list), battle.ReturnNumberOfPlayers(), battle.ReturnedEnemy().UnitLevel);
-                        CheckForQuest(battlechoose.ReturnDifficulty(), battle.ReturnedEnemy(), battle.ReturnedHealingDone(), ReturnLowestPercent(list), classesUsed);
-                            
-
-                        UpdateQuestVisual();
-
-                        foreach (var item in list)
-                        {
-                            this.player.ControlledCharacters.RemoveAll(x => x.UnitName == item.UnitName);
-                        }
-                        
-                        this.player.ControlledCharacters.AddRange(battle.ReturnChars(player));
-
-                        UpdateChars();
-
-                        UpdateInventoryVisual();
+                        battleWasWon = true;
                     }
-                    else
+
+                    List<EnumCharClass> classesUsed = new List<EnumCharClass>();
+                    foreach (var item in list)
                     {
-                        UpdateChars();
+                        classesUsed.Add(item.CharClass);
                     }
+
+                    CheckForQuest(battlechoose.ReturnDifficulty(), battle.ReturnedEnemy(), battle.ReturnedHealingDone(), ReturnLowestPercent(list), classesUsed, battleWasWon);
+
+                    UpdateQuestVisual();
+
+                    foreach (var item in list)
+                    {
+                        this.player.ControlledCharacters.RemoveAll(x => x.UnitName == item.UnitName);
+                    }
+
+                    this.player.ControlledCharacters.AddRange(battle.ReturnChars(player));
+
+                    UpdateChars();
+
+                    UpdateInventoryVisual();
                 }
             }
             else

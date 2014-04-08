@@ -1,4 +1,4 @@
-﻿Version 0.1.4.11 (08/04-2014):
+﻿Version 0.1.4.12 (08/04-2014):
 	
 	- General:
 		- More options where added!
@@ -6,6 +6,19 @@
 			  new features!
 			- Ability to turn sound on and off added!
 			- Ability to adjust sound volume added!
+
+	- Quests:
+		- Significant changes were made to the quest system:
+			- Quest credit will now be given more consistently with their description. For example,
+			  the quest "Defeat 5 opponents of Hard difficulty" will only be given credit if the player
+			  defeats an opponent of hard difficulty. However, a quest such as "Deal 2000 damage to
+			  Normal opponents" will now give credit regardless of whether the player lost or won the
+			  battle. This means that the following quests will now be granted credit despite a loss:
+				
+				- Heal X damage during battles
+				- Deal X damage during battles
+
+			The remaining quests will function as previously.
 _________________________________________________________________________________________________________
 Version 0.1.4.10 (25/02-2014):
 
