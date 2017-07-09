@@ -24,7 +24,6 @@ namespace RPG.Core
             this.soundVolume = 10;
             this.prefDifficulty = 0;
             this.prefChars = new List<string>();
-            this.saveFolderPath = Environment.SpecialFolder.MyDocuments.ToString() + "/The Legend of Eiwar/";
         }
         #endregion
 
@@ -34,7 +33,6 @@ namespace RPG.Core
         private int soundVolume;
         private int prefDifficulty;
         private List<string> prefChars;
-        private string saveFolderPath;
         #endregion
 
         #region Properties
@@ -62,12 +60,6 @@ namespace RPG.Core
         {
             get { return prefChars; }
             set { prefChars = value; }
-        }
-
-            public string SaveFolderPath
-        {
-            get { return saveFolderPath; }
-            set { saveFolderPath = value; }
         }
         #endregion
 

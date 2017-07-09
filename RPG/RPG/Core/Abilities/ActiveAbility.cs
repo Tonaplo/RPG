@@ -2659,6 +2659,7 @@ namespace RPG.Core.Abilities
     #endregion
 
     #region NPC Abilities
+
     /// <summary>
     /// This ability deals damage to the 1 target, based on the NPCs level.
     /// </summary>
@@ -2678,7 +2679,6 @@ namespace RPG.Core.Abilities
         public NPCFireball()
         { }
 
-        int damageValue = 0;
         public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
         {
             string damagedone = "";
@@ -2717,7 +2717,6 @@ namespace RPG.Core.Abilities
         public NPCHeal()
         { }
 
-        int damageValue = 0;
         public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
         {
             int heal = (int)Math.Abs(_caster.BuffedHP.IntValue * 0.07);
@@ -2747,7 +2746,6 @@ namespace RPG.Core.Abilities
         public NPCNuke()
         { }
 
-        int damageValue = 0;
         public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
         {
             string damagedone = "";
@@ -2780,7 +2778,6 @@ namespace RPG.Core.Abilities
         public NPCAtonementSmite()
         { }
 
-        int damageValue = 0;
         public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
         {
             string damagedone = "";
@@ -2825,7 +2822,6 @@ namespace RPG.Core.Abilities
         public NPCGrow()
         { }
 
-        int damageValue = 0;
         public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
         {
             int buff = (int)Math.Abs(_caster.BuffedHP.IntValue * 0.10);
@@ -2852,7 +2848,6 @@ namespace RPG.Core.Abilities
         public NPCDesperation()
         { }
 
-        int damageValue = 0;
         public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
         {
             int damage = (int)Math.Abs((_caster.BuffedHP.IntValue-_caster.CurrentHP.IntValue) * 0.15);
@@ -2887,7 +2882,6 @@ namespace RPG.Core.Abilities
         public NPCGrowingDespair()
         { }
         int iteration = 1;
-        int damageValue = 0;
         public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
         {
             int damage = (int)(_caster.UnitLevel * (0.5 * iteration));
@@ -2902,6 +2896,40 @@ namespace RPG.Core.Abilities
             
             this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + _targets[index].UnitName + ", dealing " + damage + " to each!";
             iteration++;
+        }
+    }
+
+    public class NPCCarpetBomb : ActiveAbility
+    {
+        public NPCCarpetBomb(Character _char, string _name, string _description, Image _icon, EnumAbilityClassReq _classReq)
+            : base(_char, _name, _description, _icon, _classReq)
+        {
+            this.AbilityName = "Carpet Bomb";
+            this.Description = "The monster Carpet Bombs its enemies, dealing 200% damage to each enemy.";
+            this.Icon = this.SetIcon(Properties.Resources.fireball);
+        }
+
+        /// <summary>
+        /// Used only for XML Serialization
+        /// </summary>
+        public NPCCarpetBomb()
+        { }
+
+        public override void UseAbility(Units.NPC _caster, List<Units.Character> _targets)
+        {
+            string damagedone = "";
+            int damage = (int)Math.Abs(_caster.UnitLevel * 2.00);
+            for (int i = 0; i < _targets.Count; i++)
+            {
+                if (_targets[i].CurrentHP.IntValue > 0 && _targets.Any(x => x.CurrentHP.IntValue > 0))
+                {
+                    _targets[i].CurrentHP.IntValue -= damage;
+
+                    damagedone += _targets[i].UnitName + " for " + damage + ", ";
+                }
+            
+            }
+            this.ChatString = _caster.UnitName + " uses " + this.AbilityName + " on " + damagedone + "!";
         }
     }
 

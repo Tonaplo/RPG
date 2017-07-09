@@ -42,7 +42,6 @@
             this.radioButtonSoundOn = new System.Windows.Forms.RadioButton();
             this.radioButtonSoundOff = new System.Windows.Forms.RadioButton();
             this.numericUpDownSound = new System.Windows.Forms.NumericUpDown();
-            this.bnSaveFolder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSound)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +55,7 @@
             this.bnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnOk.ForeColor = System.Drawing.Color.Yellow;
-            this.bnOk.Location = new System.Drawing.Point(45, 347);
+            this.bnOk.Location = new System.Drawing.Point(45, 284);
             this.bnOk.Name = "bnOk";
             this.bnOk.Size = new System.Drawing.Size(174, 35);
             this.bnOk.TabIndex = 29;
@@ -121,7 +120,7 @@
             this.bnAbandon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bnAbandon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnAbandon.ForeColor = System.Drawing.Color.Yellow;
-            this.bnAbandon.Location = new System.Drawing.Point(45, 307);
+            this.bnAbandon.Location = new System.Drawing.Point(45, 240);
             this.bnAbandon.Name = "bnAbandon";
             this.bnAbandon.Size = new System.Drawing.Size(174, 24);
             this.bnAbandon.TabIndex = 35;
@@ -219,31 +218,12 @@
             this.numericUpDownSound.TabIndex = 44;
             this.numericUpDownSound.ValueChanged += new System.EventHandler(this.numericUpDownSound_ValueChanged);
             // 
-            // bnSaveFolder
-            // 
-            this.bnSaveFolder.BackColor = System.Drawing.Color.DarkRed;
-            this.bnSaveFolder.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.bnSaveFolder.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
-            this.bnSaveFolder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.bnSaveFolder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.bnSaveFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnSaveFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnSaveFolder.ForeColor = System.Drawing.Color.Yellow;
-            this.bnSaveFolder.Location = new System.Drawing.Point(45, 260);
-            this.bnSaveFolder.Name = "bnSaveFolder";
-            this.bnSaveFolder.Size = new System.Drawing.Size(174, 26);
-            this.bnSaveFolder.TabIndex = 46;
-            this.bnSaveFolder.Text = "Edit Save Folder";
-            this.bnSaveFolder.UseVisualStyleBackColor = false;
-            this.bnSaveFolder.Click += new System.EventHandler(this.bnSaveFolder_Click);
-            // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(260, 409);
-            this.Controls.Add(this.bnSaveFolder);
             this.Controls.Add(this.numericUpDownSound);
             this.Controls.Add(this.radioButtonSoundOff);
             this.Controls.Add(this.radioButtonSoundOn);
@@ -284,6 +264,5 @@
         private System.Windows.Forms.RadioButton radioButtonSoundOn;
         private System.Windows.Forms.RadioButton radioButtonSoundOff;
         private System.Windows.Forms.NumericUpDown numericUpDownSound;
-        private System.Windows.Forms.Button bnSaveFolder;
     }
 }

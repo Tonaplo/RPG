@@ -6,8 +6,6 @@ This tab presents planned changes to the game, that has not yet been implemented
 
 	- Add a recovery mode if game files were corrupted.
 
-	- Change the file location of the save files.
-
 	- Add "Zones" where the player can battle in.
 
 	- I have an idea of how to save data on the server, rendering local copies useless.

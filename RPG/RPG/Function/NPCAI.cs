@@ -41,7 +41,7 @@ namespace RPG.Function
             }
             else
             {
-                this.aiScript = r.Next(0, 6);
+                this.aiScript = r.Next(0, 7);
             }
 
             this.targets = _targets;
@@ -65,6 +65,9 @@ namespace RPG.Function
             get { return npc; }
         }
 
+        /// <summary>
+        /// Adds abilities to the given NPCAI
+        /// </summary>
         public void AddAbilities()
         {
             switch (aiScript)
@@ -105,11 +108,20 @@ namespace RPG.Function
                         npc.AddActiveAbility(new NPCGrowingDespair(null, "", "", null, EnumAbilityClassReq.NPC));
                     }
                     break;
+                case 6:
+                    if (npc.UnitActiveAbilities.Count == 0)
+                    {
+                        npc.AddActiveAbility(new NPCCarpetBomb(null, "", "", null, EnumAbilityClassReq.NPC));
+                    }
+                    break;
                 default:
                     break;
             }
         }
 
+        /// <summary>
+        /// Runs the given NPCAI script
+        /// </summary>
         public void Run()
         {
 
@@ -133,17 +145,26 @@ namespace RPG.Function
                 case 5:
                     GrowingDespair();
                     break;
+                case 6:
+                    CarpetBomber();
+                    break;
                 default:
                     break;
             }
         }
 
+        /// <summary>
+        /// this AI just constantly fires Fireballs at the enemy. 
+        /// </summary>
         private void ConstantFireballs()
         {
             npc.UnitActiveAbilities[0].UseAbility(npc, targets);
             chatAction = npc.UnitActiveAbilities[0].ChatString;
         }
 
+        /// <summary>
+        /// Drop a huge nuke on the players and then heals up self for 5 rounds
+        /// </summary>
         private void NukeAndHeal()
         {
             if (aiStep == 0)
@@ -163,12 +184,18 @@ namespace RPG.Function
                 aiStep = 0;
         }
 
+        /// <summary>
+        /// Spams Atonement on enemies
+        /// </summary>
         private void AtonementSmite()
         {
             npc.UnitActiveAbilities[0].UseAbility(npc, targets);
             chatAction = npc.UnitActiveAbilities[0].ChatString;
         }
 
+        /// <summary>
+        /// Randomly either Heals, Fireballs or Atonement Smites.
+        /// </summary>
         private void WhichShouldITake()
         {
             for (int i = 0; i < 1; i++)
@@ -180,6 +207,9 @@ namespace RPG.Function
             
         }
 
+        /// <summary>
+        /// Alternates between increasing it's health pool and dealing damage based on it's remaining health
+        /// </summary>
         private void GrowAndDespair()
         {
             if (aiStep == 0)
@@ -199,7 +229,16 @@ namespace RPG.Function
                 aiStep = 0;
         }
 
+        /// <summary>
+        /// Deals increasingly higher damage each turn.
+        /// </summary>
         private void GrowingDespair()
+        {
+            npc.UnitActiveAbilities[0].UseAbility(npc, targets);
+            chatAction = npc.UnitActiveAbilities[0].ChatString;
+        }
+
+        private void CarpetBomber()
         {
             npc.UnitActiveAbilities[0].UseAbility(npc, targets);
             chatAction = npc.UnitActiveAbilities[0].ChatString;

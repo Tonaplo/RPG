@@ -956,11 +956,11 @@ namespace RPG.Core
 
         public override void UpdateQuest(Player _player, int _difficulty, NPC _enemy, int _healingDone, int _damageDone, double _charPercent, List<EnumCharClass> _class, bool battleWasWon)
         {
-            if (monsterType == null)
+            /*if (monsterType == null)
             {
                 monsterType = Function.PlayerQuestHandler.ReturnRandomMonsterType();
                 
-            }
+            }*/
             this.questText = "Defeat 3 " + monsterType + " of Very Easy difficulty";
 
             if (_difficulty == -4 && monsterType == _enemy.TypeOfNPC && battleWasWon)

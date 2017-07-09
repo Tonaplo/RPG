@@ -30,18 +30,12 @@ namespace RPG
             List<Player> playerList = ServerManagement.LoadPlayers("players.xml");
             SoundManager.InitializeSounds();
 
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
-            fbd.Description = "If you are a returning player, please choose a folder to load your characters from. If you are new to the game, please press cancel:";
-            
-            var result = fbd.ShowDialog();
-
-            if (result == System.Windows.Forms.DialogResult.OK)
-            {
-                playerList = ServerManagement.LoadFromFolder(Path.Combine(fbd.SelectedPath, "players.xml"));
-            }
-
+            playerList = ServerManagement.LoadFromFolder(Path.Combine(Environment.SpecialFolder.MyDocuments.ToString(), "/The Legend of Eiwar/players.xml"));
+                
             if (playerList == null)
+            {
                 playerList = new List<Player>();
+            }
 
             LoginForm lf = new LoginForm(playerList);
             Application.Run(lf);

@@ -365,15 +365,9 @@ namespace RPG
         {
             Function.SoundManager.PlayButtonSound();
             player.Settings.ThisVersion = (Function.ServerManagement.GetRunningVersion()).ToString();
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
-            fbd.Description = "Choose a location to save your list of players. This will work as a backup case case anything changes!";
-
-            if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                ServerManagement.Saveplayers("players.xml", playerlist, player);
-                ServerManagement.ExportToFolder(Path.Combine(fbd.SelectedPath,"players.xml"), playerlist);
-            }
-
+            ServerManagement.Saveplayers("players.xml", playerlist, player);
+            ServerManagement.ExportToFolder(Path.Combine(Environment.SpecialFolder.MyDocuments.ToString(), "/The Legend of Eiwar/players.xml"), playerlist);
+            
             Function.SoundManager.StopMainMenuMusic();
             this.Close();
         }
@@ -394,13 +388,11 @@ namespace RPG
                     {
                         list.Add(item);
                     }
-                        
-                    Function.SoundManager.PauseMainMenuMusic();
 
                     BattleForm battle = new BattleForm(list, battlechoose.ReturnDifficulty(), player.Settings);
                     if (battle.ShowDialog() == DialogResult.OK)
                     {
-                        Function.SoundManager.ResumeMainMenuMusic();
+                        Function.SoundManager.PlayMain(true, this, player.Settings.SoundVolume);
                         list = battle.ReturnChars(player);
 
                         List<Item> loot = GenerateLoot(battlechoose.ReturnDifficulty(), ReturnAverageLevel(list), battle.ReturnNumberOfPlayers(), battle.ReturnedEnemy().UnitLevel);

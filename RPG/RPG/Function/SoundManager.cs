@@ -49,10 +49,12 @@ namespace RPG.Function
                     sender is UI.OptionsForm || sender is UI.QuestDifficultyForm ||
                     sender is UI.RandomizeStatForm || sender is UI.SupportForm)
                 {
+                    StopBattleMusic();
                     PlayMainMenuMusic();
                 }
                 else
                 {
+                    StopMainMenuMusic();
                     PlayBattleMusic();
                 }
             }
@@ -94,7 +96,7 @@ namespace RPG.Function
         public static void PlayBattleMusic()
         {
             //backMusic2.IsLooped = true;
-            //backMusic2.Play();
+            backMusic2.Play();
         }
 
         public static void PauseBattleMusic()
@@ -109,7 +111,7 @@ namespace RPG.Function
 
         public static void StopBattleMusic()
         {
-            //backMusic2.Stop();
+            backMusic2.Stop();
         }
 
         public static void AdjustVolume(int volume)

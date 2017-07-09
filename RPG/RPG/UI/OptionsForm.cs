@@ -163,18 +163,5 @@ namespace RPG.UI
 
             Function.SoundManager.AdjustVolume(player.Settings.SoundVolume);
         }
-
-        private void bnSaveFolder_Click(object sender, EventArgs e)
-        {
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
-            fbd.Description = "Please specify where you want the game to save your savefiles:";
-
-            var result = fbd.ShowDialog();
-
-            if (result == System.Windows.Forms.DialogResult.OK)
-            {
-                player.Settings.SaveFolderPath = Path.Combine(fbd.SelectedPath, "players.xml");
-            }
-        }
     }
 }

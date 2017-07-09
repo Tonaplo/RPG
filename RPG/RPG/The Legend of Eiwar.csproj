@@ -26,8 +26,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>http://www.tonaplo.dk/PublishedProjects/The Legend of Eiwar/</InstallUrl>
     <UpdateUrl>http://www.tonaplo.dk/PublishedProjects/The Legend of Eiwar/</UpdateUrl>
-    <SupportUrl>https://docs.google.com/forms/d/15iHbzt2H74AGrO3oVzdlIc08Q1vP3_cegFcdOmP02Hk/viewform</SupportUrl>
-    <ErrorReportUrl>https://docs.google.com/forms/d/15iHbzt2H74AGrO3oVzdlIc08Q1vP3_cegFcdOmP02Hk/viewform</ErrorReportUrl>
+    <SupportUrl>https://docs.google.com/forms/d/16gp7xTZvtP6zsQ9UwheVaeVm3hP7zlt9hq2ufDsZSZY/viewform</SupportUrl>
+    <ErrorReportUrl>https://docs.google.com/forms/d/16gp7xTZvtP6zsQ9UwheVaeVm3hP7zlt9hq2ufDsZSZY/viewform</ErrorReportUrl>
     <TargetCulture>en</TargetCulture>
     <ProductName>The Legend of Eiwar</ProductName>
     <PublisherName>Anders Vagner</PublisherName>
@@ -36,7 +36,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationRevision>15</ApplicationRevision>
     <ApplicationVersion>0.1.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

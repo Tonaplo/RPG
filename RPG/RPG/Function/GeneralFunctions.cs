@@ -18,8 +18,8 @@ namespace RPG.Function
         #region Font Fields
         [DllImport("gdi32.dll")]
         private static extern IntPtr AddFontMemResourceEx(IntPtr pbfont, uint cbfont, IntPtr pdv, [In] ref uint pcFonts);
-        FontFamily ff;
-        Font font;
+        //FontFamily ff;
+        //Font font;
         #endregion
 
         /// <summary>

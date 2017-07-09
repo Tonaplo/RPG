@@ -171,7 +171,7 @@ namespace RPG.Function
             }
             catch (Exception exp)
             {
-                //System.Windows.Forms.MessageBox.Show(exp.Message);
+                System.Windows.Forms.MessageBox.Show(exp.Message);
             }
             finally { }
         }

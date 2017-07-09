@@ -78,93 +78,11 @@ namespace RPG.UI
             Function.SoundManager.PlayButtonSound();
             ucCharacterBattle control = sender as ucCharacterBattle;
             Core.Abilities.ActiveAbility ab = control.ChoosenAbility();
+
             if (ab.DamageOrHealing == EnumActiveAbilityType.Damage)
-            {
-                if (control.CheckBoxEnemyStatus)
-                {
-
-                    int previousHP = 0;
-                    int postHP = 0;
-                    int previousMonsterHP = 0;
-                    int postMonsterHP = 0;
-
-                    foreach (var item in battleChars)
-                    {
-                        previousHP += item.CurrentHP.IntValue;
-                    }
-
-                    previousMonsterHP = enemy.CurrentHP.IntValue;
-
-                    ab.UseAbility(control.Character(), battleChars, null, enemy);
-
-                    foreach (var item in battleChars)
-                    {
-                        postHP += item.CurrentHP.IntValue;
-                    }
-
-                    postMonsterHP = enemy.CurrentHP.IntValue;
-
-                    if (postHP > previousHP)
-                        healingDone += Math.Abs(postHP - previousHP);
-
-                    if (postMonsterHP > previousMonsterHP)
-                        damageDone += Math.Abs(postMonsterHP - previousMonsterHP);
-
-                    Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, "[" + DateTime.Now.ToShortTimeString() + "] ", Color.DarkSeaGreen);
-                    Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, ab.ChatString + Environment.NewLine, Color.DarkOrange);
-
-                    CheckPlayersHealth();
-                }
-                else
-                {
-                    RPG.UI.MessageForm mes = new MessageForm("You have no target!");
-                    mes.ShowDialog();
-                }
-            }
+                AttackButtonDamage(control, ab);
             else
-            {
-                if (control.CheckBoxP1Status || control.CheckBoxP2Status || control.CheckBoxP3Status  || control.CheckBoxP4Status || Function.CombatHandler.RequiresNoTarget(ab))
-                {
-                    List<int> indexes = new List<int>();
-
-                    if (control.CheckBoxP1Status)
-                        indexes.Add(0);
-                    if (control.CheckBoxP2Status)
-                        indexes.Add(1);
-                    if (control.CheckBoxP3Status)
-                        indexes.Add(2);
-                    if (control.CheckBoxP4Status)
-                        indexes.Add(3);
-
-                    int previousHP = 0;
-                    int postHP = 0;
-
-                    foreach (var item in battleChars)
-                    {
-                        previousHP += item.CurrentHP.IntValue;
-                    }
-
-                    ab.UseAbility(control.Character(), battleChars, indexes, enemy);
-
-                    foreach (var item in battleChars)
-                    {
-                        postHP += item.CurrentHP.IntValue;
-                    }
-
-                    if (postHP > previousHP)
-                        healingDone += Math.Abs(postHP - previousHP);
-
-                    UpdateIndexedControls(indexes);
-
-                    Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, "[" + DateTime.Now.ToShortTimeString() + "] ", Color.DarkSeaGreen);
-                    Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, ab.ChatString + Environment.NewLine, Color.DarkOrange);
-                }
-                else
-                {
-                    RPG.UI.MessageForm mes = new MessageForm("You have no target!");
-                    mes.ShowDialog();
-                }
-            }
+                AttackButtonHealing(control, ab);
 
             foreach (var item in flpCharacters.Controls)
             {
@@ -174,6 +92,95 @@ namespace RPG.UI
             (flpNPCs.Controls[0] as ucNPC).Update();
 
             CheckNPCHealth();
+        }
+
+        private void AttackButtonDamage(ucCharacterBattle control, Core.Abilities.ActiveAbility ab)
+        {
+            if (control.CheckBoxEnemyStatus)
+            {
+
+                int previousHP = 0;
+                int postHP = 0;
+                int previousMonsterHP = 0;
+                int postMonsterHP = 0;
+
+                foreach (var item in battleChars)
+                {
+                    previousHP += item.CurrentHP.IntValue;
+                }
+
+                previousMonsterHP = enemy.CurrentHP.IntValue;
+
+                ab.UseAbility(control.Character(), battleChars, null, enemy);
+
+                foreach (var item in battleChars)
+                {
+                    postHP += item.CurrentHP.IntValue;
+                }
+
+                postMonsterHP = enemy.CurrentHP.IntValue;
+
+                if (postHP > previousHP)
+                    healingDone += Math.Abs(postHP - previousHP);
+
+                if (postMonsterHP > previousMonsterHP)
+                    damageDone += Math.Abs(postMonsterHP - previousMonsterHP);
+
+                Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, "[" + DateTime.Now.ToShortTimeString() + "] ", Color.DarkSeaGreen);
+                Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, ab.ChatString + Environment.NewLine, Color.DarkOrange);
+
+                CheckPlayersHealth();
+            }
+            else
+            {
+                RPG.UI.MessageForm mes = new MessageForm("You have no target!");
+                mes.ShowDialog();
+            }
+        }
+
+        private void AttackButtonHealing(ucCharacterBattle control, Core.Abilities.ActiveAbility ab)
+        {
+            if (control.CheckBoxP1Status || control.CheckBoxP2Status || control.CheckBoxP3Status || control.CheckBoxP4Status || Function.CombatHandler.RequiresNoTarget(ab))
+            {
+                List<int> indexes = new List<int>();
+
+                if (control.CheckBoxP1Status)
+                    indexes.Add(0);
+                if (control.CheckBoxP2Status)
+                    indexes.Add(1);
+                if (control.CheckBoxP3Status)
+                    indexes.Add(2);
+                if (control.CheckBoxP4Status)
+                    indexes.Add(3);
+
+                int previousHP = 0;
+                int postHP = 0;
+
+                foreach (var item in battleChars)
+                {
+                    previousHP += item.CurrentHP.IntValue;
+                }
+
+                ab.UseAbility(control.Character(), battleChars, indexes, enemy);
+
+                foreach (var item in battleChars)
+                {
+                    postHP += item.CurrentHP.IntValue;
+                }
+
+                if (postHP > previousHP)
+                    healingDone += Math.Abs(postHP - previousHP);
+
+                UpdateIndexedControls(indexes);
+
+                Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, "[" + DateTime.Now.ToShortTimeString() + "] ", Color.DarkSeaGreen);
+                Function.RichTextBoxExtensions.AppendText(richTextBoxActionbox, ab.ChatString + Environment.NewLine, Color.DarkOrange);
+            }
+            else
+            {
+                RPG.UI.MessageForm mes = new MessageForm("You have no target!");
+                mes.ShowDialog();
+            }
         }
 
         public List<Core.Units.Character> ReturnChars(Core.Player _player)
